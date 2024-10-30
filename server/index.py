@@ -13,6 +13,20 @@ app = FastAPI()
 ai = Client()
 
 scraping_status = dict()
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 async def run_scraping_task(company_url: str, company_name: str):
     try:
         # Update the status to "In Progress"
@@ -26,18 +40,6 @@ async def run_scraping_task(company_url: str, company_name: str):
     except Exception as e:
         # If an error occurs, mark status as "Failed"
         scraping_status[company_name] = f"Failed: {str(e)}"
-
-origins = [
-    "http://localhost:5173",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 @app.post("/scrap")
@@ -97,9 +99,8 @@ async def scrap(
         }
 
     except ClientResponseError as e:
-        print(e)
         response.status_code = status.HTTP_400_BAD_REQUEST
-        return {"error": f"Failed to save company"}
+        return {"error": f"Failed to save company {e}"}
     except Exception as e:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         return {"error": f"An unexpected error occurred: {str(e)}"}

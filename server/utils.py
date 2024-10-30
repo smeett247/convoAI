@@ -11,6 +11,27 @@ from bs4 import BeautifulSoup
 import httpx
 
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler("scrapping.log")
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(stdout_handler)
+
+# Variables for file management
+attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
+markdown_files = []
+attachment_files = []
+
+
 def create_vector_store(client: Client, company_name: str):
     """Create a vector store for company
 
@@ -41,29 +62,6 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
         tool_resources={"file_search": {"vector_store_ids": [vector_store_id]}},
     )
     return assistant.id
-
-
-# Scraping
-# Logging setup
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
-
-stdout_handler = logging.StreamHandler(sys.stdout)
-stdout_handler.setLevel(logging.DEBUG)
-stdout_handler.setFormatter(formatter)
-
-file_handler = logging.FileHandler("scraping.log")
-file_handler.setLevel(logging.DEBUG)
-file_handler.setFormatter(formatter)
-
-logger.addHandler(file_handler)
-logger.addHandler(stdout_handler)
-
-# Variables for file management
-attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
-markdown_files = []
-attachment_files = []
 
 
 def save_extensions(
@@ -131,7 +129,7 @@ def generate_page_report(url: str, content: bytes, company_name: str):
         if len(url_domain.split(".")) > 2
         else url_domain.split(".")[0]
     )
-    reports_dir = os.path.join("reports", company_name)
+    reports_dir = os.path.join(os.getcwd(), "temp", "markdown")
     os.makedirs(reports_dir, exist_ok=True)
 
     report_filename_md = f"{domain_name}.md"
@@ -148,7 +146,7 @@ def generate_page_report(url: str, content: bytes, company_name: str):
         markdown_files.append(report_filepath_md)
 
 
-def scrape_entire_website(start_url: str, company_name: str, max_iterations=1000):
+def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -270,7 +268,6 @@ def convert_attachments_to_pdf():
             logger.error(f"Error converting attachment {file_path} to PDF: {e}")
 
 
-
 def scrap_website(company_url: str, company_name: str):
     """Recursively Scrap the URL provided
 
@@ -289,15 +286,14 @@ def scrap_website(company_url: str, company_name: str):
             sys.exit(1)
 
     scrape_entire_website(company_url, company_name, max_iterations)
-    print("Scraping completed.")
 
-    convert_markdown_to_pdf()
-    print("Markdown files converted to PDFs.")
+    logging.info("Scraping completed.")
+    for md in markdown_files:
+        convert_markdown_to_pdf(md)
 
-    convert_attachments_to_pdf()
-    print("Attachments converted to PDFs.")
-
-    print("All conversions completed.")
+    logging.info("Markdown files converted to PDFs.")
+    logging.info("Attachments converted to PDFs.")
+    logging.info("All conversions completed.")
 
 
 def validate_website(website: str) -> bool:
@@ -318,4 +314,4 @@ def validate_website(website: str) -> bool:
 
 
 if __name__ == "__main__":
-    convert_markdown_to_pdf("./temp/markdown/fathom.md")
+    scrap_website("https://www.example.com", "Example")
