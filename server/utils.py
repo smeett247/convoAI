@@ -300,7 +300,15 @@ def scrap_website(company_url: str, company_name: str):
     print("All conversions completed.")
 
 
-def validate_website(website: str):
+def validate_website(website: str) -> bool:
+    """
+
+    Args:
+        website (str): Website url that needs to be validated
+
+    Returns:
+        bool : Weather the provided string is a URL or not
+    """
     url_validator = z.string().url()
     try:
         url_validator.validate(website)
