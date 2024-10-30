@@ -1,0 +1,9 @@
+.env
+env
+.venv
+attachments
+reports
+uploads
+__pycache__
+tempCodeRunnerFile.py
+temp
