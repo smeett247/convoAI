@@ -1,0 +1,5 @@
+"scripts": {
+  "build": "tsc -p tsconfig.app.json",
+  "start": "vite --config tsconfig.node.json",
+  "lint": "eslint --ext .js,.jsx,.ts,.tsx src/"
+}
