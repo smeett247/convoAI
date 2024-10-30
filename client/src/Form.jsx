@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import "./form.css";
+import { HOST } from "../config.ts";
 import {
   Container,
   Typography,
@@ -22,8 +22,8 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import MuiAlert from "@mui/material/Alert";
-import { ThemeProvider, ThemeContext } from "./ThemeContext";
-import Header from "./Header";
+import { ThemeProvider, ThemeContext } from "./ThemeContext.jsx";
+import Header from "./Header.jsx";
 import RemoveIcon from "@mui/icons-material/Remove";
 import Ellipse1 from "./assets/Ellipse11.svg";
 import Ellipse2 from "./assets/Ellipse2.svg";
@@ -137,18 +137,17 @@ function Form() {
     setFormData({ ...formData, additionalWebsites: newWebsites });
   };
 
-
-   // Polling function to check scraping status
-   const checkScrapingStatus = async (companyName) => {
+  // Polling function to check scraping status
+  const checkScrapingStatus = async (companyName) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/companies/${companyName}`);
+      const response = await fetch(`${HOST}/companies/${companyName}`);
       const result = await response.json();
 
       if (response.ok && result.scraping_complete) {
-        setLoading(false); 
+        setLoading(false);
         setShowDialog(true);
       } else {
-        setTimeout(() => checkScrapingStatus(companyName), 3000); 
+        setTimeout(() => checkScrapingStatus(companyName), 3000);
       }
     } catch (error) {
       console.error("Error checking scraping status:", error);
@@ -183,13 +182,14 @@ function Form() {
         if (url) data.append("additional_websites", url);
       });
       data.append("persona", formData.persona);
-      if (formData.customer_name) data.append("customer_name", formData.customer_name);
+      if (formData.customer_name)
+        data.append("customer_name", formData.customer_name);
       formData.attachments.forEach((file) => data.append("attachments", file));
 
       setLoading(true);
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/create-company/", {
+        const response = await fetch(`${HOST}/scrap`, {
           method: "POST",
           body: data,
         });
@@ -198,7 +198,7 @@ function Form() {
           setSnackbarMessage("Form submitted successfully!");
           const result = await response.json();
           console.log("Response from server:", result);
-          checkScrapingStatus(formData.company_name); 
+          // checkScrapingStatus(formData.company_name);
         } else {
           const result = await response.json();
           setSnackbarMessage(`Error: ${result.message}`);
@@ -662,56 +662,67 @@ function Form() {
             }}
           />
 
-<Button
-        variant="contained"
-        type="submit"
-        fullWidth
-        sx={{
-          fontFamily: "Montserrat",
-          backgroundColor: "#243a57",
-          borderRadius: "8px",
-          marginTop: "30px",
-          marginBottom: "10px",
-        }}
-        disabled={loading}
-      >
-        {loading ? <CircularProgress size={24} color="inherit" /> : "Submit"}
-      </Button>
+          <Button
+            variant="contained"
+            type="submit"
+            fullWidth
+            sx={{
+              fontFamily: "Montserrat",
+              backgroundColor: "#243a57",
+              borderRadius: "8px",
+              marginTop: "30px",
+              marginBottom: "10px",
+            }}
+            disabled={loading}
+          >
+            {loading ? (
+              <CircularProgress size={24} color="inherit" />
+            ) : (
+              "Submit"
+            )}
+          </Button>
         </form>
         {/* {loading && <CircularProgress style={{ marginTop: "1rem" }} />} */}
 
         {/* Confirmation Dialog */}
         <Dialog open={showDialog} onClose={() => setShowDialog(false)}>
-        <DialogTitle>Scraping Complete</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Scraping is complete. Do you want to continue with the chatbot?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setShowDialog(false)} color="primary">
-            No
-          </Button>
-          <Button onClick={() => navigate("/chatbot")} color="primary" autoFocus>
-            Yes
-          </Button>
-        </DialogActions>
-      </Dialog>
+          <DialogTitle>Scraping Complete</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Scraping is complete. Do you want to continue with the chatbot?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setShowDialog(false)} color="primary">
+              No
+            </Button>
+            <Button
+              onClick={() => navigate("/chatbot")}
+              color="primary"
+              autoFocus
+            >
+              Yes
+            </Button>
+          </DialogActions>
+        </Dialog>
 
-      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={() => setOpenSnackbar(false)}>
-        <Alert
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={6000}
           onClose={() => setOpenSnackbar(false)}
-          severity={snackbarMessage.includes("Error") ? "error" : "success"}
         >
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={() => setOpenSnackbar(false)}
+            severity={snackbarMessage.includes("Error") ? "error" : "success"}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );
 }
 
-// Wrap App component with ThemeProvider
 const WrappedApp = () => (
   <ThemeProvider>
     <Header />
