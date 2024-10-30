@@ -1,6 +1,7 @@
 from openai import Client
 import zon as z
-import re
+from markdown_pdf import MarkdownPdf, Section
+import os
 
 
 def create_vector_store(client: Client, company_name: str):
@@ -35,6 +36,29 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
     return assistant.id
 
 
+def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
+    """Convert a Markdown file to PDF format with TOC and CSS styling.
+
+    Args:
+        path (str): Path to the Markdown file.
+        output_dir (str): Directory to save the generated PDF file. Defaults to "temp/pdf".
+    """
+    pdf = MarkdownPdf(toc_level=2)
+
+    with open(path, "r", encoding="utf-8") as file:
+        content = file.read()
+
+    pdf.add_section(Section(content))
+    pdf.meta["author"] = "NotTheRightGuy"
+
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(
+        output_dir, os.path.splitext(os.path.basename(path))[0] + ".pdf"
+    )
+
+    pdf.save(output_path)
+
+
 def scrap_website(company_url: str):
     """Recursively Scrap the URL provided
 
@@ -51,3 +75,7 @@ def validate_website(website: str):
         return True
     except:
         return False
+
+
+if __name__ == "__main__":
+    convert_markdown_to_pdf("./temp/markdown/fathom.md")
