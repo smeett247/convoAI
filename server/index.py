@@ -13,6 +13,20 @@ app = FastAPI()
 ai = Client()
 
 scraping_status = dict()
+async def run_scraping_task(company_url: str, company_name: str):
+    try:
+        # Update the status to "In Progress"
+        scraping_status[company_name] = "In Progress"
+
+        # Perform the website scraping (could take time)
+        scrap_website(company_url, company_name)
+
+        # Mark status as "Completed" once done
+        scraping_status[company_name] = "Completed"
+    except Exception as e:
+        # If an error occurs, mark status as "Failed"
+        scraping_status[company_name] = f"Failed: {str(e)}"
+
 origins = [
     "http://localhost:5173",
 ]
