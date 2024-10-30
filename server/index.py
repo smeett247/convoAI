@@ -12,6 +12,7 @@ load_dotenv()
 app = FastAPI()
 ai = Client()
 
+scraping_status = dict()
 origins = [
     "http://localhost:5173",
 ]
@@ -33,7 +34,7 @@ async def scrap(
     company_url: str = Form(...),
     persona: str = Form(...),
     customer_name: str = Form(...),
-    logo: UploadFile = Form(...),
+    logo: Optional[UploadFile] = Form(None),
     additional_websites: Optional[str] = Form(None),
     attachments: Optional[UploadFile] = Form(None),
 ):
@@ -43,7 +44,12 @@ async def scrap(
 
     vector_store_id = "vector_store_1234"
     assistant_id = "assistant_id_1234"
-    logo_binary = await logo.read()
+
+    if logo:
+        logo_binary = await logo.read()
+        logo = FileUpload(logo.filename, logo_binary)
+    else:
+        logo = None
 
     try:
         db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
@@ -61,14 +67,13 @@ async def scrap(
                 "assistant_id": assistant_id,
                 "persona": persona,
                 "customer_name": customer_name,
-                "logo": FileUpload(logo.filename, logo_binary),
+                "logo": logo,
                 "additional_websites": additional_websites,
             }
         )
-        # Set the initial status to "Pending" using the company name as key
+
         scraping_status[company_name] = "Pending"
 
-        # Start the background task for scraping
         background_tasks.add_task(run_scraping_task, company_url, company_name)
 
         response.status_code = status.HTTP_201_CREATED
