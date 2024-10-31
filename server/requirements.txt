@@ -55,4 +55,3 @@ uuid==1.30
 uvicorn==0.32.0
 validators==0.34.0
 yarl==1.17.0
-zon==2.0.1

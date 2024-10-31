@@ -24,7 +24,9 @@ from openai import Client
 from dotenv import load_dotenv
 from pocketbase.client import ClientResponseError, FileUpload
 from typing import Optional
+from datetime import datetime, timedelta
 import uvicorn
+import asyncio
 from queue import Queue
 
 
@@ -45,13 +47,61 @@ app.add_middleware(
 )
 
 
-async def run_scraping_task(company_url: str, company_name: str):
-    try:
-        scraping_status[company_name] = "In Progress"
-        scrap_website(company_url, company_name)
-        scraping_status[company_name] = "Completed"
-    except Exception as e:
-        scraping_status[company_name] = f"Failed: {str(e)}"
+async def run_scraping_task(company_name: str, websites: list):
+    """Runs the scraping task for the specified company URL.
+
+    This function updates the scraping status for the company, performs the website scraping,
+    and handles any exceptions that may occur during the process.
+
+    Args:
+        company_url (str): The URL of the company's website to scrape.
+        company_name (str): The name of the company for tracking status.
+
+    Returns:
+        None
+    """
+    global total_scraped_companies  # Use the global variable
+    for url in websites:
+        try:
+            # Initialize status for each website
+            scraping_status[f"{company_name}_{url}"] = {
+                "status": "In Progress",
+                "start_time": datetime.now(),
+                "elapsed": 0
+            }
+            
+            end_time = datetime.now() + timedelta(minutes=2)
+
+            while datetime.now() < end_time:
+                # Here, you can call your scrap_website function to perform the scraping
+                scrap_website(url, company_name)
+                scraping_status[f"{company_name}_{url}"]["elapsed"] = (datetime.now() - scraping_status[f"{company_name}_{url}"]["start_time"]).total_seconds()
+                # Sleep for a short duration to prevent busy waiting
+                await asyncio.sleep(1)  # Adjust sleep duration if needed
+            
+            # Update status as "Completed"
+            scraping_status[f"{company_name}_{url}"]["status"] = "Completed"
+            
+            # Increment the total scraped companies count
+            total_scraped_companies += 1
+
+        except Exception as e:
+            # Capture any unexpected error
+            scraping_status[f"{company_name}_{url}"]["status"] = f"Failed: {str(e)}"
+            scraping_status[f"{company_name}_{url}"]["elapsed"] = (datetime.now() - scraping_status[f"{company_name}_{url}"]["start_time"]).total_seconds()
+
+origins = ["http://localhost:5173"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+scraping_status = dict()
+session_manager = dict()
 
 
 @app.post("/scrap")
@@ -79,16 +129,20 @@ async def scrap(
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
 
+
+    vector_store_id = "vid_123"
+    assistant_id = "aid_123"
     if logo:
         logo_binary = await logo.read()
         logo = FileUpload(logo.filename, logo_binary)
     else:
         logo = None
 
+    # Check if the company has already been scraped
     try:
         db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
         response.status_code = status.HTTP_409_CONFLICT
-        return {"message": "This company has already been scrapped"}
+        return {"message": "This company has already been scraped"}
     except:
         pass
 
@@ -113,9 +167,19 @@ async def scrap(
             }
         )
 
-        scraping_status[company_name] = "Pending"
+        # Prepare list of websites to scrape
+        websites_to_scrape = [company_url]
+        print(websites_to_scrape)
+        if additional_websites:
+            websites_to_scrape.extend(additional_websites.split(","))  # Split additional websites by comma
+        print(websites_to_scrape)
 
-        background_tasks.add_task(run_scraping_task, company_url, company_name)
+        # Initialize status for each website
+        for url in websites_to_scrape:
+            scraping_status[f"{company_name}_{url}"] = {"status": "Pending", "elapsed": 0}
+
+        # Start scraping in the background
+        background_tasks.add_task(run_scraping_task, company_name, websites_to_scrape)
 
         response.status_code = status.HTTP_201_CREATED
         return {
@@ -130,91 +194,35 @@ async def scrap(
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         return {"error": f"An unexpected error occurred: {str(e)}"}
 
-
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
     status = scraping_status.get(company_name)
     if status is None:
         return {"status": "Not Found", "company_name": company_name}
 
-    return {"status": status, "company_name": company_name}
+    # Prepare response data without start_time for each website
+    response_data = {
+        "total_scraped": total_scraped_companies,  # Include total companies scraped
+        "companies": {}
+    }
+    
+    overall_elapsed = 0
+    for company_url, status_data in statuses.items():
+        if status_data["status"] == "In Progress":
+            status_data["elapsed"] = (datetime.now() - status_data["start_time"]).total_seconds()
+        
+        # Add status and elapsed time for each URL
+        response_data["companies"][company_url] = {
+            "status": status_data["status"],
+            "elapsed": status_data["elapsed"]
+        }
 
+        # Sum overall elapsed time for all URLs being scraped
+        overall_elapsed += status_data["elapsed"]
 
-@app.get("/companies/{company_name}")
-async def get_company(company_name: str):
-    try:
-        companies = db.collection("companies").get_full_list()
-        company = next((c for c in companies if c.company_name == company_name), None)
-        if company:
-            return company
-        else:
-            raise HTTPException(status_code=404, detail="Company not found.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    response_data["overall_elapsed"] = overall_elapsed  # Include overall elapsed time
 
-
-@app.get("/companies")
-async def get_all_companies():
-    try:
-        companies = db.collection("companies").get_full_list()
-        return [company for company in companies]
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/ask")
-async def ask_query(
-    company_name: str = Body(...), persona: str = Body(...), prompt: str = Body(...)
-):
-    company_name = company_name.strip().lower().replace(" ", "_")
-    key = f"{company_name}<SEP>{persona}"
-    if key in session_manager:
-        value = session_manager[key]
-        assistant_id = value["assistant_id"]
-        thread_id = value["thread_id"]
-        vector_store_id = value["vector_store_id"]
-
-    else:
-        try:
-            company = db.collection("companies").get_first_list_item(
-                f"company_name='{company_name}'"
-            )
-            assistant_id = company.assistant_id
-            vector_store_id = company.vector_store_id
-            thread_id = "fresh_thread_id"
-            session_manager[key] = {
-                "assistant_id": assistant_id,
-                "vector_store_id": vector_store_id,
-                "thread_id": thread_id,
-            }
-        except Exception as e:
-            return {"message": "Requested company not found!", "error": e}
-
-    try:
-        sentence_queue = Queue()
-        buffer_dict = {"buffer": ""}
-
-        ai.beta.threads.messages.create(
-            thread_id=thread_id, role="user", content=prompt
-        )
-
-        assistant_reply_parts = []
-
-        run = ai.beta.threads.runs.create(
-            thread_id=thread_id, assistant_id=assistant_id, stream=True
-        )
-
-        for event in run:
-            process_stream_event(
-                event, assistant_reply_parts, sentence_queue, buffer_dict
-            )
-
-        assistant_reply = "".join(assistant_reply_parts)
-        return {"answer": assistant_reply}
-
-    except Exception as e:
-        return {"message": "Something went wrong while generating response", "error": e}
-
+    return response_data
 
 if __name__ == "__main__":
     uvicorn.run("index:app", port=8000, log_level="info")
