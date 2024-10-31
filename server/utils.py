@@ -65,15 +65,18 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
 
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
-):
-    """_summary_
+): 
+    """Saves content to a file if the URL's extension is in the specified list.
 
     Args:
-        url (str): _description_
-        content (bytes): _description_
-        folder (str): _description_
-        extensions (list[str]): _description_
-        company_name (str): _description_
+        url (str): The URL of the file.
+        content (bytes): The content to save.
+        folder (str): The folder where the file will be saved.
+        extensions (list[str]): List of allowed file extensions.
+        company_name (str): The company name for folder organization.
+
+    Returns:
+        None
     """
     
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
@@ -170,14 +173,20 @@ def generate_page_report(url: str, content: bytes, company_name: str):
 
 def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
 
-    """_summary_
+    """Scrapes a website starting from the given URL.
+
+    Iteratively fetches pages and saves attachments if their URLs match specified extensions. 
+    Generates a report for HTML content found on the pages. 
 
     Args:
-        start_url (str): _description_
-        company_name (str): _description_
-        max_iterations (int, optional): _description_. Defaults to 10.
+        start_url (str): The starting URL for scraping.
+        company_name (str): The name of the company for organizing reports.
+        max_iterations (int, optional): Maximum number of pages to scrape. Defaults to 10.
+
+    Returns:
+        None
     """
-    
+
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -241,11 +250,12 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
 
 def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
 
-    """Convert a Markdown file to PDF format with TOC and CSS styling.
+    """Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
 
     Args:
-        path (str): Path to the Markdown file.
-        output_dir (str): Directory to save the generated PDF file. Defaults to "temp/pdf".
+        path (str): Path to the Markdown file to be converted.
+        output_dir (str): Directory where the generated PDF file will be saved. 
+                          Defaults to "temp/pdf".
     """
 
     pdf = MarkdownPdf(toc_level=2)
@@ -266,14 +276,18 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
 
 def convert_attachments_to_pdf():
 
-    """Converts various attachment files to PDF.
+    """Convert various attachment files (DOC, DOCX, PPT, PPTX) to PDF format.
 
-    Args:
-        attachment_files (set): A set of paths to attachment files.
+        This function processes a set of attachment file paths, converting supported 
+        file types to PDF using LibreOffice. If a file is already in PDF format, 
+        it logs this information. Unsupported file types are also logged.
 
-    Returns:
-        None
-    """
+        Args:
+            None
+
+        Returns:
+            None
+        """
 
     for file_path in set(attachment_files):
         try:
@@ -312,10 +326,14 @@ def convert_attachments_to_pdf():
 
 
 def scrap_website(company_url: str, company_name: str):
-    """Recursively Scrap the URL provided
+    """Recursively scrape the specified company URL and convert results.
 
     Args:
-        company_url (str): URL of the company provided
+        company_url (str): The URL of the company to be scraped.
+        company_name (str): The name of the company for reporting purposes.
+
+    Returns:
+        None
     """
     max_iterations_input = 200
 
