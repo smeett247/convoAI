@@ -1,5 +1,4 @@
 from openai import Client
-import zon as z
 from markdown_pdf import MarkdownPdf, Section
 import os
 import sys
@@ -9,7 +8,6 @@ import ssl
 from urllib.parse import urlparse, urlsplit, urljoin
 from bs4 import BeautifulSoup
 import httpx
-
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -67,6 +65,15 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
 ):
+    """_summary_
+
+    Args:
+        url (str): _description_
+        content (bytes): _description_
+        folder (str): _description_
+        extensions (list[str]): _description_
+        company_name (str): _description_
+    """
     
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
     os.makedirs(folder_dir, exist_ok=True)
@@ -91,8 +98,19 @@ def save_extensions(
 
 
 def generate_page_report(url: str, content: bytes, company_name: str):
-    soup = BeautifulSoup(content, "lxml")
 
+    """Generates a Markdown report from webpage content.
+
+    Args:
+        url (str): The webpage URL.
+        content (bytes): HTML content of the webpage.
+        company_name (str): The company name for report organization.
+
+    Returns:
+        None
+    """
+
+    soup = BeautifulSoup(content, "lxml")
     title = (
         soup.title.string.strip()
         if soup.title and soup.title.string
@@ -146,8 +164,19 @@ def generate_page_report(url: str, content: bytes, company_name: str):
     if report_filepath_md not in markdown_files:
         markdown_files.append(report_filepath_md)
 
+    
+
 
 def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
+
+    """_summary_
+
+    Args:
+        start_url (str): _description_
+        company_name (str): _description_
+        max_iterations (int, optional): _description_. Defaults to 10.
+    """
+    
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -210,12 +239,14 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
 
 
 def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
+
     """Convert a Markdown file to PDF format with TOC and CSS styling.
 
     Args:
         path (str): Path to the Markdown file.
         output_dir (str): Directory to save the generated PDF file. Defaults to "temp/pdf".
     """
+
     pdf = MarkdownPdf(toc_level=2)
 
     with open(path, "r", encoding="utf-8") as file:
@@ -233,6 +264,16 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
 
 
 def convert_attachments_to_pdf():
+
+    """Converts various attachment files to PDF.
+
+    Args:
+        attachment_files (set): A set of paths to attachment files.
+
+    Returns:
+        None
+    """
+
     for file_path in set(attachment_files):
         try:
             file_extension = file_path.split(".")[-1].lower()
