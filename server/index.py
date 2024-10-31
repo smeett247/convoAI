@@ -1,5 +1,5 @@
 from db import client as db  # PocketBase client instance
-from fastapi import FastAPI, status, Response, Form, UploadFile, BackgroundTasks
+from fastapi import FastAPI, status, Response, Form, UploadFile, BackgroundTasks, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from utils import create_vector_store, create_assistant, validate_website, scrap_website
 from openai import Client
@@ -11,8 +11,6 @@ import uvicorn
 load_dotenv()
 app = FastAPI()
 ai = Client()
-
-scraping_status = dict()
 
 origins = [
     "http://localhost:5173",
@@ -26,19 +24,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+scraping_status = dict()
+session_manager = dict()
+
 
 async def run_scraping_task(company_url: str, company_name: str):
     try:
-        # Update the status to "In Progress"
         scraping_status[company_name] = "In Progress"
-
-        # Perform the website scraping (could take time)
         scrap_website(company_url, company_name)
-
-        # Mark status as "Completed" once done
         scraping_status[company_name] = "Completed"
     except Exception as e:
-        # If an error occurs, mark status as "Failed"
         scraping_status[company_name] = f"Failed: {str(e)}"
 
 
@@ -58,8 +53,7 @@ async def scrap(
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
 
-    vector_store_id = "vector_store_1234"
-    assistant_id = "assistant_id_1234"
+
 
     if logo:
         logo_binary = await logo.read()
@@ -73,11 +67,15 @@ async def scrap(
         return {"message": "This company has already been scrapped"}
     except:
         pass
+    
+    # TODO : Use actual client and vector store id
+    vector_store_id = "vector_store_1234"
+    assistant_id = "assistant_id_1234"
 
     try:
         db.collection("companies").create(
             {
-                "company_name": company_name,
+                "company_name": company_name.lower(),
                 "company_url": company_url,
                 "vector_store_id": vector_store_id,
                 "assistant_id": assistant_id,
@@ -108,12 +106,55 @@ async def scrap(
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
-    status = scraping_status.get(company_name)  # Check the status dictionary
+    status = scraping_status.get(company_name)
     if status is None:
         return {"status": "Not Found", "company_name": company_name}
 
     return {"status": status, "company_name": company_name}
 
+
+@app.get("/companies/{company_name}")
+async def get_company(company_name: str):
+    try:
+        companies = db.collection("companies").get_full_list()
+        company = next((c for c in companies if c.company_name == company_name), None)
+        if company:
+            return company
+        else:
+            raise HTTPException(status_code=404, detail="Company not found.")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/companies")
+async def get_all_companies():
+    try:
+        companies = db.collection("companies").get_full_list()
+        return [company for company in companies]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+
+@app.post("/ask")
+async def ask_query(company_name: str = Body(...), persona : str = Body(...), prompt : str = Body(...)):    
+    key = f"{company_name.lower()}<SEP>{persona}"
+    #! DEBUG
+    print(company_name, persona, prompt)
+    if key in session_manager:
+        value = session_manager[key]
+        assistant_id = value.assistant_id
+        thread_id = value.thread_id
+        vector_store_id = value.vector_store_id
+        
+    else:
+        company = db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
+        assistant_id = company.assistant_id
+        vector_store_id = company.vector_store_id
+        # thread_id = ai.beta.threads.create().id
+        thread_id = "fresh_thread_id"
+    
+    return {"assistant_id": assistant_id, "vector_id": vector_store_id, "thread_id": thread_id}
+    
+    
 
 if __name__ == "__main__":
     uvicorn.run("index:app", port=8000, log_level="info")
