@@ -19,8 +19,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "vite.config.ts",  // Include Vite config
-    "src/**/*.js",     // Include JavaScript files
-    "src/**/*.jsx"     // Include JSX files
+    "vite.config.ts", // Include Vite config
+    "src/**/*.js", // Include JavaScript files
+    "src/**/*.jsx" // Include JSX files
   ]
 }

@@ -67,6 +67,7 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
 ):
+    
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
     os.makedirs(folder_dir, exist_ok=True)
 

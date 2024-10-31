@@ -1,13 +1,5 @@
 import "regenerator-runtime/runtime";
 import { useState, useEffect } from "react";
-import { TbHelpHexagonFilled } from "react-icons/tb";
-import {
-  GoAlertFill,
-  GoCheckCircleFill,
-  GoCodeSquare,
-  GoGitPullRequest,
-  GoFlame,
-} from "react-icons/go";
 import { FaMicrophoneAlt, FaStopCircle, FaStop } from "react-icons/fa";
 import { GrSend } from "react-icons/gr";
 import { motion } from "framer-motion";
@@ -16,34 +8,17 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { Typewriter } from "react-simple-typewriter";
 import Markdown from "react-markdown";
+import AiCard from "../components/AiCard";
+import { HOST } from "../../config";
+import { Info } from "../utils/chatBotInfo";
 
-function AiCard({
-  Icon,
-  title,
-  text,
-}: {
-  Icon: any;
-  title: string;
+interface MessageProp {
   text: string;
-}) {
-  return (
-    <div className="bg-white rounded-md border p-4 sm:p-3 hover:ring-1 hover:ring-slate-300 cursor-pointer transition-all">
-      <Icon className="w-10 h-10 opacity-70 mb-4 text-fill sm:w-8 sm:h-8" />
-      <h1 className="font-bold text-xl text-primary sm:text-lg">{title}</h1>
-      <p className="text-sm opacity-95 sm:text-xs">{text}</p>
-    </div>
-  );
+  sender: string;
 }
 
-function speak(text: string) {
-  const utterance = new SpeechSynthesisUtterance(text);
-  const voices = speechSynthesis.getVoices();
-  utterance.voice = voices[0];
-  speechSynthesis.speak(utterance);
-}
-
-function chatbot() {
-  const [messages, setMessages] = useState<any[]>([]);
+export default function Chatbot() {
+  const [messages, setMessages] = useState<MessageProp[]>([]);
   const [prompt, setPrompt] = useState<string>("");
   const [isListening, setIsListening] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -87,16 +62,16 @@ function chatbot() {
     resetTranscript();
     setIsProcessing(true);
 
-    const controller = new AbortController(); // Create a new AbortController instance
-    setAbortController(controller); // Store the controller
+    const controller = new AbortController();
+    setAbortController(controller);
 
-    fetch("http://localhost:8000/ask", {
+    fetch(`${HOST}/ask`, {
       method: "POST",
       body: JSON.stringify({ question: inputPrompt }),
       headers: {
         "Content-Type": "application/json",
       },
-      signal: controller.signal, // Pass the abort signal to fetch
+      signal: controller.signal,
     })
       .then((res) => {
         if (!res.ok) {
@@ -105,7 +80,6 @@ function chatbot() {
         return res.json();
       })
       .then((data) => {
-        // speak(data.answer);
         const aiMessage = { text: data.answer, sender: "ai" };
         setMessages((prev) => [...prev, aiMessage]);
         setIsProcessing(false);
@@ -124,8 +98,8 @@ function chatbot() {
 
   const handleCancelProcessing = () => {
     if (abortController) {
-      abortController.abort(); // Abort the fetch request
-      setAbortController(null); // Clear the abort controller
+      abortController.abort();
+      setAbortController(null);
     }
     setIsProcessing(false);
   };
@@ -134,7 +108,6 @@ function chatbot() {
     <main className="h-screen grid grid-cols-[12vw_1fr] font-mont max-md:grid-cols-1 w-screen">
       <aside className="flex flex-col py-6 px-4 border-r items-center justify-between max-md:hidden">
         <img src="/alunet.png" alt="Alunet Systems Logo" className="w-40 m-2" />
-        {/* <img src="/arkay.jpeg" alt="Arkay Windows Logo" className="w-40 m-2" /> */}
         <div className="w-full bg-fill/[0.1] h-14 rounded-md border gap-4 flex items-center px-2">
           <div className="size-10 bg-fill rounded-full"></div>
           <div>
@@ -191,38 +164,7 @@ function chatbot() {
                   },
                 }}
               >
-                {[
-                  {
-                    Icon: TbHelpHexagonFilled,
-                    title: "Answer",
-                    text: "What's the batch size of bulk order?",
-                  },
-                  {
-                    Icon: GoAlertFill,
-                    title: "Inquiry",
-                    text: "What are the available products?",
-                  },
-                  {
-                    Icon: GoCheckCircleFill,
-                    title: "Support",
-                    text: "Need assistance with selecting what is right for you?",
-                  },
-                  {
-                    Icon: GoCodeSquare,
-                    title: "Analysis",
-                    text: "An expert review and comparison of the best products",
-                  },
-                  {
-                    Icon: GoGitPullRequest,
-                    title: "Escalate Issue",
-                    text: "Connect to our talented team for further assistance",
-                  },
-                  {
-                    Icon: GoFlame,
-                    title: "Become a Vendor",
-                    text: "Join our network of vendors and grow your business",
-                  },
-                ].map((card, index) => (
+                {Info.map((card, index) => (
                   <motion.div
                     key={index}
                     variants={{
@@ -254,7 +196,6 @@ function chatbot() {
                           delaySpeed={3}
                         />
                       </p>
-                      {/* <p className="font-medium bg-white px-2 py-2 border rounded-full">{msg.text}</p> */}
                     </div>
                   ) : (
                     <div className="flex flex-col rounded-full">
@@ -270,8 +211,6 @@ function chatbot() {
         </div>
 
         <div className="flex justify-center items-end pb-4 overflow-hidden">
-          {" "}
-          {/* Changed items-center to items-end */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -281,7 +220,7 @@ function chatbot() {
           >
             <input
               type="text"
-              className="rounded-full h-12 w-full focus:outline-none pl-4" // Added pl-4 for left padding
+              className="rounded-full h-12 w-full focus:outline-none pl-4"
               placeholder="Ask me anything"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
@@ -327,5 +266,3 @@ function chatbot() {
     </main>
   );
 }
-
-export default chatbot;
