@@ -4,10 +4,11 @@ import os
 import sys
 import logging
 import subprocess
-import ssl
+import openai
 from urllib.parse import urlparse, urlsplit, urljoin
 from bs4 import BeautifulSoup
 import httpx
+import re
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -353,6 +354,50 @@ def validate_website(website: str) -> bool:
         return True
     except:
         return False
+
+def extract_sentences(text):
+    sentence_end_pattern = re.compile(r"([^.!?]*[.!?])", re.M)
+    sentences = sentence_end_pattern.findall(text)
+    buffer = sentence_end_pattern.sub("", text)
+    sentences = [s.strip() for s in sentences if s.strip()]
+    buffer = buffer.strip()
+    return sentences, buffer
+
+
+def process_stream_event(event, assistant_reply_parts, sentence_queue, buffer_dict):
+    """_summary_
+
+    Args:
+        event (_type_): _description_
+        assistant_reply_parts (_type_): _description_
+        sentence_queue (_type_): _description_
+        buffer_dict (_type_): _description_
+    """
+    if isinstance(event, openai.types.beta.assistant_stream_event.ThreadMessageDelta):
+        if isinstance(
+            event.data.delta.content[0],
+            openai.types.beta.threads.text_delta_block.TextDeltaBlock,
+        ):
+            new_content = event.data.delta.content[0].text.value
+            cleaned_text = ""
+            i = 0
+            while i < len(new_content):
+                if new_content[i] != "【":
+                    cleaned_text += new_content[i]
+                elif new_content[i] == "【":
+                    i += 1
+                    while i < len(new_content) and new_content[i] != "】":
+                        i += 1
+                i += 1
+
+            if cleaned_text:
+                assistant_reply_parts.append(cleaned_text)
+                buffer_dict["buffer"] += cleaned_text
+                sentences, buffer_dict["buffer"] = extract_sentences(
+                    buffer_dict["buffer"]
+                )
+                for sentence in sentences:
+                    sentence_queue.put(sentence)
 
 
 if __name__ == "__main__":
