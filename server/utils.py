@@ -358,20 +358,14 @@ def scrap_website(company_url: str, company_name: str):
 
 
 def validate_website(website: str) -> bool:
-    """
-
+    """ Validate a website to see if it's a valid URL or not
     Args:
         website (str): Website url that needs to be validated
 
     Returns:
         bool : Weather the provided string is a URL or not
     """
-    url_validator = z.string().url()
-    try:
-        url_validator.validate(website)
-        return True
-    except:
-        return False
+    pass
 
 def extract_sentences(text):
     sentence_end_pattern = re.compile(r"([^.!?]*[.!?])", re.M)
