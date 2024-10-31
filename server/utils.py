@@ -10,24 +10,22 @@ from bs4 import BeautifulSoup
 import httpx
 from dotenv import load_dotenv
 import re
+import logging
 
 load_dotenv()
 
-
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
 
-stdout_handler = logging.StreamHandler(sys.stdout)
-stdout_handler.setLevel(logging.DEBUG)
-stdout_handler.setFormatter(formatter)
+if not logger.handlers:
+    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(process)d | %(message)s")
 
-file_handler = logging.FileHandler("scraping.log")
-file_handler.setLevel(logging.DEBUG)
-file_handler.setFormatter(formatter)
+    file_handler = logging.FileHandler("scraping.log")
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(formatter)
 
-logger.addHandler(file_handler)
-logger.addHandler(stdout_handler)
+    logger.addHandler(file_handler)
+
 
 attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
 markdown_files = []
@@ -358,7 +356,6 @@ def scrap_website(company_url: str, company_name: str):
     logging.info("Markdown files converted to PDFs.")
     logging.info("Attachments converted to PDFs.")
     logging.info("All conversions completed.")
-
 
 import re
 

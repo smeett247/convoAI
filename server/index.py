@@ -1,4 +1,4 @@
-from db import client as db  # PocketBase client instance
+from db import client as db 
 from fastapi import (
     FastAPI,
     status,
@@ -25,16 +25,17 @@ from openai import Client
 from dotenv import load_dotenv
 from pocketbase.client import ClientResponseError, FileUpload
 from typing import Optional
-from datetime import datetime, timedelta
+from datetime import datetime
 import uvicorn
 import asyncio
 from queue import Queue
-
+from multiprocessing import Process, Queue
 
 load_dotenv()
 app = FastAPI()
 ai = Client()
 total_scraped_companies = 0
+timeout_seconds = 60
 
 origins = [
     "http://localhost:5173",
@@ -48,7 +49,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 origins = ["http://localhost:5173"]
 
 app.add_middleware(
@@ -59,48 +59,93 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def scrap_website_process(url, company_name, result_queue):
+    try:
+    
+        start_time = datetime.now()
+        print(f"Started scraping {url} for {company_name} at {start_time}")
+        
+        scrap_website(url, company_name)
+        
+        end_time = datetime.now()
+        time_taken = (end_time - start_time).total_seconds()
+        print(f"Completed scraping {url} for {company_name} at {end_time}, time taken: {time_taken} seconds")
+        
+        result_queue.put(("Completed", time_taken))
+    except Exception as e:
+        print(f"Error scraping {url} for {company_name}: {e}")
+        result_queue.put((f"Failed: {str(e)}", None))
 
 async def run_scraping_task(company_name: str, websites: list[str]):
-    """
-    Runs the scraping task for the given company URLs.
-
-    This function updates the scraping status for the company, performs the website scraping,
-    and handles any exceptions that may occur during the process.
-
-    Args:
-        company_name (str): The name of the company for tracking status.
-        websites (list[str]): The List of URLs that needs to scraped.
-
-    Returns:
-        None
-    """
     global total_scraped_companies
+    total_scraped_companies = 0
+    global timeout_seconds
+    scraping_status[company_name] = {}
+   
     for url in websites:
+        print(scraping_status)
+        start_time = datetime.now()
+        print(f"Task started for {url} at {start_time}")
         try:
-            scraping_status[f"{company_name}_{url}"] = {
+            scraping_status[company_name][url] = {
                 "status": "In Progress",
-                "start_time": datetime.now(),
+                "start_time": start_time,
                 "elapsed": 0,
             }
+              
+            result_queue = Queue()
+            process = Process(target=scrap_website_process, args=(url, company_name, result_queue))
+            process.start()
+        
+            for _ in range(timeout_seconds):
+                if process.is_alive():
+                    await asyncio.sleep(1)
+                else:
+                    break
+            else:
+                process.terminate()
+                process.join()
+                scraping_status[company_name][url]["status"] = "Timed Out"
+                total_scraped_companies += 1
+                end_time = datetime.now()
+            
+                scraping_status[company_name][url]["end_time"] = datetime.now()
+                time_taken = (end_time - start_time).total_seconds()
+                scraping_status[company_name][url]["elapsed"] = time_taken
+                print(f"Scraping {url} for {company_name} timed out after {timeout_seconds} seconds")
+                continue  
 
-            end_time = datetime.now() + timedelta(minutes=2)
-
-            while datetime.now() < end_time:
-                scrap_website(url, company_name)
-                scraping_status[f"{company_name}_{url}"]["elapsed"] = (
-                    datetime.now()
-                    - scraping_status[f"{company_name}_{url}"]["start_time"]
-                ).total_seconds()
-                await asyncio.sleep(1)
-
-            scraping_status[f"{company_name}_{url}"]["status"] = "Completed"
-            total_scraped_companies += 1
-
+            process.join()
+            if not result_queue.empty():
+                result, child_time_taken = result_queue.get()
+                if result == "Completed":
+                    scraping_status[company_name][url]["status"] = "Completed"
+                    total_scraped_companies += 1
+                
+                    time_taken = child_time_taken if child_time_taken is not None else (datetime.now() - start_time).total_seconds()
+                    scraping_status[company_name][url]["elapsed"] = time_taken
+                    print(f"Scraping {url} for {company_name} completed in {time_taken} seconds")
+                else:
+                    scraping_status[company_name][url]["status"] = result
+                    time_taken = (datetime.now() - start_time).total_seconds()
+                    scraping_status[company_name][url]["elapsed"] = time_taken
+                    print(f"Scraping {url} for {company_name} failed after {time_taken} seconds: {result}")
+            else:
+                scraping_status[company_name][url]["status"] = "Failed: No result"
+                time_taken = (datetime.now() - start_time).total_seconds()
+                scraping_status[company_name][url]["elapsed"] = time_taken
+                print(f"Scraping {url} for {company_name} failed with no result after {time_taken} seconds")
         except Exception as e:
-            scraping_status[f"{company_name}_{url}"]["status"] = f"Failed: {str(e)}"
-            scraping_status[f"{company_name}_{url}"]["elapsed"] = (
-                datetime.now() - scraping_status[f"{company_name}_{url}"]["start_time"]
-            ).total_seconds()
+            scraping_status[company_name][url]["status"] = f"Failed: {str(e)}"
+            time_taken = (datetime.now() - start_time).total_seconds()
+            scraping_status[company_name][url]["elapsed"] = time_taken
+            print(f"Error in task for {url} for {company_name}: {e}")
+        finally:
+            if "elapsed" not in scraping_status[company_name][url]:
+                time_taken = (datetime.now() - start_time).total_seconds()
+                scraping_status[company_name][url]["elapsed"] = time_taken
+                print(f"Task for {url} for {company_name} finished, time taken: {time_taken} seconds")
+    
 
 
 @app.post("/scrap")
@@ -110,7 +155,7 @@ async def scrap(
     company_name: str = Form(...),
     company_url: str = Form(...),
     persona: str = Form(...),
-    customer_name: str = Form(...),
+    customer_name: Optional[str] = Form(""),
     logo: UploadFile = File(None),
     additional_websites: Optional[str] = Form(None),
     attachments: UploadFile = File(None),
@@ -155,13 +200,13 @@ async def scrap(
         )
 
         websites_to_scrape = [company_url]
-        print(websites_to_scrape)
         if additional_websites:
             websites_to_scrape.extend(additional_websites.split(","))
-        print(websites_to_scrape)
+
+        scraping_status[company_name] = {}
 
         for url in websites_to_scrape:
-            scraping_status[f"{company_name}_{url}"] = {
+            scraping_status[company_name][url] = {
                 "status": "Pending",
                 "elapsed": 0,
             }
@@ -189,24 +234,37 @@ async def get_scraping_status(company_name: str):
         return {"status": "Not Found", "company_name": company_name}
 
     response_data = {"total_scraped": total_scraped_companies, "companies": {}}
-
+    
     overall_elapsed = 0
-    for company_url, status_data in status.items():
+    all_completed = True  
+    
+    for url, status_data in status.items():
+       
         if status_data["status"] == "In Progress":
             status_data["elapsed"] = (
                 datetime.now() - status_data["start_time"]
             ).total_seconds()
-
-        response_data["companies"][company_url] = {
+            all_completed = False 
+       
+        response_data["companies"][url] = {
             "status": status_data["status"],
+            "start_time": status_data["start_time"].isoformat(),
             "elapsed": status_data["elapsed"],
         }
 
+        if "end_time" in status_data:
+            response_data["companies"][url]["end_time"] = status_data["end_time"].isoformat()
+
         overall_elapsed += status_data["elapsed"]
 
+    
+    response_data["status"] = "Completed" if all_completed else "In Progress"
     response_data["overall_elapsed"] = overall_elapsed
 
     return response_data
+
+
+
 
 
 @app.post("/ask")
