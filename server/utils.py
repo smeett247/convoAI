@@ -4,13 +4,15 @@ import os
 import sys
 import logging
 import subprocess
-import ssl
+import openai
 from urllib.parse import urlparse, urlsplit, urljoin
 from bs4 import BeautifulSoup
 import httpx
 from dotenv import load_dotenv
+import re
 
 load_dotenv()
+
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -20,7 +22,7 @@ stdout_handler = logging.StreamHandler(sys.stdout)
 stdout_handler.setLevel(logging.DEBUG)
 stdout_handler.setFormatter(formatter)
 
-file_handler = logging.FileHandler("scrapping.log")
+file_handler = logging.FileHandler("scraping.log")
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 
@@ -69,16 +71,19 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
 ):
-    """_summary_
+    """Saves content to a file if the URL's extension is in the specified list.
 
     Args:
-        url (str): _description_
-        content (bytes): _description_
-        folder (str): _description_
-        extensions (list[str]): _description_
-        company_name (str): _description_
+        url (str): The URL of the file.
+        content (bytes): The content to save.
+        folder (str): The folder where the file will be saved.
+        extensions (list[str]): List of allowed file extensions.
+        company_name (str): The company name for folder organization.
+
+    Returns:
+        None
     """
-    
+
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
     os.makedirs(folder_dir, exist_ok=True)
 
@@ -102,7 +107,6 @@ def save_extensions(
 
 
 def generate_page_report(url: str, content: bytes, company_name: str):
-
     """Generates a Markdown report from webpage content.
 
     Args:
@@ -168,19 +172,23 @@ def generate_page_report(url: str, content: bytes, company_name: str):
     if report_filepath_md not in markdown_files:
         markdown_files.append(report_filepath_md)
 
-    
-
 
 def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
+    """
+    Scrapes a website starting from the given URL.
 
-    """_summary_
+    Iteratively fetches pages and saves attachments if their URLs match specified extensions.
+    Generates a report for HTML content found on the pages.
 
     Args:
-        start_url (str): _description_
-        company_name (str): _description_
-        max_iterations (int, optional): _description_. Defaults to 10.
+        start_url (str): The starting URL for scraping.
+        company_name (str): The name of the company for organizing reports.
+        max_iterations (int, optional): Maximum number of pages to scrape. Defaults to 10.
+
+    Returns:
+        None
     """
-    
+
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -243,12 +251,13 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
 
 
 def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
-
-    """Convert a Markdown file to PDF format with TOC and CSS styling.
+    """
+    Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
 
     Args:
-        path (str): Path to the Markdown file.
-        output_dir (str): Directory to save the generated PDF file. Defaults to "temp/pdf".
+        path (str): Path to the Markdown file to be converted.
+        output_dir (str): Directory where the generated PDF file will be saved.
+                          Defaults to "temp/pdf".
     """
 
     pdf = MarkdownPdf(toc_level=2)
@@ -268,16 +277,19 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
 
 
 def convert_attachments_to_pdf():
-
-    """Converts various attachment files to PDF.
-
-    Args:
-        attachment_files (set): A set of paths to attachment files.
-
-    Returns:
-        None
     """
+    Convert various attachment files (DOC, DOCX, PPT, PPTX) to PDF format.
 
+        This function processes a set of attachment file paths, converting supported
+        file types to PDF using LibreOffice. If a file is already in PDF format,
+        it logs this information. Unsupported file types are also logged.
+
+        Args:
+            None
+
+        Returns:
+            None
+    """
     for file_path in set(attachment_files):
         try:
             file_extension = file_path.split(".")[-1].lower()
@@ -315,10 +327,14 @@ def convert_attachments_to_pdf():
 
 
 def scrap_website(company_url: str, company_name: str):
-    """Recursively Scrap the URL provided
+    """Recursively scrape the specified company URL and convert results.
 
     Args:
-        company_url (str): URL of the company provided
+        company_url (str): The URL of the company to be scraped.
+        company_name (str): The name of the company for reporting purposes.
+
+    Returns:
+        None
     """
     max_iterations_input = 200
 
@@ -342,22 +358,87 @@ def scrap_website(company_url: str, company_name: str):
     logging.info("All conversions completed.")
 
 
-# def validate_website(website: str) -> bool:
-#     """
-
-#     Args:
-#         website (str): Website url that needs to be validated
-
-#     Returns:
-#         bool : Weather the provided string is a URL or not
-#     """
-#     url_validator = z.string().url()
-#     try:
-#         url_validator.validate(website)
-#         return True
-#     except:
-#         return False
+import re
 
 
-if __name__ == "__main__":
-    scrap_website("https://www.example.com", "Example")
+def validate_website(website: str) -> bool:
+    """
+    Validates if the given website URL is in a valid format.
+
+    Args:
+        website (str): Website URL that needs to be validated.
+
+    Returns:
+        bool: Whether the provided string is a valid URL or not.
+    """
+    url_pattern = re.compile(
+        r"^(https?://)?"  # Optional http or https
+        r"([a-zA-Z0-9-]+\.)+"  # Domain name segments
+        r"[a-zA-Z]{2,}"  # Top-level domain
+        r"(/[a-zA-Z0-9._/?&=-]*)*$",  # Optional path/query
+        re.IGNORECASE,
+    )
+    return bool(url_pattern.match(website))
+
+
+def extract_sentences(text):
+    """
+    Extracts sentences from the given text, returning a list of individual
+    sentences and any remaining text that doesn't end with a sentence-ending punctuation.
+
+    Args:
+        text (str): The input text to extract sentences from.
+
+    Returns:
+        tuple: A tuple containing:
+            - list: A list of sentences ending with '.', '!', or '?'.
+            - str: Remaining text that does not end with '.', '!', or '?'.
+    """
+    sentence_end_pattern = re.compile(r"([^.!?]*[.!?])", re.M)
+    sentences = sentence_end_pattern.findall(text)
+    buffer = sentence_end_pattern.sub("", text)
+    sentences = [s.strip() for s in sentences if s.strip()]
+    buffer = buffer.strip()
+    return sentences, buffer
+
+
+def process_stream_event(event, assistant_reply_parts, sentence_queue, buffer_dict):
+    """
+    Processes an event from the OpenAI assistant stream, extracting and queuing
+    sentences while handling any additional buffering and special characters.
+
+    Args:
+        event (openai.types.beta.assistant_stream_event.ThreadMessageDelta):
+            The incoming event message to process, expected to contain text data.
+        assistant_reply_parts (list): A list accumulating cleaned text parts
+            from the assistant's replies.
+        sentence_queue (Queue): A queue where processed and complete sentences are added.
+        buffer_dict (dict): A dictionary holding the "buffer" key, where partially
+            complete sentence fragments are stored until fully formed.
+
+    """
+    if isinstance(event, openai.types.beta.assistant_stream_event.ThreadMessageDelta):
+        if isinstance(
+            event.data.delta.content[0],
+            openai.types.beta.threads.text_delta_block.TextDeltaBlock,
+        ):
+            new_content = event.data.delta.content[0].text.value
+            cleaned_text = ""
+            i = 0
+            while i < len(new_content):
+                if new_content[i] != "【":
+                    cleaned_text += new_content[i]
+                elif new_content[i] == "【":
+                    i += 1
+                    while i < len(new_content) and new_content[i] != "】":
+                        i += 1
+                i += 1
+
+            if cleaned_text:
+                assistant_reply_parts.append(cleaned_text)
+                buffer_dict["buffer"] += cleaned_text
+                sentences, buffer_dict["buffer"] = extract_sentences(
+                    buffer_dict["buffer"]
+                )
+                for sentence in sentences:
+                    sentence_queue.put(sentence)

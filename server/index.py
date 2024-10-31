@@ -1,7 +1,22 @@
 from db import client as db  # PocketBase client instance
-from fastapi import FastAPI, status, Response, Form, UploadFile, BackgroundTasks, HTTPException, Body
+from fastapi import (
+    FastAPI,
+    status,
+    Response,
+    Form,
+    UploadFile,
+    BackgroundTasks,
+    HTTPException,
+    Body,
+)
 from fastapi.middleware.cors import CORSMiddleware
-from utils import create_vector_store, create_assistant, scrap_website
+from utils import (
+    create_vector_store,
+    create_assistant,
+    validate_website,
+    scrap_website,
+    process_stream_event,
+)
 from openai import Client
 from dotenv import load_dotenv
 from pocketbase.client import ClientResponseError, FileUpload
@@ -9,6 +24,7 @@ from typing import Optional
 from datetime import datetime, timedelta
 import uvicorn
 import asyncio
+from queue import Queue
 
 load_dotenv()
 app = FastAPI()
@@ -63,6 +79,28 @@ scraping_status = dict()
 session_manager = dict()
 
 
+async def run_scraping_task(company_url: str, company_name: str):
+    """Runs the scraping task for the specified company URL.
+
+    This function updates the scraping status for the company, performs the website scraping,
+    and handles any exceptions that may occur during the process.
+
+    Args:
+        company_url (str): The URL of the company's website to scrape.
+        company_name (str): The name of the company for tracking status.
+
+    Returns:
+        None
+    """
+    try:
+        # Update the status to "In Progress"
+        scraping_status[company_name] = "In Progress"
+        scrap_website(company_url, company_name)
+        scraping_status[company_name] = "Completed"
+    except Exception as e:
+        scraping_status[company_name] = f"Failed: {str(e)}"
+
+
 @app.post("/scrap")
 async def scrap(
     response: Response,
@@ -75,21 +113,25 @@ async def scrap(
     additional_websites: Optional[str] = Form(None),
     attachments: Optional[UploadFile] = Form(None),
 ):
-    """_summary_
+    """Handles the scraping of a company's website and stores its details.
+
+    Validates the provided URL, checks if the company has already been scraped,
+    and saves the company's information in the database. Initiates the scraping task
+    in the background if the company is new.
 
     Args:
-        response (Response): _description_
-        background_tasks (BackgroundTasks): _description_
-        company_name (str, optional): _description_. Defaults to Form(...).
-        company_url (str, optional): _description_. Defaults to Form(...).
-        persona (str, optional): _description_. Defaults to Form(...).
-        customer_name (str, optional): _description_. Defaults to Form(...).
-        logo (Optional[UploadFile], optional): _description_. Defaults to Form(None).
-        additional_websites (Optional[str], optional): _description_. Defaults to Form(None).
-        attachments (Optional[UploadFile], optional): _description_. Defaults to Form(None).
+        response (Response): The response object to modify the response status.
+        background_tasks (BackgroundTasks): The background tasks to schedule scraping.
+        company_name (str): The name of the company to be scraped.
+        company_url (str): The URL of the company's website to scrape.
+        persona (str): The persona to associate with the company.
+        customer_name (str): The name of the customer associated with the company.
+        logo (Optional[UploadFile], optional): The logo file for the company. Defaults to Form(None).
+        additional_websites (Optional[str], optional): Any additional websites associated with the company. Defaults to Form(None).
+        attachments (Optional[UploadFile], optional): Any attachments related to the company. Defaults to Form(None).
 
     Returns:
-        _type_: _description_
+        dict: A message indicating the result of the operation, including any error details if applicable.
     """
     # if not validate_website(company_url):
     #     response.status_code = status.HTTP_400_BAD_REQUEST
@@ -112,7 +154,10 @@ async def scrap(
     except:
         pass
 
-    # Save company to the database
+    # TODO : Use actual client and vector store id
+    vector_store_id = "vector_store_1234"
+    assistant_id = "assistant_id_1234"
+
     try:
         db.collection("companies").create(
             {
@@ -156,10 +201,22 @@ async def scrap(
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
-    # Filter status for entries related to the requested company
-    statuses = {name: data for name, data in scraping_status.items() if name.startswith(company_name)}
+    """Retrieves the scraping status of the specified company.
 
-    if not statuses:
+    This endpoint checks the current scraping status for the given company name
+    and returns the status if found; otherwise, it indicates that the company
+    was not found in the status records.
+
+    Args:
+        company_name (str): The name of the company to check the scraping status for.
+
+    Returns:
+        dict: A dictionary containing the scraping status and the company name,
+              or a message indicating that the company was not found.
+    """
+
+    status = scraping_status.get(company_name)  # Check the status dictionary
+    if status is None:
         return {"status": "Not Found", "company_name": company_name}
 
     # Prepare response data without start_time for each website
