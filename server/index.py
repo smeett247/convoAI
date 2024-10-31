@@ -35,6 +35,18 @@ scraping_status = {}
 total_scraped_companies = 0  # Global variable to track total companies scraped
 
 async def run_scraping_task(company_name: str, websites: list):
+    """Runs the scraping task for the specified company URL.
+
+    This function updates the scraping status for the company, performs the website scraping,
+    and handles any exceptions that may occur during the process.
+
+    Args:
+        company_url (str): The URL of the company's website to scrape.
+        company_name (str): The name of the company for tracking status.
+
+    Returns:
+        None
+    """
     global total_scraped_companies  # Use the global variable
     for url in websites:
         try:
@@ -77,28 +89,6 @@ app.add_middleware(
 
 scraping_status = dict()
 session_manager = dict()
-
-
-async def run_scraping_task(company_url: str, company_name: str):
-    """Runs the scraping task for the specified company URL.
-
-    This function updates the scraping status for the company, performs the website scraping,
-    and handles any exceptions that may occur during the process.
-
-    Args:
-        company_url (str): The URL of the company's website to scrape.
-        company_name (str): The name of the company for tracking status.
-
-    Returns:
-        None
-    """
-    try:
-        # Update the status to "In Progress"
-        scraping_status[company_name] = "In Progress"
-        scrap_website(company_url, company_name)
-        scraping_status[company_name] = "Completed"
-    except Exception as e:
-        scraping_status[company_name] = f"Failed: {str(e)}"
 
 
 @app.post("/scrap")
