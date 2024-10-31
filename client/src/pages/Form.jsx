@@ -138,9 +138,6 @@ function Form() {
     e.preventDefault();
 
     let validationErrors = {};
-    if (!formData.company_url || !validateURL(formData.company_url)) {
-      validationErrors.company_url = "Please enter a valid website URL";
-    }
     if (!formData.company_name) {
       validationErrors.company_name = "Company name is required";
     }
@@ -172,16 +169,19 @@ function Form() {
         });
 
         if (response.ok) {
-          setSnackbarMessage("Form submitted successfully!");
+          setSnackbarMessage(
+            "Form submitted successfully! Starting scraping session!"
+          );
           const result = await response.json();
           console.log("Response from server:", result);
-          // checkScrapingStatus(formData.company_name);
+          setLoading(false);
         } else {
           const result = await response.json();
           setSnackbarMessage(`Error: ${result.message}`);
           setLoading(false);
         }
       } catch (error) {
+        console.log(error);
         setSnackbarMessage("Error: Failed to submit form. Please try again.");
         setLoading(false);
       } finally {
