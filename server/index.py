@@ -29,7 +29,7 @@ session_manager = dict()
 
 
 async def run_scraping_task(company_url: str, company_name: str):
-     """_summary_
+    """_summary_
 
     Args:
         company_url (str): _description_
@@ -167,23 +167,30 @@ async def get_all_companies():
 
 @app.post("/ask")
 async def ask_query(company_name: str = Body(...), persona : str = Body(...), prompt : str = Body(...)):    
-    key = f"{company_name.lower()}<SEP>{persona}"
-    #! DEBUG
-    print(company_name, persona, prompt)
+    company_name = company_name.strip().lower().replace(" ","_")
+    key = f"{company_name}<SEP>{persona}"
     if key in session_manager:
         value = session_manager[key]
-        assistant_id = value.assistant_id
-        thread_id = value.thread_id
-        vector_store_id = value.vector_store_id
+        assistant_id = value["assistant_id"]
+        thread_id = value["thread_id"]
+        vector_store_id = value["vector_store_id"]
         
     else:
-        company = db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
-        assistant_id = company.assistant_id
-        vector_store_id = company.vector_store_id
-        # thread_id = ai.beta.threads.create().id
-        thread_id = "fresh_thread_id"
+        try:
+            company = db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
+            assistant_id = company.assistant_id
+            vector_store_id = company.vector_store_id
+            # thread_id = ai.beta.threads.create().id
+            thread_id = "fresh_thread_id"
+            session_manager[key] = {
+                "assistant_id" : assistant_id,
+                "vector_store_id" : vector_store_id,
+                "thread_id" : thread_id
+            }
+        except:
+            return {"message" : "Requested company not found!"}
     
-    return {"assistant_id": assistant_id, "vector_id": vector_store_id, "thread_id": thread_id}
+    return {"assistant_id": assistant_id, "vector_store_id": vector_store_id, "thread_id": thread_id}
     
     
 
