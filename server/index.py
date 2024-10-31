@@ -8,6 +8,7 @@ from pocketbase.client import ClientResponseError, FileUpload
 from typing import Optional
 from datetime import datetime, timedelta
 import uvicorn
+import asyncio
 
 load_dotenv()
 app = FastAPI()
@@ -31,8 +32,11 @@ async def run_scraping_task(company_name: str, websites: list):
             end_time = datetime.now() + timedelta(minutes=2)
 
             while datetime.now() < end_time:
+                # Here, you can call your scrap_website function to perform the scraping
                 scrap_website(url, company_name)
                 scraping_status[f"{company_name}_{url}"]["elapsed"] = (datetime.now() - scraping_status[f"{company_name}_{url}"]["start_time"]).total_seconds()
+                # Sleep for a short duration to prevent busy waiting
+                await asyncio.sleep(1)  # Adjust sleep duration if needed
             
             # Update status as "Completed"
             scraping_status[f"{company_name}_{url}"]["status"] = "Completed"
@@ -57,22 +61,6 @@ app.add_middleware(
 
 scraping_status = dict()
 session_manager = dict()
-
-
-async def run_scraping_task(company_url: str, company_name: str):
-     """_summary_
-
-    Args:
-        company_url (str): _description_
-        company_name (str): _description_
-    """
-    try:
-        # Update the status to "In Progress"
-        scraping_status[company_name] = "In Progress"
-        scrap_website(company_url, company_name)
-        scraping_status[company_name] = "Completed"
-    except Exception as e:
-        scraping_status[company_name] = f"Failed: {str(e)}"
 
 
 @app.post("/scrap")
@@ -103,12 +91,13 @@ async def scrap(
     Returns:
         _type_: _description_
     """
-    if not validate_website(company_url):
-        response.status_code = status.HTTP_400_BAD_REQUEST
-        return {"msg": "Provided URL is not valid"}
+    # if not validate_website(company_url):
+    #     response.status_code = status.HTTP_400_BAD_REQUEST
+    #     return {"msg": "Provided URL is not valid"}
 
 
-
+    vector_store_id = "vid_123"
+    assistant_id = "aid_123"
     if logo:
         logo_binary = await logo.read()
         logo = FileUpload(logo.filename, logo_binary)
@@ -167,16 +156,6 @@ async def scrap(
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
-    """_summary_
-
-    Args:
-        company_name (str): _description_
-
-    Returns:
-        _type_: _description_
-    """
-    status = scraping_status.get(company_name)  # Check the status dictionary
-    if status is None:
     # Filter status for entries related to the requested company
     statuses = {name: data for name, data in scraping_status.items() if name.startswith(company_name)}
 

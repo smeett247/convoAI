@@ -8,6 +8,9 @@ import ssl
 from urllib.parse import urlparse, urlsplit, urljoin
 from bs4 import BeautifulSoup
 import httpx
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
