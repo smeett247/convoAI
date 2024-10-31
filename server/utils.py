@@ -25,11 +25,13 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(stdout_handler)
 
-# Variables for file management
 attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
 markdown_files = []
 attachment_files = []
 
+# Local Cache
+scraping_status = dict()
+session_manager = dict()
 
 def create_vector_store(client: Client, company_name: str):
     """Create a vector store for company
@@ -437,3 +439,25 @@ def process_stream_event(event, assistant_reply_parts, sentence_queue, buffer_di
                 )
                 for sentence in sentences:
                     sentence_queue.put(sentence)
+                    
+
+def upload_pdf_to_vector_store(client : Client, vector_store_id : str, file_content : bytes):
+    """
+    Uploads a PDF file to a specified vector store.
+
+    Args:
+        client (Client): Client instance for interacting with the vector store service.
+        vector_store_id (str): Unique identifier of the target vector store.
+        file_content (bytes): PDF file content in bytes.
+    """
+    try:
+        file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+            vector_store_id=vector_store_id, files=[file_content]
+        )
+        
+        if file_batch.status == "completed":
+            print("Attachement uploaded!")
+        else:
+            raise Exception("File upload failed.")
+    except Exception as e:
+        print("Something went wrong: " + e)

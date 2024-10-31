@@ -16,6 +16,9 @@ from utils import (
     validate_website,
     scrap_website,
     process_stream_event,
+    scraping_status,
+    session_manager,
+    upload_pdf_to_vector_store
 )
 from openai import Client
 from dotenv import load_dotenv
@@ -23,6 +26,7 @@ from pocketbase.client import ClientResponseError, FileUpload
 from typing import Optional
 import uvicorn
 from queue import Queue
+
 
 load_dotenv()
 app = FastAPI()
@@ -40,25 +44,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-scraping_status = dict()
-session_manager = dict()
-
 
 async def run_scraping_task(company_url: str, company_name: str):
-    """Runs the scraping task for the specified company URL.
-
-    This function updates the scraping status for the company, performs the website scraping,
-    and handles any exceptions that may occur during the process.
-
-    Args:
-        company_url (str): The URL of the company's website to scrape.
-        company_name (str): The name of the company for tracking status.
-
-    Returns:
-        None
-    """
     try:
-        # Update the status to "In Progress"
         scraping_status[company_name] = "In Progress"
         scrap_website(company_url, company_name)
         scraping_status[company_name] = "Completed"
@@ -78,26 +66,15 @@ async def scrap(
     additional_websites: Optional[str] = Form(None),
     attachments: Optional[UploadFile] = Form(None),
 ):
-    """Handles the scraping of a company's website and stores its details.
-
-    Validates the provided URL, checks if the company has already been scraped,
-    and saves the company's information in the database. Initiates the scraping task
-    in the background if the company is new.
-
-    Args:
-        response (Response): The response object to modify the response status.
-        background_tasks (BackgroundTasks): The background tasks to schedule scraping.
-        company_name (str): The name of the company to be scraped.
-        company_url (str): The URL of the company's website to scrape.
-        persona (str): The persona to associate with the company.
-        customer_name (str): The name of the customer associated with the company.
-        logo (Optional[UploadFile], optional): The logo file for the company. Defaults to Form(None).
-        additional_websites (Optional[str], optional): Any additional websites associated with the company. Defaults to Form(None).
-        attachments (Optional[UploadFile], optional): Any attachments related to the company. Defaults to Form(None).
-
-    Returns:
-        dict: A message indicating the result of the operation, including any error details if applicable.
-    """
+    print("++++++Logo+++++++")
+    print(logo)
+    print("+++++++++++++")
+    
+    print("++++++Attachments+++++++")
+    print(attachments)
+    print("+++++++++++++")
+    
+    company_name = company_name.lower().strip().replace(" ", "_")
     if not validate_website(company_url):
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
@@ -116,13 +93,16 @@ async def scrap(
         pass
 
     # TODO : Use actual client and vector store id
-    vector_store_id = "vector_store_1234"
-    assistant_id = "assistant_id_1234"
+    # vector_store_id = create_vector_store(client=ai, company_name=company_name)
+    # assistant_id = create_assistant(client=ai, vector_store_id=vector_store_id, company_name=company_name)
+    
+    vector_store_id = "vs-1234567890"
+    assistant_id = "ad-1234567890"
 
     try:
         db.collection("companies").create(
             {
-                "company_name": company_name.lower(),
+                "company_name": company_name,
                 "company_url": company_url,
                 "vector_store_id": vector_store_id,
                 "assistant_id": assistant_id,
@@ -153,21 +133,7 @@ async def scrap(
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
-    """Retrieves the scraping status of the specified company.
-
-    This endpoint checks the current scraping status for the given company name
-    and returns the status if found; otherwise, it indicates that the company
-    was not found in the status records.
-
-    Args:
-        company_name (str): The name of the company to check the scraping status for.
-
-    Returns:
-        dict: A dictionary containing the scraping status and the company name,
-              or a message indicating that the company was not found.
-    """
-
-    status = scraping_status.get(company_name)  # Check the status dictionary
+    status = scraping_status.get(company_name)
     if status is None:
         return {"status": "Not Found", "company_name": company_name}
 
@@ -215,7 +181,6 @@ async def ask_query(
             )
             assistant_id = company.assistant_id
             vector_store_id = company.vector_store_id
-            # thread_id = ai.beta.threads.create().id
             thread_id = "fresh_thread_id"
             session_manager[key] = {
                 "assistant_id": assistant_id,
