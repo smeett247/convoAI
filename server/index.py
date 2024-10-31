@@ -1,12 +1,28 @@
 from db import client as db  # PocketBase client instance
-from fastapi import FastAPI, status, Response, Form, UploadFile, BackgroundTasks, HTTPException, Body
+from fastapi import (
+    FastAPI,
+    status,
+    Response,
+    Form,
+    UploadFile,
+    BackgroundTasks,
+    HTTPException,
+    Body,
+)
 from fastapi.middleware.cors import CORSMiddleware
-from utils import create_vector_store, create_assistant, validate_website, scrap_website
+from utils import (
+    create_vector_store,
+    create_assistant,
+    validate_website,
+    scrap_website,
+    process_stream_event,
+)
 from openai import Client
 from dotenv import load_dotenv
 from pocketbase.client import ClientResponseError, FileUpload
 from typing import Optional
 import uvicorn
+from queue import Queue
 
 load_dotenv()
 app = FastAPI()
@@ -86,8 +102,6 @@ async def scrap(
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
 
-
-
     if logo:
         logo_binary = await logo.read()
         logo = FileUpload(logo.filename, logo_binary)
@@ -100,7 +114,7 @@ async def scrap(
         return {"message": "This company has already been scrapped"}
     except:
         pass
-    
+
     # TODO : Use actual client and vector store id
     vector_store_id = "vector_store_1234"
     assistant_id = "assistant_id_1234"
@@ -139,11 +153,10 @@ async def scrap(
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
-
     """Retrieves the scraping status of the specified company.
 
     This endpoint checks the current scraping status for the given company name
-    and returns the status if found; otherwise, it indicates that the company 
+    and returns the status if found; otherwise, it indicates that the company
     was not found in the status records.
 
     Args:
@@ -153,7 +166,7 @@ async def get_scraping_status(company_name: str):
         dict: A dictionary containing the scraping status and the company name,
               or a message indicating that the company was not found.
     """
-    
+
     status = scraping_status.get(company_name)  # Check the status dictionary
     if status is None:
         return {"status": "Not Found", "company_name": company_name}
@@ -173,6 +186,7 @@ async def get_company(company_name: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/companies")
 async def get_all_companies():
     try:
@@ -180,36 +194,62 @@ async def get_all_companies():
         return [company for company in companies]
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
+
 
 @app.post("/ask")
-async def ask_query(company_name: str = Body(...), persona : str = Body(...), prompt : str = Body(...)):    
-    company_name = company_name.strip().lower().replace(" ","_")
+async def ask_query(
+    company_name: str = Body(...), persona: str = Body(...), prompt: str = Body(...)
+):
+    company_name = company_name.strip().lower().replace(" ", "_")
     key = f"{company_name}<SEP>{persona}"
     if key in session_manager:
         value = session_manager[key]
         assistant_id = value["assistant_id"]
         thread_id = value["thread_id"]
         vector_store_id = value["vector_store_id"]
-        
+
     else:
         try:
-            company = db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
+            company = db.collection("companies").get_first_list_item(
+                f"company_name='{company_name}'"
+            )
             assistant_id = company.assistant_id
             vector_store_id = company.vector_store_id
             # thread_id = ai.beta.threads.create().id
             thread_id = "fresh_thread_id"
             session_manager[key] = {
-                "assistant_id" : assistant_id,
-                "vector_store_id" : vector_store_id,
-                "thread_id" : thread_id
+                "assistant_id": assistant_id,
+                "vector_store_id": vector_store_id,
+                "thread_id": thread_id,
             }
-        except:
-            return {"message" : "Requested company not found!"}
-    
-    return {"assistant_id": assistant_id, "vector_store_id": vector_store_id, "thread_id": thread_id}
-    
-    
+        except Exception as e:
+            return {"message": "Requested company not found!", "error": e}
+
+    try:
+        sentence_queue = Queue()
+        buffer_dict = {"buffer": ""}
+
+        ai.beta.threads.messages.create(
+            thread_id=thread_id, role="user", content=prompt
+        )
+
+        assistant_reply_parts = []
+
+        run = ai.beta.threads.runs.create(
+            thread_id=thread_id, assistant_id=assistant_id, stream=True
+        )
+
+        for event in run:
+            process_stream_event(
+                event, assistant_reply_parts, sentence_queue, buffer_dict
+            )
+
+        assistant_reply = "".join(assistant_reply_parts)
+        return {"answer": assistant_reply}
+
+    except Exception as e:
+        return {"message": "Something went wrong while generating response", "error": e}
+
 
 if __name__ == "__main__":
     uvicorn.run("index:app", port=8000, log_level="info")

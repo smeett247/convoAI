@@ -65,7 +65,7 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
 
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
-): 
+):
     """Saves content to a file if the URL's extension is in the specified list.
 
     Args:
@@ -78,7 +78,7 @@ def save_extensions(
     Returns:
         None
     """
-    
+
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
     os.makedirs(folder_dir, exist_ok=True)
 
@@ -102,7 +102,6 @@ def save_extensions(
 
 
 def generate_page_report(url: str, content: bytes, company_name: str):
-
     """Generates a Markdown report from webpage content.
 
     Args:
@@ -168,15 +167,13 @@ def generate_page_report(url: str, content: bytes, company_name: str):
     if report_filepath_md not in markdown_files:
         markdown_files.append(report_filepath_md)
 
-    
-
 
 def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
+    """
+    Scrapes a website starting from the given URL.
 
-    """Scrapes a website starting from the given URL.
-
-    Iteratively fetches pages and saves attachments if their URLs match specified extensions. 
-    Generates a report for HTML content found on the pages. 
+    Iteratively fetches pages and saves attachments if their URLs match specified extensions.
+    Generates a report for HTML content found on the pages.
 
     Args:
         start_url (str): The starting URL for scraping.
@@ -249,12 +246,12 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
 
 
 def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
-
-    """Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
+    """
+    Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
 
     Args:
         path (str): Path to the Markdown file to be converted.
-        output_dir (str): Directory where the generated PDF file will be saved. 
+        output_dir (str): Directory where the generated PDF file will be saved.
                           Defaults to "temp/pdf".
     """
 
@@ -275,11 +272,11 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
 
 
 def convert_attachments_to_pdf():
+    """
+    Convert various attachment files (DOC, DOCX, PPT, PPTX) to PDF format.
 
-    """Convert various attachment files (DOC, DOCX, PPT, PPTX) to PDF format.
-
-        This function processes a set of attachment file paths, converting supported 
-        file types to PDF using LibreOffice. If a file is already in PDF format, 
+        This function processes a set of attachment file paths, converting supported
+        file types to PDF using LibreOffice. If a file is already in PDF format,
         it logs this information. Unsupported file types are also logged.
 
         Args:
@@ -287,8 +284,7 @@ def convert_attachments_to_pdf():
 
         Returns:
             None
-        """
-
+    """
     for file_path in set(attachment_files):
         try:
             file_extension = file_path.split(".")[-1].lower()
@@ -357,17 +353,42 @@ def scrap_website(company_url: str, company_name: str):
     logging.info("All conversions completed.")
 
 
+import re
+
+
 def validate_website(website: str) -> bool:
-    """ Validate a website to see if it's a valid URL or not
+    """
+    Validates if the given website URL is in a valid format.
+
     Args:
-        website (str): Website url that needs to be validated
+        website (str): Website URL that needs to be validated.
 
     Returns:
-        bool : Weather the provided string is a URL or not
+        bool: Whether the provided string is a valid URL or not.
     """
-    pass
+    url_pattern = re.compile(
+        r"^(https?://)?"  # Optional http or https
+        r"([a-zA-Z0-9-]+\.)+"  # Domain name segments
+        r"[a-zA-Z]{2,}"  # Top-level domain
+        r"(/[a-zA-Z0-9._/?&=-]*)*$",  # Optional path/query
+        re.IGNORECASE,
+    )
+    return bool(url_pattern.match(website))
+
 
 def extract_sentences(text):
+    """
+    Extracts sentences from the given text, returning a list of individual
+    sentences and any remaining text that doesn't end with a sentence-ending punctuation.
+
+    Args:
+        text (str): The input text to extract sentences from.
+
+    Returns:
+        tuple: A tuple containing:
+            - list: A list of sentences ending with '.', '!', or '?'.
+            - str: Remaining text that does not end with '.', '!', or '?'.
+    """
     sentence_end_pattern = re.compile(r"([^.!?]*[.!?])", re.M)
     sentences = sentence_end_pattern.findall(text)
     buffer = sentence_end_pattern.sub("", text)
@@ -377,13 +398,19 @@ def extract_sentences(text):
 
 
 def process_stream_event(event, assistant_reply_parts, sentence_queue, buffer_dict):
-    """_summary_
+    """
+    Processes an event from the OpenAI assistant stream, extracting and queuing
+    sentences while handling any additional buffering and special characters.
 
     Args:
-        event (_type_): _description_
-        assistant_reply_parts (_type_): _description_
-        sentence_queue (_type_): _description_
-        buffer_dict (_type_): _description_
+        event (openai.types.beta.assistant_stream_event.ThreadMessageDelta):
+            The incoming event message to process, expected to contain text data.
+        assistant_reply_parts (list): A list accumulating cleaned text parts
+            from the assistant's replies.
+        sentence_queue (Queue): A queue where processed and complete sentences are added.
+        buffer_dict (dict): A dictionary holding the "buffer" key, where partially
+            complete sentence fragments are stored until fully formed.
+
     """
     if isinstance(event, openai.types.beta.assistant_stream_event.ThreadMessageDelta):
         if isinstance(
@@ -410,7 +437,3 @@ def process_stream_event(event, assistant_reply_parts, sentence_queue, buffer_di
                 )
                 for sentence in sentences:
                     sentence_queue.put(sentence)
-
-
-if __name__ == "__main__":
-    scrap_website("https://www.example.com", "Example")
