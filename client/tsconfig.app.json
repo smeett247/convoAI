@@ -12,7 +12,7 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",  // Keep this to handle JSX files
+    "jsx": "react-jsx", // Keep this to handle JSX files
 
     /* Linting */
     "strict": true,
@@ -22,8 +22,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",   // Include TypeScript files
-    "src/**/*.js",    // Include JavaScript files
-    "src/**/*.jsx"    // Include JSX files
+    "src/**/*.tsx", // Include TypeScript files
+    "src/**/*.js", // Include JavaScript files
+    "src/**/*.jsx" // Include JSX files
   ]
 }

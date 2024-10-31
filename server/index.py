@@ -1,5 +1,5 @@
 from db import client as db  # PocketBase client instance
-from fastapi import FastAPI, status, Response, Form, UploadFile, BackgroundTasks
+from fastapi import FastAPI, status, Response, Form, UploadFile, BackgroundTasks, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from utils import create_vector_store, create_assistant, scrap_website
 from openai import Client
@@ -55,6 +55,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+scraping_status = dict()
+session_manager = dict()
+
+
+async def run_scraping_task(company_url: str, company_name: str):
+     """_summary_
+
+    Args:
+        company_url (str): _description_
+        company_name (str): _description_
+    """
+    try:
+        # Update the status to "In Progress"
+        scraping_status[company_name] = "In Progress"
+        scrap_website(company_url, company_name)
+        scraping_status[company_name] = "Completed"
+    except Exception as e:
+        scraping_status[company_name] = f"Failed: {str(e)}"
+
+
 @app.post("/scrap")
 async def scrap(
     response: Response,
@@ -67,12 +87,27 @@ async def scrap(
     additional_websites: Optional[str] = Form(None),
     attachments: Optional[UploadFile] = Form(None),
 ):
-    # if not validate_website(company_url):
-    #     response.status_code = status.HTTP_400_BAD_REQUEST
-    #     return {"msg": "Provided URL is not valid"}
+    """_summary_
 
-    vector_store_id = "vector_store_1234"
-    assistant_id = "assistant_id_1234"
+    Args:
+        response (Response): _description_
+        background_tasks (BackgroundTasks): _description_
+        company_name (str, optional): _description_. Defaults to Form(...).
+        company_url (str, optional): _description_. Defaults to Form(...).
+        persona (str, optional): _description_. Defaults to Form(...).
+        customer_name (str, optional): _description_. Defaults to Form(...).
+        logo (Optional[UploadFile], optional): _description_. Defaults to Form(None).
+        additional_websites (Optional[str], optional): _description_. Defaults to Form(None).
+        attachments (Optional[UploadFile], optional): _description_. Defaults to Form(None).
+
+    Returns:
+        _type_: _description_
+    """
+    if not validate_website(company_url):
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return {"msg": "Provided URL is not valid"}
+
+
 
     if logo:
         logo_binary = await logo.read()
@@ -92,7 +127,7 @@ async def scrap(
     try:
         db.collection("companies").create(
             {
-                "company_name": company_name,
+                "company_name": company_name.lower(),
                 "company_url": company_url,
                 "vector_store_id": vector_store_id,
                 "assistant_id": assistant_id,
@@ -124,15 +159,24 @@ async def scrap(
         }
 
     except ClientResponseError as e:
-        print(e)
         response.status_code = status.HTTP_400_BAD_REQUEST
-        return {"error": "Failed to save company"}
+        return {"error": f"Failed to save company {e}"}
     except Exception as e:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         return {"error": f"An unexpected error occurred: {str(e)}"}
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
+    """_summary_
+
+    Args:
+        company_name (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    status = scraping_status.get(company_name)  # Check the status dictionary
+    if status is None:
     # Filter status for entries related to the requested company
     statuses = {name: data for name, data in scraping_status.items() if name.startswith(company_name)}
 

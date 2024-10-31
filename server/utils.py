@@ -8,7 +8,26 @@ import ssl
 from urllib.parse import urlparse, urlsplit, urljoin
 from bs4 import BeautifulSoup
 import httpx
-from dotenv import load_dotenv
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler("scrapping.log")
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(stdout_handler)
+
+# Variables for file management
+attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
+markdown_files = []
+attachment_files = []
 
 load_dotenv()
 
@@ -44,32 +63,19 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
     return assistant.id
 
 
-# Scraping
-# Logging setup
-logger = logging.getLogger()
-logger.setLevel(logging.INFO)
-formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
-
-stdout_handler = logging.StreamHandler(sys.stdout)
-stdout_handler.setLevel(logging.DEBUG)
-stdout_handler.setFormatter(formatter)
-
-file_handler = logging.FileHandler("scraping.log")
-file_handler.setLevel(logging.DEBUG)
-file_handler.setFormatter(formatter)
-
-logger.addHandler(file_handler)
-logger.addHandler(stdout_handler)
-
-# Variables for file management
-attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
-markdown_files = []
-attachment_files = []
-
-
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
 ):
+    """_summary_
+
+    Args:
+        url (str): _description_
+        content (bytes): _description_
+        folder (str): _description_
+        extensions (list[str]): _description_
+        company_name (str): _description_
+    """
+    
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
     os.makedirs(folder_dir, exist_ok=True)
 
@@ -93,8 +99,19 @@ def save_extensions(
 
 
 def generate_page_report(url: str, content: bytes, company_name: str):
-    soup = BeautifulSoup(content, "lxml")
 
+    """Generates a Markdown report from webpage content.
+
+    Args:
+        url (str): The webpage URL.
+        content (bytes): HTML content of the webpage.
+        company_name (str): The company name for report organization.
+
+    Returns:
+        None
+    """
+
+    soup = BeautifulSoup(content, "lxml")
     title = (
         soup.title.string.strip()
         if soup.title and soup.title.string
@@ -132,7 +149,7 @@ def generate_page_report(url: str, content: bytes, company_name: str):
         if len(url_domain.split(".")) > 2
         else url_domain.split(".")[0]
     )
-    reports_dir = os.path.join("reports", company_name)
+    reports_dir = os.path.join(os.getcwd(), "temp", "markdown")
     os.makedirs(reports_dir, exist_ok=True)
 
     report_filename_md = f"{domain_name}.md"
@@ -148,8 +165,19 @@ def generate_page_report(url: str, content: bytes, company_name: str):
     if report_filepath_md not in markdown_files:
         markdown_files.append(report_filepath_md)
 
+    
 
-def scrape_entire_website(start_url: str, company_name: str, max_iterations=1000):
+
+def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
+
+    """_summary_
+
+    Args:
+        start_url (str): _description_
+        company_name (str): _description_
+        max_iterations (int, optional): _description_. Defaults to 10.
+    """
+    
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -212,12 +240,14 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=1000
 
 
 def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
+
     """Convert a Markdown file to PDF format with TOC and CSS styling.
 
     Args:
         path (str): Path to the Markdown file.
         output_dir (str): Directory to save the generated PDF file. Defaults to "temp/pdf".
     """
+
     pdf = MarkdownPdf(toc_level=2)
 
     with open(path, "r", encoding="utf-8") as file:
@@ -235,6 +265,16 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
 
 
 def convert_attachments_to_pdf():
+
+    """Converts various attachment files to PDF.
+
+    Args:
+        attachment_files (set): A set of paths to attachment files.
+
+    Returns:
+        None
+    """
+
     for file_path in set(attachment_files):
         try:
             file_extension = file_path.split(".")[-1].lower()
@@ -271,7 +311,6 @@ def convert_attachments_to_pdf():
             logger.error(f"Error converting attachment {file_path} to PDF: {e}")
 
 
-
 def scrap_website(company_url: str, company_name: str):
     """Recursively Scrap the URL provided
 
@@ -290,15 +329,14 @@ def scrap_website(company_url: str, company_name: str):
             sys.exit(1)
 
     scrape_entire_website(company_url, company_name, max_iterations)
-    print("Scraping completed.")
 
-    convert_markdown_to_pdf()
-    print("Markdown files converted to PDFs.")
+    logging.info("Scraping completed.")
+    for md in markdown_files:
+        convert_markdown_to_pdf(md)
 
-    convert_attachments_to_pdf()
-    print("Attachments converted to PDFs.")
-
-    print("All conversions completed.")
+    logging.info("Markdown files converted to PDFs.")
+    logging.info("Attachments converted to PDFs.")
+    logging.info("All conversions completed.")
 
 
 # def validate_website(website: str) -> bool:
@@ -319,4 +357,4 @@ def scrap_website(company_url: str, company_name: str):
 
 
 if __name__ == "__main__":
-    convert_markdown_to_pdf("./temp/markdown/fathom.md")
+    scrap_website("https://www.example.com", "Example")

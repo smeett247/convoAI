@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { HOST } from "../config.ts";
+import { HOST } from "../../config";
 import {
   Container,
   Typography,
@@ -22,15 +22,15 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import MuiAlert from "@mui/material/Alert";
-import { ThemeProvider, ThemeContext } from "./ThemeContext.jsx";
-import Header from "./Header.jsx";
+import { ThemeProvider, ThemeContext } from "../context/ThemeContext.jsx";
+import Header from "../components/Header.jsx";
 import RemoveIcon from "@mui/icons-material/Remove";
-import Ellipse1 from "./assets/Ellipse11.svg";
-import Ellipse2 from "./assets/Ellipse2.svg";
-import Ellipse3 from "./assets/Ellipse3.svg";
-import Ellipse4 from "./assets/Ellipse4.svg";
+import Ellipse1 from "../assets/images/Ellipse1.svg";
+import Ellipse2 from "../assets/images/Ellipse2.svg";
+import Ellipse3 from "../assets/images/Ellipse3.svg";
+import Ellipse4 from "../assets/images/Ellipse4.svg";
 
-const Alert = React.forwardRef((props, ref) => (
+const Alert = forwardRef((props, ref) => (
   <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 ));
 
@@ -60,29 +60,6 @@ function Form() {
     );
     setFormData({ ...formData, additionalWebsites: newWebsites });
   };
-
-  // Validate URL function
-  const validateURL = (url) => {
-    const pattern = new RegExp(
-      "^(https?:\\/\\/)?" +
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|" +
-        "((\\d{1,3}\\.){3}\\d{1,3}))" +
-        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" +
-        "(\\?[;&a-z\\d%_.~+=-]*)?" +
-        "(\\#[-a-z\\d_]*)?$",
-      "i"
-    );
-    return !!pattern.test(url);
-  };
-
-  // Effect to change body style
-  useEffect(() => {
-    document.body.style.display = "block";
-
-    return () => {
-      document.body.style.display = "";
-    };
-  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -205,7 +182,7 @@ function Form() {
           setLoading(false);
         }
       } catch (error) {
-        setSnackbarMessage("Failed to submit form. Please try again.");
+        setSnackbarMessage("Error: Failed to submit form. Please try again.");
         setLoading(false);
       } finally {
         setOpenSnackbar(true);
@@ -233,8 +210,6 @@ function Form() {
           right: "0vw",
           bottom: "10vh",
           width: "50vw",
-          // maxWidth: "500px",
-          // opacity: 0.3,
           zIndex: -1,
         }}
       />
@@ -247,8 +222,6 @@ function Form() {
           right: "10vw",
           bottom: "30vh",
           width: "6vw",
-          // maxWidth: "500px",
-          // opacity: 0.3,
           zIndex: -1,
         }}
       />
@@ -259,11 +232,8 @@ function Form() {
         style={{
           position: "absolute",
           left: "0vw",
-          // top: "4vw",
           bottom: "20vh",
           width: "9vw",
-          // maxWidth: "500px",
-          // opacity: 0.3,
           zIndex: -1,
         }}
       />
@@ -276,8 +246,7 @@ function Form() {
           left: "10vw",
           top: "14vh",
           width: "6vw",
-          // maxWidth: "500px",
-          // opacity: 0.3,
+
           zIndex: -1,
         }}
       />
@@ -334,7 +303,6 @@ function Form() {
                 "& fieldset": {
                   borderColor: errors.company_url ? "red" : "#d7d7d7",
                   borderRadius: "8px",
-                  // boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
                 },
                 "&:hover fieldset": {
                   borderColor: errors.company_url ? "red" : "#ff9800",
@@ -474,7 +442,7 @@ function Form() {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      {index > 0 && ( // Show remove button only for additional websites
+                      {index > 0 && (
                         <IconButton
                           onClick={() => handleRemoveWebsiteField(index)}
                           color="error"
@@ -556,7 +524,7 @@ function Form() {
                   },
                 },
                 "& .MuiSelect-select": {
-                  padding: "12px 14px", // Adjust padding
+                  padding: "12px 14px",
                   fontFamily: "Montserrat",
                   color: "#243a57",
                 },
@@ -682,9 +650,7 @@ function Form() {
             )}
           </Button>
         </form>
-        {/* {loading && <CircularProgress style={{ marginTop: "1rem" }} />} */}
 
-        {/* Confirmation Dialog */}
         <Dialog open={showDialog} onClose={() => setShowDialog(false)}>
           <DialogTitle>Scraping Complete</DialogTitle>
           <DialogContent>
