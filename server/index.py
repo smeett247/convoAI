@@ -28,6 +28,12 @@ app.add_middleware(
 
 
 async def run_scraping_task(company_url: str, company_name: str):
+    """_summary_
+
+    Args:
+        company_url (str): _description_
+        company_name (str): _description_
+    """
     try:
         # Update the status to "In Progress"
         scraping_status[company_name] = "In Progress"
@@ -54,6 +60,22 @@ async def scrap(
     additional_websites: Optional[str] = Form(None),
     attachments: Optional[UploadFile] = Form(None),
 ):
+    """_summary_
+
+    Args:
+        response (Response): _description_
+        background_tasks (BackgroundTasks): _description_
+        company_name (str, optional): _description_. Defaults to Form(...).
+        company_url (str, optional): _description_. Defaults to Form(...).
+        persona (str, optional): _description_. Defaults to Form(...).
+        customer_name (str, optional): _description_. Defaults to Form(...).
+        logo (Optional[UploadFile], optional): _description_. Defaults to Form(None).
+        additional_websites (Optional[str], optional): _description_. Defaults to Form(None).
+        attachments (Optional[UploadFile], optional): _description_. Defaults to Form(None).
+
+    Returns:
+        _type_: _description_
+    """
     if not validate_website(company_url):
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
@@ -108,6 +130,14 @@ async def scrap(
 
 @app.get("/scraping_status/{company_name}")
 async def get_scraping_status(company_name: str):
+    """_summary_
+
+    Args:
+        company_name (str): _description_
+
+    Returns:
+        _type_: _description_
+    """
     status = scraping_status.get(company_name)  # Check the status dictionary
     if status is None:
         return {"status": "Not Found", "company_name": company_name}

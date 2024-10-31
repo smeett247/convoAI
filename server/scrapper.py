@@ -32,6 +32,15 @@ attachment_files = []
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
 ):
+    """_summary_
+
+    Args:
+        url (str): _description_
+        content (bytes): _description_
+        folder (str): _description_
+        extensions (list[str]): _description_
+        company_name (str): _description_
+    """
     folder_dir = os.path.join(os.getcwd(), folder, company_name)
     os.makedirs(folder_dir, exist_ok=True)
 
@@ -55,6 +64,18 @@ def save_extensions(
 
 
 def generate_page_report(url: str, content: bytes, company_name: str):
+
+    """Generates a Markdown report from webpage content.
+
+    Args:
+        url (str): The URL of the webpage.
+        content (bytes): The HTML content of the webpage.
+        company_name (str): The name of the company for report organization.
+
+    Returns:
+        None
+    """
+
     soup = BeautifulSoup(content, "lxml")
 
     title = (
@@ -112,6 +133,13 @@ def generate_page_report(url: str, content: bytes, company_name: str):
 
 
 def scrape_entire_website(start_url: str, company_name: str, max_iterations=1000):
+    """_summary_
+
+    Args:
+        start_url (str): _description_
+        company_name (str): _description_
+        max_iterations (int, optional): _description_. Defaults to 1000.
+    """
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -174,6 +202,17 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=1000
 
 
 def convert_markdown_files_to_pdf():
+    """Converts Markdown files to PDF.
+
+    This function reads Markdown files, converts their content to HTML, and generates a PDF file
+    with basic CSS styling.
+
+    Args:
+        markdown_files (set): A set of paths to Markdown files.
+
+    Returns:
+        None
+    """
     for markdown_file_path in set(markdown_files):
         try:
             with open(markdown_file_path, "r", encoding="utf-8", errors="ignore") as f:
@@ -205,6 +244,14 @@ def convert_markdown_files_to_pdf():
 
 
 def convert_attachments_to_pdf():
+    """Converts various attachment files to PDF.
+
+    Args:
+        attachment_files (set): A set of paths to attachment files.
+
+    Returns:
+        None
+    """
     for file_path in set(attachment_files):
         try:
             file_extension = file_path.split(".")[-1].lower()
