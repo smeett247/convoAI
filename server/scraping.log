@@ -1,1 +1,33 @@
 2024-10-30 13:09:21,751 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Janmejay%20Portfolio%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Janmejay%20Portfolio%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:28:10,420 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:28:10,447 | INFO | HTTP Request: POST http://127.0.0.1:8090/api/collections/companies/records "HTTP/1.1 200 OK"
+2024-10-31 14:28:10,447 | INFO | Fetching URL: https://www.arkaywindows.com/
+2024-10-31 14:28:11,854 | INFO | HTTP Request: GET https://www.arkaywindows.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:28:11,870 | INFO | Fetching URL: https://example.com/
+2024-10-31 14:28:12,916 | INFO | HTTP Request: GET https://example.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:32:06,068 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:32:40,114 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:32:40,117 | INFO | HTTP Request: POST http://127.0.0.1:8090/api/collections/companies/records "HTTP/1.1 200 OK"
+2024-10-31 14:32:40,117 | INFO | Fetching URL: https://www.arkaywindows.com/
+2024-10-31 14:32:41,629 | INFO | HTTP Request: GET https://www.arkaywindows.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:32:41,629 | INFO | Fetching URL: https://example.com/
+2024-10-31 14:32:42,691 | INFO | HTTP Request: GET https://example.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:40:29,869 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:40:49,192 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:40:49,200 | INFO | HTTP Request: POST http://127.0.0.1:8090/api/collections/companies/records "HTTP/1.1 200 OK"
+2024-10-31 14:40:49,200 | INFO | Fetching URL: https://www.arkaywindows.com/
+2024-10-31 14:40:50,784 | INFO | HTTP Request: GET https://www.arkaywindows.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:40:50,787 | INFO | Fetching URL: https://example.com/
+2024-10-31 14:40:51,839 | INFO | HTTP Request: GET https://example.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:45:57,101 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:45:57,104 | INFO | HTTP Request: POST http://127.0.0.1:8090/api/collections/companies/records "HTTP/1.1 200 OK"
+2024-10-31 14:45:57,105 | INFO | Fetching URL: https://www.arkaywindows.com/
+2024-10-31 14:45:58,696 | INFO | HTTP Request: GET https://www.arkaywindows.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:45:58,699 | INFO | Fetching URL: https://example.com/
+2024-10-31 14:45:59,824 | INFO | HTTP Request: GET https://example.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:48:14,237 | INFO | HTTP Request: GET http://127.0.0.1:8090/api/collections/companies/records?filter=company_name%3D%27Arkay%20Windows%27&%24cancelKey=one_by_filter_%2Fapi%2Fcollections%2Fcompanies%2Frecords_company_name%3D%27Arkay%20Windows%27&page=1&perPage=1 "HTTP/1.1 200 OK"
+2024-10-31 14:48:14,240 | INFO | HTTP Request: POST http://127.0.0.1:8090/api/collections/companies/records "HTTP/1.1 200 OK"
+2024-10-31 14:48:14,241 | INFO | Fetching URL: https://www.arkaywindows.com/
+2024-10-31 14:48:15,761 | INFO | HTTP Request: GET https://www.arkaywindows.com/ "HTTP/1.1 200 OK"
+2024-10-31 14:48:15,765 | INFO | Fetching URL: https://example.com/
+2024-10-31 14:48:16,813 | INFO | HTTP Request: GET https://example.com/ "HTTP/1.1 200 OK"

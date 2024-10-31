@@ -1,5 +1,4 @@
 from openai import Client
-import zon as z
 from markdown_pdf import MarkdownPdf, Section
 import os
 import sys
@@ -9,7 +8,9 @@ import ssl
 from urllib.parse import urlparse, urlsplit, urljoin
 from bs4 import BeautifulSoup
 import httpx
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def create_vector_store(client: Client, company_name: str):
     """Create a vector store for company
@@ -300,21 +301,21 @@ def scrap_website(company_url: str, company_name: str):
     print("All conversions completed.")
 
 
-def validate_website(website: str) -> bool:
-    """
+# def validate_website(website: str) -> bool:
+#     """
 
-    Args:
-        website (str): Website url that needs to be validated
+#     Args:
+#         website (str): Website url that needs to be validated
 
-    Returns:
-        bool : Weather the provided string is a URL or not
-    """
-    url_validator = z.string().url()
-    try:
-        url_validator.validate(website)
-        return True
-    except:
-        return False
+#     Returns:
+#         bool : Weather the provided string is a URL or not
+#     """
+#     url_validator = z.string().url()
+#     try:
+#         url_validator.validate(website)
+#         return True
+#     except:
+#         return False
 
 
 if __name__ == "__main__":
