@@ -209,9 +209,10 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
             continue
 
         try:
-            r = httpx.get(url, verify=False, timeout=httpx.Timeout(10,0, connect=5.0))
+            r = httpx.get(url, verify=False, timeout=5)
             r.raise_for_status()
         except Exception as e:
+            logger.error(f"Got an error while scraping {start_url} : {e}")
             continue
 
         scraped_urls.add(url)
@@ -227,6 +228,7 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
         if "text/html" in content_type:
             generate_page_report(url, r.content, company_name)
         else:
+            logger.error("Invalid page response, skipping this URL")
             continue
 
         soup = BeautifulSoup(r.content, "lxml")
@@ -335,13 +337,7 @@ def scrap_website(company_url: str, company_name: str):
     Returns:
         None
     """
-    max_iterations_input = 1000
-    try:
-        max_iterations = int(max_iterations_input)
-    except ValueError:
-        logger.error("Invalid input for maximum iterations. Please enter a number.")
-        sys.exit(1)
-
+    max_iterations = 100 # Number of pages to scrap
     scrape_entire_website(company_url, company_name, max_iterations)
 
     logging.info("Scraping completed.")
@@ -448,11 +444,7 @@ def upload_pdf_to_vector_store(
             vector_store_id=vector_store_id, files=file_streams
         )
 
-        if file_batch.status == "completed":
-            logger.info(f"{pdf_files} got uploded to vector store with id {vector_store_id}")
-        else:
-            logger.error("Something went wrong while uploading pdf to vector store")
-            raise Exception("File upload failed.")
+        logger.info(f"{pdf_files} got uploded to vector store with id {vector_store_id}")
     except Exception as e:
         logger.error(f"Caught an exception while uploading pdf to vector store : {e}")
     finally:

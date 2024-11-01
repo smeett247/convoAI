@@ -86,15 +86,17 @@ def scrap_website_process(url, company_name, result_queue):
 
 
 async def run_scraping_task(
-    company_name: str, websites: list[str], vector_store_id: str, timeout_seconds : int
+    company_name: str, websites: list[str], vector_store_id: str, timeout_seconds: int
 ):
     global total_scraped_companies
     total_scraped_companies = 0
     scraping_status[company_name] = {}
-    logger.info(f"Starting Scrapping Session with Timeout at {timeout_seconds} seconds")
+    logger.info(f"Starting Scraping Session with Timeout at {timeout_seconds} seconds")
+    
     for url in websites:
         start_time = datetime.now()
         logger.info(f"Task started for {url} at {start_time}")
+        
         try:
             scraping_status[company_name][url] = {
                 "status": "In Progress",
@@ -113,20 +115,25 @@ async def run_scraping_task(
                     await asyncio.sleep(1)
                 else:
                     break
-            else:
-                process.terminate()
-                process.join()
+            else: 
+                if process.is_alive():
+                    logger.info(f"Attempting to terminate process with PID {process.pid}")
+                    process.terminate()
+                    process.join(timeout=5) 
+                    
+                if process.is_alive():
+                    logger.info(f"Force killing process with PID {process.pid}")
+                    process.kill()
+
                 scraping_status[company_name][url]["status"] = "Timed Out"
                 total_scraped_companies += 1
                 end_time = datetime.now()
-
-                scraping_status[company_name][url]["end_time"] = datetime.now()
+                scraping_status[company_name][url]["end_time"] = end_time
                 time_taken = (end_time - start_time).total_seconds()
                 scraping_status[company_name][url]["elapsed"] = time_taken
                 logger.info(
                     f"Scraping {url} for {company_name} timed out after {timeout_seconds} seconds"
                 )
-                continue
 
             process.join()
             if not result_queue.empty():
@@ -134,7 +141,6 @@ async def run_scraping_task(
                 if result == "Completed":
                     scraping_status[company_name][url]["status"] = "Completed"
                     total_scraped_companies += 1
-
                     time_taken = (
                         child_time_taken
                         if child_time_taken is not None
@@ -247,8 +253,7 @@ async def scrap(
                 f.write(attachment.file.read())
             pdf_files.append(attachment_path)
 
-    logger.info("Converting attachments to PDF format")
-    pdf_files = process_files(pdf_files)
+    
 
     try:
         db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
@@ -264,6 +269,8 @@ async def scrap(
         client=ai, vector_store_id=vector_store_id, company_name=company_name
     )
 
+    logger.info("Converting attachments to PDF format")
+    pdf_files = process_files(pdf_files)
     if(len(pdf_files) != 0):
         logger.info(f"Uploading attachments to vector store to ID {vector_store_id}")
         upload_pdf_to_vector_store(ai, vector_store_id, pdf_files)
