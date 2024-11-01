@@ -23,6 +23,7 @@ from utils import (
     convert_docx_to_pdf,
     convert_markdown_to_pdf,
     convert_markdown_to_pdf_vs,
+    logger
 )
 from openai import Client
 from dotenv import load_dotenv
@@ -31,7 +32,6 @@ from typing import Optional
 from datetime import datetime
 import uvicorn
 import asyncio
-import shutil
 from queue import Queue
 from multiprocessing import Process, Queue
 import os
@@ -39,15 +39,19 @@ import os
 load_dotenv()
 app = FastAPI()
 
-attachments_folder = "temp/attachments/"
-converted_pdfs_folder = "temp/pdf/"
+#? Creating Temporary Folders
+markdown_folder = os.path.join(os.getcwd(), "temp","markdown")
+attachments_folder = os.path.join(os.getcwd(), "temp","attachments")
+converted_pdfs_folder = os.path.join(os.getcwd(), "temp", "pdf")
 
+os.makedirs(markdown_folder, exist_ok=True)
 os.makedirs(attachments_folder, exist_ok=True)
 os.makedirs(converted_pdfs_folder, exist_ok=True)
+#? 
+
 
 ai = Client()
 total_scraped_companies = 0
-timeout_seconds = 30
 
 origins = [
     "http://localhost:5173",
@@ -61,48 +65,36 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-origins = ["http://localhost:5173"]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
 def scrap_website_process(url, company_name, result_queue):
     try:
 
         start_time = datetime.now()
-        print(f"Started scraping {url} for {company_name} at {start_time}")
+        logger.info(f"Started scraping {url} for {company_name} at {start_time}")
 
         scrap_website(url, company_name)
 
         end_time = datetime.now()
         time_taken = (end_time - start_time).total_seconds()
-        print(
+        logger.info(
             f"Completed scraping {url} for {company_name} at {end_time}, time taken: {time_taken} seconds"
         )
 
         result_queue.put(("Completed", time_taken))
     except Exception as e:
-        print(f"Error scraping {url} for {company_name}: {e}")
+        logger.error(f"Error scraping {url} for {company_name}: {e}")
         result_queue.put((f"Failed: {str(e)}", None))
 
 
 async def run_scraping_task(
-    company_name: str, websites: list[str], vector_store_id: str
+    company_name: str, websites: list[str], vector_store_id: str, timeout_seconds : int
 ):
     global total_scraped_companies
     total_scraped_companies = 0
-    global timeout_seconds
     scraping_status[company_name] = {}
-
+    logger.info(f"Starting Scrapping Session with Timeout at {timeout_seconds} seconds")
     for url in websites:
         start_time = datetime.now()
-        print(f"Task started for {url} at {start_time}")
+        logger.info(f"Task started for {url} at {start_time}")
         try:
             scraping_status[company_name][url] = {
                 "status": "In Progress",
@@ -131,7 +123,7 @@ async def run_scraping_task(
                 scraping_status[company_name][url]["end_time"] = datetime.now()
                 time_taken = (end_time - start_time).total_seconds()
                 scraping_status[company_name][url]["elapsed"] = time_taken
-                print(
+                logger.info(
                     f"Scraping {url} for {company_name} timed out after {timeout_seconds} seconds"
                 )
                 continue
@@ -149,36 +141,37 @@ async def run_scraping_task(
                         else (datetime.now() - start_time).total_seconds()
                     )
                     scraping_status[company_name][url]["elapsed"] = time_taken
-                    print(
+                    logger.info(
                         f"Scraping {url} for {company_name} completed in {time_taken} seconds"
                     )
                 else:
                     scraping_status[company_name][url]["status"] = result
                     time_taken = (datetime.now() - start_time).total_seconds()
                     scraping_status[company_name][url]["elapsed"] = time_taken
-                    print(
+                    logger.error(
                         f"Scraping {url} for {company_name} failed after {time_taken} seconds: {result}"
                     )
             else:
                 scraping_status[company_name][url]["status"] = "Failed: No result"
                 time_taken = (datetime.now() - start_time).total_seconds()
                 scraping_status[company_name][url]["elapsed"] = time_taken
-                print(
+                logger.error(
                     f"Scraping {url} for {company_name} failed with no result after {time_taken} seconds"
                 )
         except Exception as e:
             scraping_status[company_name][url]["status"] = f"Failed: {str(e)}"
             time_taken = (datetime.now() - start_time).total_seconds()
             scraping_status[company_name][url]["elapsed"] = time_taken
-            print(f"Error in task for {url} for {company_name}: {e}")
+            logger.error(f"Error in task for {url} for {company_name}: {e}")
         finally:
             if "elapsed" not in scraping_status[company_name][url]:
                 time_taken = (datetime.now() - start_time).total_seconds()
                 scraping_status[company_name][url]["elapsed"] = time_taken
-                print(
+                logger.info(
                     f"Task for {url} for {company_name} finished, time taken: {time_taken} seconds"
                 )
 
+    logger.info("Starting conversion of parsed report from markdown to PDF")
     input_dir = os.path.join("temp", "markdown")
     scraped_pdfs_to_upload = []
     for filename in os.listdir(input_dir):
@@ -186,8 +179,23 @@ async def run_scraping_task(
             input_path = os.path.join(input_dir, filename)
             pdf_path = convert_markdown_to_pdf(input_path)
             scraped_pdfs_to_upload.append(pdf_path)
-    upload_pdf_to_vector_store(ai, vector_store_id, scraped_pdfs_to_upload)
-    shutil.rmtree("temp")
+    
+    if(len(scraped_pdfs_to_upload)!=0):
+        logger.info(f"Conversion of report completed and uploaded to vector store with id {vector_store_id}")
+        upload_pdf_to_vector_store(ai, vector_store_id, scraped_pdfs_to_upload)
+        logger.info(f"Removing Markdown file generated for {company_name}")
+    else:
+        logger.info(f"No PDF found from scrapped session, something went wrong.... Skipping upload")
+        
+    
+    for filename in os.listdir(input_dir):
+        if filename.endswith(".md"):
+            input_path = os.path.join(input_dir, filename)
+            try:
+                os.remove(input_path)
+            except OSError:
+                logger.info("File not found for deletion, skipping...")
+                pass
 
 
 def process_files(file_paths: list[str]) -> list[str]:
@@ -196,7 +204,6 @@ def process_files(file_paths: list[str]) -> list[str]:
     for path in file_paths:
         filename = os.path.splitext(os.path.basename(path))[0] + ".pdf"
         pdf_path = os.path.join(converted_pdfs_folder, filename)
-        pdf_path_ppt_docx = os.path.join(converted_pdfs_folder)
         if path.endswith(".pdf"):
             pdf_files.append(path)
         elif path.endswith(".docx"):
@@ -217,6 +224,7 @@ async def scrap(
     persona: str = Form(...),
     customer_name: Optional[str] = Form(""),
     logo: UploadFile = File(None),
+    timeout_seconds: Optional[int] = Form(60),
     additional_websites: Optional[str] = Form(None),
     attachments: list[UploadFile] = File(None),
 ):
@@ -239,23 +247,29 @@ async def scrap(
                 f.write(attachment.file.read())
             pdf_files.append(attachment_path)
 
+    logger.info("Converting attachments to PDF format")
     pdf_files = process_files(pdf_files)
 
     try:
         db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
         response.status_code = status.HTTP_409_CONFLICT
+        logger.error(f"{company_name} has already been scrapped, skipping scraping for now")
         return {"message": "This company has already been scraped"}
     except:
         pass
 
-    # TODO : Use actual client and vector store id
+    logger.info(f"Creating vector store and assistant id for new company: {company_name}")
     vector_store_id = create_vector_store(client=ai, company_name=company_name)
     assistant_id = create_assistant(
         client=ai, vector_store_id=vector_store_id, company_name=company_name
     )
 
-    upload_pdf_to_vector_store(ai, vector_store_id, pdf_files)
-
+    if(len(pdf_files) != 0):
+        logger.info(f"Uploading attachments to vector store to ID {vector_store_id}")
+        upload_pdf_to_vector_store(ai, vector_store_id, pdf_files)
+    else:
+        logger.info("No attachments found! Skipping upload step")
+        
     try:
         db.collection("companies").create(
             {
@@ -282,9 +296,11 @@ async def scrap(
                 "elapsed": 0,
             }
 
+        logger.info("Starting Scraping task on background thread")
         background_tasks.add_task(
-            run_scraping_task, company_name, websites_to_scrape, vector_store_id
+            run_scraping_task, company_name, websites_to_scrape, vector_store_id, timeout_seconds
         )
+        logger.info("Sending scraping begun response to client")
 
         response.status_code = status.HTTP_201_CREATED
         return {
@@ -294,7 +310,7 @@ async def scrap(
 
     except ClientResponseError as e:
         response.status_code = status.HTTP_400_BAD_REQUEST
-        return {"error": f"Failed to save company {e}"}
+        return {"error": f"Failed to save company {str(e)}"}
     except Exception as e:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
         return {"error": f"An unexpected error occurred: {str(e)}"}
@@ -364,6 +380,7 @@ async def get_all_companies():
 async def ask_query(
     company_name: str = Body(...), persona: str = Body(...), prompt: str = Body(...)
 ):
+    logger.info(f"\nQuestion : {prompt}\nCompany Name : {company_name}\nPersona : {persona}\n\n")
     company_name = company_name.strip().lower().replace(" ", "_")
     key = f"{company_name}<SEP>{persona}"
     if key in session_manager:
@@ -397,7 +414,6 @@ async def ask_query(
         )
 
         assistant_reply_parts = []
-
         run = ai.beta.threads.runs.create(
             thread_id=thread_id, assistant_id=assistant_id, stream=True
         )
@@ -408,10 +424,12 @@ async def ask_query(
             )
 
         assistant_reply = "".join(assistant_reply_parts)
+        logger.info(f"Generated Answer: {assistant_reply}")
         return {"answer": assistant_reply}
 
     except Exception as e:
         return {"message": "Something went wrong while generating response", "error": e}
+
 
 
 if __name__ == "__main__":

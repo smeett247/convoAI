@@ -33,6 +33,7 @@ function Form() {
     persona: "",
     attachments: [],
     customer_name: "",
+    timeout_seconds: "30",
   });
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -146,6 +147,7 @@ function Form() {
     data.append("company_name", formData.company_name);
     if (formData.logo) data.append("logo", formData.logo);
     data.append("additional_websites", formData.additionalWebsites.join(", "));
+    data.append("timeout_seconds", formData.timeout_seconds);
     data.append("persona", formData.persona);
     if (formData.customer_name)
       data.append("customer_name", formData.customer_name);
@@ -167,12 +169,13 @@ function Form() {
         );
       } else {
         const result = await response.json();
-        toast.error(JSON.stringify(result));
+        toast.error(result.message);
         setLoading(false);
       }
     } catch (error) {
-      console.log(error);
-      toast.error(error as any);
+      toast.error(
+        "The server didn't respond, Are you sure the server is running?"
+      );
       setLoading(false);
     }
   };
@@ -294,15 +297,6 @@ function Form() {
             variant="outlined"
             onChange={handleFileChange}
             margin="normal"
-            InputLabelProps={{
-              shrink: true,
-              style: {
-                fontFamily: "Montserrat",
-                color: "#243a57",
-                fontWeight: "550",
-              },
-            }}
-            inputProps={{ multiple: true }}
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -478,6 +472,19 @@ function Form() {
                 backgroundColor: "transparent",
               },
             }}
+          />
+          <TextField
+            fullWidth
+            type="text"
+            label="Timeout in Seconds"
+            variant="outlined"
+            onChange={(e) => {
+              setFormData({
+                ...formData,
+                timeout_seconds: e.target.value,
+              });
+            }}
+            margin="normal"
           />
 
           <Button

@@ -15,29 +15,29 @@ from docx2pdf import convert
 
 load_dotenv()
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-if not logger.handlers:
-    formatter = logging.Formatter(
-        "%(asctime)s | %(levelname)s | %(process)d | %(message)s"
-    )
-
-    file_handler = logging.FileHandler("scraping.log")
-    file_handler.setLevel(logging.INFO)
-    file_handler.setFormatter(formatter)
-
-    logger.addHandler(file_handler)
-
-
 attachment_extensions = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx"]
-markdown_files = []
-attachment_files = []
 
 # Local Cache
+markdown_files = []
+attachment_files = []
 scraping_status = dict()
 session_manager = dict()
 
+def create_logger():
+    logs_folder = os.path.join(os.getcwd(), "logs")
+    os.makedirs(logs_folder, exist_ok=True)
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)s | %(process)d | %(message)s"
+    )
+    file_handler = logging.FileHandler(os.path.join(os.getcwd(),"logs","session.log"))
+    file_handler.setLevel(logging.INFO)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    return logger
+
+logger = create_logger()
 
 def create_vector_store(client: Client, company_name: str):
     """Create a vector store for company
@@ -47,6 +47,7 @@ def create_vector_store(client: Client, company_name: str):
         company_name (str): Name of the company for which vector store will be generated (will be used to name the vector store)
     """
     vector_store = client.beta.vector_stores.create(name=company_name)
+    logger.info(f"Vector ID generated for {company_name}")
     return vector_store.id
 
 
@@ -68,6 +69,7 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
         tools=[{"type": "file_search"}],
         tool_resources={"file_search": {"vector_store_ids": [vector_store_id]}},
     )
+    logger.info(f"Assistant ID generated for {company_name}")
     return assistant.id
 
 
@@ -104,9 +106,9 @@ def save_extensions(
 
         with open(file_path, "wb") as file:
             file.write(content)
-        logger.info(f"Downloaded attachment {file_path}")
 
         attachment_files.append(file_path)
+    logger.info(f"Saved the following attachements: {attachment_files}")
 
 
 def generate_page_report(url: str, content: bytes, company_name: str):
@@ -151,7 +153,6 @@ def generate_page_report(url: str, content: bytes, company_name: str):
 
     url_domain = urlsplit(url).netloc
     if not url_domain:
-        logger.error("Invalid URL provided, cannot generate report filename.")
         return
 
     domain_name = (
@@ -170,10 +171,10 @@ def generate_page_report(url: str, content: bytes, company_name: str):
     ) as report_file:
         report_file.write(report_content)
 
-    logger.info(f"Report for {url} has been appended to {report_filename_md}")
-
     if report_filepath_md not in markdown_files:
         markdown_files.append(report_filepath_md)
+    
+    logger.info(f"Markdown Report Generated for {url}")
 
 
 def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
@@ -191,7 +192,7 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
     Returns:
         None
     """
-
+    logger.info(f"Started Scraping from {start_url}")
     parsed_start_url = urlparse(start_url)
     base_domain = parsed_start_url.netloc
 
@@ -201,22 +202,16 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
 
     while urls_to_scrape:
         if iteration_count >= max_iterations:
-            logger.info(
-                f"Maximum iteration count of {max_iterations} reached. Stopping scraping."
-            )
             break
 
         url = urls_to_scrape.pop(0)
         if url in scraped_urls:
-            logger.debug(f"URL already scraped: {url}")
             continue
 
-        logger.info(f"Fetching URL: {url}")
         try:
-            r = httpx.get(url, verify=False, timeout=10)
+            r = httpx.get(url, verify=False, timeout=httpx.Timeout(10,0, connect=5.0))
             r.raise_for_status()
         except Exception as e:
-            logger.error(f"Error fetching {url}: {e}")
             continue
 
         scraped_urls.add(url)
@@ -225,14 +220,13 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
         content_type = r.headers.get("Content-Type", "").lower()
         if any(url.lower().endswith(f".{ext}") for ext in attachment_extensions):
             save_extensions(
-                url, r.content, "attachments", attachment_extensions, company_name
+                url, r.content, os.path.join(os.getcwd(),"temp","attachments"), attachment_extensions, company_name
             )
             continue
 
         if "text/html" in content_type:
             generate_page_report(url, r.content, company_name)
         else:
-            logger.info(f"Non-HTML content at {url}, skipping parsing.")
             continue
 
         soup = BeautifulSoup(r.content, "lxml")
@@ -248,12 +242,10 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
                 and joined_url not in urls_to_scrape
             ):
                 new_urls.add(joined_url)
-
-        logger.info(f"Found {len(new_urls)} new URLs on {url}.")
         urls_to_scrape.extend(new_urls)
 
 
-def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
+def convert_markdown_to_pdf(path: str, output_dir: str = os.path.join(os.getcwd(),"temp","pdf")):
     """
     Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
 
@@ -275,9 +267,11 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
     output_path = os.path.join(
         output_dir, os.path.splitext(os.path.basename(path))[0] + ".pdf"
     )
-
+    
     pdf.save(output_path)
+    logger.info(f"The markdown file at {path} got saved as pdf to {output_dir}")
     return output_path
+
 
 
 def convert_attachments_to_pdf():
@@ -312,6 +306,7 @@ def convert_attachments_to_pdf():
                     ],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
+                    timeout=30
                 )
                 if result.returncode == 0:
                     logger.info(f"Converted {file_path} to PDF at {pdf_file_path}")
@@ -340,16 +335,12 @@ def scrap_website(company_url: str, company_name: str):
     Returns:
         None
     """
-    max_iterations_input = 200
-
-    if not max_iterations_input:
-        max_iterations = 1000
-    else:
-        try:
-            max_iterations = int(max_iterations_input)
-        except ValueError:
-            logger.error("Invalid input for maximum iterations. Please enter a number.")
-            sys.exit(1)
+    max_iterations_input = 1000
+    try:
+        max_iterations = int(max_iterations_input)
+    except ValueError:
+        logger.error("Invalid input for maximum iterations. Please enter a number.")
+        sys.exit(1)
 
     scrape_entire_website(company_url, company_name, max_iterations)
 
@@ -458,11 +449,15 @@ def upload_pdf_to_vector_store(
         )
 
         if file_batch.status == "completed":
-            print("Attachement uploaded!")
+            logger.info(f"{pdf_files} got uploded to vector store with id {vector_store_id}")
         else:
+            logger.error("Something went wrong while uploading pdf to vector store")
             raise Exception("File upload failed.")
     except Exception as e:
-        print("Something went wrong: " + e)
+        logger.error(f"Caught an exception while uploading pdf to vector store : {e}")
+    finally:
+        for stream in file_streams:
+            stream.close()
 
 
 def convert_docx_to_pdf(docx_path: str, pdf_path: str):
