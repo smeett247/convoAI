@@ -149,7 +149,7 @@ export default function Chatbot() {
       <aside className="flex flex-col py-6 px-4 border-r items-center justify-between max-md:hidden">
         <img
           src={`${POCKETBASE}/api/files/companies/${companyInfo.id}/${companyInfo.img}`}
-          alt="Alunet Systems Logo"
+          alt="Company Logo"
           className="w-40 m-2"
         />
         <div className="w-full bg-fill/[0.1] h-14 rounded-md border gap-4 flex items-center px-2">
@@ -165,8 +165,8 @@ export default function Chatbot() {
         </div>
       </aside>
 
-      <section className="px-72 bg-slate-100 relative max-md:px-10">
-        <div className=" relative py-10 flex flex-col items-center">
+      <section className="px-56 bg-slate-100 relative max-md:px-10">
+        <div className="py-10 flex flex-col items-center h-screen">
           {messages.length === 0 ? (
             <>
               <p className="font-bold text-3xl py-4 px-8 max-md:px-4 max-md:py-2 max-md:text-xl text-primary bg-white rounded-full border">
@@ -190,7 +190,7 @@ export default function Chatbot() {
                 Good Day, How may I help you?
               </motion.div>
               <img
-                src="/msbc-logo.png"
+                src={`${POCKETBASE}/api/files/companies/${companyInfo.id}/${companyInfo.img}`}
                 alt="Company Logo"
                 className="mt-32 w-56 md:hidden"
               />
@@ -227,7 +227,7 @@ export default function Chatbot() {
               </motion.div>
             </>
           ) : (
-            <div className="w-full flex flex-col gap-4 overflow-y-scroll mb-24">
+            <div className="w-full flex flex-col gap-4 px-4 py-2 overflow-y-scroll mb-[5vh]">
               {messages.map((msg, index) => (
                 <div key={index} className="flex items-center">
                   {msg.sender === "user" ? (

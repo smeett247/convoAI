@@ -278,6 +278,7 @@ def convert_markdown_to_pdf(path: str, output_dir: str = "temp/pdf"):
     )
 
     pdf.save(output_path)
+    return output_path
 
 
 def convert_attachments_to_pdf():
@@ -469,9 +470,11 @@ def convert_docx_to_pdf(docx_path: str, pdf_path: str):
     """Convert DOCX to PDF."""
     convert(docx_path, pdf_path)
 
+
 def convert_pptx_to_pdf(pptx_path: str, pdf_path: str):
     """Convert PPTX to PDF."""
     convertppt(pptx_path, pdf_path)
+
 
 def convert_markdown_to_pdf_vs(path: str, output_dir: str = "converted_pdfs/"):
     """
@@ -497,7 +500,6 @@ def convert_markdown_to_pdf_vs(path: str, output_dir: str = "converted_pdfs/"):
     )
 
     pdf.save(output_path)
-
 
 
 if __name__ == "__main__":
