@@ -12,7 +12,6 @@ from dotenv import load_dotenv
 import re
 import logging
 from docx2pdf import convert
-from pptxtopdf import convert as convertppt
 
 load_dotenv()
 
@@ -469,11 +468,6 @@ def upload_pdf_to_vector_store(
 def convert_docx_to_pdf(docx_path: str, pdf_path: str):
     """Convert DOCX to PDF."""
     convert(docx_path, pdf_path)
-
-
-def convert_pptx_to_pdf(pptx_path: str, pdf_path: str):
-    """Convert PPTX to PDF."""
-    convertppt(pptx_path, pdf_path)
 
 
 def convert_markdown_to_pdf_vs(path: str, output_dir: str = "converted_pdfs/"):

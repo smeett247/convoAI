@@ -21,7 +21,6 @@ from utils import (
     session_manager,
     upload_pdf_to_vector_store,
     convert_docx_to_pdf,
-    convert_pptx_to_pdf,
     convert_markdown_to_pdf,
     convert_markdown_to_pdf_vs,
 )
@@ -202,9 +201,6 @@ def process_files(file_paths: list[str]) -> list[str]:
             pdf_files.append(path)
         elif path.endswith(".docx"):
             convert_docx_to_pdf(path, pdf_path)
-            pdf_files.append(pdf_path)
-        elif path.endswith(".pptx"):
-            convert_pptx_to_pdf(path, pdf_path_ppt_docx)
             pdf_files.append(pdf_path)
         elif path.endswith(".md"):
             convert_markdown_to_pdf_vs(path)
