@@ -20,6 +20,10 @@ from utils import (
     scraping_status,
     session_manager,
     upload_pdf_to_vector_store,
+    convert_docx_to_pdf,
+    convert_pptx_to_pdf,
+    convert_markdown_to_pdf,
+    convert_markdown_to_pdf_vs
 )
 from openai import Client
 from dotenv import load_dotenv
@@ -30,9 +34,17 @@ import uvicorn
 import asyncio
 from queue import Queue
 from multiprocessing import Process, Queue
+import os
 
 load_dotenv()
 app = FastAPI()
+
+attachments_folder = "attachments/"
+converted_pdfs_folder = "converted_pdfs/"
+
+os.makedirs(attachments_folder, exist_ok=True)
+os.makedirs(converted_pdfs_folder, exist_ok=True)
+
 ai = Client()
 total_scraped_companies = 0
 timeout_seconds = 60
@@ -145,8 +157,33 @@ async def run_scraping_task(company_name: str, websites: list[str]):
                 time_taken = (datetime.now() - start_time).total_seconds()
                 scraping_status[company_name][url]["elapsed"] = time_taken
                 print(f"Task for {url} for {company_name} finished, time taken: {time_taken} seconds")
-    
 
+    input_dir = os.path.join("temp","markdown")
+    for filename in os.listdir(input_dir):
+        if filename.endswith(".md"):
+            input_path = os.path.join(input_dir, filename)
+            convert_markdown_to_pdf(input_path)
+
+def process_files(file_paths: list[str]) -> list[str]:
+    """Process files and return converted PDF paths."""
+    pdf_files = []
+    for path in file_paths:
+        filename = os.path.splitext(os.path.basename(path))[0] + ".pdf"
+        pdf_path = os.path.join(converted_pdfs_folder, filename)
+        pdf_path_ppt_docx = os.path.join(converted_pdfs_folder)
+        if path.endswith('.pdf'):
+            pdf_files.append(path)
+        elif path.endswith('.docx'):
+            convert_docx_to_pdf(path, pdf_path)
+            pdf_files.append(pdf_path)
+        elif path.endswith('.pptx'):
+            convert_pptx_to_pdf(path,pdf_path_ppt_docx)
+            pdf_files.append(pdf_path)
+        elif path.endswith('.md'):
+            convert_markdown_to_pdf_vs(path)
+            pdf_files.append(pdf_path)
+
+    return pdf_files
 
 @app.post("/scrap")
 async def scrap(
@@ -158,7 +195,7 @@ async def scrap(
     customer_name: Optional[str] = Form(""),
     logo: UploadFile = File(None),
     additional_websites: Optional[str] = Form(None),
-    attachments: UploadFile = File(None),
+    attachments: list[UploadFile] = File(None),
 ):
     company_name = company_name.lower().strip().replace(" ", "_")
     if not validate_website(company_url):
@@ -170,6 +207,17 @@ async def scrap(
         logo = FileUpload(logo.filename, logo_binary)
     else:
         logo = None
+    pdf_files = []
+
+    if attachments:
+        for attachment in attachments:
+            print(attachment)
+            attachment_path = os.path.join(attachments_folder, attachment.filename)
+            with open(attachment_path, 'wb') as f:
+                f.write(attachment.file.read())
+            pdf_files.append(attachment_path)
+
+    pdf_files = process_files(pdf_files)
 
     try:
         db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
@@ -184,6 +232,8 @@ async def scrap(
 
     vector_store_id = "vs-1234567890"
     assistant_id = "ad-1234567890"
+
+    # upload_pdf_to_vector_store(company_name,vector_store_id,pdf_files)
 
     try:
         db.collection("companies").create(
@@ -262,8 +312,6 @@ async def get_scraping_status(company_name: str):
     response_data["overall_elapsed"] = overall_elapsed
 
     return response_data
-
-
 
 
 

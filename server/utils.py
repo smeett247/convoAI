@@ -11,6 +11,8 @@ import httpx
 from dotenv import load_dotenv
 import re
 import logging
+from docx2pdf import convert
+from pptxtopdf import convert as convertppt
 
 load_dotenv()
 
@@ -350,14 +352,7 @@ def scrap_website(company_url: str, company_name: str):
     scrape_entire_website(company_url, company_name, max_iterations)
 
     logging.info("Scraping completed.")
-    for md in markdown_files:
-        convert_markdown_to_pdf(md)
-
-    logging.info("Markdown files converted to PDFs.")
-    logging.info("Attachments converted to PDFs.")
     logging.info("All conversions completed.")
-
-import re
 
 
 def validate_website(website: str) -> bool:
@@ -444,7 +439,7 @@ def process_stream_event(event, assistant_reply_parts, sentence_queue, buffer_di
 
 
 def upload_pdf_to_vector_store(
-    client: Client, vector_store_id: str, file_content: bytes
+    client: Client, vector_store_id: str, pdf_files: list[str]
 ):
     """
     Uploads a PDF file to a specified vector store.
@@ -452,11 +447,12 @@ def upload_pdf_to_vector_store(
     Args:
         client (Client): Client instance for interacting with the vector store service.
         vector_store_id (str): Unique identifier of the target vector store.
-        file_content (bytes): PDF file content in bytes.
+        pdf_files (list): List of pdf_files path.
     """
+    file_streams = [open(pdf_path, "rb") for pdf_path in pdf_files]
     try:
         file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
-            vector_store_id=vector_store_id, files=[file_content]
+            vector_store_id=vector_store_id, files=file_streams
         )
 
         if file_batch.status == "completed":
@@ -465,6 +461,42 @@ def upload_pdf_to_vector_store(
             raise Exception("File upload failed.")
     except Exception as e:
         print("Something went wrong: " + e)
+
+
+def convert_docx_to_pdf(docx_path: str, pdf_path: str):
+    """Convert DOCX to PDF."""
+    convert(docx_path, pdf_path)
+
+def convert_pptx_to_pdf(pptx_path: str, pdf_path: str):
+    """Convert PPTX to PDF."""
+    convertppt(pptx_path, pdf_path)
+
+def convert_markdown_to_pdf_vs(path: str, output_dir: str = "converted_pdfs/"):
+    """
+    Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
+
+    Args:
+        path (str): Path to the Markdown file to be converted.
+        output_dir (str): Directory where the generated PDF file will be saved.
+                          Defaults to "converted_pdfs/".
+    """
+
+    pdf = MarkdownPdf(toc_level=2)
+
+    with open(path, "r", encoding="utf-8") as file:
+        content = file.read()
+
+    pdf.add_section(Section(content))
+    pdf.meta["author"] = "NotTheRightGuy"
+
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(
+        output_dir, os.path.splitext(os.path.basename(path))[0] + ".pdf"
+    )
+
+    pdf.save(output_path)
+
+
 
 if __name__ == "__main__":
     scrap_website("http://www.example.com", "Example")
