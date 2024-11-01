@@ -20,7 +20,9 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 if not logger.handlers:
-    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(process)d | %(message)s")
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)s | %(process)d | %(message)s"
+    )
 
     file_handler = logging.FileHandler("scraping.log")
     file_handler.setLevel(logging.INFO)

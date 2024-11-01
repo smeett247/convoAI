@@ -9,8 +9,10 @@ import SpeechRecognition, {
 import { Typewriter } from "react-simple-typewriter";
 import Markdown from "react-markdown";
 import AiCard from "../components/AiCard";
-import { HOST } from "../../config";
+import { HOST, POCKETBASE } from "../../config";
 import { Info } from "../utils/chatBotInfo";
+import toTitleCase from "../utils/toTitleCase";
+import toast from "react-hot-toast";
 
 interface MessageProp {
   text: string;
@@ -24,6 +26,39 @@ export default function Chatbot() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [abortController, setAbortController] =
     useState<AbortController | null>(null);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const company = urlParams.get("company");
+
+  const [companyInfo, setCompanyInfo] = useState({
+    id: "",
+    vectorStoreId: "",
+    assistantID: "",
+    img: null,
+    persona: "",
+    customer_name: "",
+  });
+
+  if (!company) {
+    window.location.href = "/form";
+    return;
+  }
+
+  useEffect(() => {
+    fetch(`${HOST}/companies/${company}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCompanyInfo({
+          ...companyInfo,
+          vectorStoreId: data.vector_store_id,
+          assistantID: data.assistant_id,
+          img: data.logo,
+          persona: data.persona,
+          customer_name: data.customer_name,
+          id: data.id,
+        });
+      });
+  }, []);
 
   const {
     finalTranscript,
@@ -67,7 +102,11 @@ export default function Chatbot() {
 
     fetch(`${HOST}/ask`, {
       method: "POST",
-      body: JSON.stringify({ question: inputPrompt }),
+      body: JSON.stringify({
+        prompt: inputPrompt,
+        company_name: company,
+        persona: companyInfo.persona,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -75,6 +114,7 @@ export default function Chatbot() {
     })
       .then((res) => {
         if (!res.ok) {
+          toast.error("Something went wrong!");
           throw new Error("Network response was not ok");
         }
         return res.json();
@@ -107,12 +147,16 @@ export default function Chatbot() {
   return (
     <main className="h-screen grid grid-cols-[12vw_1fr] font-mont max-md:grid-cols-1 w-screen">
       <aside className="flex flex-col py-6 px-4 border-r items-center justify-between max-md:hidden">
-        <img src="/alunet.png" alt="Alunet Systems Logo" className="w-40 m-2" />
+        <img
+          src={`${POCKETBASE}/api/files/companies/${companyInfo.id}/${companyInfo.img}`}
+          alt="Alunet Systems Logo"
+          className="w-40 m-2"
+        />
         <div className="w-full bg-fill/[0.1] h-14 rounded-md border gap-4 flex items-center px-2">
           <div className="size-10 bg-fill rounded-full"></div>
           <div>
             <p className="font-semibold text-[2vw] sm:text-[0.4vw] md:text-[0.5vw] lg:text-[0.6vw] xl:text-[0.8vw] flex">
-              Tim
+              {companyInfo.customer_name}
             </p>
             <p className="text-[2vw] sm:text-[0.3vw] md:text-[0.4vw] lg:text-[0.5vw] xl:text-[0.6vw]">
               Customer
@@ -126,7 +170,7 @@ export default function Chatbot() {
           {messages.length === 0 ? (
             <>
               <p className="font-bold text-3xl py-4 px-8 max-md:px-4 max-md:py-2 max-md:text-xl text-primary bg-white rounded-full border">
-                Aluna AI
+                {toTitleCase(company.split("_").join(" "))} AI
               </p>
               <motion.div
                 className="text-3xl font-medium mt-8 max-md:mt-3 opacity-80 max-md:text-lg"

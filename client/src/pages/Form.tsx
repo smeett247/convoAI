@@ -2,7 +2,6 @@ import { useState, useContext, useEffect, forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { HOST } from "../../config";
 import {
-  Container,
   Typography,
   TextField,
   Button,
@@ -10,18 +9,11 @@ import {
   InputLabel,
   FormControl,
   Select,
-  Snackbar,
   IconButton,
   InputAdornment,
   CircularProgress,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import MuiAlert from "@mui/material/Alert";
 import { ThemeProvider, ThemeContext } from "../context/ThemeContext.jsx";
 import Header from "../components/Header.jsx";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -29,15 +21,10 @@ import Ellipse1 from "../assets/images/Ellipse1.svg";
 import Ellipse2 from "../assets/images/Ellipse2.svg";
 import Ellipse3 from "../assets/images/Ellipse3.svg";
 import Ellipse4 from "../assets/images/Ellipse4.svg";
-
-const Alert = forwardRef((props, ref) => (
-  <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
-));
+import toast from "react-hot-toast";
 
 function Form() {
   const { theme } = useContext(ThemeContext);
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     company_url: "",
     company_name: "",
@@ -47,36 +34,27 @@ function Form() {
     attachments: [],
     customer_name: "",
   });
-
-  const [errors, setErrors] = useState({});
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [showDialog, setShowDialog] = useState(false);
-
-  const handleRemoveWebsiteField = (index) => {
+  const handleRemoveWebsiteField = (index: number) => {
     const newWebsites = formData.additionalWebsites.filter(
       (_, i) => i !== index
     );
     setFormData({ ...formData, additionalWebsites: newWebsites });
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleFileChange = (e) => {
+  const handleFileChange = (e: any) => {
     const file = e.target.files[0];
     if (file && ["image/jpeg", "image/jpg", "image/png"].includes(file.type)) {
       setFormData({ ...formData, logo: file });
     } else {
-      setSnackbarMessage("Please upload a valid image file (JPG, JPEG, PNG)");
-      setOpenSnackbar(true);
+      toast.error(
+        "Invalid Image Format. Supported File format are : jpeg, jpg and png"
+      );
     }
   };
 
-  const handleAttachmentsChange = (e) => {
+  const handleAttachmentsChange = (e: any) => {
     const files = Array.from(e.target.files);
     const validFiles = files.filter((file) =>
       [
@@ -84,21 +62,18 @@ function Form() {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         "application/vnd.openxmlformats-officedocument.presentationml.presentation",
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        //@ts-ignore
       ].includes(file.type)
     );
 
     if (validFiles.length === files.length) {
+      //@ts-ignore
       setFormData({ ...formData, attachments: validFiles });
     } else {
-      setSnackbarMessage(
-        "Please upload valid attachments (PDF, Word, PowerPoint, Excel)"
+      toast.error(
+        "Invalid attachment format, allowed formats are docx, pdf and ppt"
       );
-      setOpenSnackbar(true);
     }
-  };
-
-  const handleCloseSnackbar = () => {
-    setOpenSnackbar(false);
   };
 
   const handleAddWebsiteField = () => {
@@ -108,85 +83,97 @@ function Form() {
     });
   };
 
+  //@ts-ignore
   const handleWebsiteChange = (index, value) => {
     const newWebsites = [...formData.additionalWebsites];
     newWebsites[index] = value;
     setFormData({ ...formData, additionalWebsites: newWebsites });
   };
 
-  // Polling function to check scraping status
+  //@ts-ignore
   const checkScrapingStatus = async (companyName) => {
     try {
-      const response = await fetch(`${HOST}/companies/${companyName}`);
+      const response = await fetch(`${HOST}/scraping_status/${companyName}`);
       const result = await response.json();
-
-      if (response.ok && result.scraping_complete) {
+      if (response.ok && result.status != "In Progress") {
         setLoading(false);
-        setShowDialog(true);
+        toast(
+          (t) => (
+            <span>
+              Scraping session completed. Proceed to Chatbot?
+              <br />
+              <button
+                onClick={() => {
+                  navigate(
+                    `/chatbot?company=${formData.company_name
+                      .toLowerCase()
+                      .replace(" ", "_")}`
+                  );
+                  toast.dismiss(t.id);
+                }}
+                className="bg-black p-2 font-bold text-white mt-2"
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => toast.dismiss(t.id)}
+                className="bg-red-600 p-2 font-bold text-white mt-2 ml-2"
+              >
+                No
+              </button>
+            </span>
+          ),
+          {
+            duration: 60000,
+          }
+        );
       } else {
-        setTimeout(() => checkScrapingStatus(companyName), 3000);
+        //* Handle Progress Bar here
+        setTimeout(() => checkScrapingStatus(companyName), 5000);
       }
     } catch (error) {
       console.error("Error checking scraping status:", error);
       setLoading(false);
-      setSnackbarMessage("Failed to check scraping status.");
-      setOpenSnackbar(true);
+      toast.error("Something went wrong while checking scraping status");
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    let validationErrors = {};
-    if (!formData.company_name) {
-      validationErrors.company_name = "Company name is required";
-    }
-    if (!formData.persona) {
-      validationErrors.persona = "Persona selection is required";
-    }
+    const data = new FormData();
+    data.append("company_url", formData.company_url);
+    data.append("company_name", formData.company_name);
+    if (formData.logo) data.append("logo", formData.logo);
+    data.append("additional_websites", formData.additionalWebsites.join(", "));
+    data.append("persona", formData.persona);
+    if (formData.customer_name)
+      data.append("customer_name", formData.customer_name);
+    formData.attachments.forEach((file) => data.append("attachments", file));
 
-    setErrors(validationErrors);
+    setLoading(true);
 
-    if (Object.keys(validationErrors).length === 0) {
-      const data = new FormData();
-      data.append("company_url", formData.company_url);
-      data.append("company_name", formData.company_name);
-      if (formData.logo) data.append("logo", formData.logo);
-      formData.additionalWebsites.forEach((url) => {
-        if (url) data.append("additional_websites", url);
+    try {
+      const response = await fetch(`${HOST}/scrap`, {
+        method: "POST",
+        body: data,
       });
-      data.append("persona", formData.persona);
-      if (formData.customer_name)
-        data.append("customer_name", formData.customer_name);
-      formData.attachments.forEach((file) => data.append("attachments", file));
 
-      setLoading(true);
+      if (response.ok) {
+        toast.success("Form saved, starting scraping session");
 
-      try {
-        const response = await fetch(`${HOST}/scrap`, {
-          method: "POST",
-          body: data,
-        });
-
-        if (response.ok) {
-          setSnackbarMessage(
-            "Form submitted successfully! Starting scraping session!"
-          );
-          const result = await response.json();
-          console.log("Response from server:", result);
-          setLoading(false);
-        } else {
-          const result = await response.json();
-          setSnackbarMessage(`Error: ${result.message}`);
-          setLoading(false);
-        }
-      } catch (error) {
-        console.log(error);
-        setSnackbarMessage("Error: Failed to submit form. Please try again.");
+        checkScrapingStatus(
+          formData.company_name.toLowerCase().replace(" ", "_")
+        );
+      } else {
+        const result = await response.json();
+        toast.error(JSON.stringify(result));
         setLoading(false);
-      } finally {
-        setOpenSnackbar(true);
       }
+    } catch (error) {
+      console.log(error);
+      toast.error(error as any);
+      setLoading(false);
     }
   };
 
@@ -254,10 +241,9 @@ function Form() {
       <div
         style={{
           marginTop: "50px",
-          marginTop: "5vh", // Adjust for spacing
           backgroundColor: theme.backgroundColor,
           borderRadius: "8px",
-          padding: "2vh 3vw", // Responsive padding
+          padding: "2vh 3vw",
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
           border: "solid 1px #d7d7d7",
           fontFamily: "Montserrat",
@@ -287,41 +273,7 @@ function Form() {
             onChange={(e) =>
               setFormData({ ...formData, company_url: e.target.value })
             }
-            error={!!errors.company_url}
-            helperText={errors.company_url}
             margin="normal"
-            InputLabelProps={{
-              shrink: true,
-              style: {
-                color: errors.company_url ? "red" : "#243a57",
-                fontWeight: "550",
-                fontFamily: "Montserrat",
-              },
-            }}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: errors.company_url ? "red" : "#d7d7d7",
-                  borderRadius: "8px",
-                },
-                "&:hover fieldset": {
-                  borderColor: errors.company_url ? "red" : "#ff9800",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: errors.company_url ? "red" : "#243a57",
-                },
-              },
-              "& .MuiOutlinedInput-input": {
-                color: "#243a57",
-                backgroundColor: "transparent",
-              },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                backgroundColor: "transparent",
-              },
-              "&:hover": {
-                backgroundColor: "transparent",
-              },
-            }}
           />
 
           <TextField
@@ -333,41 +285,6 @@ function Form() {
             onChange={(e) =>
               setFormData({ ...formData, company_name: e.target.value })
             }
-            error={!!errors.company_name}
-            helperText={errors.company_name}
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-              style: {
-                color: errors.company_name ? "red" : "#243a57",
-                fontWeight: "550",
-                fontFamily: "Montserrat",
-              },
-            }}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: errors.company_url ? "red" : "#d7d7d7",
-                  borderRadius: "8px",
-                },
-                "&:hover fieldset": {
-                  borderColor: errors.company_url ? "red" : "#ff9800",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: errors.company_url ? "red" : "#243a57",
-                },
-              },
-              "& .MuiOutlinedInput-input": {
-                color: "#243a57", // Input text color
-                backgroundColor: "transparent",
-              },
-              "& .MuiOutlinedInput-root.Mui-focused": {
-                backgroundColor: "transparent",
-              },
-              "&:hover": {
-                backgroundColor: "transparent",
-              },
-            }}
           />
 
           <TextField
@@ -385,6 +302,7 @@ function Form() {
                 fontWeight: "550",
               },
             }}
+            inputProps={{ multiple: true }}
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -428,17 +346,7 @@ function Form() {
                 placeholder="www.additional.com"
                 value={company_url}
                 onChange={(e) => handleWebsiteChange(index, e.target.value)}
-                error={!!errors[`additionalWebsites${index}`]}
-                helperText={errors[`additionalWebsites${index}`]}
                 margin="normal"
-                InputLabelProps={{
-                  shrink: true,
-                  style: {
-                    fontFamily: "Montserrat",
-                    color: "#243a57",
-                    fontWeight: "550",
-                  },
-                }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -451,46 +359,21 @@ function Form() {
                           <RemoveIcon />
                         </IconButton>
                       )}
-                      <IconButton
-                        onClick={handleAddWebsiteField}
-                        color="#243a57"
-                        size="small"
-                      >
+                      <IconButton onClick={handleAddWebsiteField} size="small">
                         <AddIcon />
                       </IconButton>
                     </InputAdornment>
                   ),
                 }}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: errors.company_url ? "red" : "#d7d7d7",
-                      borderRadius: "8px",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: errors.company_url ? "red" : "#ff9800",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: errors.company_url ? "red" : "#243a57",
-                    },
-                  },
-                  "& .MuiOutlinedInput-input": {
-                    color: "#243a57",
-                    backgroundColor: "transparent",
-                  },
-                  "& .MuiOutlinedInput-root.Mui-focused": {
-                    backgroundColor: "transparent",
-                  },
-                }}
               />
             </div>
           ))}
 
-          <FormControl fullWidth margin="normal" error={!!errors.persona}>
+          <FormControl fullWidth margin="normal">
             <InputLabel
               style={{
                 fontFamily: "Montserrat",
-                color: errors.persona ? "red" : "#243a57",
+                color: "#243a57",
                 fontWeight: "550",
               }}
               shrink
@@ -509,26 +392,6 @@ function Form() {
                   borderRadius: "8px",
                 },
               }}
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "8px",
-                  "& fieldset": {
-                    borderColor: errors.persona ? "red" : "#d7d7d7",
-                    borderRadius: "8px",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: errors.persona ? "red" : "#ff9800",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: errors.persona ? "red" : "#243a57",
-                  },
-                },
-                "& .MuiSelect-select": {
-                  padding: "12px 14px",
-                  fontFamily: "Montserrat",
-                  color: "#243a57",
-                },
-              }}
             >
               <MenuItem value="">
                 <em>Select Persona</em>
@@ -536,11 +399,6 @@ function Form() {
               <MenuItem value="Happy Helper">Happy Helper</MenuItem>
               <MenuItem value="Strict Instructor">Strict Instructor</MenuItem>
             </Select>
-            {errors.persona && (
-              <span style={{ color: "red", fontFamily: "Montserrat" }}>
-                {errors.persona}
-              </span>
-            )}
           </FormControl>
 
           <TextField
@@ -553,14 +411,6 @@ function Form() {
               setFormData({ ...formData, customer_name: e.target.value })
             }
             margin="normal"
-            InputLabelProps={{
-              shrink: true,
-              style: {
-                fontFamily: "Montserrat",
-                color: "#243a57",
-                fontWeight: "550",
-              },
-            }}
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -650,40 +500,6 @@ function Form() {
             )}
           </Button>
         </form>
-
-        <Dialog open={showDialog} onClose={() => setShowDialog(false)}>
-          <DialogTitle>Scraping Complete</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Scraping is complete. Do you want to continue with the chatbot?
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={() => setShowDialog(false)} color="primary">
-              No
-            </Button>
-            <Button
-              onClick={() => navigate("/chatbot")}
-              color="primary"
-              autoFocus
-            >
-              Yes
-            </Button>
-          </DialogActions>
-        </Dialog>
-
-        <Snackbar
-          open={openSnackbar}
-          autoHideDuration={6000}
-          onClose={() => setOpenSnackbar(false)}
-        >
-          <Alert
-            onClose={() => setOpenSnackbar(false)}
-            severity={snackbarMessage.includes("Error") ? "error" : "success"}
-          >
-            {snackbarMessage}
-          </Alert>
-        </Snackbar>
       </div>
     </div>
   );
