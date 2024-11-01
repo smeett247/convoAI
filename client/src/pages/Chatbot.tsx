@@ -9,9 +9,10 @@ import SpeechRecognition, {
 import { Typewriter } from "react-simple-typewriter";
 import Markdown from "react-markdown";
 import AiCard from "../components/AiCard";
-import { HOST } from "../../config";
+import { HOST, POCKETBASE } from "../../config";
 import { Info } from "../utils/chatBotInfo";
 import toTitleCase from "../utils/toTitleCase";
+import toast from "react-hot-toast";
 
 interface MessageProp {
   text: string;
@@ -30,6 +31,7 @@ export default function Chatbot() {
   const company = urlParams.get("company");
 
   const [companyInfo, setCompanyInfo] = useState({
+    id: "",
     vectorStoreId: "",
     assistantID: "",
     img: null,
@@ -46,7 +48,15 @@ export default function Chatbot() {
     fetch(`${HOST}/companies/${company}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setCompanyInfo({
+          ...companyInfo,
+          vectorStoreId: data.vector_store_id,
+          assistantID: data.assistant_id,
+          img: data.logo,
+          persona: data.persona,
+          customer_name: data.customer_name,
+          id: data.id,
+        });
       });
   }, []);
 
@@ -92,7 +102,11 @@ export default function Chatbot() {
 
     fetch(`${HOST}/ask`, {
       method: "POST",
-      body: JSON.stringify({ question: inputPrompt }),
+      body: JSON.stringify({
+        prompt: inputPrompt,
+        company_name: company,
+        persona: companyInfo.persona,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -100,6 +114,7 @@ export default function Chatbot() {
     })
       .then((res) => {
         if (!res.ok) {
+          toast.error("Something went wrong!");
           throw new Error("Network response was not ok");
         }
         return res.json();
@@ -132,7 +147,11 @@ export default function Chatbot() {
   return (
     <main className="h-screen grid grid-cols-[12vw_1fr] font-mont max-md:grid-cols-1 w-screen">
       <aside className="flex flex-col py-6 px-4 border-r items-center justify-between max-md:hidden">
-        <img src="/alunet.png" alt="Alunet Systems Logo" className="w-40 m-2" />
+        <img
+          src={`${POCKETBASE}/api/files/companies/${companyInfo.id}/${companyInfo.img}`}
+          alt="Alunet Systems Logo"
+          className="w-40 m-2"
+        />
         <div className="w-full bg-fill/[0.1] h-14 rounded-md border gap-4 flex items-center px-2">
           <div className="size-10 bg-fill rounded-full"></div>
           <div>

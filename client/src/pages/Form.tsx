@@ -48,7 +48,9 @@ function Form() {
     if (file && ["image/jpeg", "image/jpg", "image/png"].includes(file.type)) {
       setFormData({ ...formData, logo: file });
     } else {
-      toast.error("Invalid Image Format");
+      toast.error(
+        "Invalid Image Format. Supported File format are : jpeg, jpg and png"
+      );
     }
   };
 

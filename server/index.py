@@ -8,6 +8,7 @@ from fastapi import (
     BackgroundTasks,
     File,
     Body,
+    HTTPException,
 )
 from fastapi.middleware.cors import CORSMiddleware
 from utils import (
@@ -281,6 +282,28 @@ async def get_scraping_status(company_name: str):
     response_data["overall_elapsed"] = overall_elapsed
 
     return response_data
+
+
+@app.get("/companies/{company_name}")
+async def get_company(company_name: str):
+    try:
+        companies = db.collection("companies").get_full_list()
+        company = next((c for c in companies if c.company_name == company_name), None)
+        if company:
+            return company
+        else:
+            raise HTTPException(status_code=404, detail="Company not found.")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/companies")
+async def get_all_companies():
+    try:
+        companies = db.collection("companies").get_full_list()
+        return [company for company in companies]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.post("/ask")
