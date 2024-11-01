@@ -78,6 +78,14 @@ In the `pocketbase` directory, run the provided Pocketbase executable:
 ./pocketbase serve # On Windows use pocketbase.exe serve
 ```
 
+For Admin page navigate to `http://localhost:8090/_`
+Admin Password will be
+
+```bash
+email : admin@email.com
+password: password12345
+```
+
 ### 4. Running Everything Together
 
 After starting each component, ensure they are correctly connected:
