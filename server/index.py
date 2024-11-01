@@ -371,7 +371,7 @@ async def get_company(company_name: str):
         else:
             raise HTTPException(status_code=404, detail="Company not found.")
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=404, detail=str(e))
 
 
 @app.get("/companies")

@@ -45,21 +45,44 @@ export default function Chatbot() {
   }
 
   useEffect(() => {
-    fetch(`${HOST}/companies/${company}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCompanyInfo({
-          ...companyInfo,
-          vectorStoreId: data.vector_store_id,
-          assistantID: data.assistant_id,
-          img: data.logo,
-          persona: data.persona,
-          customer_name: data.customer_name,
-          id: data.id,
-        });
-      });
-  }, []);
+    let isMounted = true;
 
+    const fetchCompanyData = async () => {
+      try {
+        const res = await fetch(`${HOST}/companies/${company}`);
+
+        if (res.status == 404) {
+          window.location.href = "/form";
+          return;
+        }
+
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted) {
+            setCompanyInfo((prevInfo) => ({
+              ...prevInfo,
+              vectorStoreId: data.vector_store_id,
+              assistantID: data.assistant_id,
+              img: data.logo,
+              persona: data.persona,
+              customer_name: data.customer_name,
+              id: data.id,
+            }));
+          }
+        } else {
+          window.location.href = "/form";
+        }
+      } catch (error) {
+        console.error("Error fetching company data:", error);
+      }
+    };
+
+    fetchCompanyData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [company]);
   const {
     finalTranscript,
     resetTranscript,

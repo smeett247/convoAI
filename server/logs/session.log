@@ -1,0 +1,166 @@
+2024-11-01 13:20:01,526 | INFO | 9175 | Creating vector store and assistant id for new company: tech_mahindra
+2024-11-01 13:20:01,973 | INFO | 9175 | Vector ID generated for tech_mahindra
+2024-11-01 13:20:02,508 | INFO | 9175 | Assistant ID generated for tech_mahindra
+2024-11-01 13:20:02,508 | INFO | 9175 | Converting attachments to PDF format
+2024-11-01 13:20:02,509 | INFO | 9175 | Uploading attachments to vector store to ID vs_1mz14ANpjgiGO5ZEz7oElP3v
+2024-11-01 13:20:14,436 | INFO | 9175 | ['/mnt/d/Programming/convoai/server/temp/attachments/digital-experience-simplified.pdf'] got uploded to vector store with id vs_1mz14ANpjgiGO5ZEz7oElP3v
+2024-11-01 13:20:14,460 | INFO | 9175 | Starting Scraping task on background thread
+2024-11-01 13:20:14,462 | INFO | 9175 | Sending scraping begun response to client
+2024-11-01 13:20:14,464 | INFO | 9175 | Starting Scraping Session with Timeout at 25 seconds
+2024-11-01 13:20:14,464 | INFO | 9175 | Task started for https://www.techmahindra.com/ at 2024-11-01 13:20:14.464334
+2024-11-01 13:20:14,471 | INFO | 9188 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-01 13:20:14.471178
+2024-11-01 13:20:14,472 | INFO | 9188 | Started Scraping from https://www.techmahindra.com/
+2024-11-01 13:20:14,740 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/
+2024-11-01 13:20:14,921 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-portfolio-companies/
+2024-11-01 13:20:15,105 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/
+2024-11-01 13:20:15,278 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/ways-working/
+2024-11-01 13:20:15,552 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/energy-and-utilities/
+2024-11-01 13:20:15,702 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation'
+Redirect location: 'https://www.techmahindra.com/about-us/tech-mahindra-foundation/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:15,876 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/
+2024-11-01 13:20:16,065 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/rise/
+2024-11-01 13:20:16,226 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/
+2024-11-01 13:20:16,411 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/
+2024-11-01 13:20:16,624 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/
+2024-11-01 13:20:16,812 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/indus-project/
+2024-11-01 13:20:16,974 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/
+2024-11-01 13:20:17,163 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/
+2024-11-01 13:20:17,420 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/oil-and-gas/
+2024-11-01 13:20:17,588 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/
+2024-11-01 13:20:17,760 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/careers/techm-way/
+2024-11-01 13:20:17,957 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/#main-content
+2024-11-01 13:20:18,130 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/
+2024-11-01 13:20:18,357 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/sap/
+2024-11-01 13:20:18,578 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/contact-us/
+2024-11-01 13:20:18,819 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/
+2024-11-01 13:20:18,988 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/
+2024-11-01 13:20:19,169 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/techmverse/
+2024-11-01 13:20:19,335 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/analyst-insights/
+2024-11-01 13:20:19,602 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/network-services/
+2024-11-01 13:20:19,784 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-brand/
+2024-11-01 13:20:19,956 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/
+2024-11-01 13:20:20,122 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/news/
+2024-11-01 13:20:20,402 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/blockchain/
+2024-11-01 13:20:20,609 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty'
+Redirect location: 'https://www.techmahindra.com/about-us/individual-social-responsibility/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:20,769 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/
+2024-11-01 13:20:20,929 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/privacy-policy/
+2024-11-01 13:20:21,102 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/application-development-maintenance-service/
+2024-11-01 13:20:21,270 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/events/
+2024-11-01 13:20:21,512 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/
+2024-11-01 13:20:21,713 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/ttlh/
+2024-11-01 13:20:21,892 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/alliance/servicenow/
+2024-11-01 13:20:22,053 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/accessibility-statement/
+2024-11-01 13:20:22,224 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/
+2024-11-01 13:20:22,451 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/
+2024-11-01 13:20:22,622 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/sitemap
+2024-11-01 13:20:22,802 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/strategy-and-consulting-services/
+2024-11-01 13:20:22,974 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/salesforce/
+2024-11-01 13:20:23,180 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/
+2024-11-01 13:20:23,397 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/next-gen-contact-center-framework-canadian-retailer/
+2024-11-01 13:20:23,566 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/
+2024-11-01 13:20:23,759 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/pega/
+2024-11-01 13:20:23,937 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/events/cxo-roundtable-shaping-future-networks-ai-and-ml-autonomous-operations/
+2024-11-01 13:20:24,204 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/
+2024-11-01 13:20:24,407 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/
+2024-11-01 13:20:24,591 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/hi-tech/
+2024-11-01 13:20:24,779 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/data-analytics/
+2024-11-01 13:20:24,970 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions'
+Redirect location: 'https://www.techmahindra.com/about-us/mahindra-educational-institutions/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:25,117 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/careers/diversity-inclusion/
+2024-11-01 13:20:25,284 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/views/
+2024-11-01 13:20:25,429 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Applications'
+Redirect location: 'https://www.techmahindra.com/search/?search=Applications'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:25,567 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
+2024-11-01 13:20:25,734 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/
+2024-11-01 13:20:25,958 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/performance-engineering/
+2024-11-01 13:20:26,159 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/#vbp-carousel-3157
+2024-11-01 13:20:26,340 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/investors/
+2024-11-01 13:20:26,497 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/
+2024-11-01 13:20:26,624 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search'
+Redirect location: 'https://www.techmahindra.com/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:26,861 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/banking-financial-services/
+2024-11-01 13:20:27,070 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/
+2024-11-01 13:20:27,215 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Locations'
+Redirect location: 'https://www.techmahindra.com/search/?search=Locations'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:27,373 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
+2024-11-01 13:20:27,550 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-and-it-strategy-roadmap-upcoming-middle-eastern-smart-city/
+2024-11-01 13:20:27,734 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/intelligent-automation/
+2024-11-01 13:20:27,965 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/terms-of-use/
+2024-11-01 13:20:28,118 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/
+2024-11-01 13:20:28,290 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/awards/
+2024-11-01 13:20:28,499 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-infrastructure-services/
+2024-11-01 13:20:28,741 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/
+2024-11-01 13:20:28,973 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/
+2024-11-01 13:20:29,124 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/
+2024-11-01 13:20:29,286 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-data-platform-telia/
+2024-11-01 13:20:29,417 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Mahindra'
+Redirect location: 'https://www.techmahindra.com/search/?search=Mahindra'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:29,574 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/
+2024-11-01 13:20:29,835 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/
+2024-11-01 13:20:30,030 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/digital-supply-chain/
+2024-11-01 13:20:30,243 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/engineering-services/
+2024-11-01 13:20:30,414 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/careers/
+2024-11-01 13:20:30,626 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/
+2024-11-01 13:20:30,829 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/rcg/
+2024-11-01 13:20:31,020 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/sustainability/
+2024-11-01 13:20:31,233 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/healthcare-life-sciences/
+2024-11-01 13:20:31,469 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/
+2024-11-01 13:20:31,640 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/
+2024-11-01 13:20:31,792 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/
+2024-11-01 13:20:31,978 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/
+2024-11-01 13:20:32,119 | ERROR | 9188 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Jobs'
+Redirect location: 'https://www.techmahindra.com/search/?search=Jobs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-01 13:20:32,267 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/scale-at-speed/
+2024-11-01 13:20:32,504 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/alliance/
+2024-11-01 13:20:32,685 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/
+2024-11-01 13:20:32,858 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/industries/professional-services/
+2024-11-01 13:20:33,026 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/products-and-platforms/
+2024-11-01 13:20:33,178 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/
+2024-11-01 13:20:34,456 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/customer-speak/
+2024-11-01 13:20:34,645 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/testing-services/
+2024-11-01 13:20:34,808 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/
+2024-11-01 13:20:34,966 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/cookie-policy/
+2024-11-01 13:20:35,126 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/
+2024-11-01 13:20:35,353 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/about-us/leadership/
+2024-11-01 13:20:35,520 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/resources/access-control-management-government-agency/
+2024-11-01 13:20:35,697 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/
+2024-11-01 13:20:35,891 | INFO | 9188 | Markdown Report Generated for https://www.techmahindra.com/services/application-services/
+2024-11-01 13:20:35,913 | INFO | 9188 | Completed scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-01 13:20:35.913541, time taken: 21.442363 seconds
+2024-11-01 13:20:36,494 | INFO | 9175 | Scraping https://www.techmahindra.com/ for tech_mahindra completed in 21.442363 seconds
+2024-11-01 13:20:36,494 | INFO | 9175 | Starting conversion of parsed report from markdown to PDF
+2024-11-01 13:20:36,851 | INFO | 9175 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-01 13:20:36,852 | INFO | 9175 | Conversion of report completed and uploaded to vector store with id vs_1mz14ANpjgiGO5ZEz7oElP3v
+2024-11-01 13:20:43,580 | INFO | 9175 | ['/mnt/d/Programming/convoai/server/temp/pdf/techmahindra.pdf'] got uploded to vector store with id vs_1mz14ANpjgiGO5ZEz7oElP3v
+2024-11-01 13:20:43,580 | INFO | 9175 | Removing Markdown file generated for tech_mahindra
+2024-11-01 13:20:52,254 | INFO | 9175 | 
+Question : Who are you?
+Company Name : tech_mahindra
+Persona : Happy Helper
+
+
+2024-11-01 13:20:55,944 | INFO | 9175 | Generated Answer: I am a product support assistant for Tech Mahindra, here to help you with any questions or information you need regarding our products and services. If you have specific inquiries, feel free to ask!
+2024-11-01 13:21:45,577 | INFO | 9175 | 
+Question : What is ServiceNow?
+Company Name : tech_mahindra
+Persona : Happy Helper
+
+
+2024-11-01 13:21:53,781 | INFO | 9175 | Generated Answer: ServiceNow is a digital workflow platform designed to elevate customer experiences by automating and managing various business processes. Tech Mahindra, as a recognized partner of ServiceNow, offers end-to-end solutions that utilize this platform to enhance productivity and operational efficiency across industries.
+
+The platform provides various capabilities like low-touch automation through catalog-driven operations, data integration, real-time analytics, and personalized user experiences. It is particularly beneficial for organizations looking to improve their customer service, manage sustainability risks, and connect various digital workflows. Through its collaboration with ServiceNow, Tech Mahindra aims to assist enterprises in navigating their digital transformation journeys by integrating IT services, enhancing customer engagement, and enabling proactive management of operational risks.
+2024-11-01 13:22:27,024 | INFO | 9175 | 
+Question : How many model options do you have in Delivery as Service?
+Company Name : tech_mahindra
+Persona : Happy Helper
+
+
+2024-11-01 13:22:33,257 | INFO | 9175 | Generated Answer: Tech Mahindra's 'Delivery-as-a-Service' model offers four model options to choose from. This framework supports the ServiceNow platform and leverages extensive knowledge resources, a use-case repository, and specialist project teams. If you need more detailed information about each model option, feel free to ask!
