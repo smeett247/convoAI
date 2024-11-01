@@ -18,7 +18,9 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 if not logger.handlers:
-    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(process)d | %(message)s")
+    formatter = logging.Formatter(
+        "%(asctime)s | %(levelname)s | %(process)d | %(message)s"
+    )
 
     file_handler = logging.FileHandler("scraping.log")
     file_handler.setLevel(logging.INFO)
@@ -357,8 +359,6 @@ def scrap_website(company_url: str, company_name: str):
     logging.info("Attachments converted to PDFs.")
     logging.info("All conversions completed.")
 
-import re
-
 
 def validate_website(website: str) -> bool:
     """
@@ -465,6 +465,7 @@ def upload_pdf_to_vector_store(
             raise Exception("File upload failed.")
     except Exception as e:
         print("Something went wrong: " + e)
+
 
 if __name__ == "__main__":
     scrap_website("http://www.example.com", "Example")

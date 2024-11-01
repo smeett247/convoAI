@@ -11,6 +11,7 @@ import Markdown from "react-markdown";
 import AiCard from "../components/AiCard";
 import { HOST } from "../../config";
 import { Info } from "../utils/chatBotInfo";
+import toTitleCase from "../utils/toTitleCase";
 
 interface MessageProp {
   text: string;
@@ -24,6 +25,30 @@ export default function Chatbot() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [abortController, setAbortController] =
     useState<AbortController | null>(null);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const company = urlParams.get("company");
+
+  const [companyInfo, setCompanyInfo] = useState({
+    vectorStoreId: "",
+    assistantID: "",
+    img: null,
+    persona: "",
+    customer_name: "",
+  });
+
+  if (!company) {
+    window.location.href = "/form";
+    return;
+  }
+
+  useEffect(() => {
+    fetch(`${HOST}/companies/${company}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
 
   const {
     finalTranscript,
@@ -112,7 +137,7 @@ export default function Chatbot() {
           <div className="size-10 bg-fill rounded-full"></div>
           <div>
             <p className="font-semibold text-[2vw] sm:text-[0.4vw] md:text-[0.5vw] lg:text-[0.6vw] xl:text-[0.8vw] flex">
-              Tim
+              {companyInfo.customer_name}
             </p>
             <p className="text-[2vw] sm:text-[0.3vw] md:text-[0.4vw] lg:text-[0.5vw] xl:text-[0.6vw]">
               Customer
@@ -126,7 +151,7 @@ export default function Chatbot() {
           {messages.length === 0 ? (
             <>
               <p className="font-bold text-3xl py-4 px-8 max-md:px-4 max-md:py-2 max-md:text-xl text-primary bg-white rounded-full border">
-                Aluna AI
+                {toTitleCase(company.split("_").join(" "))} AI
               </p>
               <motion.div
                 className="text-3xl font-medium mt-8 max-md:mt-3 opacity-80 max-md:text-lg"
