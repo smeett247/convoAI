@@ -295,8 +295,17 @@ function Form() {
             type="file"
             label="Company Logo"
             variant="outlined"
-            onChange={handleFileChange}
+            onChange={handleAttachmentsChange}
             margin="normal"
+            InputLabelProps={{
+              shrink: true,
+              style: {
+                fontFamily: "Montserrat",
+                color: "#243a57",
+                fontWeight: "550",
+              },
+            }}
+            inputProps={{ multiple: true }}
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
