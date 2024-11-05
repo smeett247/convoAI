@@ -276,6 +276,30 @@ function Form() {
               setFormData({ ...formData, company_url: e.target.value })
             }
             margin="normal"
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "#d7d7d7",
+                  borderRadius: "8px",
+                },
+                "&:hover fieldset": {
+                  borderColor: "#ff9800",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#243a57",
+                },
+              },
+              "& .MuiOutlinedInput-input": {
+                color: "#243a57",
+                backgroundColor: "transparent",
+              },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                backgroundColor: "transparent",
+              },
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            }}
           />
 
           <TextField
@@ -287,6 +311,30 @@ function Form() {
             onChange={(e) =>
               setFormData({ ...formData, company_name: e.target.value })
             }
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "#d7d7d7",
+                  borderRadius: "8px",
+                },
+                "&:hover fieldset": {
+                  borderColor: "#ff9800",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#243a57",
+                },
+              },
+              "& .MuiOutlinedInput-input": {
+                color: "#243a57",
+                backgroundColor: "transparent",
+              },
+              "& .MuiOutlinedInput-root.Mui-focused": {
+                backgroundColor: "transparent",
+              },
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            }}
           />
 
           <TextField
@@ -294,8 +342,17 @@ function Form() {
             type="file"
             label="Company Logo"
             variant="outlined"
-            onChange={handleFileChange}
+            onChange={handleAttachmentsChange}
             margin="normal"
+            InputLabelProps={{
+              shrink: true,
+              style: {
+                fontFamily: "Montserrat",
+                color: "#243a57",
+                fontWeight: "550",
+              },
+            }}
+            inputProps={{ multiple: true }}
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -357,6 +414,30 @@ function Form() {
                       </IconButton>
                     </InputAdornment>
                   ),
+                }}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#d7d7d7",
+                      borderRadius: "8px",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#ff9800",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#243a57",
+                    },
+                  },
+                  "& .MuiOutlinedInput-input": {
+                    color: "#243a57",
+                    backgroundColor: "transparent",
+                  },
+                  "& .MuiOutlinedInput-root.Mui-focused": {
+                    backgroundColor: "transparent",
+                  },
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                  },
                 }}
               />
             </div>
@@ -504,6 +585,30 @@ function Form() {
                 });
               }}
               margin="normal"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#d7d7d7",
+                    borderRadius: "8px",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#ff9800",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#243a57",
+                  },
+                },
+                "& .MuiOutlinedInput-input": {
+                  color: "#243a57",
+                  backgroundColor: "transparent",
+                },
+                "& .MuiOutlinedInput-root.Mui-focused": {
+                  backgroundColor: "transparent",
+                },
+                "&:hover": {
+                  backgroundColor: "transparent",
+                },
+              }}
             />
           </div>
 
