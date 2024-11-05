@@ -482,24 +482,37 @@ function Form() {
 
             {/* Conditionally render the TextField for custom instructions */}
             {formData.persona === "Custom Persona" && (
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Enter Custom Instructions"
-                variant="outlined"
-                value={formData.instructions || ""}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    instructions: e.target.value,
-                  })
-                }
-                inputProps={{
-                  sx: {
-                    borderRadius: "8px",
-                  },
-                }}
-              />
+              <>
+                <TextField
+                  fullWidth
+                  margin="normal"
+                  label="Enter Persona Name"
+                  variant="outlined"
+                  inputProps={{
+                    sx: {
+                      borderRadius: "8px",
+                    },
+                  }}
+                />
+                <TextField
+                  fullWidth
+                  margin="normal"
+                  label="Enter Custom Instructions*"
+                  variant="outlined"
+                  value={formData.instructions || ""}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      instructions: e.target.value,
+                    })
+                  }
+                  inputProps={{
+                    sx: {
+                      borderRadius: "8px",
+                    },
+                  }}
+                />
+              </>
             )}
           </FormControl>
 

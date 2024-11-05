@@ -1,7 +1,6 @@
 from openai import Client
 from markdown_pdf import MarkdownPdf, Section
 import os
-import sys
 import logging
 import subprocess
 import openai
@@ -12,6 +11,10 @@ from dotenv import load_dotenv
 import re
 import logging
 from docx2pdf import convert
+from icrawler.builtin import GoogleImageCrawler
+from typing import Optional
+from fastapi import UploadFile
+from pocketbase.client import FileUpload
 
 load_dotenv()
 
@@ -23,6 +26,7 @@ attachment_files = []
 scraping_status = dict()
 session_manager = dict()
 
+
 def create_logger():
     logs_folder = os.path.join(os.getcwd(), "logs")
     os.makedirs(logs_folder, exist_ok=True)
@@ -31,13 +35,48 @@ def create_logger():
     formatter = logging.Formatter(
         "%(asctime)s | %(levelname)s | %(process)d | %(message)s"
     )
-    file_handler = logging.FileHandler(os.path.join(os.getcwd(),"logs","session.log"))
+    file_handler = logging.FileHandler(os.path.join(os.getcwd(), "logs", "session.log"))
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
     return logger
 
+
 logger = create_logger()
+
+async def fetch_or_upload_logo(company_name: str, logo: Optional[UploadFile]) -> Optional[FileUpload]:
+    """
+    Handle logo retrieval. If logo is provided, upload it; otherwise, crawl Google Images.
+    """
+    google_crawler = GoogleImageCrawler(storage={'root_dir': os.path.join(os.getcwd(), "temp", "images")})
+    if logo:
+        logo_binary = await logo.read()
+        return FileUpload(logo.filename, logo_binary)
+    
+    logger.info(f"Attempting to retrieve logo for {company_name.replace('_', ' ')} from Google Images")
+    crawled_logo_path = None
+    try:
+        google_crawler.crawl(keyword=f"{company_name.replace('_', ' ')} Company Logo", max_num=1)
+        
+        images_dir = os.path.join(os.getcwd(), "temp", "images")
+        crawled_files = os.listdir(images_dir)
+        if crawled_files:
+            crawled_logo_path = os.path.join(images_dir, crawled_files[0])
+            logger.info(f"Logo saved at {crawled_logo_path}")
+            with open(crawled_logo_path, "rb") as f:
+                logo_binary = f.read()
+            return FileUpload("logo.jpg", logo_binary)
+        else:
+            logger.warning("No images were saved by the crawler.")
+            return None
+    except Exception as e:
+        logger.warning(f"Logo retrieval for {company_name.replace('_', ' ')} failed: {e}")
+        return None
+    finally:
+        if crawled_logo_path and os.path.exists(crawled_logo_path):
+            logger.info("Removing crawled logo from images directory")
+            os.remove(crawled_logo_path)
+
 
 def create_vector_store(client: Client, company_name: str):
     """Create a vector store for company
@@ -51,7 +90,9 @@ def create_vector_store(client: Client, company_name: str):
     return vector_store.id
 
 
-def create_assistant(client: Client, vector_store_id: str, company_name: str, instructions:str):
+def create_assistant(
+    client: Client, vector_store_id: str, company_name: str, instructions: str
+):
     """Create assistant of a company using it's previously generated vector store and company name.
 
     Args:
@@ -71,6 +112,7 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str, in
     )
     logger.info(f"Assistant ID generated for {company_name}")
     return assistant.id
+
 
 def delete_assistant_and_vs(client: Client, assistant_id: str, vector_store_id: str):
     """Delete the assistant and its corresponding vector store.
@@ -93,12 +135,12 @@ def delete_assistant_and_vs(client: Client, assistant_id: str, vector_store_id: 
         logger.info(f"Vector store with ID {vector_store_id} deleted.")
 
         return {"detail": "Assistant and vector store successfully deleted."}
-    
+
     except Exception as e:
         logger.error(f"Error deleting assistant or vector store: {str(e)}")
-        return {"detail": "Something went wrong when deleting vector store and assistant"}
-        
-        
+        return {
+            "detail": "Something went wrong when deleting vector store and assistant"
+        }
 
 
 def save_extensions(
@@ -201,7 +243,7 @@ def generate_page_report(url: str, content: bytes, company_name: str):
 
     if report_filepath_md not in markdown_files:
         markdown_files.append(report_filepath_md)
-    
+
     logger.info(f"Markdown Report Generated for {url}")
 
 
@@ -249,7 +291,11 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
         content_type = r.headers.get("Content-Type", "").lower()
         if any(url.lower().endswith(f".{ext}") for ext in attachment_extensions):
             save_extensions(
-                url, r.content, os.path.join(os.getcwd(),"temp","attachments"), attachment_extensions, company_name
+                url,
+                r.content,
+                os.path.join(os.getcwd(), "temp", "attachments"),
+                attachment_extensions,
+                company_name,
             )
             continue
 
@@ -275,7 +321,9 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
         urls_to_scrape.extend(new_urls)
 
 
-def convert_markdown_to_pdf(path: str, output_dir: str = os.path.join(os.getcwd(),"temp","pdf")):
+def convert_markdown_to_pdf(
+    path: str, output_dir: str = os.path.join(os.getcwd(), "temp", "pdf")
+):
     """
     Convert a Markdown file to PDF format with a Table of Contents and CSS styling.
 
@@ -297,11 +345,10 @@ def convert_markdown_to_pdf(path: str, output_dir: str = os.path.join(os.getcwd(
     output_path = os.path.join(
         output_dir, os.path.splitext(os.path.basename(path))[0] + ".pdf"
     )
-    
+
     pdf.save(output_path)
     logger.info(f"The markdown file at {path} got saved as pdf to {output_dir}")
     return output_path
-
 
 
 def convert_attachments_to_pdf():
@@ -336,7 +383,7 @@ def convert_attachments_to_pdf():
                     ],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
-                    timeout=30
+                    timeout=30,
                 )
                 if result.returncode == 0:
                     logger.info(f"Converted {file_path} to PDF at {pdf_file_path}")
@@ -365,7 +412,7 @@ def scrap_website(company_url: str, company_name: str):
     Returns:
         None
     """
-    max_iterations = 100 # Number of pages to scrap
+    max_iterations = 100  # Number of pages to scrap
     scrape_entire_website(company_url, company_name, max_iterations)
 
     logging.info("Scraping completed.")
@@ -472,7 +519,9 @@ def upload_pdf_to_vector_store(
             vector_store_id=vector_store_id, files=file_streams
         )
 
-        logger.info(f"{pdf_files} got uploded to vector store with id {vector_store_id}")
+        logger.info(
+            f"{pdf_files} got uploded to vector store with id {vector_store_id}"
+        )
     except Exception as e:
         logger.error(f"Caught an exception while uploading pdf to vector store : {e}")
     finally:

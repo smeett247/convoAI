@@ -24,7 +24,8 @@ from utils import (
     convert_markdown_to_pdf,
     convert_markdown_to_pdf_vs,
     delete_assistant_and_vs,
-    logger
+    fetch_or_upload_logo,
+    logger,
 )
 from openai import Client
 from dotenv import load_dotenv
@@ -40,15 +41,15 @@ import os
 load_dotenv()
 app = FastAPI()
 
-#? Creating Temporary Folders
-markdown_folder = os.path.join(os.getcwd(), "temp","markdown")
-attachments_folder = os.path.join(os.getcwd(), "temp","attachments")
+# ? Creating Temporary Folders
+markdown_folder = os.path.join(os.getcwd(), "temp", "markdown")
+attachments_folder = os.path.join(os.getcwd(), "temp", "attachments")
 converted_pdfs_folder = os.path.join(os.getcwd(), "temp", "pdf")
 
 os.makedirs(markdown_folder, exist_ok=True)
 os.makedirs(attachments_folder, exist_ok=True)
 os.makedirs(converted_pdfs_folder, exist_ok=True)
-#? 
+# ?
 
 
 ai = Client()
@@ -65,6 +66,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 def scrap_website_process(url, company_name, result_queue):
     try:
@@ -93,11 +95,11 @@ async def run_scraping_task(
     total_scraped_companies = 0
     scraping_status[company_name] = {}
     logger.info(f"Starting Scraping Session with Timeout at {timeout_seconds} seconds")
-    
+
     for url in websites:
         start_time = datetime.now()
         logger.info(f"Task started for {url} at {start_time}")
-        
+
         try:
             scraping_status[company_name][url] = {
                 "status": "In Progress",
@@ -116,12 +118,14 @@ async def run_scraping_task(
                     await asyncio.sleep(1)
                 else:
                     break
-            else: 
+            else:
                 if process.is_alive():
-                    logger.info(f"Attempting to terminate process with PID {process.pid}")
+                    logger.info(
+                        f"Attempting to terminate process with PID {process.pid}"
+                    )
                     process.terminate()
-                    process.join(timeout=5) 
-                    
+                    process.join(timeout=1)
+
                 if process.is_alive():
                     logger.info(f"Force killing process with PID {process.pid}")
                     process.kill()
@@ -186,15 +190,18 @@ async def run_scraping_task(
             input_path = os.path.join(input_dir, filename)
             pdf_path = convert_markdown_to_pdf(input_path)
             scraped_pdfs_to_upload.append(pdf_path)
-    
-    if(len(scraped_pdfs_to_upload)!=0):
-        logger.info(f"Conversion of report completed and uploaded to vector store with id {vector_store_id}")
+
+    if len(scraped_pdfs_to_upload) != 0:
+        logger.info(
+            f"Conversion of report completed and uploaded to vector store with id {vector_store_id}"
+        )
         upload_pdf_to_vector_store(ai, vector_store_id, scraped_pdfs_to_upload)
         logger.info(f"Removing Markdown file generated for {company_name}")
     else:
-        logger.info(f"No PDF found from scrapped session, something went wrong.... Skipping upload")
-        
-    
+        logger.info(
+            f"No PDF found from scrapped session, something went wrong.... Skipping upload"
+        )
+
     for filename in os.listdir(input_dir):
         if filename.endswith(".md"):
             input_path = os.path.join(input_dir, filename)
@@ -241,11 +248,8 @@ async def scrap(
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
 
-    if logo:
-        logo_binary = await logo.read()
-        logo = FileUpload(logo.filename, logo_binary)
-    else:
-        logo = None
+    logo_file = await fetch_or_upload_logo(company_name, logo)
+   
     pdf_files = []
 
     if attachments:
@@ -256,33 +260,42 @@ async def scrap(
             pdf_files.append(attachment_path)
 
     if instructions:
-        instructions = f"You are a product support assistant for the company {company_name} and you answer questions based on the files provided. Keep the following in mind while answering as well" + instructions
+        instructions = (
+            f"You are a product support assistant for the company {company_name} and you answer questions based on the files provided. Keep the following in mind while answering as well"
+            + instructions
+        )
     else:
-       instructions = f"You are a helpful product support assistant for the company {company_name} and you answer questions based on the files provided."
-    
+        instructions = f"You are a helpful product support assistant for the company {company_name} and you answer questions based on the files provided."
 
     try:
         db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
         response.status_code = status.HTTP_409_CONFLICT
-        logger.error(f"{company_name} has already been scrapped, skipping scraping for now")
+        logger.error(
+            f"{company_name} has already been scrapped, skipping scraping for now"
+        )
         return {"message": "This company has already been scraped"}
     except:
         pass
 
-    logger.info(f"Creating vector store and assistant id for new company: {company_name}")
+    logger.info(
+        f"Creating vector store and assistant id for new company: {company_name}"
+    )
     vector_store_id = create_vector_store(client=ai, company_name=company_name)
     assistant_id = create_assistant(
-        client=ai, vector_store_id=vector_store_id, company_name=company_name, instructions=instructions
+        client=ai,
+        vector_store_id=vector_store_id,
+        company_name=company_name,
+        instructions=instructions,
     )
 
     logger.info("Converting attachments to PDF format")
     pdf_files = process_files(pdf_files)
-    if(len(pdf_files) != 0):
+    if len(pdf_files) != 0:
         logger.info(f"Uploading attachments to vector store to ID {vector_store_id}")
         upload_pdf_to_vector_store(ai, vector_store_id, pdf_files)
     else:
         logger.info("No attachments found! Skipping upload step")
-        
+
     try:
         db.collection("companies").create(
             {
@@ -292,7 +305,7 @@ async def scrap(
                 "assistant_id": assistant_id,
                 "persona": persona,
                 "customer_name": customer_name,
-                "logo": logo,
+                "logo": logo_file,
                 "additional_websites": additional_websites,
             }
         )
@@ -311,7 +324,11 @@ async def scrap(
 
         logger.info("Starting Scraping task on background thread")
         background_tasks.add_task(
-            run_scraping_task, company_name, websites_to_scrape, vector_store_id, timeout_seconds
+            run_scraping_task,
+            company_name,
+            websites_to_scrape,
+            vector_store_id,
+            timeout_seconds,
         )
         logger.info("Sending scraping begun response to client")
 
@@ -388,16 +405,17 @@ async def get_all_companies():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.delete("/companies/{company_name}")
 async def delete_company(company_name: str):
     try:
         companies = db.collection("companies").get_full_list()
         company = next((c for c in companies if c.company_name == company_name), None)
-        
+
         if company:
             # Delete the assistant and vector store associated with the company
             delete_assistant_and_vs(ai, company.assistant_id, company.vector_store_id)
-            
+
             # Now delete the company from the database
             db.collection("companies").delete(company.id)
             return {"detail": f"Company '{company_name}' successfully deleted."}
@@ -406,11 +424,14 @@ async def delete_company(company_name: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.post("/ask")
 async def ask_query(
     company_name: str = Body(...), persona: str = Body(...), prompt: str = Body(...)
 ):
-    logger.info(f"\nQuestion : {prompt}\nCompany Name : {company_name}\nPersona : {persona}\n\n")
+    logger.info(
+        f"\nQuestion : {prompt}\nCompany Name : {company_name}\nPersona : {persona}\n\n"
+    )
     company_name = company_name.strip().lower().replace(" ", "_")
     key = f"{company_name}<SEP>{persona}"
     if key in session_manager:
@@ -459,7 +480,6 @@ async def ask_query(
 
     except Exception as e:
         return {"message": "Something went wrong while generating response", "error": e}
-
 
 
 if __name__ == "__main__":
