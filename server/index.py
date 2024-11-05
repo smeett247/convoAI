@@ -228,6 +228,7 @@ async def scrap(
     background_tasks: BackgroundTasks,
     company_name: str = Form(...),
     company_url: str = Form(...),
+    instructions: Optional[str] = Form(""),
     persona: str = Form(...),
     customer_name: Optional[str] = Form(""),
     logo: UploadFile = File(None),
@@ -254,6 +255,10 @@ async def scrap(
                 f.write(attachment.file.read())
             pdf_files.append(attachment_path)
 
+    if instructions:
+        instructions = f"You are a product support assistant for the company {company_name} and you answer questions based on the files provided. Keep the following in mind while answering as well" + instructions
+    else:
+       instructions = f"You are a helpful product support assistant for the company {company_name} and you answer questions based on the files provided."
     
 
     try:
@@ -267,7 +272,7 @@ async def scrap(
     logger.info(f"Creating vector store and assistant id for new company: {company_name}")
     vector_store_id = create_vector_store(client=ai, company_name=company_name)
     assistant_id = create_assistant(
-        client=ai, vector_store_id=vector_store_id, company_name=company_name
+        client=ai, vector_store_id=vector_store_id, company_name=company_name, instructions=instructions
     )
 
     logger.info("Converting attachments to PDF format")

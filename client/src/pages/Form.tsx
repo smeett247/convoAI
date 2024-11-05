@@ -33,7 +33,8 @@ function Form() {
     persona: "",
     attachments: [],
     customer_name: "",
-    timeout_seconds: "30",
+    instructions: "",
+    timeout_seconds: "0",
   });
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -146,11 +147,15 @@ function Form() {
     data.append("company_name", formData.company_name);
     if (formData.logo) data.append("logo", formData.logo);
     data.append("additional_websites", formData.additionalWebsites.join(", "));
-    data.append("timeout_seconds", formData.timeout_seconds);
+    if (formData.timeout_seconds != "0")
+      data.append("timeout_seconds", formData.timeout_seconds);
+    else data.append("timeout_seconds", "30");
+    data.append("instructions", formData.instructions);
     data.append("persona", formData.persona);
     if (formData.customer_name)
       data.append("customer_name", formData.customer_name);
     formData.attachments.forEach((file) => data.append("attachments", file));
+    console.log("Scraping begun with timout of : " + formData.timeout_seconds);
 
     setLoading(true);
 
@@ -342,7 +347,7 @@ function Form() {
             type="file"
             label="Company Logo"
             variant="outlined"
-            onChange={handleAttachmentsChange}
+            onChange={handleFileChange}
             margin="normal"
             InputLabelProps={{
               shrink: true,
@@ -472,7 +477,30 @@ function Form() {
               </MenuItem>
               <MenuItem value="Happy Helper">Happy Helper</MenuItem>
               <MenuItem value="Strict Instructor">Strict Instructor</MenuItem>
+              <MenuItem value="Custom Persona">Custom Persona</MenuItem>
             </Select>
+
+            {/* Conditionally render the TextField for custom instructions */}
+            {formData.persona === "Custom Persona" && (
+              <TextField
+                fullWidth
+                margin="normal"
+                label="Enter Custom Instructions"
+                variant="outlined"
+                value={formData.instructions || ""}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    instructions: e.target.value,
+                  })
+                }
+                inputProps={{
+                  sx: {
+                    borderRadius: "8px",
+                  },
+                }}
+              />
+            )}
           </FormControl>
 
           <TextField
@@ -557,7 +585,7 @@ function Form() {
             <TextField
               fullWidth
               type="number"
-              label="Minutes"
+              label="Timeout Minutes"
               variant="outlined"
               onChange={(e) => {
                 const mins = parseInt(e.target.value, 10) || 0;
@@ -573,7 +601,7 @@ function Form() {
             <TextField
               fullWidth
               type="number"
-              label="Seconds"
+              label="Timeout Seconds"
               variant="outlined"
               onChange={(e) => {
                 const secs = parseInt(e.target.value, 10) || 0;

@@ -51,7 +51,7 @@ def create_vector_store(client: Client, company_name: str):
     return vector_store.id
 
 
-def create_assistant(client: Client, vector_store_id: str, company_name: str):
+def create_assistant(client: Client, vector_store_id: str, company_name: str, instructions:str):
     """Create assistant of a company using it's previously generated vector store and company name.
 
     Args:
@@ -64,7 +64,7 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
     """
     assistant = client.beta.assistants.create(
         name=company_name,
-        instructions=f"You are a helpful product support assistant for the company {company_name} and you answer questions based on the files provided.",
+        instructions=instructions,
         model="gpt-4o-mini",
         tools=[{"type": "file_search"}],
         tool_resources={"file_search": {"vector_store_ids": [vector_store_id]}},
