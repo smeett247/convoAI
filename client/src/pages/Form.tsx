@@ -141,7 +141,6 @@ function Form() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
     const data = new FormData();
     data.append("company_url", formData.company_url);
     data.append("company_name", formData.company_name);
@@ -473,19 +472,40 @@ function Form() {
               },
             }}
           />
-          <TextField
-            fullWidth
-            type="text"
-            label="Timeout in Seconds"
-            variant="outlined"
-            onChange={(e) => {
-              setFormData({
-                ...formData,
-                timeout_seconds: e.target.value,
-              });
-            }}
-            margin="normal"
-          />
+          <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+            <TextField
+              fullWidth
+              type="number"
+              label="Minutes"
+              variant="outlined"
+              onChange={(e) => {
+                const mins = parseInt(e.target.value, 10) || 0;
+                const currentSeconds =
+                  parseInt(formData.timeout_seconds, 10) || 0;
+                setFormData({
+                  ...formData,
+                  timeout_seconds: String(mins * 60 + (currentSeconds % 60)),
+                });
+              }}
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              type="number"
+              label="Seconds"
+              variant="outlined"
+              onChange={(e) => {
+                const secs = parseInt(e.target.value, 10) || 0;
+                const currentMinutes =
+                  Math.floor(parseInt(formData.timeout_seconds, 10) / 60) || 0;
+                setFormData({
+                  ...formData,
+                  timeout_seconds: String(currentMinutes * 60 + secs),
+                });
+              }}
+              margin="normal"
+            />
+          </div>
 
           <Button
             variant="contained"

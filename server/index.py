@@ -23,6 +23,7 @@ from utils import (
     convert_docx_to_pdf,
     convert_markdown_to_pdf,
     convert_markdown_to_pdf_vs,
+    delete_assistant_and_vs,
     logger
 )
 from openai import Client
@@ -382,6 +383,23 @@ async def get_all_companies():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.delete("/companies/{company_name}")
+async def delete_company(company_name: str):
+    try:
+        companies = db.collection("companies").get_full_list()
+        company = next((c for c in companies if c.company_name == company_name), None)
+        
+        if company:
+            # Delete the assistant and vector store associated with the company
+            delete_assistant_and_vs(ai, company.assistant_id, company.vector_store_id)
+            
+            # Now delete the company from the database
+            db.collection("companies").delete(company.id)
+            return {"detail": f"Company '{company_name}' successfully deleted."}
+        else:
+            raise HTTPException(status_code=404, detail="Company not found.")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/ask")
 async def ask_query(

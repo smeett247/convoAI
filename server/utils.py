@@ -72,6 +72,34 @@ def create_assistant(client: Client, vector_store_id: str, company_name: str):
     logger.info(f"Assistant ID generated for {company_name}")
     return assistant.id
 
+def delete_assistant_and_vs(client: Client, assistant_id: str, vector_store_id: str):
+    """Delete the assistant and its corresponding vector store.
+
+    Args:
+        client (Client): OpenAI Client
+        assistant_id (str): ID of the assistant to delete
+        vector_store_id (str): ID of the vector store to delete
+
+    Returns:
+        dict: Confirmation message for deletion
+    """
+    try:
+        # Delete the assistant
+        client.beta.assistants.delete(assistant_id)
+        logger.info(f"Assistant with ID {assistant_id} deleted.")
+
+        # Delete the vector store
+        client.beta.vector_stores.delete(vector_store_id)
+        logger.info(f"Vector store with ID {vector_store_id} deleted.")
+
+        return {"detail": "Assistant and vector store successfully deleted."}
+    
+    except Exception as e:
+        logger.error(f"Error deleting assistant or vector store: {str(e)}")
+        return {"detail": "Something went wrong when deleting vector store and assistant"}
+        
+        
+
 
 def save_extensions(
     url: str, content: bytes, folder: str, extensions: list[str], company_name: str
