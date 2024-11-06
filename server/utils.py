@@ -39,25 +39,35 @@ def create_logger():
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
+    logger.propagate = False
     return logger
 
 
 logger = create_logger()
 
-async def fetch_or_upload_logo(company_name: str, logo: Optional[UploadFile]) -> Optional[FileUpload]:
+
+async def fetch_or_upload_logo(
+    company_name: str, logo: Optional[UploadFile]
+) -> Optional[FileUpload]:
     """
     Handle logo retrieval. If logo is provided, upload it; otherwise, crawl Google Images.
     """
-    google_crawler = GoogleImageCrawler(storage={'root_dir': os.path.join(os.getcwd(), "temp", "images")})
+    google_crawler = GoogleImageCrawler(
+        storage={"root_dir": os.path.join(os.getcwd(), "temp", "images")}
+    )
     if logo:
         logo_binary = await logo.read()
         return FileUpload(logo.filename, logo_binary)
-    
-    logger.info(f"Attempting to retrieve logo for {company_name.replace('_', ' ')} from Google Images")
+
+    logger.info(
+        f"Attempting to retrieve logo for {company_name.replace('_', ' ')} from Google Images"
+    )
     crawled_logo_path = None
     try:
-        google_crawler.crawl(keyword=f"{company_name.replace('_', ' ')} Company Logo", max_num=1)
-        
+        google_crawler.crawl(
+            keyword=f"{company_name.replace('_', ' ')} Company Logo", max_num=1
+        )
+
         images_dir = os.path.join(os.getcwd(), "temp", "images")
         crawled_files = os.listdir(images_dir)
         if crawled_files:
@@ -70,7 +80,9 @@ async def fetch_or_upload_logo(company_name: str, logo: Optional[UploadFile]) ->
             logger.warning("No images were saved by the crawler.")
             return None
     except Exception as e:
-        logger.warning(f"Logo retrieval for {company_name.replace('_', ' ')} failed: {e}")
+        logger.warning(
+            f"Logo retrieval for {company_name.replace('_', ' ')} failed: {e}"
+        )
         return None
     finally:
         if crawled_logo_path and os.path.exists(crawled_logo_path):
@@ -247,7 +259,9 @@ def generate_page_report(url: str, content: bytes, company_name: str):
     logger.info(f"Markdown Report Generated for {url}")
 
 
-def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
+def scrape_entire_website(
+    start_url: str, company_name: str, max_pages: int = 1000
+) -> None:
     """
     Scrapes a website starting from the given URL.
 
@@ -257,55 +271,61 @@ def scrape_entire_website(start_url: str, company_name: str, max_iterations=10):
     Args:
         start_url (str): The starting URL for scraping.
         company_name (str): The name of the company for organizing reports.
-        max_iterations (int, optional): Maximum number of pages to scrape. Defaults to 10.
-
-    Returns:
-        None
+        max_pages (int, optional): Maximum number of pages to scrape. Defaults to 250.
     """
-    logger.info(f"Started Scraping from {start_url}")
-    parsed_start_url = urlparse(start_url)
-    base_domain = parsed_start_url.netloc
+    if not start_url:
+        raise ValueError("Start URL cannot be empty")
 
-    urls_to_scrape = [start_url]
+    if not company_name:
+        raise ValueError("Company name cannot be empty")
+
+    if not isinstance(max_pages, int) or max_pages <= 0:
+        raise ValueError("Max iterations must be a positive integer")
+
+    base_domain = urlparse(start_url).netloc
     scraped_urls = set()
-    iteration_count = 0
+    urls_to_scrape = [start_url]
 
-    while urls_to_scrape:
-        if iteration_count >= max_iterations:
-            break
-
+    while urls_to_scrape and len(scraped_urls) < max_pages:
         url = urls_to_scrape.pop(0)
+        if not url:
+            logger.warning(f"Skipping null URL")
+            continue
+
         if url in scraped_urls:
             continue
 
         try:
-            r = httpx.get(url, verify=False, timeout=5)
-            r.raise_for_status()
-        except Exception as e:
+            response = httpx.get(url, verify=False, timeout=5)
+            response.raise_for_status()
+        except (httpx.RequestError, httpx.HTTPError) as e:
             logger.error(f"Got an error while scraping {start_url} : {e}")
             continue
 
-        scraped_urls.add(url)
-        iteration_count += 1
+        if not response:
+            logger.warning(f"Skipping empty response for {url}")
+            continue
 
-        content_type = r.headers.get("Content-Type", "").lower()
+        scraped_urls.add(url)
+
+        content_type = response.headers.get("Content-Type", "").lower()
         if any(url.lower().endswith(f".{ext}") for ext in attachment_extensions):
             save_extensions(
                 url,
-                r.content,
+                response.content,
                 os.path.join(os.getcwd(), "temp", "attachments"),
                 attachment_extensions,
                 company_name,
             )
             continue
 
-        if "text/html" in content_type:
-            generate_page_report(url, r.content, company_name)
-        else:
-            logger.error("Invalid page response, skipping this URL")
+        if "text/html" not in content_type:
+            logger.debug(f"Invalid page response: {content_type}, skipping this URL")
             continue
+        else:
+            generate_page_report(url, response.content, company_name)
 
-        soup = BeautifulSoup(r.content, "lxml")
+        soup = BeautifulSoup(response.content, "lxml")
         new_urls = set()
         for a in soup.find_all("a", href=True):
             href = a["href"]
@@ -412,8 +432,7 @@ def scrap_website(company_url: str, company_name: str):
     Returns:
         None
     """
-    max_iterations = 100  # Number of pages to scrap
-    scrape_entire_website(company_url, company_name, max_iterations)
+    scrape_entire_website(company_url, company_name)
 
     logging.info("Scraping completed.")
     logging.info("All conversions completed.")
@@ -429,14 +448,7 @@ def validate_website(website: str) -> bool:
     Returns:
         bool: Whether the provided string is a valid URL or not.
     """
-    url_pattern = re.compile(
-        r"^(https?://)?"  # Optional http or https
-        r"([a-zA-Z0-9-]+\.)+"  # Domain name segments
-        r"[a-zA-Z]{2,}"  # Top-level domain
-        r"(/[a-zA-Z0-9._/?&=-]*)*$",  # Optional path/query
-        re.IGNORECASE,
-    )
-    return bool(url_pattern.match(website))
+    return website.startswith(("http://", "https://")) and "." in website
 
 
 def extract_sentences(text):
@@ -515,7 +527,7 @@ def upload_pdf_to_vector_store(
     """
     file_streams = [open(pdf_path, "rb") for pdf_path in pdf_files]
     try:
-        file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+        client.beta.vector_stores.file_batches.upload_and_poll(
             vector_store_id=vector_store_id, files=file_streams
         )
 

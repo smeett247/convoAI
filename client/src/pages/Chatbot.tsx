@@ -1,5 +1,5 @@
 import "regenerator-runtime/runtime";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaMicrophoneAlt, FaStopCircle, FaStop } from "react-icons/fa";
 import { GrSend } from "react-icons/gr";
 import { motion } from "framer-motion";
@@ -27,6 +27,7 @@ export default function Chatbot() {
   const [abortController, setAbortController] =
     useState<AbortController | null>(null);
 
+  const containerRef = useRef<HTMLDivElement>(null);
   const urlParams = new URLSearchParams(window.location.search);
   const company = urlParams.get("company");
 
@@ -43,6 +44,15 @@ export default function Chatbot() {
     window.location.href = "/form";
     return;
   }
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [messages]);
 
   useEffect(() => {
     let isMounted = true;
@@ -250,7 +260,10 @@ export default function Chatbot() {
               </motion.div>
             </>
           ) : (
-            <div className="w-full flex flex-col gap-4 px-4 py-2 overflow-y-scroll mb-[5vh]">
+            <div
+              className="w-full flex flex-col gap-4 px-4 py-2 overflow-y-scroll mb-[5vh]"
+              ref={containerRef}
+            >
               {messages.map((msg, index) => (
                 <div key={index} className="flex items-center">
                   {msg.sender === "user" ? (

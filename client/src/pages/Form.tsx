@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { HOST } from "../../config";
 import {
@@ -25,6 +25,7 @@ import toast from "react-hot-toast";
 
 function Form() {
   const { theme } = useContext(ThemeContext);
+  const messageContainerRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     company_url: "",
     company_name: "",
@@ -193,7 +194,7 @@ function Form() {
           });
 
           if (response.ok) {
-            resolve("Company saved, starting scraping session");
+            resolve("Company saved, researching your company");
 
             checkScrapingStatus(
               formData.company_name.toLowerCase().replace(" ", "_")
@@ -211,8 +212,7 @@ function Form() {
         }
       }),
       {
-        loading:
-          "Trying to generate vector store and assistant for your company",
+        loading: "Preparing the backend for your AI Assistant",
         success: (data: any) => data,
         error: (error: any) => error,
       }

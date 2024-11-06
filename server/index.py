@@ -249,7 +249,7 @@ async def scrap(
         return {"msg": "Provided URL is not valid"}
 
     logo_file = await fetch_or_upload_logo(company_name, logo)
-   
+
     pdf_files = []
 
     if attachments:
@@ -483,4 +483,4 @@ async def ask_query(
 
 
 if __name__ == "__main__":
-    uvicorn.run("index:app", port=8000, log_level="info")
+    uvicorn.run("index:app", port=8000, host="0.0.0.0")
