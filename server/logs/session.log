@@ -1,412 +1,463 @@
-2024-11-06 15:59:41,556 | INFO | 4725 | Attempting to retrieve logo for arkay windows from Google Images
-2024-11-06 15:59:44,568 | INFO | 4725 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
-2024-11-06 15:59:44,572 | INFO | 4725 | Removing crawled logo from images directory
-2024-11-06 15:59:44,577 | INFO | 4725 | Creating vector store and assistant id for new company: arkay_windows
-2024-11-06 15:59:45,595 | INFO | 4725 | Vector ID generated for arkay_windows
-2024-11-06 15:59:46,549 | INFO | 4725 | Assistant ID generated for arkay_windows
-2024-11-06 15:59:46,550 | INFO | 4725 | Converting attachments to PDF format
-2024-11-06 15:59:46,550 | INFO | 4725 | No attachments found! Skipping upload step
-2024-11-06 15:59:46,633 | INFO | 4725 | Starting Scraping task on background thread
-2024-11-06 15:59:46,633 | INFO | 4725 | Sending scraping begun response to client
-2024-11-06 15:59:46,634 | INFO | 4725 | Starting Scraping Session with Timeout at 300 seconds
-2024-11-06 15:59:46,634 | INFO | 4725 | Task started for https://www.arkaywindows.com/ at 2024-11-06 15:59:46.634714
-2024-11-06 15:59:46,638 | INFO | 4737 | Started scraping https://www.arkaywindows.com/ for arkay_windows at 2024-11-06 15:59:46.638128
-2024-11-06 15:59:48,362 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/
-2024-11-06 15:59:49,793 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=hinged-doors
-2024-11-06 15:59:51,310 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/faq
-2024-11-06 15:59:52,799 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold-hi
-2024-11-06 15:59:54,453 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product_category/roofs
-2024-11-06 15:59:55,816 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/product/aws-70-hi%20'
-Redirect location: 'https://www.arkaywindows.com/product/aws-70-hi'
+2024-11-06 16:23:17,788 | INFO | 5357 | Attempting to retrieve logo for tech mahindra from Google Images
+2024-11-06 16:23:20,794 | INFO | 5357 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-06 16:23:20,797 | INFO | 5357 | Removing crawled logo from images directory
+2024-11-06 16:23:20,837 | INFO | 5357 | Creating vector store and assistant id for new company: tech_mahindra
+2024-11-06 16:23:21,495 | INFO | 5357 | Vector ID generated for tech_mahindra
+2024-11-06 16:23:22,311 | INFO | 5357 | Assistant ID generated for tech_mahindra
+2024-11-06 16:23:22,311 | INFO | 5357 | Converting attachments to PDF format
+2024-11-06 16:23:22,311 | INFO | 5357 | Uploading attachments to vector store to ID vs_T1WuVIDSjjDYV5J3QSVjvOjo
+2024-11-06 16:23:30,874 | INFO | 5357 | ['/mnt/d/Programming/convoai/server/temp/attachments/digital-experience-simplified.pdf'] got uploded to vector store with id vs_T1WuVIDSjjDYV5J3QSVjvOjo
+2024-11-06 16:23:30,972 | INFO | 5357 | Starting Scraping task on background thread
+2024-11-06 16:23:30,973 | INFO | 5357 | Sending scraping begun response to client
+2024-11-06 16:23:30,975 | INFO | 5357 | Starting Scraping Session with Timeout at 120 seconds
+2024-11-06 16:23:30,975 | INFO | 5357 | Task started for https://www.techmahindra.com/ at 2024-11-06 16:23:30.975571
+2024-11-06 16:23:30,980 | INFO | 5372 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-06 16:23:30.980135
+2024-11-06 16:23:31,290 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/
+2024-11-06 16:23:31,528 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/
+2024-11-06 16:23:31,771 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/
+2024-11-06 16:23:32,051 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/
+2024-11-06 16:23:32,292 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/
+2024-11-06 16:23:32,600 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/
+2024-11-06 16:23:32,758 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Applications'
+Redirect location: 'https://www.techmahindra.com/search/?search=Applications'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 15:59:57,484 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/about-us
-2024-11-06 15:59:58,792 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/privacy-policy/'
-Redirect location: 'https://www.arkaywindows.com/privacy-policy'
+2024-11-06 16:23:33,033 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/
+2024-11-06 16:23:33,300 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/
+2024-11-06 16:23:33,480 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
+2024-11-06 16:23:33,692 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/
+2024-11-06 16:23:33,900 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/
+2024-11-06 16:23:34,079 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/sitemap
+2024-11-06 16:23:34,305 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/
+2024-11-06 16:23:34,518 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/
+2024-11-06 16:23:34,710 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/
+2024-11-06 16:23:34,927 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/
+2024-11-06 16:23:35,210 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/
+2024-11-06 16:23:35,458 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/application-services/
+2024-11-06 16:23:35,637 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/
+2024-11-06 16:23:35,858 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/artificial-intelligence/
+2024-11-06 16:23:36,067 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-brand/
+2024-11-06 16:23:36,328 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/search/
+2024-11-06 16:23:36,535 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/
+2024-11-06 16:23:36,714 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-and-it-strategy-roadmap-upcoming-middle-eastern-smart-city/
+2024-11-06 16:23:36,964 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/investors/
+2024-11-06 16:23:37,178 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/
+2024-11-06 16:23:37,493 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/healthcare-life-sciences/
+2024-11-06 16:23:37,719 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/oil-and-gas/
+2024-11-06 16:23:37,921 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/cookie-policy/
+2024-11-06 16:23:38,126 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/#main-content
+2024-11-06 16:23:38,369 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/techmverse/
+2024-11-06 16:23:38,644 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/
+2024-11-06 16:23:38,906 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/salesforce/
+2024-11-06 16:23:39,090 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/
+2024-11-06 16:23:39,412 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/
+2024-11-06 16:23:39,615 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/
+2024-11-06 16:23:39,850 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/contact-us/
+2024-11-06 16:23:40,129 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/techm-way/
+2024-11-06 16:23:40,309 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/
+2024-11-06 16:23:40,527 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/blockchain/
+2024-11-06 16:23:40,777 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/diversity-inclusion/
+2024-11-06 16:23:40,975 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/sap/
+2024-11-06 16:23:41,229 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/intelligent-automation/
+2024-11-06 16:23:41,449 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/accessibility-statement/
+2024-11-06 16:23:41,657 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/
+2024-11-06 16:23:41,879 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty'
+Redirect location: 'https://www.techmahindra.com/about-us/individual-social-responsibility/'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:00:00,414 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies
-2024-11-06 16:00:02,397 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product_category/windows
-2024-11-06 16:00:05,189 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=sliding-doors
-2024-11-06 16:00:07,150 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors
-2024-11-06 16:00:08,971 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/edgeglide
-2024-11-06 16:00:11,011 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/privacy-policy
-2024-11-06 16:00:12,517 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/vacancies
-2024-11-06 16:00:14,197 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/blog
-2024-11-06 16:00:15,901 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/contact-us
-2024-11-06 16:00:17,500 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/showroom-virtual-reality-tour
-2024-11-06 16:00:18,786 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/cookie-policy/'
-Redirect location: 'https://www.arkaywindows.com/cookie-policy'
+2024-11-06 16:23:42,059 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/performance-engineering/
+2024-11-06 16:23:42,321 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/engineering-services/
+2024-11-06 16:23:42,585 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/indus-project/
+2024-11-06 16:23:42,830 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/scale-at-speed/
+2024-11-06 16:23:43,050 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/ways-working/
+2024-11-06 16:23:43,240 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/
+2024-11-06 16:23:43,421 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/awards/
+2024-11-06 16:23:43,572 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/access-control-management-government-agency/
+2024-11-06 16:23:43,811 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/network-services/
+2024-11-06 16:23:44,064 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/
+2024-11-06 16:23:44,358 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/pega/
+2024-11-06 16:23:44,619 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/rise/
+2024-11-06 16:23:44,828 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/
+2024-11-06 16:23:45,038 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/news/
+2024-11-06 16:23:45,359 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/events/tech-mahindra-gold-sponsor-aws-reinvent-2024/
+2024-11-06 16:23:45,504 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Mahindra'
+Redirect location: 'https://www.techmahindra.com/search/?search=Mahindra'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:00:20,459 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/arkay-showroom
-2024-11-06 16:00:22,026 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video
-2024-11-06 16:00:23,587 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold
-2024-11-06 16:00:25,483 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/resources
-2024-11-06 16:00:27,036 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/infiniglide-3
-2024-11-06 16:00:28,673 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/request-a-quote
-2024-11-06 16:00:30,084 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/terms-and-conditions/'
+2024-11-06 16:23:45,659 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/
+2024-11-06 16:23:45,839 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/terms-of-use/
+2024-11-06 16:23:45,990 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation'
+Redirect location: 'https://www.techmahindra.com/about-us/tech-mahindra-foundation/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:23:46,178 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/analyst-insights/
+2024-11-06 16:23:46,366 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/#vbp-carousel-3157
+2024-11-06 16:23:46,657 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/private-equity/
+2024-11-06 16:23:46,910 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/
+2024-11-06 16:23:47,081 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/
+2024-11-06 16:23:47,307 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/
+2024-11-06 16:23:47,596 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-infrastructure-services/
+2024-11-06 16:23:47,781 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions'
+Redirect location: 'https://www.techmahindra.com/about-us/mahindra-educational-institutions/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:23:48,172 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/privacy-policy/
+2024-11-06 16:23:48,373 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/
+2024-11-06 16:23:48,587 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search'
+Redirect location: 'https://www.techmahindra.com/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:23:48,751 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/servicenow/
+2024-11-06 16:23:48,951 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/testing-services/
+2024-11-06 16:23:49,187 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/
+2024-11-06 16:23:49,398 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/banking-financial-services/
+2024-11-06 16:23:49,718 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/
+2024-11-06 16:23:49,937 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/next-gen-contact-center-framework-canadian-retailer/
+2024-11-06 16:23:50,163 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/
+2024-11-06 16:23:50,417 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/data-analytics/
+2024-11-06 16:23:50,640 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Jobs'
+Redirect location: 'https://www.techmahindra.com/search/?search=Jobs'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:23:50,819 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/
+2024-11-06 16:23:51,074 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/sustainability/
+2024-11-06 16:23:51,438 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/rcg/
+2024-11-06 16:23:51,649 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/leadership/
+2024-11-06 16:23:51,804 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Locations'
+Redirect location: 'https://www.techmahindra.com/search/?search=Locations'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:23:52,131 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/customer-speak/
+2024-11-06 16:23:52,330 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/application-development-maintenance-service/
+2024-11-06 16:23:52,613 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/ttlh/
+2024-11-06 16:23:53,915 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-portfolio-companies/
+2024-11-06 16:23:54,100 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/
+2024-11-06 16:23:54,304 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/
+2024-11-06 16:23:54,519 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/events/
+2024-11-06 16:23:54,726 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/
+2024-11-06 16:23:54,947 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/digital-supply-chain/
+2024-11-06 16:23:55,140 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/
+2024-11-06 16:23:55,353 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/
+2024-11-06 16:23:55,702 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/hi-tech/
+2024-11-06 16:23:55,913 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/energy-and-utilities/
+2024-11-06 16:23:56,157 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/
+2024-11-06 16:23:56,353 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
+2024-11-06 16:23:56,617 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/products-and-platforms/
+2024-11-06 16:23:56,795 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-data-platform-telia/
+2024-11-06 16:23:56,997 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/professional-services/
+2024-11-06 16:23:57,205 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/
+2024-11-06 16:23:57,417 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/strategy-and-consulting-services/
+2024-11-06 16:23:57,711 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/#main-content
+2024-11-06 16:23:59,372 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-beyond-pink-and-blue/
+2024-11-06 16:24:00,618 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-beautiful-mind/
+2024-11-06 16:24:01,406 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-good-last-goodbye/
+2024-11-06 16:24:02,646 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-tour-de-india-conquering-6100-km-bicycle/
+2024-11-06 16:24:02,896 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/#main-content
+2024-11-06 16:24:04,183 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-beyond-bars/
+2024-11-06 16:24:05,740 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-run-anywhere/
+2024-11-06 16:24:06,967 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-restarting-heart/
+2024-11-06 16:24:08,863 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-making-social-responsibility-personal-ashok-garla-and-story-amachavadi/
+2024-11-06 16:24:09,047 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/#main-content
+2024-11-06 16:24:09,342 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/our-services/
+2024-11-06 16:24:10,241 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/business-sustainability-post-covid-19-crisis/
+2024-11-06 16:24:10,502 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/#main-content
+2024-11-06 16:24:10,755 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/hi-tech/
+2024-11-06 16:24:11,993 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/unveiling-power-digital-process-mining-business-transformation/
+2024-11-06 16:24:12,771 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/bpaas/
+2024-11-06 16:24:13,610 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/navixus/
+2024-11-06 16:24:14,578 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/hyper-personalization-new-norm-customer-service/
+2024-11-06 16:24:14,816 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/banking-financial-services/
+2024-11-06 16:24:15,746 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/transport-logistics/
+2024-11-06 16:24:16,355 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/manufacturing/
+2024-11-06 16:24:17,634 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/energy-utilities/
+2024-11-06 16:24:18,620 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/insurance/
+2024-11-06 16:24:19,915 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/unlocking-kyc-aml-operational-agility-next-gen-offerings/
+2024-11-06 16:24:20,509 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/why-digitally-transform-your-back-office-operations/
+2024-11-06 16:24:20,674 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/privacy-policy'
+Redirect location: 'https://www.techmahindra.com/privacy-policy/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:24:22,084 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/role-bpo-companies-client-innovation-journey/
+2024-11-06 16:24:22,325 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/consulting/
+2024-11-06 16:24:23,711 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/business-process-evolution-powered-digital-transformation/
+2024-11-06 16:24:24,942 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/accelerators/
+2024-11-06 16:24:25,244 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/retail-cpg/
+2024-11-06 16:24:25,449 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/healthcare-life-sciences/
+2024-11-06 16:24:25,651 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/communications-media-entertainment/
+2024-11-06 16:24:26,610 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/enabling-app-development-upgrade-and-integration-leading-us-based-crop-insurer/
+2024-11-06 16:24:27,415 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/ushering-new-era-generative-ai-insurance/
+2024-11-06 16:24:27,710 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/#main-content
+2024-11-06 16:24:28,975 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-transformation-one-worlds-leading-life-insurance-companies/
+2024-11-06 16:24:29,850 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/cloud-infrastructure-transformation/
+2024-11-06 16:24:30,727 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/digital-workplace-transformation/
+2024-11-06 16:24:31,018 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/customer-experience/
+2024-11-06 16:24:32,310 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/es-policy-administration-system-roll-out-major-insurance-carrier-north/
+2024-11-06 16:24:33,194 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/managed-services-entire-infrastructure-uk-insurer/
+2024-11-06 16:24:33,394 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/data-analytics/
+2024-11-06 16:24:34,214 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/rise-embedded-insurance-game-changer-insurance-industry/
+2024-11-06 16:24:34,468 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/next-gen-managed-services/
+2024-11-06 16:24:35,815 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/enhancing-fraud-detection-capabilities-advanced-analytics-leading-us-pc-insurer/
+2024-11-06 16:24:36,789 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/maximizing-business-value-post-guidewire-implementation-part-2/
+2024-11-06 16:24:38,076 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/servicenow-secops-vulnerability-response-module-implementation-and-remediation-management/
+2024-11-06 16:24:38,256 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/digital-distribution-cx-transformation/
+2024-11-06 16:24:39,577 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/guidewire/
+2024-11-06 16:24:40,487 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/maximizing-value-data-insurance/
+2024-11-06 16:24:41,424 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/geospatial-intelligence-revolutionizing-property-insurance-industry/
+2024-11-06 16:24:42,304 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/digital-engineering-insurtechs-insurers-defii/
+2024-11-06 16:24:43,877 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/digitalizing-submission-intake-commercial-insurance-underwriting/
+2024-11-06 16:24:44,796 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/transformation-pension-administration-leading-australian-superannuation-organization/
+2024-11-06 16:24:46,136 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/underwriting-transformation/
+2024-11-06 16:24:46,910 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/leadership-perspectives-esg-insurance-featuring-rohit-puranik-svp-and-head-insurance/
+2024-11-06 16:24:47,862 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/general-insurance-claims-transformation-anz-driven-nxt-era-cloud-specialization/
+2024-11-06 16:24:48,763 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/maximizing-business-value-post-guidewire-implementation/
+2024-11-06 16:24:50,048 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/data-engineering-analytics-ai-ml/
+2024-11-06 16:24:51,044 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/empowering-life-insurance-agents-digital-tools/
+2024-11-06 16:24:51,953 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/personal-cyber-insurance/
+2024-11-06 16:24:53,717 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/defining-nxt-insurance-underwriting-automated-submission-prioritization/
+2024-11-06 16:24:53,900 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/everest-groups-guidewire-services-peak-matrix-assessment-2024/
+2024-11-06 16:24:54,463 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/security-risk-management/
+2024-11-06 16:24:55,852 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/automation-opportunities-life-insurance-illustrations/
+2024-11-06 16:24:56,699 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/insurance-industrys-digital-transformation-navigating-through-fog-while-balancing/
+2024-11-06 16:24:58,000 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/perspective-guidewire-claimcenter-data-migration/
+2024-11-06 16:24:58,995 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/enabling-data-warehouse-development-data-migration-and-data-modernization-leading-pc/
+2024-11-06 16:24:59,232 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/#main-content
+2024-11-06 16:24:59,410 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/what-we-do/application-services/sap'
+Redirect location: 'https://www.techmahindra.com/services/sap/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:24:59,642 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/microsoft-partnership/
+2024-11-06 16:25:00,490 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/oracle-partnership/
+2024-11-06 16:25:00,719 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/salesforce/
+2024-11-06 16:25:00,868 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Applications'
+Redirect location: 'https://www.techmahindra.com/search/?search=Applications'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:25:01,153 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-2
+2024-11-06 16:25:01,370 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-0
+2024-11-06 16:25:01,601 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/mahindra-educational-institutions/
+2024-11-06 16:25:01,834 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/tech-mahindra-foundation/
+2024-11-06 16:25:02,063 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-1
+2024-11-06 16:25:02,236 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-overview/recognition/'
+Redirect location: 'https://www.techmahindra.com/awards/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:25:02,439 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/individual-social-responsibility/
+2024-11-06 16:25:03,490 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-recognized-only-indian-company-double-score-transparency/
+2024-11-06 16:25:04,817 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#main-content
+2024-11-06 16:25:05,062 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com
+2024-11-06 16:25:05,257 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/#main-content
+2024-11-06 16:25:05,433 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/#main-content
+2024-11-06 16:25:05,659 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/#main-content
+2024-11-06 16:25:05,936 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/sitemap#main-content
+2024-11-06 16:25:07,158 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digitization-home-buying-experience-leading-bank-canada/
+2024-11-06 16:25:08,236 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/105'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:09,432 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/blockchain-enabled-supply-chain-digitalization-improves-inbound-parts-shipments-cycle/
+2024-11-06 16:25:10,148 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/tech-mahindra-saved-over-140mn-global-fb-firm-hyper-automation/
+2024-11-06 16:25:10,784 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/?page=1
+2024-11-06 16:25:11,726 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/94'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:12,985 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/navixus-saves-30-mn-australian-telecom-cognitive-ai-solutions/
+2024-11-06 16:25:14,086 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/93'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:15,137 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/102'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:15,965 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/tech-mahindra-accelerates-canadian-banks-sme-banking-onboarding-process/
+2024-11-06 16:25:17,042 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/101'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:18,093 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/100'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:18,298 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/clinical-data-integration-phoenix-based-health-center/
+2024-11-06 16:25:19,366 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/98'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2024-11-06 16:25:19,588 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/#main-content
+2024-11-06 16:25:20,554 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/techm-navixus-cx-transformation-media-entertainment-company/
+2024-11-06 16:25:21,404 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/leveraging-genai-empower-leading-automotive-manufacturer/
+2024-11-06 16:25:22,106 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/techm-navixus-leads-ccaas-transformation-us-based-health-insurance-provider/
+2024-11-06 16:25:22,287 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/changi-airport-group/
+2024-11-06 16:25:22,459 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/delta-faucet/
+2024-11-06 16:25:22,666 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/diesel/
+2024-11-06 16:25:22,909 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/5g/
+2024-11-06 16:25:23,216 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/#main-content
+2024-11-06 16:25:23,449 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/vivrelle/
+2024-11-06 16:25:23,616 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/#main-content
+2024-11-06 16:25:23,817 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/#main-content
+2024-11-06 16:25:25,099 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/cisco-partnership/
+2024-11-06 16:25:25,945 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategize-reduce-attack-surface-agility/
+2024-11-06 16:25:27,256 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/cyber-recovery/
+2024-11-06 16:25:28,452 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/managed-security-services/
+2024-11-06 16:25:29,279 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/tech-mahindra-and-sysdig-partnership-accelerate-your-devsecops-and-cloud-adoption/
+2024-11-06 16:25:29,490 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/dell-partnership/
+2024-11-06 16:25:29,710 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/ibm-partnership/
+2024-11-06 16:25:29,927 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/implementing-data-security-accelerate-generative-ai-initiatives/
+2024-11-06 16:25:30,766 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/managed-cloud-security/
+2024-11-06 16:25:30,976 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/aws-partnership/
+2024-11-06 16:25:31,107 | INFO | 5357 | Attempting to terminate process with PID 5372
+2024-11-06 16:25:31,224 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/#main-content
+2024-11-06 16:25:31,444 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/news-views/case-studies/secured-and-enriched-test-data-provisioning-large-financial-organization/'
+Redirect location: 'https://www.techmahindra.com/insights/case-studies/secured-and-enriched-test-data-provisioning-large-financial-organization/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:25:31,584 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/news-views/case-studies/performance-assurance-tier-1-telematics-customer-north-america/'
+Redirect location: 'https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:25:31,818 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/application-services/#main-content
+2024-11-06 16:25:32,099 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/news-views/views/techm-appginiez-revolutionizing-devops-automation-generative-ai/'
+Redirect location: 'https://www.techmahindra.com/insights/views/techm-appginiez-revolutionizing-devops-automation-generative-ai/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 16:25:32,109 | INFO | 5357 | Force killing process with PID 5372
+2024-11-06 16:25:32,110 | INFO | 5357 | Scraping https://www.techmahindra.com/ for tech_mahindra timed out after 120 seconds
+2024-11-06 16:25:32,113 | ERROR | 5357 | Scraping https://www.techmahindra.com/ for tech_mahindra failed with no result after 121.137484 seconds
+2024-11-06 16:25:32,113 | INFO | 5357 | Starting conversion of parsed report from markdown to PDF
+2024-11-06 16:25:32,727 | INFO | 5357 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-06 16:25:32,727 | INFO | 5357 | Conversion of report completed and uploaded to vector store with id vs_T1WuVIDSjjDYV5J3QSVjvOjo
+2024-11-06 16:25:42,596 | INFO | 5357 | ['/mnt/d/Programming/convoai/server/temp/pdf/techmahindra.pdf'] got uploded to vector store with id vs_T1WuVIDSjjDYV5J3QSVjvOjo
+2024-11-06 16:25:42,600 | INFO | 5357 | Removing Markdown file generated for tech_mahindra
+2024-11-06 16:25:58,277 | INFO | 5357 | 
+Question : What are the roles for which you are hiring?
+Company Name : tech_mahindra
+Persona : 
+
+
+2024-11-06 16:26:12,533 | INFO | 5357 | Generated Answer: The documents provided did not contain specific details on the current roles for which Tech Mahindra is hiring. However, I recommend visiting their careers page for the latest job openings and available positions:
+
+- **Tech Mahindra Careers Page**: [Explore Opportunities Here](https://www.techmahindra.com/careers/)
+
+If you have any specific roles or departments in mind, please let me know, and I can assist you further!
+2024-11-06 16:26:29,908 | INFO | 5357 | 
+Question : What are the services that guys offer?
+Company Name : tech_mahindra
+Persona : 
+
+
+2024-11-06 16:26:44,288 | INFO | 5357 | Generated Answer: Tech Mahindra offers a wide range of services aimed at supporting digital transformation across various industries. Here are some of the key services provided:
+
+1. **Cloud Services**:
+   - Cloud consulting and management, including assessment, migration, and transformation services.
+
+2. **Business Process Services (BPS)**:
+   - Focused solutions for industries such as banking, insurance, and healthcare, providing next-gen digital customer experience and back-office services.
+
+3. **Digital Transformation Solutions**:
+   - Services that include enterprise application integration, implementation of SAP, Oracle, and Salesforce solutions, and automation.
+
+4. **Intelligent Automation**:
+   - Leveraging AI and automation technologies to enhance operational efficiency.
+
+5. **Consulting Services**:
+   - Advisory services across various sectors to help organizations adapt to digitalization and optimize processes.
+
+6. **Application Development and Maintenance**:
+   - Providing support for modern and legacy applications, ensuring smooth performance and updates.
+
+7. **Blockchain Solutions**:
+   - Implementing blockchain technologies for secure and efficient operations, particularly in supply chain management.
+
+8. **Customer Experience Solutions**:
+   - Developing comprehensive customer engagement strategies that include analytics, IoT integration, and personalized services.
+
+9. **Sustainability Services**:
+   - Frameworks to help businesses achieve ESG goals through improved data performance and sustainability practices.
+
+These services underscore Tech Mahindra's commitment to being a global leader in providing technology-driven business solutions tailored to meet the evolving needs of clients across different sectors. If you need more specific details about a particular service, feel free to ask!
+2024-11-06 16:27:02,956 | INFO | 5357 | 
+Question : Tell me more  about block chain solutions
+Company Name : tech_mahindra
+Persona : 
+
+
+2024-11-06 16:27:19,120 | INFO | 5357 | Generated Answer: Tech Mahindra provides a comprehensive range of blockchain solutions designed to enhance various business processes, promoting efficiency, transparency, and security across industries. Here are the key features and offerings of their blockchain services:
+
+1. **Decentralized Solutions**: Tech Mahindra focuses on providing decentralized solutions that empower users with more control over their data and financial transactions. This approach enhances transparency, security, and trust within business ecosystems.
+
+2. **Customized Blockchain Applications**: Their services include building bespoke applications using top blockchain platforms tailored to specific industry needs. This includes integration into native applications such as supply chain and loyalty management systems.
+
+3. **Prototyping and Proof of Concepts (POC)**: They support business teams in rapidly developing POCs and proof of technology to validate blockchain applications and assess their potential before full-scale deployment.
+
+4. **Modular, Plug-and-Play Solutions**: Tech Mahindra offers a modular platform as a service that allows businesses to integrate blockchain capabilities easily into their existing systems.
+
+5. **NFT Marketplace**: Built on the Polygon framework, Tech Mahindra provides solutions for an NFT marketplace where users can create, sell, and purchase NFTs using both fiat currencies and cryptocurrencies.
+
+6. **Supply Chain Transparency**: Their blockchain initiative supports supply chain management by enabling real-time verification of transactions, ownership, and payments. This is crucial for industries like agriculture and pharmaceuticals where traceability is vital.
+
+7. **Smart Contracts**: Tech Mahindra implements smart contracts to automate processes across various applications, helping in the reduction of fraud and improving operational efficiency by ensuring that contracts are executed exactly as programmed without any intermediary.
+
+These capabilities position Tech Mahindra as a leader in leveraging blockchain technology for enhancing operational efficiencies and business transformations across sectors. If you would like more specific information or examples, feel free to ask!
+2024-11-06 18:15:11,964 | INFO | 1922 | 
+Question : Hey, How are you?
+Company Name : tech_mahindra
+Persona : 
+
+
+2024-11-06 18:15:16,565 | INFO | 1922 | Generated Answer: I'm just a program, but I'm here and ready to help you! How can I assist you today?
+2024-11-06 18:15:56,972 | INFO | 1922 | Assistant with ID asst_sqvg8aJteFoCnjPUnNW9PKtL deleted.
+2024-11-06 18:15:58,206 | INFO | 1922 | Vector store with ID vs_iqr0wQXamhjURuWtNUoScH62 deleted.
+2024-11-06 18:16:01,945 | INFO | 1922 | Assistant with ID asst_vZT5odCWpG604p2UPB8ypig9 deleted.
+2024-11-06 18:16:04,507 | INFO | 1922 | Vector store with ID vs_T1WuVIDSjjDYV5J3QSVjvOjo deleted.
+2024-11-06 18:16:39,068 | INFO | 1922 | Attempting to retrieve logo for arkay windows from Google Images
+2024-11-06 18:16:42,073 | INFO | 1922 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-06 18:16:42,076 | INFO | 1922 | Removing crawled logo from images directory
+2024-11-06 18:16:42,082 | INFO | 1922 | Creating vector store and assistant id for new company: arkay_windows
+2024-11-06 18:16:43,327 | INFO | 1922 | Vector ID generated for arkay_windows
+2024-11-06 18:16:44,135 | INFO | 1922 | Assistant ID generated for arkay_windows
+2024-11-06 18:16:44,135 | INFO | 1922 | Converting attachments to PDF format
+2024-11-06 18:16:44,135 | INFO | 1922 | No attachments found! Skipping upload step
+2024-11-06 18:16:44,158 | INFO | 1922 | Starting Scraping task on background thread
+2024-11-06 18:16:44,158 | INFO | 1922 | Sending scraping begun response to client
+2024-11-06 18:16:44,159 | INFO | 1922 | Starting Scraping Session with Timeout at 60 seconds
+2024-11-06 18:16:44,159 | INFO | 1922 | Task started for https://www.arkaywindows.com/ at 2024-11-06 18:16:44.159854
+2024-11-06 18:16:44,167 | INFO | 1945 | Started scraping https://www.arkaywindows.com/ for arkay_windows at 2024-11-06 18:16:44.167554
+2024-11-06 18:16:45,836 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/
+2024-11-06 18:16:47,267 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video
+2024-11-06 18:16:48,413 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/terms-and-conditions/'
 Redirect location: 'https://www.arkaywindows.com/terms-and-conditions'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:00:31,686 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=bifold-doors
-2024-11-06 16:00:33,120 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/door-manufacturer
-2024-11-06 16:00:34,805 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com
-2024-11-06 16:00:36,269 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/join-our-network
-2024-11-06 16:00:37,974 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/infinilight
-2024-11-06 16:00:39,640 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/schuco-doors-supplier-london-uk
-2024-11-06 16:00:41,465 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '302 Found' for url 'https://www.arkaywindows.com/media-centre'
-Redirect location: 'https://www.arkaywindows.com/login/?login=media&redirect_to=https%3A%2F%2Fwww.arkaywindows.com%2Fmedia-centre'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
-2024-11-06 16:00:43,183 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/ads-70-hd
-2024-11-06 16:00:44,800 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-bsc94
-2024-11-06 16:00:46,844 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/pirnar
-2024-11-06 16:00:48,524 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/ase60
-2024-11-06 16:00:50,159 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/upvc-patio-doors
-2024-11-06 16:00:51,825 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/entrance-doors
-2024-11-06 16:00:53,582 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-bsf70
-2024-11-06 16:00:55,386 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/upvc-doors
-2024-11-06 16:00:57,083 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/ass-50
-2024-11-06 16:00:58,781 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-58bd-hi
-2024-11-06 16:01:00,602 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/as-fd-75
-2024-11-06 16:01:02,424 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-gt55-commercial-doors
-2024-11-06 16:01:06,910 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf']
-2024-11-06 16:01:08,536 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/veranda
-2024-11-06 16:01:10,211 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/pallazzo
-2024-11-06 16:01:11,729 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/infinilantern
-2024-11-06 16:01:13,329 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/stratus
-2024-11-06 16:01:14,981 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/bifold-door-manufacturer-buckinghamshire
-2024-11-06 16:01:16,542 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/aluk-windows-supplier-berkshire
-2024-11-06 16:01:18,027 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/window-manufacturer
-2024-11-06 16:01:19,610 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/aluk-windows-supplier-essex
-2024-11-06 16:01:21,040 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/aluminium-doors-bournemouth
-2024-11-06 16:01:22,572 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/bifold-door-manufacturer
-2024-11-06 16:01:24,226 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/aluminium-doors-poole
-2024-11-06 16:01:26,536 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/installers
-2024-11-06 16:01:28,012 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/bifold-door-manufacturer-hertfordshire
-2024-11-06 16:01:29,506 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/sliding-door-manufacturer
-2024-11-06 16:01:30,972 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/aluminium-windows-supplier
-2024-11-06 16:01:32,423 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/aluk-58bw-flush-windows-buckinghamshire
-2024-11-06 16:01:33,792 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/door-supplier-kent
-2024-11-06 16:01:35,187 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies/canada-street
-2024-11-06 16:01:36,719 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies/victorian-period-home-residential-refurb
-2024-11-06 16:01:38,409 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies#intro
-2024-11-06 16:01:39,907 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies/iconic-escapade-silverstone-project
-2024-11-06 16:01:41,346 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies/lsq_bermondsey
-2024-11-06 16:01:42,810 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/case-studies/graven_hill-resi-new-build
-2024-11-06 16:01:44,104 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/privacy-policy/'
-Redirect location: 'https://www.arkaywindows.com/privacy-policy'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:01:45,716 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/upvc-windows
-2024-11-06 16:01:47,247 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aws-70-sc
-2024-11-06 16:01:48,802 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aws-70-hi
-2024-11-06 16:01:50,422 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/tilt-and-turn-windows
-2024-11-06 16:01:51,922 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/casement-windows
-2024-11-06 16:01:53,507 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-58bw-st
-2024-11-06 16:01:55,064 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-58-bw
-2024-11-06 16:01:56,719 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/sliding-sash-windows
-2024-11-06 16:01:58,262 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/product/aluk-58-flush-casement
-2024-11-06 16:02:00,332 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf']
-2024-11-06 16:02:01,935 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/edge-glide-sliding-doors-buckinghamshire
-2024-11-06 16:02:03,619 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Client error '404 Not Found' for url 'https://www.arkaywindows.com/product/infiniglide-6'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:02:05,239 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/edge-glide-sliding-doors-hampshire
-2024-11-06 16:02:06,835 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/edge-glide-sliding-doors-hertfordshire
-2024-11-06 16:02:08,280 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/edge-glide-sliding-doors-london
-2024-11-06 16:02:09,860 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/edge-glide-sliding-doors-oxford
-2024-11-06 16:02:11,203 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/product/edgeglide/arkay_eg-35mm-product-brochure'
-Redirect location: 'https://www.arkaywindows.com/wp-content/uploads/2021/09/Arkay_EG-35mm-Product-Brochure.pdf'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:02:16,325 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/cookie-policy
-2024-11-06 16:02:17,717 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/what-products-do-you-need-to-transform-your-home-in-2024
-2024-11-06 16:02:19,197 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/part-l-building-regulations
-2024-11-06 16:02:20,542 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/transform-your-home-into-a-green-home-with-slimline-aluminium-windows-and-doors
-2024-11-06 16:02:22,647 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/welcome-to-your-factory
-2024-11-06 16:02:23,856 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/blog?paged=3'
-Redirect location: 'https://www.arkaywindows.com/blog/page/3'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:02:25,247 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/safety-first-enhancing-home-security-with-aluminium-doors
-2024-11-06 16:02:26,639 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/edgeglide-loved-by-installers
-2024-11-06 16:02:28,246 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/our-aluk-products
-2024-11-06 16:02:29,776 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/exciting-news-arkay-windows-nominated-for-three-categories-at-the-2024-national-fenestration-awards
-2024-11-06 16:02:31,237 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/category/industry
-2024-11-06 16:02:32,687 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/what-three-products-meet-new-building-regs-that-you-need-in-your-home-now
-2024-11-06 16:02:34,120 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/category/products
-2024-11-06 16:02:35,503 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/bifold-doors-are-they-worth-it-for-your-home
-2024-11-06 16:02:36,831 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/blog/'
-Redirect location: 'https://www.arkaywindows.com/blog'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:02:38,319 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/arkay-windows-and-aluk-collaborate-on-the-iconic-escapade-silverstone-project
-2024-11-06 16:02:39,829 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/what-are-the-best-bifold-doors
-2024-11-06 16:02:41,269 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/category/news
-2024-11-06 16:02:42,678 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/thermal-break-technology-for-energy-efficient-windows
-2024-11-06 16:02:43,903 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/blog?paged=2'
-Redirect location: 'https://www.arkaywindows.com/blog/page/2'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:02:45,304 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/building-regulations-compliance-with-arkay-windows
-2024-11-06 16:02:46,666 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/how-to-keep-your-home-warm-naturally-this-autumn
-2024-11-06 16:02:48,136 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/best-sliding-doors
-2024-11-06 16:02:49,560 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/are-bifold-doors-energy-efficient
-2024-11-06 16:02:50,993 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/what-is-the-difference-between-bifold-doors-and-sliding-doors
-2024-11-06 16:02:52,409 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/new-aluk-entrance-door
-2024-11-06 16:02:53,909 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/how-to-keep-your-home-energy-efficient-this-spring
-2024-11-06 16:02:55,396 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/terms-and-conditions
-2024-11-06 16:02:58,880 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/cookie-policy/'
+2024-11-06 18:16:49,863 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/showroom-virtual-reality-tour
+2024-11-06 18:16:51,302 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/infiniglide-3
+2024-11-06 18:16:52,640 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/vacancies
+2024-11-06 18:16:54,188 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold
+2024-11-06 18:16:55,630 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/privacy-policy
+2024-11-06 18:16:57,283 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=hinged-doors
+2024-11-06 18:16:58,848 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/infinilight
+2024-11-06 18:17:00,406 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/schuco-doors-supplier-london-uk
+2024-11-06 18:17:02,385 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/request-a-quote
+2024-11-06 18:17:03,938 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors
+2024-11-06 18:17:05,600 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold-hi
+2024-11-06 18:17:07,116 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/arkay-showroom
+2024-11-06 18:17:08,796 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com
+2024-11-06 18:17:10,330 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/case-studies
+2024-11-06 18:17:11,780 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/about-us
+2024-11-06 18:17:13,221 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=sliding-doors
+2024-11-06 18:17:14,754 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/door-manufacturer
+2024-11-06 18:17:16,271 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/edgeglide
+2024-11-06 18:17:17,727 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/windows
+2024-11-06 18:17:18,883 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/cookie-policy/'
 Redirect location: 'https://www.arkaywindows.com/cookie-policy'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:02:59,553 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/product/ass-70-fd'
-Redirect location: 'http://www.arkaywindows.com/product/schuco-ass70-fd-hd-bifold/'
+2024-11-06 18:17:20,005 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/product/aws-70-hi%20'
+Redirect location: 'https://www.arkaywindows.com/product/aws-70-hi'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:03:01,170 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Client error '404 Not Found' for url 'https://www.arkaywindows.com/product/aluk-f82'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:03:03,770 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/arkay-windows-london
-2024-11-06 16:03:05,388 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/infiniglide
-2024-11-06 16:03:06,831 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/unifold-bifold-doors
-2024-11-06 16:03:08,332 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/unifold-bifold-doors-2-2
-2024-11-06 16:03:09,740 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/aluminium-bifold-doors-from-arkay
-2024-11-06 16:03:11,211 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/infiniglide-6
-2024-11-06 16:03:12,667 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/arkay-windows-aluminium-window-door-manufacturers
-2024-11-06 16:03:14,081 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/infinilight
-2024-11-06 16:03:15,524 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/stratus-roof-lantern-video
-2024-11-06 16:03:17,068 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/video/edgeglide
-2024-11-06 16:03:18,487 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/unifold-bifold-doors-kent'
-Redirect location: 'https://www.arkaywindows.com/unifold-bifold-doors-kent-2'
+2024-11-06 18:17:21,387 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/join-our-network
+2024-11-06 18:17:22,793 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/roofs
+2024-11-06 18:17:24,198 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=bifold-doors
+2024-11-06 18:17:25,620 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/faq
+2024-11-06 18:17:27,332 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/resources
+2024-11-06 18:17:28,772 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/blog
+2024-11-06 18:17:30,232 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/contact-us
+2024-11-06 18:17:31,377 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/privacy-policy/'
+Redirect location: 'https://www.arkaywindows.com/privacy-policy'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:03:19,782 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/video/'
-Redirect location: 'https://www.arkaywindows.com/video'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:03:21,058 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/media-centre/arkay-unifold-unifold-product-brochure/arkay_unifold_v2_dec-21_lr'
-Redirect location: 'https://www.arkaywindows.com/wp-content/uploads/2021/09/Arkay_Unifold_V2_Dec-21_LR.pdf'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:03:23,744 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf']
-2024-11-06 16:03:25,351 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/unifold-bifold-doors-hertfordshire
-2024-11-06 16:03:26,819 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/unifold-bifold-doors-london
-2024-11-06 16:03:28,338 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/unifold-bifold-doors-oxford
-2024-11-06 16:03:30,037 | INFO | 4737 | Markdown Report Generated for https://www.arkaywindows.com/unifold-bifold-doors-essex
-2024-11-06 16:03:31,596 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf']
-2024-11-06 16:03:35,577 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf']
-2024-11-06 16:03:36,880 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf']
-2024-11-06 16:03:38,217 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf']
-2024-11-06 16:03:40,231 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf']
-2024-11-06 16:03:41,867 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf']
-2024-11-06 16:03:43,683 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf']
-2024-11-06 16:03:47,988 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf']
-2024-11-06 16:03:49,610 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf']
-2024-11-06 16:03:51,566 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf']
-2024-11-06 16:03:53,009 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf']
-2024-11-06 16:03:55,453 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf']
-2024-11-06 16:03:57,817 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf']
-2024-11-06 16:04:03,317 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : The read operation timed out
-2024-11-06 16:04:06,350 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf']
-2024-11-06 16:04:08,369 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf']
-2024-11-06 16:04:10,079 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf']
-2024-11-06 16:04:12,248 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf']
-2024-11-06 16:04:13,832 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf']
-2024-11-06 16:04:15,844 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf']
-2024-11-06 16:04:21,466 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : The read operation timed out
-2024-11-06 16:04:24,762 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf']
-2024-11-06 16:04:26,538 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Pirnar-Door_Jan-21_LR_1.pdf']
-2024-11-06 16:04:28,298 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Pirnar-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC_Composite-Entrance-Door_Jan-21_LR_1.pdf']
-2024-11-06 16:04:32,698 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Pirnar-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC_Composite-Entrance-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ADS-70-HD_Door-Jan-21_LR-1_1.pdf']
-2024-11-06 16:04:34,428 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Pirnar-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC_Composite-Entrance-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ADS-70-HD_Door-Jan-21_LR-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Stratus_Lantern_Roof_Jan-21_LR_1.pdf']
-2024-11-06 16:04:39,967 | ERROR | 4737 | Got an error while scraping https://www.arkaywindows.com/ : The read operation timed out
-2024-11-06 16:04:42,273 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Pirnar-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC_Composite-Entrance-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ADS-70-HD_Door-Jan-21_LR-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Stratus_Lantern_Roof_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-AWS-70-SC-Window_Jan-21_LR._1.pdf']
-2024-11-06 16:04:46,943 | INFO | 4725 | Attempting to terminate process with PID 4737
-2024-11-06 16:04:47,762 | INFO | 4737 | Saved the following attachements: ['/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Dec-23-1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_EG-35mm-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_Unifold_V2_Dec-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSF70-bifold_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-58BW-Flush-Window_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay-Windows-InfiniGLIDE-3-cill-and-drainage_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Akay-Unifold-HI-Brochure-Nov-23_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-ST-Window_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Sliding-Door_Evolve_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-Liniar-Windows_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-Optio-588W-Flush-Window-Web_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLANTERN-A4-_Jan-21_V5_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_InfiniGlide3_Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_PallazzoBrochure-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASE-60-Sliding-Door-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-VS_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ASS-50-Sliding-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-58BW-Normal-Casement_Feb21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/InfiniLIGHT-Typical-Section-Detail_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Arkay_infiniLIGHT-Product-Brochure_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Vernada-Product-Sheet-Digital_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC-DOOR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-GT55-Commercial-Door_Mar-21-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Pirnar-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/UPVC_Composite-Entrance-Door_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-ADS-70-HD_Door-Jan-21_LR-1_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Stratus_Lantern_Roof_Jan-21_LR_1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Schuco-AWS-70-SC-Window_Jan-21_LR._1.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/arkay_windows/Aluk-BSC94-Sliding-Door_Feb-21_LR.pdf']
-2024-11-06 16:04:47,945 | INFO | 4725 | Force killing process with PID 4737
-2024-11-06 16:04:47,946 | INFO | 4725 | Scraping https://www.arkaywindows.com/ for arkay_windows timed out after 300 seconds
-2024-11-06 16:04:47,948 | ERROR | 4725 | Scraping https://www.arkaywindows.com/ for arkay_windows failed with no result after 301.31344 seconds
-2024-11-06 16:04:47,948 | INFO | 4725 | Starting conversion of parsed report from markdown to PDF
-2024-11-06 16:04:48,337 | INFO | 4725 | The markdown file at temp/markdown/arkaywindows.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
-2024-11-06 16:04:48,338 | INFO | 4725 | Conversion of report completed and uploaded to vector store with id vs_iqr0wQXamhjURuWtNUoScH62
-2024-11-06 16:04:56,056 | INFO | 4725 | ['/mnt/d/Programming/convoai/server/temp/pdf/arkaywindows.pdf'] got uploded to vector store with id vs_iqr0wQXamhjURuWtNUoScH62
-2024-11-06 16:04:56,059 | INFO | 4725 | Removing Markdown file generated for arkay_windows
-2024-11-06 16:05:15,330 | INFO | 4725 | 
-Question : What are some of the best windows that you can suggest?
+2024-11-06 18:17:32,989 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '302 Found' for url 'https://www.arkaywindows.com/media-centre'
+Redirect location: 'https://www.arkaywindows.com/login/?login=media&redirect_to=https%3A%2F%2Fwww.arkaywindows.com%2Fmedia-centre'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
+2024-11-06 18:17:34,403 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/infiniglide
+2024-11-06 18:17:36,050 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/edgeglide
+2024-11-06 18:17:37,510 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/infiniglide-6
+2024-11-06 18:17:39,085 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/unifold-bifold-doors
+2024-11-06 18:17:40,470 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/arkay-windows-london
+2024-11-06 18:17:41,921 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/unifold-bifold-doors-2-2
+2024-11-06 18:17:43,341 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/infinilight
+2024-11-06 18:17:44,223 | INFO | 1922 | Attempting to terminate process with PID 1945
+2024-11-06 18:17:44,863 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/arkay-windows-aluminium-window-door-manufacturers
+2024-11-06 18:17:45,225 | INFO | 1922 | Force killing process with PID 1945
+2024-11-06 18:17:45,226 | INFO | 1922 | Scraping https://www.arkaywindows.com/ for arkay_windows timed out after 60 seconds
+2024-11-06 18:17:45,230 | ERROR | 1922 | Scraping https://www.arkaywindows.com/ for arkay_windows failed with no result after 61.07011 seconds
+2024-11-06 18:17:45,230 | INFO | 1922 | Starting conversion of parsed report from markdown to PDF
+2024-11-06 18:17:45,405 | INFO | 1922 | The markdown file at temp/markdown/arkaywindows.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-06 18:17:45,406 | INFO | 1922 | Conversion of report completed and uploaded to vector store with id vs_jbqTYWvfoiskzk5maru9rYl5
+2024-11-06 18:17:51,994 | INFO | 1922 | ['/mnt/d/Programming/convoai/server/temp/pdf/arkaywindows.pdf'] got uploded to vector store with id vs_jbqTYWvfoiskzk5maru9rYl5
+2024-11-06 18:17:51,995 | INFO | 1922 | Removing Markdown file generated for arkay_windows
+2024-11-06 18:18:06,422 | INFO | 1922 | 
+Question : Hey, Tell me a bit about your company
 Company Name : arkay_windows
-Persona : Happy Helper
+Persona : Custom Persona
 
 
-2024-11-06 16:05:30,830 | INFO | 4725 | Generated Answer: Here are some of the best window options from Arkay Windows:
-
-1. **Schüco AWS 70 HI Windows**
-   - These aluminium windows offer high thermal insulation with a 70 mm frame depth. They feature a modern aesthetic and are suitable for both new builds and refurbishments. They combine functionality and design, making them a popular choice for various project types.
-
-2. **AluK 58BW HI Windows**
-   - Available in both casement and flush designs, these windows are known for their clean lines and advanced functionality. They meet high security standards and are designed for durability, making them ideal for both residential and commercial properties.
-
-3. **Slimline Aluminium Windows (Schüco AWS 70 SC)**
-   - This window range is particularly noted for its slim frame profile, making it a versatile addition to any property. It’s designed for excellent insulation and can be customized to suit different architectural styles.
-
-4. **AluK 58BW HI Flush Casement Windows**
-   - These windows feature a sleek design that mimics traditional styles but offers modern performance and durability. They have been tested for safety and energy efficiency, providing a high level of security.
-
-5. **uPVC Casement Windows (Liniar)**
-   - This range provides a beautiful and practical design that allows for natural light while being highly secure. The windows are energy-efficient, making them suitable for modern energy standards while maintaining a classic look.
-
-6. **Vertical Sliding Slim Frame Windows (Liniar)**
-   - Combining traditional aesthetics with modern technology, these sliding sash windows offer a high level of security and thermal performance.
-
-These products emphasize durability, energy efficiency, aesthetic appeal, and security, making them excellent choices for various residential and commercial applications. Each type can be customized to meet the specific needs of your project while adhering to the latest building regulations.
-2024-11-06 16:06:45,297 | INFO | 5196 | 
-Question : I want to buy some windows, Can you guide me through the process?
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:07:02,794 | INFO | 5196 | Generated Answer: Sure! Here’s a guided process to help you buy windows from Arkay Windows:
-
-1. **Get a Quote:**
-   - You can get a quote by sending an email to sales@arkaywindows.com with your requirements, which should include a drawing of your product, sizes, color preferences, and any extras you require. Alternatively, you can use their online quoting engine.
-   - If you are a first-time customer, make sure to include your full company name, address, and contact details to get set up in their system.
-
-2. **Review and Confirm Your Quote:**
-   - Once you receive the quote, if you are satisfied, send back the signed quotation along with a 40% deposit to confirm your order.
-   - If you need to make changes, you can email them for an amended quote.
-
-3. **Lead Times:**
-   - For the most current lead times, you can email or call them (01923 803923).
-
-4. **Visit the Showroom:**
-   - You are welcome to visit their showroom in Watford, which is open Monday to Friday from 9:30 AM to 4:30 PM. It’s advisable to call or email in advance to ensure availability.
-
-5. **Delivery Process:**
-   - After your order is confirmed, you can arrange for delivery by emailing deliveries@arkaywindows.com with your desired delivery location and phone number. They will provide a delivery time slot (morning or afternoon).
-
-6. **Warranty and Support:**
-   - If you experience any issues with your product after installation, their aftersales team is available to assist you.
-
-7. **Customization Options:**
-   - Arkay Windows offers a wide range of customization options in design, color (over 200 options), and hardware. You can work with them to tailor specifications to suit your preferences.
-
-8. **Energy Efficiency and Compliance:**
-   - Many of their products, like the AluK 58BW HI Windows and EdgeGlide+ sliding doors, comply with new building regulations and are designed for high energy efficiency.
-
-By following these steps, you should be able to successfully purchase windows from Arkay Windows. If you have any further questions, feel free to ask!
-2024-11-06 16:07:34,493 | INFO | 5196 | 
-Question : Can you help me choose a good window right now?
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:07:47,960 | INFO | 5196 | Generated Answer: Here are some excellent window options you might consider from Arkay Windows:
-
-1. **Liniar uPVC Casement Windows**:
-   - These windows feature a timeless design with modern performance. They are highly secure and thermally efficient, making them a great choice for energy savings. 
-   - You can customize your casement windows with a variety of colour and finish options to suit your home’s aesthetics.
-
-2. **AluK 58BW HI Windows**:
-   - Made from aluminium, these windows offer a sleek modern appearance with high thermal efficiency. They are designed for durability and weather resistance, and they are available in many configurations (casement, tilt-before-turn, etc.).
-   - This window range also allows for extensive customization with over 200 RAL colours available, offering dual colour options as well.
-
-3. **Schüco AWS 70 HI Windows**:
-   - These aluminium windows combine aesthetic appeal with energy efficiency, featuring a narrow frame depth for slim sightlines. 
-   - They are suitable for both new builds and refurbishment projects, thus adding significant value to your property.
-
-4. **Vertical Sliding Slim Frame Windows**:
-   - Ideal if you're looking for a classic style. These UPVC windows provide a traditional appearance with modern performance, designed to keep your views unobstructed.
-   - They offer excellent thermal efficiency and security while enriching the aesthetic of heritage properties.
-
-5. **Tilt and Turn Windows**:
-   - These windows are perfect for contemporary designs, offering versatile operation modes by tilting or turning inward, making them easy to clean.
-   - They are crafted for high thermal efficiency and weatherproofing, ensuring energy savings while providing a modern look.
-
-When choosing a window, consider your specific needs such as style, energy efficiency, security features, and the overall aesthetics you want to achieve for your home. Each option above can be tailored to match your preferences and requirements.
-
-If you would like more information about any specific window type or need help with customization options, feel free to ask!
-2024-11-06 16:08:06,088 | INFO | 5196 | 
-Question : I want to buy something modern
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:08:15,658 | INFO | 5196 | Generated Answer: If you are looking for modern window options from Arkay Windows, here are a couple of excellent choices to consider:
-
-1. **AluK 58BW HI Windows**:
-   - These aluminium windows have a sleek, modern design with high thermal efficiency and durability. 
-   - They offer various configurations, including casement and tilt-before-turn, which can suit a contemporary aesthetic.
-   - You can also customize them extensively with over 200 RAL colour options, allowing for a dual-colour finish if desired.
-
-2. **Schüco AWS 70 HI Windows**:
-   - This option features a slim frame design that provides minimal sightlines, enhancing the look of modern architectural styles.
-   - The combination of aesthetics and energy efficiency makes it suitable for both new construction and renovation projects.
-
-3. **Tilt and Turn Windows**:
-   - These windows are very modern in functionality, allowing for flexible operation—either tilting for ventilation or fully turning inwards for easy cleaning.
-   - They are crafted to be energy efficient and weatherproof, making them a practical choice without compromising on modern design.
-
-4. **Liniar uPVC Casement Windows**:
-   - While a bit more traditional, they come with a modern twist and excellent thermal performance.
-   - They can be customized significantly to fit contemporary home designs.
-
-Each of these options will provide a modern aesthetic while offering functional benefits like energy savings and security. 
-
-If you would like assistance with customizing one of these options further or have specific preferences in mind, just let me know!
-2024-11-06 16:19:22,911 | INFO | 5196 | 
-Question : Hello, Where is your company based?
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:19:30,208 | INFO | 5196 | Generated Answer: Arkay Windows is based in Watford, London. The exact address is:
-
-**36-38 Caxton Way, Watford Business Park, Watford, WD18 8QZ, UK.** 
-
-If you need to contact them, the phone number is **01923 803923** and you can also reach them via email at **sales@arkaywindows.com**.
-2024-11-06 16:19:49,077 | INFO | 5196 | 
-Question : Can you help me write a mail to them asking for a quotee?
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:19:56,743 | INFO | 5196 | Generated Answer: Certainly! Here's a draft email you can use to request a quote from Arkay Windows:
-
----
-
-Subject: Request for Quote for Windows
-
-Dear Arkay Windows Team,
-
-I hope this message finds you well. 
-
-I am interested in obtaining a quote for windows for my property. Here are the details I would like to provide for your consideration:
-
-- **Window Type:** [Specify the type of windows you are interested in, e.g., AluK 58BW HI Windows, Liniar uPVC Casement Windows, etc.]
-- **Sizes:** [Include the dimensions of the windows you require]
-- **Color Preferences:** [Specify any color preferences you have]
-- **Extras:** [List any additional features or requirements, such as security features, double glazing, etc.]
-- **Drawing:** [Attach a drawing or plan of your project if you have one]
-
-I am excited to explore the options available and would appreciate your prompt response with a quote.
-
-Please let me know if you need any more information from my side to facilitate this request.
-
-Thank you!
-
-Best regards,
-
-[Your Name]  
-[Your Company Name] (if applicable)  
-[Your Address]  
-[Your Phone Number]  
-[Your Email Address]
-
----
-
-Feel free to update the placeholders and any other details specific to your request! If you need further assistance or modifications, let me know!
-2024-11-06 16:20:15,727 | INFO | 5196 | 
-Question : Can you help me with maths problem?
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:20:18,631 | INFO | 5196 | Generated Answer: Of course! Please provide the math problem you're working on, and I'll be happy to help you with it.
-2024-11-06 16:20:30,156 | INFO | 5196 | 
-Question : What's the integration of sin(x)
-Company Name : arkay_windows
-Persona : Happy Helper
-
-
-2024-11-06 16:20:34,118 | INFO | 5196 | Generated Answer: The integral of \(\sin(x)\) with respect to \(x\) is:
-
-\[
-\int \sin(x) \, dx = -\cos(x) + C
-\]
-
-where \(C\) is the constant of integration. If you have any other math problems or need further assistance with this topic, feel free to ask!
+2024-11-06 18:18:11,557 | INFO | 1922 | Generated Answer: Meow! Arkay Windows be company making magical, high-quality windows and doors! We focus on creating durable, energy-efficient products that keep homes cozy and stylish. Our cats-pertise includes offering various designs and materials to cater to every kitty's taste. We also care about customer satisfaction and strive to provide purr-fect service. If you have any specific questions, just meow, and I'll fetch the details! 🐾
