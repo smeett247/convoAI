@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, forwardRef } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { HOST } from "../../config";
 import {
@@ -92,12 +92,23 @@ function Form() {
     setFormData({ ...formData, additionalWebsites: newWebsites });
   };
 
-  //@ts-ignore
-  const checkScrapingStatus = async (companyName) => {
+  /**
+   * Check the status of a scraping session. If the status is "In Progress", the
+   * function will recursively call itself after 5 seconds. If the status is
+   * anything else, the function will display a toast notification that asks the
+   * user if they want to proceed to the chatbot. If the user clicks yes, they
+   * will be redirected to the chatbot page with the company name as a query
+   * parameter. If the user clicks no, the toast notification will be dismissed.
+   *
+   * @param {string} companyName - The name of the company to check the scraping
+   * status for.
+   */
+  const checkScrapingStatus = async (companyName: string) => {
     try {
       const response = await fetch(`${HOST}/scraping_status/${companyName}`);
       const result = await response.json();
-      if (response.ok && result.status != "In Progress") {
+
+      if (response.ok && result.status !== "In Progress") {
         setLoading(false);
         toast(
           (t) => (
@@ -107,7 +118,7 @@ function Form() {
               <button
                 onClick={() => {
                   navigate(
-                    `/chatbot?company=${formData.company_name
+                    `/chatbot?company=${companyName
                       .toLowerCase()
                       .replace(" ", "_")}`
                   );
@@ -130,7 +141,6 @@ function Form() {
           }
         );
       } else {
-        //* Handle Progress Bar here
         setTimeout(() => checkScrapingStatus(companyName), 5000);
       }
     } catch (error) {
@@ -140,48 +150,73 @@ function Form() {
     }
   };
 
+  /**
+   * Handles the form submission.
+   * - Prevents the default form submission event
+   * - Shows a toast while the server is processing the request
+   * - If the server responds with a 200 status code, shows a success toast
+   *   and starts the scraping session
+   * - If the server responds with an error, shows an error toast
+   * - If there is an error during the request, shows an error toast
+   * - If the server doesn't respond, shows an error toast
+   */
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("company_url", formData.company_url);
-    data.append("company_name", formData.company_name);
-    if (formData.logo) data.append("logo", formData.logo);
-    data.append("additional_websites", formData.additionalWebsites.join(", "));
-    if (formData.timeout_seconds != "0")
-      data.append("timeout_seconds", formData.timeout_seconds);
-    else data.append("timeout_seconds", "30");
-    data.append("instructions", formData.instructions);
-    data.append("persona", formData.persona);
-    if (formData.customer_name)
-      data.append("customer_name", formData.customer_name);
-    formData.attachments.forEach((file) => data.append("attachments", file));
-    console.log("Scraping begun with timout of : " + formData.timeout_seconds);
 
-    setLoading(true);
-
-    try {
-      const response = await fetch(`${HOST}/scrap`, {
-        method: "POST",
-        body: data,
-      });
-
-      if (response.ok) {
-        toast.success("Form saved, starting scraping session");
-
-        checkScrapingStatus(
-          formData.company_name.toLowerCase().replace(" ", "_")
+    toast.promise(
+      new Promise(async (resolve, reject) => {
+        const data = new FormData();
+        data.append("company_url", formData.company_url);
+        data.append("company_name", formData.company_name);
+        if (formData.logo) data.append("logo", formData.logo);
+        data.append(
+          "additional_websites",
+          formData.additionalWebsites.join(", ")
         );
-      } else {
-        const result = await response.json();
-        toast.error(result.message);
-        setLoading(false);
+        if (formData.timeout_seconds != "0")
+          data.append("timeout_seconds", formData.timeout_seconds);
+        else data.append("timeout_seconds", "30");
+        data.append("instructions", formData.instructions);
+        data.append("persona", formData.persona);
+        if (formData.customer_name)
+          data.append("customer_name", formData.customer_name);
+        formData.attachments.forEach((file) =>
+          data.append("attachments", file)
+        );
+
+        setLoading(true);
+
+        try {
+          const response = await fetch(`${HOST}/scrap`, {
+            method: "POST",
+            body: data,
+          });
+
+          if (response.ok) {
+            resolve("Company saved, starting scraping session");
+
+            checkScrapingStatus(
+              formData.company_name.toLowerCase().replace(" ", "_")
+            );
+          } else {
+            const result = await response.json();
+            reject(result.message);
+            setLoading(false);
+          }
+        } catch (error) {
+          reject(
+            "The server didn't respond, Are you sure the server is running?"
+          );
+          setLoading(false);
+        }
+      }),
+      {
+        loading:
+          "Trying to generate vector store and assistant for your company",
+        success: (data: any) => data,
+        error: (error: any) => error,
       }
-    } catch (error) {
-      toast.error(
-        "The server didn't respond, Are you sure the server is running?"
-      );
-      setLoading(false);
-    }
+    );
   };
 
   return (

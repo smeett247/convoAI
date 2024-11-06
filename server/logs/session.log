@@ -1,0 +1,83 @@
+2024-11-06 11:27:17,431 | INFO | 1686 | Attempting to retrieve logo for arkay windows from Google Images
+2024-11-06 11:27:22,440 | INFO | 1686 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-06 11:27:22,444 | INFO | 1686 | Removing crawled logo from images directory
+2024-11-06 11:27:22,459 | ERROR | 1686 | arkay_windows has already been scrapped, skipping scraping for now
+2024-11-06 11:28:24,032 | INFO | 1686 | Attempting to retrieve logo for arkay windows from Google Images
+2024-11-06 11:28:27,039 | INFO | 1686 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-06 11:28:27,044 | INFO | 1686 | Removing crawled logo from images directory
+2024-11-06 11:28:27,173 | ERROR | 1686 | arkay_windows has already been scrapped, skipping scraping for now
+2024-11-06 11:28:37,802 | INFO | 1686 | Assistant with ID asst_Tf9zjVyUPHa23LRMDmZMxmeZ deleted.
+2024-11-06 11:28:39,222 | INFO | 1686 | Vector store with ID vs_XJyHce1UvBkEJGOWKxVrwobx deleted.
+2024-11-06 11:28:53,133 | INFO | 1686 | Attempting to retrieve logo for arkay windows from Google Images
+2024-11-06 11:28:56,141 | INFO | 1686 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-06 11:28:56,146 | INFO | 1686 | Removing crawled logo from images directory
+2024-11-06 11:28:56,149 | INFO | 1686 | Creating vector store and assistant id for new company: arkay_windows
+2024-11-06 11:28:56,755 | INFO | 1686 | Vector ID generated for arkay_windows
+2024-11-06 11:28:57,550 | INFO | 1686 | Assistant ID generated for arkay_windows
+2024-11-06 11:28:57,551 | INFO | 1686 | Converting attachments to PDF format
+2024-11-06 11:28:57,551 | INFO | 1686 | No attachments found! Skipping upload step
+2024-11-06 11:28:57,597 | INFO | 1686 | Starting Scraping task on background thread
+2024-11-06 11:28:57,597 | INFO | 1686 | Sending scraping begun response to client
+2024-11-06 11:28:57,597 | INFO | 1686 | Starting Scraping Session with Timeout at 20 seconds
+2024-11-06 11:28:57,598 | INFO | 1686 | Task started for https://www.arkaywindows.com/ at 2024-11-06 11:28:57.598080
+2024-11-06 11:28:57,602 | INFO | 1723 | Started scraping https://www.arkaywindows.com/ for arkay_windows at 2024-11-06 11:28:57.602577
+2024-11-06 11:28:57,603 | INFO | 1723 | Started Scraping from https://www.arkaywindows.com/
+2024-11-06 11:28:59,846 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/
+2024-11-06 11:29:01,899 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold-hi
+2024-11-06 11:29:03,829 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/resources
+2024-11-06 11:29:05,041 | ERROR | 1723 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/terms-and-conditions/'
+Redirect location: 'https://www.arkaywindows.com/terms-and-conditions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 11:29:06,410 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/product_category/windows
+2024-11-06 11:29:07,968 | ERROR | 1723 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '302 Found' for url 'https://www.arkaywindows.com/media-centre'
+Redirect location: 'https://www.arkaywindows.com/login/?login=media&redirect_to=https%3A%2F%2Fwww.arkaywindows.com%2Fmedia-centre'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
+2024-11-06 11:29:09,389 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=sliding-doors
+2024-11-06 11:29:10,749 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/contact-us
+2024-11-06 11:29:12,083 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/door-manufacturer
+2024-11-06 11:29:13,476 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/about-us
+2024-11-06 11:29:14,896 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold
+2024-11-06 11:29:16,309 | INFO | 1723 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=hinged-doors
+2024-11-06 11:29:17,496 | ERROR | 1723 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/privacy-policy/'
+Redirect location: 'https://www.arkaywindows.com/privacy-policy'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+2024-11-06 11:29:17,623 | INFO | 1686 | Attempting to terminate process with PID 1723
+2024-11-06 11:29:18,626 | INFO | 1686 | Force killing process with PID 1723
+2024-11-06 11:29:18,628 | INFO | 1686 | Scraping https://www.arkaywindows.com/ for arkay_windows timed out after 20 seconds
+2024-11-06 11:29:18,634 | ERROR | 1686 | Scraping https://www.arkaywindows.com/ for arkay_windows failed with no result after 21.035897 seconds
+2024-11-06 11:29:18,634 | INFO | 1686 | Starting conversion of parsed report from markdown to PDF
+2024-11-06 11:29:19,102 | INFO | 1686 | The markdown file at temp/markdown/arkaywindows.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-06 11:29:19,102 | INFO | 1686 | Conversion of report completed and uploaded to vector store with id vs_KGaXrS9pR95y1elgT3NDeBNf
+2024-11-06 11:29:23,726 | INFO | 1686 | ['/mnt/d/Programming/convoai/server/temp/pdf/arkaywindows.pdf'] got uploded to vector store with id vs_KGaXrS9pR95y1elgT3NDeBNf
+2024-11-06 11:29:23,730 | INFO | 1686 | Removing Markdown file generated for arkay_windows
+2024-11-06 13:46:48,503 | INFO | 1618 | Attempting to retrieve logo for tech mahindra from Google Images
+2024-11-06 13:46:51,516 | INFO | 1618 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-06 13:46:51,814 | INFO | 1618 | Removing crawled logo from images directory
+2024-11-06 13:46:51,821 | INFO | 1618 | Creating vector store and assistant id for new company: tech_mahindra
+2024-11-06 13:46:52,505 | INFO | 1618 | Vector ID generated for tech_mahindra
+2024-11-06 13:46:53,253 | INFO | 1618 | Assistant ID generated for tech_mahindra
+2024-11-06 13:46:53,253 | INFO | 1618 | Converting attachments to PDF format
+2024-11-06 13:46:53,254 | INFO | 1618 | No attachments found! Skipping upload step
+2024-11-06 13:46:53,343 | INFO | 1618 | Starting Scraping task on background thread
+2024-11-06 13:46:53,343 | INFO | 1618 | Sending scraping begun response to client
+2024-11-06 13:46:53,344 | INFO | 1618 | Starting Scraping Session with Timeout at 10 seconds
+2024-11-06 13:46:53,344 | INFO | 1618 | Task started for https://www.techmahindra.com/ at 2024-11-06 13:46:53.344733
+2024-11-06 13:46:53,351 | INFO | 1631 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-06 13:46:53.351743
+2024-11-06 13:46:53,352 | INFO | 1631 | Started Scraping from https://www.techmahindra.com/
+2024-11-06 13:46:53,617 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/
+2024-11-06 13:46:54,981 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/
+2024-11-06 13:46:55,832 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/
+2024-11-06 13:46:57,225 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/industries/energy-and-utilities/
+2024-11-06 13:46:58,489 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/
+2024-11-06 13:46:59,328 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
+2024-11-06 13:47:00,656 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/
+2024-11-06 13:47:01,708 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/
+2024-11-06 13:47:02,589 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/
+2024-11-06 13:47:03,359 | INFO | 1618 | Attempting to terminate process with PID 1631
+2024-11-06 13:47:03,916 | INFO | 1631 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
+2024-11-06 13:47:04,362 | INFO | 1618 | Force killing process with PID 1631
+2024-11-06 13:47:04,364 | INFO | 1618 | Scraping https://www.techmahindra.com/ for tech_mahindra timed out after 10 seconds
+2024-11-06 13:47:04,371 | ERROR | 1618 | Scraping https://www.techmahindra.com/ for tech_mahindra failed with no result after 11.026745 seconds
+2024-11-06 13:47:04,371 | INFO | 1618 | Starting conversion of parsed report from markdown to PDF
+2024-11-06 13:47:04,482 | INFO | 1618 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-06 13:47:04,482 | INFO | 1618 | Conversion of report completed and uploaded to vector store with id vs_qY8wcjWVKgKLb4SxWd213LO5
