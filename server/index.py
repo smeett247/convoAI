@@ -234,7 +234,7 @@ async def scrap(
     response: Response,
     background_tasks: BackgroundTasks,
     company_name: str = Form(...),
-    company_url: str = Form(...),
+    company_url: Optional[str] = Form(None),
     instructions: Optional[str] = Form(""),
     persona: str = Form(...),
     customer_name: Optional[str] = Form(""),
@@ -244,7 +244,7 @@ async def scrap(
     attachments: list[UploadFile] = File(None),
 ):
     company_name = company_name.lower().strip().replace(" ", "_")
-    if not validate_website(company_url):
+    if company_url and not validate_website(company_url):
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
 
@@ -310,7 +310,10 @@ async def scrap(
             }
         )
 
-        websites_to_scrape = [company_url]
+        websites_to_scrape = []
+        if company_url:
+            websites_to_scrape.append(company_url)
+
         if additional_websites:
             websites_to_scrape.extend(additional_websites.split(","))
 
@@ -333,10 +336,16 @@ async def scrap(
         logger.info("Sending scraping begun response to client")
 
         response.status_code = status.HTTP_201_CREATED
-        return {
-            "message": "Company saved and scraping started",
-            "company_name": company_name,
-        }
+        if company_url:
+            return {
+                "message": "Company saved and scraping started",
+                "company_name": company_name,
+            }
+        else:
+            return {
+                "message": "Company saved and uploading attachments started",
+                "company_name": company_name,
+            }
 
     except ClientResponseError as e:
         response.status_code = status.HTTP_400_BAD_REQUEST

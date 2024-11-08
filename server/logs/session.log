@@ -461,3 +461,14 @@ Persona : Custom Persona
 
 
 2024-11-06 18:18:11,557 | INFO | 1922 | Generated Answer: Meow! Arkay Windows be company making magical, high-quality windows and doors! We focus on creating durable, energy-efficient products that keep homes cozy and stylish. Our cats-pertise includes offering various designs and materials to cater to every kitty's taste. We also care about customer satisfaction and strive to provide purr-fect service. If you have any specific questions, just meow, and I'll fetch the details! 🐾
+2024-11-08 17:25:27,501 | INFO | 2146 | Creating vector store and assistant id for new company: google
+2024-11-08 17:25:28,132 | INFO | 2146 | Vector ID generated for google
+2024-11-08 17:25:28,847 | INFO | 2146 | Assistant ID generated for google
+2024-11-08 17:25:28,847 | INFO | 2146 | Converting attachments to PDF format
+2024-11-08 17:25:28,848 | INFO | 2146 | Uploading attachments to vector store to ID vs_Yo8AZuxDPtsam9YNsJD8h4Ex
+2024-11-08 17:25:34,284 | INFO | 2146 | ['/mnt/d/Programming/convoai/server/temp/attachments/Digital-Services-Act-Practical-Implications-for-Online-Services-and-Platforms.pdf'] got uploded to vector store with id vs_Yo8AZuxDPtsam9YNsJD8h4Ex
+2024-11-08 17:25:34,464 | INFO | 2146 | Starting Scraping task on background thread
+2024-11-08 17:25:34,464 | INFO | 2146 | Sending scraping begun response to client
+2024-11-08 17:25:34,465 | INFO | 2146 | Starting Scraping Session with Timeout at 30 seconds
+2024-11-08 17:25:34,465 | INFO | 2146 | Starting conversion of parsed report from markdown to PDF
+2024-11-08 17:25:34,467 | INFO | 2146 | No PDF found from scrapped session, something went wrong.... Skipping upload

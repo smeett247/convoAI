@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HOST } from "../../config";
 import {
@@ -24,8 +24,6 @@ import Ellipse4 from "../assets/images/Ellipse4.svg";
 import toast from "react-hot-toast";
 
 function Form() {
-  const { theme } = useContext(ThemeContext);
-  const messageContainerRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     company_url: "",
     company_name: "",
@@ -93,17 +91,6 @@ function Form() {
     setFormData({ ...formData, additionalWebsites: newWebsites });
   };
 
-  /**
-   * Check the status of a scraping session. If the status is "In Progress", the
-   * function will recursively call itself after 5 seconds. If the status is
-   * anything else, the function will display a toast notification that asks the
-   * user if they want to proceed to the chatbot. If the user clicks yes, they
-   * will be redirected to the chatbot page with the company name as a query
-   * parameter. If the user clicks no, the toast notification will be dismissed.
-   *
-   * @param {string} companyName - The name of the company to check the scraping
-   * status for.
-   */
   const checkScrapingStatus = async (companyName: string) => {
     try {
       const response = await fetch(`${HOST}/scraping_status/${companyName}`);
@@ -114,7 +101,7 @@ function Form() {
         toast(
           (t) => (
             <span>
-              Scraping session completed. Proceed to Chatbot?
+              Chatbot initialization completed. Proceed to chatbot?
               <br />
               <button
                 onClick={() => {
@@ -151,18 +138,12 @@ function Form() {
     }
   };
 
-  /**
-   * Handles the form submission.
-   * - Prevents the default form submission event
-   * - Shows a toast while the server is processing the request
-   * - If the server responds with a 200 status code, shows a success toast
-   *   and starts the scraping session
-   * - If the server responds with an error, shows an error toast
-   * - If there is an error during the request, shows an error toast
-   * - If the server doesn't respond, shows an error toast
-   */
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    if (!formData.company_name) {
+      toast.error("Please provide the company name");
+      return;
+    }
 
     toast.promise(
       new Promise(async (resolve, reject) => {
@@ -283,7 +264,7 @@ function Form() {
       <div
         style={{
           marginTop: "50px",
-          backgroundColor: theme.backgroundColor,
+
           borderRadius: "8px",
           padding: "2vh 3vw",
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
@@ -308,7 +289,7 @@ function Form() {
         <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
-            label="Website*"
+            label="Website"
             variant="outlined"
             placeholder="www.msbcgroup.com"
             value={formData.company_url}
@@ -515,7 +496,6 @@ function Form() {
               <MenuItem value="Custom Persona">Custom Persona</MenuItem>
             </Select>
 
-            {/* Conditionally render the TextField for custom instructions */}
             {formData.persona === "Custom Persona" && (
               <>
                 <TextField
@@ -629,64 +609,67 @@ function Form() {
               },
             }}
           />
-          <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-            <TextField
-              fullWidth
-              type="number"
-              label="Timeout Minutes"
-              variant="outlined"
-              onChange={(e) => {
-                const mins = parseInt(e.target.value, 10) || 0;
-                const currentSeconds =
-                  parseInt(formData.timeout_seconds, 10) || 0;
-                setFormData({
-                  ...formData,
-                  timeout_seconds: String(mins * 60 + (currentSeconds % 60)),
-                });
-              }}
-              margin="normal"
-            />
-            <TextField
-              fullWidth
-              type="number"
-              label="Timeout Seconds"
-              variant="outlined"
-              onChange={(e) => {
-                const secs = parseInt(e.target.value, 10) || 0;
-                const currentMinutes =
-                  Math.floor(parseInt(formData.timeout_seconds, 10) / 60) || 0;
-                setFormData({
-                  ...formData,
-                  timeout_seconds: String(currentMinutes * 60 + secs),
-                });
-              }}
-              margin="normal"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#d7d7d7",
-                    borderRadius: "8px",
+          {formData.company_url.trim() && (
+            <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+              <TextField
+                fullWidth
+                type="number"
+                label="Timeout Minutes"
+                variant="outlined"
+                onChange={(e) => {
+                  const mins = parseInt(e.target.value, 10) || 0;
+                  const currentSeconds =
+                    parseInt(formData.timeout_seconds, 10) || 0;
+                  setFormData({
+                    ...formData,
+                    timeout_seconds: String(mins * 60 + (currentSeconds % 60)),
+                  });
+                }}
+                margin="normal"
+              />
+              <TextField
+                fullWidth
+                type="number"
+                label="Timeout Seconds"
+                variant="outlined"
+                onChange={(e) => {
+                  const secs = parseInt(e.target.value, 10) || 0;
+                  const currentMinutes =
+                    Math.floor(parseInt(formData.timeout_seconds, 10) / 60) ||
+                    0;
+                  setFormData({
+                    ...formData,
+                    timeout_seconds: String(currentMinutes * 60 + secs),
+                  });
+                }}
+                margin="normal"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#d7d7d7",
+                      borderRadius: "8px",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#ff9800",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#243a57",
+                    },
                   },
-                  "&:hover fieldset": {
-                    borderColor: "#ff9800",
+                  "& .MuiOutlinedInput-input": {
+                    color: "#243a57",
+                    backgroundColor: "transparent",
                   },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "#243a57",
+                  "& .MuiOutlinedInput-root.Mui-focused": {
+                    backgroundColor: "transparent",
                   },
-                },
-                "& .MuiOutlinedInput-input": {
-                  color: "#243a57",
-                  backgroundColor: "transparent",
-                },
-                "& .MuiOutlinedInput-root.Mui-focused": {
-                  backgroundColor: "transparent",
-                },
-                "&:hover": {
-                  backgroundColor: "transparent",
-                },
-              }}
-            />
-          </div>
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                  },
+                }}
+              />
+            </div>
+          )}
 
           <Button
             variant="contained"
