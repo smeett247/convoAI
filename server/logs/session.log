@@ -472,3 +472,16 @@ Persona : Custom Persona
 2024-11-08 17:25:34,465 | INFO | 2146 | Starting Scraping Session with Timeout at 30 seconds
 2024-11-08 17:25:34,465 | INFO | 2146 | Starting conversion of parsed report from markdown to PDF
 2024-11-08 17:25:34,467 | INFO | 2146 | No PDF found from scrapped session, something went wrong.... Skipping upload
+2024-11-11 13:09:15,823 | INFO | 16652 | Creating vector store and assistant id for new company: myntraaaa
+2024-11-11 13:09:16,606 | INFO | 16652 | Vector ID generated for myntraaaa
+2024-11-11 13:09:17,347 | INFO | 16652 | Assistant ID generated for myntraaaa
+2024-11-11 13:09:17,347 | INFO | 16652 | Converting attachments to PDF format
+2024-11-11 13:09:17,347 | INFO | 16652 | No attachments found! Skipping upload step
+2024-11-11 13:09:17,567 | INFO | 16652 | Starting Scraping task on background thread
+2024-11-11 13:09:17,567 | INFO | 16652 | Sending scraping begun response to client
+2024-11-11 13:09:17,567 | INFO | 16652 | Starting Scraping Session with Timeout at 10 seconds
+2024-11-11 13:09:17,567 | INFO | 16652 | Task started for https://www.myntra.com/ at 2024-11-11 13:09:17.567170
+2024-11-11 13:09:19,892 | INFO | 5480 | Started scraping https://www.myntra.com/ for myntraaaa at 2024-11-11 13:09:19.892250
+2024-11-11 13:09:20,235 | ERROR | 5480 | Got an error while scraping https://www.myntra.com/ : Client error '403 Forbidden' for url 'https://www.myntra.com/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2024-11-11 13:09:20,235 | INFO | 5480 | Completed scraping https://www.myntra.com/ for myntraaaa at 2024-11-11 13:09:20.235772, time taken: 0.343522 seconds

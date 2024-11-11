@@ -1,0 +1,242 @@
+==================Vector Store Data=================
+
+S.No : 1
+Vector Store ID : vs_HgAkkjZtvA3KYH1HXV9wBS3Y
+Created At: 2024-11-05 15:22:45
+Name : Jane Doe's Store
+File Counts : FileCounts(cancelled=0, completed=2, failed=0, in_progress=0, total=2)
+Status : completed
+Usage in Bytes: 1313072
+Last Active At: 2024-11-05 15:30:38
+
+
+-------------
+
+S.No : 2
+Vector Store ID : vs_JVRQOgJZU6KAeEe8V5YM5mGZ
+Created At: 2024-11-05 14:39:03
+Name : jpmorgan_chase
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:39:04
+
+
+-------------
+
+S.No : 3
+Vector Store ID : vs_s0lSS0UQsOsjbwcgGlpA7TvR
+Created At: 2024-11-05 14:34:11
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:36:11
+
+
+-------------
+
+S.No : 4
+Vector Store ID : vs_zlTZidixiWxa6ZwaEvGgPtmb
+Created At: 2024-11-05 14:32:17
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:32:17
+
+
+-------------
+
+S.No : 5
+Vector Store ID : vs_UtLcjDVuaxfSwVOmSWd1YZCo
+Created At: 2024-11-05 14:29:54
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:29:55
+
+
+-------------
+
+S.No : 6
+Vector Store ID : vs_Gwlh2DIpoXHBKTYufzH1KKiH
+Created At: 2024-11-05 14:28:36
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:28:37
+
+
+-------------
+
+S.No : 7
+Vector Store ID : vs_MEKtMlk5KwGKkilm1XvQttu5
+Created At: 2024-11-05 14:28:20
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:28:21
+
+
+-------------
+
+S.No : 8
+Vector Store ID : vs_5Z0y4w1DkVb1htfquiHIKj7g
+Created At: 2024-11-05 14:27:19
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:27:23
+
+
+-------------
+
+S.No : 9
+Vector Store ID : vs_KyAVd4OTGXUMu8InzKj4w68f
+Created At: 2024-11-05 14:26:23
+Name : msbc
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-05 14:26:24
+
+
+-------------
+
+S.No : 10
+Vector Store ID : vs_xYcPATO1qfYPwxCNEVnjymRU
+Created At: 2024-11-05 12:04:50
+Name : arkay_windows
+File Counts : FileCounts(cancelled=0, completed=2, failed=0, in_progress=0, total=2)
+Status : completed
+Usage in Bytes: 293502
+Last Active At: 2024-11-05 12:53:47
+
+
+-------------
+
+S.No : 11
+Vector Store ID : vs_mn2pTQTrj71zVg5zapCglZHk
+Created At: 2024-11-05 10:32:20
+Name : Issac Qureshi's Store
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 32742
+Last Active At: 2024-11-05 12:40:37
+
+
+-------------
+
+S.No : 12
+Vector Store ID : vs_FPMAmd80IycuuPIwpOtriczB
+Created At: 2024-11-04 19:44:26
+Name : tech_mahindra
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 459840
+Last Active At: 2024-11-05 11:48:22
+
+
+-------------
+
+S.No : 13
+Vector Store ID : vs_C1VRQ3XTRwjiqeRXTMc2flLM
+Created At: 2024-11-04 15:50:38
+Name : example_corp
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-04 15:50:39
+
+
+-------------
+
+S.No : 14
+Vector Store ID : vs_5JjIjjdtNw0huwQ5Gf868xDU
+Created At: 2024-11-04 15:24:00
+Name : jpmorganm
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 55157
+Last Active At: 2024-11-04 15:24:09
+
+
+-------------
+
+S.No : 15
+Vector Store ID : vs_7M8lT46YO9d3urKwX5xHefJv
+Created At: 2024-11-04 13:02:22
+Name : jpmorgan
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 111553
+Last Active At: 2024-11-04 13:02:35
+
+
+-------------
+
+S.No : 16
+Vector Store ID : vs_wGe2EGvBEnEPNBlnqu04fgUI
+Created At: 2024-11-04 13:01:44
+Name : jp_morgan
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 331353
+Last Active At: 2024-11-04 13:02:20
+
+
+-------------
+
+S.No : 17
+Vector Store ID : vs_DOiYML05pWMVJKqK5nIX1ruA
+Created At: 2024-11-04 12:20:12
+Name : binance
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 1174
+Last Active At: 2024-11-04 12:20:16
+
+
+-------------
+
+S.No : 18
+Vector Store ID : vs_buNSyWxwelc7Cb3gjCde4m26
+Created At: 2024-11-04 12:17:28
+Name : binance
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 1174
+Last Active At: 2024-11-04 12:18:03
+
+
+-------------
+
+S.No : 19
+Vector Store ID : vs_G5xagK6JGx5biswRZqi3bPEB
+Created At: 2024-11-04 12:13:42
+Name : myntra
+File Counts : FileCounts(cancelled=0, completed=0, failed=0, in_progress=0, total=0)
+Status : completed
+Usage in Bytes: 0
+Last Active At: 2024-11-04 12:13:43
+
+
+-------------
+
+S.No : 20
+Vector Store ID : vs_JSGW2qcNTWUEQdBpTVg3WEDf
+Created At: 2024-11-04 12:11:34
+Name : fathom
+File Counts : FileCounts(cancelled=0, completed=1, failed=0, in_progress=0, total=1)
+Status : completed
+Usage in Bytes: 636332
+Last Active At: 2024-11-04 12:14:46
+
+
+-------------
+

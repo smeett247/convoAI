@@ -1,22 +1,86 @@
 import "regenerator-runtime/runtime";
 import { useState, useEffect, useRef } from "react";
-import { FaMicrophoneAlt, FaStopCircle, FaStop } from "react-icons/fa";
+import { FaMicrophoneAlt, FaStopCircle, FaStop, FaRegUser, FaRobot } from "react-icons/fa";
 import { GrSend } from "react-icons/gr";
 import { motion } from "framer-motion";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { Typewriter } from "react-simple-typewriter";
 import Markdown from "react-markdown";
 import AiCard from "../components/AiCard";
 import { HOST, POCKETBASE } from "../../config";
 import { Info } from "../utils/chatBotInfo";
 import toTitleCase from "../utils/toTitleCase";
 import toast from "react-hot-toast";
+import { GoDot } from "react-icons/go";
+
+
 
 interface MessageProp {
   text: string;
   sender: string;
+  isLoading?: boolean
+}
+
+function Message({
+  message,
+  isUser,
+  isLoading,
+}: {
+  message: string;
+  isUser: boolean;
+  isLoading?: boolean;
+}) {
+  return (
+    <div
+      className={`flex ${isUser ? "justify-end" : "justify-start"} items-start`}
+    >
+      {!isUser && (
+        <div className="mr-1 border border-gray-300 p-2 rounded-full">
+          <FaRobot className="text-blue-400 text-2xl" />
+        </div>
+      )}
+      <div
+        className={`max-w-[75%] p-3 rounded-lg font-medium ${
+          isUser
+            ? "bg-blue-500 text-white shadow-md"
+            : "bg-white text-black border border-gray-300 shadow-sm"
+        }`}
+      >
+        {isLoading ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.2 }}
+            className="flex items-center"
+          >
+            {[...Array(3)].map((_, index) => (
+              <motion.p
+                key={index}
+                initial={{ y: 4 }}
+                animate={{ y: -4 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 0.5,
+                  delay: index * 0.2,
+                }}
+              >
+                <GoDot />
+              </motion.p>
+            ))}
+          </motion.div>
+        ) : (
+          <Markdown>{message}</Markdown>
+        )}
+      </div>
+      {isUser && (
+        <div className="ml-1 bg-blue-500 text-white border border-gray-300 p-2 rounded-full">
+          <FaRegUser className=" text-lg" />
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default function Chatbot() {
@@ -26,7 +90,7 @@ export default function Chatbot() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [abortController, setAbortController] =
     useState<AbortController | null>(null);
-
+ const focusRef = useRef<HTMLInputElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const urlParams = new URLSearchParams(window.location.search);
   const company = urlParams.get("company");
@@ -129,6 +193,10 @@ export default function Chatbot() {
     setPrompt("");
     resetTranscript();
     setIsProcessing(true);
+    setTimeout(() => {
+      const loadingMessage = { text: "", sender: "ai", isLoading: true };
+      setMessages((prevMessages) => [...prevMessages, loadingMessage]);
+    }, 250);
 
     const controller = new AbortController();
     setAbortController(controller);
@@ -154,7 +222,10 @@ export default function Chatbot() {
       })
       .then((data) => {
         const aiMessage = { text: data.answer, sender: "ai" };
-        setMessages((prev) => [...prev, aiMessage]);
+        setMessages((prevMessages) =>
+          prevMessages.slice(0, prevMessages.length - 1)
+        );
+        setMessages((prevMessages) => [...prevMessages, aiMessage]);
         setIsProcessing(false);
       })
       .catch((error) => {
@@ -166,6 +237,7 @@ export default function Chatbot() {
       })
       .finally(() => {
         setIsProcessing(false);
+        focusRef.current?.focus();
       });
   };
 
@@ -174,6 +246,9 @@ export default function Chatbot() {
       abortController.abort();
       setAbortController(null);
     }
+    setMessages((prevMessages) =>
+      prevMessages.slice(0, prevMessages.length - 1)
+    );
     setIsProcessing(false);
   };
 
@@ -183,7 +258,9 @@ export default function Chatbot() {
         <img
           src={`${POCKETBASE}/api/files/companies/${companyInfo.id}/${companyInfo.img}`}
           alt="Company Logo"
-          className="w-40 m-2"
+          className="w-40 m-2 cursor-pointer"
+          onClick={() => window.location.reload()}
+          
         />
         <div className="w-full bg-fill/[0.1] h-14 rounded-md border gap-4 flex items-center px-2">
           <div className="size-10 bg-fill rounded-full"></div>
@@ -225,7 +302,8 @@ export default function Chatbot() {
               <img
                 src={`${POCKETBASE}/api/files/companies/${companyInfo.id}/${companyInfo.img}`}
                 alt="Company Logo"
-                className="mt-32 w-56 md:hidden"
+                className="mt-32 w-56 md:hidden cursor-pointer"
+                onClick={() => window.location.reload()}
               />
               <motion.div
                 className="grid grid-cols-2 w-full gap-x-6 gap-y-10 pt-10 max-md:hidden"
@@ -261,30 +339,16 @@ export default function Chatbot() {
             </>
           ) : (
             <div
-              className="w-full flex flex-col gap-4 px-4 py-2 overflow-y-scroll mb-[5vh]"
+              className="w-full flex flex-col gap-4 mb-24 overflow-y-hidden overflow-x-hidden h-full px-4"
               ref={containerRef}
             >
-              {messages.map((msg, index) => (
-                <div key={index} className="flex items-center">
-                  {msg.sender === "user" ? (
-                    <div className="flex flex-col ">
-                      <p className="font-medium bg-white px-2 py-2 border rounded-full">
-                        <Typewriter
-                          words={[msg.text]}
-                          typeSpeed={2}
-                          cursorStyle={"|"}
-                          delaySpeed={3}
-                        />
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col rounded-full">
-                      <p className="font-medium mt-2">
-                        <Markdown>{msg.text}</Markdown>
-                      </p>
-                    </div>
-                  )}
-                </div>
+             {messages.map((message, index) => (
+                <Message
+                  key={index}
+                  message={message.text}
+                  isUser={message.sender === "user"}
+                  isLoading={message.isLoading}
+                />
               ))}
             </div>
           )}
@@ -299,11 +363,17 @@ export default function Chatbot() {
             className="bg-white rounded-full border flex items-center justify-between px-4 w-[90%] md:w-[60%] lg:w-[50%] max-w-[800px] py-2 h-16 fixed bottom-6"
           >
             <input
-              type="text"
-              className="rounded-full h-12 w-full focus:outline-none pl-4"
-              placeholder="Ask me anything"
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
+               type="text"
+               ref={focusRef}
+               className={`rounded-full h-12 w-full focus:outline-none pl-4 ${
+                 isProcessing && "cursor-not-allowed"
+               }`}
+               placeholder={`${
+                 isProcessing ? "Processing..." : "Ask a question"
+               }`}
+               value={prompt}
+               disabled={isProcessing}
+               onChange={(e) => setPrompt(e.target.value)}
             />
 
             <div className="flex items-center">
