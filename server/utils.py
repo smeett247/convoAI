@@ -4,14 +4,16 @@ import os
 import logging
 import subprocess
 import openai
-from urllib.parse import urlparse, urlsplit, urljoin
+from urllib.parse import urlparse, urlsplit, urljoin, quote_plus
 from bs4 import BeautifulSoup
 import httpx
 from dotenv import load_dotenv
 import re
 import logging
 from docx2pdf import convert
+import time
 from icrawler.builtin import GoogleImageCrawler
+import random
 from typing import Optional
 from fastapi import UploadFile
 from pocketbase.client import FileUpload
@@ -260,7 +262,7 @@ def generate_page_report(url: str, content: bytes, company_name: str):
 
 
 def scrape_entire_website(
-    start_url: str, company_name: str, max_pages: int = 1000
+    start_url: str, company_name: str, max_pages: int = 1000, max_retries: int = 5
 ) -> None:
     """
     Scrapes a website starting from the given URL.
@@ -271,7 +273,7 @@ def scrape_entire_website(
     Args:
         start_url (str): The starting URL for scraping.
         company_name (str): The name of the company for organizing reports.
-        max_pages (int, optional): Maximum number of pages to scrape. Defaults to 250.
+        max_pages (int, optional): Maximum number of pages to scrape. Defaults to 1000.
     """
     if not start_url:
         raise ValueError("Start URL cannot be empty")
@@ -280,35 +282,60 @@ def scrape_entire_website(
         raise ValueError("Company name cannot be empty")
 
     if not isinstance(max_pages, int) or max_pages <= 0:
-        raise ValueError("Max iterations must be a positive integer")
+        raise ValueError("Max pages must be a positive integer")
 
+    SCRAPERAPI_KEY = os.getenv("SCRAPERAPI_KEY")
     base_domain = urlparse(start_url).netloc
     scraped_urls = set()
     urls_to_scrape = [start_url]
 
     while urls_to_scrape and len(scraped_urls) < max_pages:
         url = urls_to_scrape.pop(0)
-        if not url:
-            logger.warning(f"Skipping null URL")
-            continue
-
         if url in scraped_urls:
             continue
 
-        try:
-            response = httpx.get(url, verify=False, timeout=5)
-            response.raise_for_status()
-        except (httpx.RequestError, httpx.HTTPError) as e:
-            logger.error(f"Got an error while scraping {start_url} : {e}")
-            continue
+        success = False
+        retries = 0
 
-        if not response:
-            logger.warning(f"Skipping empty response for {url}")
+        while not success and retries < max_retries:
+            try:
+                response = httpx.get(url, verify=False, timeout=5)
+
+                if response.status_code == 403:
+                    logger.info(f"Forbidden access for URL: {url}. Using ScraperAPI.")
+                    encoded_url = quote_plus(url)
+                    scraperapi_url = f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_url}"
+
+                    with httpx.Client(timeout=30) as client:
+                        response = client.get(scraperapi_url)
+                        response.raise_for_status()
+
+                success = True
+            except httpx.RequestError as e:
+                logger.error(f"Request error for {url}: {e}")
+            except httpx.HTTPStatusError as e:
+                logger.error(f"HTTP error for {url}: {e}")
+            except Exception as e:
+                logger.error(f"Unexpected error for {url}: {e}")
+
+            if not success:
+                retries += 1
+                backoff_time = min(60, (2**retries) + random.uniform(0, 1))
+                logger.info(
+                    f"Retrying ({retries}/{max_retries}) for URL: {url} after {backoff_time:.2f} seconds."
+                )
+                time.sleep(backoff_time)
+
+        if not success:
+            logger.error(
+                f"Failed to fetch {url} after {max_retries} retries. Skipping."
+            )
+            scraped_urls.add(url)
             continue
 
         scraped_urls.add(url)
-
         content_type = response.headers.get("Content-Type", "").lower()
+
         if any(url.lower().endswith(f".{ext}") for ext in attachment_extensions):
             save_extensions(
                 url,
@@ -320,7 +347,7 @@ def scrape_entire_website(
             continue
 
         if "text/html" not in content_type:
-            logger.debug(f"Invalid page response: {content_type}, skipping this URL")
+            logger.debug(f"Non-HTML content at {url}, skipping parsing.")
             continue
         else:
             generate_page_report(url, response.content, company_name)
@@ -338,7 +365,9 @@ def scrape_entire_website(
                 and joined_url not in urls_to_scrape
             ):
                 new_urls.add(joined_url)
+
         urls_to_scrape.extend(new_urls)
+        logger.info(f"Found {len(new_urls)} new URLs on {url}.")
 
 
 def convert_markdown_to_pdf(

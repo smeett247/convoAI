@@ -1,666 +1,78 @@
-2024-11-06 16:23:17,788 | INFO | 5357 | Attempting to retrieve logo for tech mahindra from Google Images
-2024-11-06 16:23:20,794 | INFO | 5357 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
-2024-11-06 16:23:20,797 | INFO | 5357 | Removing crawled logo from images directory
-2024-11-06 16:23:20,837 | INFO | 5357 | Creating vector store and assistant id for new company: tech_mahindra
-2024-11-06 16:23:21,495 | INFO | 5357 | Vector ID generated for tech_mahindra
-2024-11-06 16:23:22,311 | INFO | 5357 | Assistant ID generated for tech_mahindra
-2024-11-06 16:23:22,311 | INFO | 5357 | Converting attachments to PDF format
-2024-11-06 16:23:22,311 | INFO | 5357 | Uploading attachments to vector store to ID vs_T1WuVIDSjjDYV5J3QSVjvOjo
-2024-11-06 16:23:30,874 | INFO | 5357 | ['/mnt/d/Programming/convoai/server/temp/attachments/digital-experience-simplified.pdf'] got uploded to vector store with id vs_T1WuVIDSjjDYV5J3QSVjvOjo
-2024-11-06 16:23:30,972 | INFO | 5357 | Starting Scraping task on background thread
-2024-11-06 16:23:30,973 | INFO | 5357 | Sending scraping begun response to client
-2024-11-06 16:23:30,975 | INFO | 5357 | Starting Scraping Session with Timeout at 120 seconds
-2024-11-06 16:23:30,975 | INFO | 5357 | Task started for https://www.techmahindra.com/ at 2024-11-06 16:23:30.975571
-2024-11-06 16:23:30,980 | INFO | 5372 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-06 16:23:30.980135
-2024-11-06 16:23:31,290 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/
-2024-11-06 16:23:31,528 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/
-2024-11-06 16:23:31,771 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/
-2024-11-06 16:23:32,051 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/
-2024-11-06 16:23:32,292 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/
-2024-11-06 16:23:32,600 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/
-2024-11-06 16:23:32,758 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Applications'
-Redirect location: 'https://www.techmahindra.com/search/?search=Applications'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:33,033 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/
-2024-11-06 16:23:33,300 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/
-2024-11-06 16:23:33,480 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
-2024-11-06 16:23:33,692 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/
-2024-11-06 16:23:33,900 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/
-2024-11-06 16:23:34,079 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/sitemap
-2024-11-06 16:23:34,305 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/
-2024-11-06 16:23:34,518 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/
-2024-11-06 16:23:34,710 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/
-2024-11-06 16:23:34,927 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/
-2024-11-06 16:23:35,210 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/
-2024-11-06 16:23:35,458 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/application-services/
-2024-11-06 16:23:35,637 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/
-2024-11-06 16:23:35,858 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/artificial-intelligence/
-2024-11-06 16:23:36,067 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-brand/
-2024-11-06 16:23:36,328 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/search/
-2024-11-06 16:23:36,535 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/
-2024-11-06 16:23:36,714 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-and-it-strategy-roadmap-upcoming-middle-eastern-smart-city/
-2024-11-06 16:23:36,964 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/investors/
-2024-11-06 16:23:37,178 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/
-2024-11-06 16:23:37,493 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/healthcare-life-sciences/
-2024-11-06 16:23:37,719 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/oil-and-gas/
-2024-11-06 16:23:37,921 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/cookie-policy/
-2024-11-06 16:23:38,126 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/#main-content
-2024-11-06 16:23:38,369 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/techmverse/
-2024-11-06 16:23:38,644 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/
-2024-11-06 16:23:38,906 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/salesforce/
-2024-11-06 16:23:39,090 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/
-2024-11-06 16:23:39,412 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/
-2024-11-06 16:23:39,615 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/
-2024-11-06 16:23:39,850 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/contact-us/
-2024-11-06 16:23:40,129 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/techm-way/
-2024-11-06 16:23:40,309 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/
-2024-11-06 16:23:40,527 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/blockchain/
-2024-11-06 16:23:40,777 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/diversity-inclusion/
-2024-11-06 16:23:40,975 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/sap/
-2024-11-06 16:23:41,229 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/intelligent-automation/
-2024-11-06 16:23:41,449 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/accessibility-statement/
-2024-11-06 16:23:41,657 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/
-2024-11-06 16:23:41,879 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty'
-Redirect location: 'https://www.techmahindra.com/about-us/individual-social-responsibility/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:42,059 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/performance-engineering/
-2024-11-06 16:23:42,321 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/engineering-services/
-2024-11-06 16:23:42,585 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/indus-project/
-2024-11-06 16:23:42,830 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/scale-at-speed/
-2024-11-06 16:23:43,050 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/ways-working/
-2024-11-06 16:23:43,240 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/
-2024-11-06 16:23:43,421 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/awards/
-2024-11-06 16:23:43,572 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/access-control-management-government-agency/
-2024-11-06 16:23:43,811 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/network-services/
-2024-11-06 16:23:44,064 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/
-2024-11-06 16:23:44,358 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/pega/
-2024-11-06 16:23:44,619 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/rise/
-2024-11-06 16:23:44,828 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/
-2024-11-06 16:23:45,038 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/news/
-2024-11-06 16:23:45,359 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/events/tech-mahindra-gold-sponsor-aws-reinvent-2024/
-2024-11-06 16:23:45,504 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Mahindra'
-Redirect location: 'https://www.techmahindra.com/search/?search=Mahindra'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:45,659 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/
-2024-11-06 16:23:45,839 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/terms-of-use/
-2024-11-06 16:23:45,990 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation'
-Redirect location: 'https://www.techmahindra.com/about-us/tech-mahindra-foundation/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:46,178 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/analyst-insights/
-2024-11-06 16:23:46,366 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/#vbp-carousel-3157
-2024-11-06 16:23:46,657 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/private-equity/
-2024-11-06 16:23:46,910 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/
-2024-11-06 16:23:47,081 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/
-2024-11-06 16:23:47,307 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/
-2024-11-06 16:23:47,596 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-infrastructure-services/
-2024-11-06 16:23:47,781 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions'
-Redirect location: 'https://www.techmahindra.com/about-us/mahindra-educational-institutions/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:48,172 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/privacy-policy/
-2024-11-06 16:23:48,373 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/
-2024-11-06 16:23:48,587 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search'
-Redirect location: 'https://www.techmahindra.com/search/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:48,751 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/servicenow/
-2024-11-06 16:23:48,951 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/testing-services/
-2024-11-06 16:23:49,187 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/
-2024-11-06 16:23:49,398 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/banking-financial-services/
-2024-11-06 16:23:49,718 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/
-2024-11-06 16:23:49,937 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/next-gen-contact-center-framework-canadian-retailer/
-2024-11-06 16:23:50,163 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/
-2024-11-06 16:23:50,417 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/data-analytics/
-2024-11-06 16:23:50,640 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Jobs'
-Redirect location: 'https://www.techmahindra.com/search/?search=Jobs'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:50,819 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/
-2024-11-06 16:23:51,074 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/sustainability/
-2024-11-06 16:23:51,438 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/rcg/
-2024-11-06 16:23:51,649 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/leadership/
-2024-11-06 16:23:51,804 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Locations'
-Redirect location: 'https://www.techmahindra.com/search/?search=Locations'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:23:52,131 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/customer-speak/
-2024-11-06 16:23:52,330 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/application-development-maintenance-service/
-2024-11-06 16:23:52,613 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/ttlh/
-2024-11-06 16:23:53,915 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-portfolio-companies/
-2024-11-06 16:23:54,100 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/
-2024-11-06 16:23:54,304 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/
-2024-11-06 16:23:54,519 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/events/
-2024-11-06 16:23:54,726 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/
-2024-11-06 16:23:54,947 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/digital-supply-chain/
-2024-11-06 16:23:55,140 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/
-2024-11-06 16:23:55,353 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/
-2024-11-06 16:23:55,702 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/hi-tech/
-2024-11-06 16:23:55,913 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/energy-and-utilities/
-2024-11-06 16:23:56,157 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/
-2024-11-06 16:23:56,353 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
-2024-11-06 16:23:56,617 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/products-and-platforms/
-2024-11-06 16:23:56,795 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-data-platform-telia/
-2024-11-06 16:23:56,997 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/professional-services/
-2024-11-06 16:23:57,205 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/
-2024-11-06 16:23:57,417 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/strategy-and-consulting-services/
-2024-11-06 16:23:57,711 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/#main-content
-2024-11-06 16:23:59,372 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-beyond-pink-and-blue/
-2024-11-06 16:24:00,618 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-beautiful-mind/
-2024-11-06 16:24:01,406 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-good-last-goodbye/
-2024-11-06 16:24:02,646 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-tour-de-india-conquering-6100-km-bicycle/
-2024-11-06 16:24:02,896 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/#main-content
-2024-11-06 16:24:04,183 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-beyond-bars/
-2024-11-06 16:24:05,740 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-run-anywhere/
-2024-11-06 16:24:06,967 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-restarting-heart/
-2024-11-06 16:24:08,863 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/people/why-techm/risefromwithin-making-social-responsibility-personal-ashok-garla-and-story-amachavadi/
-2024-11-06 16:24:09,047 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/#main-content
-2024-11-06 16:24:09,342 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/our-services/
-2024-11-06 16:24:10,241 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/business-sustainability-post-covid-19-crisis/
-2024-11-06 16:24:10,502 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/#main-content
-2024-11-06 16:24:10,755 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/hi-tech/
-2024-11-06 16:24:11,993 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/unveiling-power-digital-process-mining-business-transformation/
-2024-11-06 16:24:12,771 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/bpaas/
-2024-11-06 16:24:13,610 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/navixus/
-2024-11-06 16:24:14,578 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/hyper-personalization-new-norm-customer-service/
-2024-11-06 16:24:14,816 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/banking-financial-services/
-2024-11-06 16:24:15,746 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/transport-logistics/
-2024-11-06 16:24:16,355 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/manufacturing/
-2024-11-06 16:24:17,634 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/energy-utilities/
-2024-11-06 16:24:18,620 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/insurance/
-2024-11-06 16:24:19,915 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/unlocking-kyc-aml-operational-agility-next-gen-offerings/
-2024-11-06 16:24:20,509 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/why-digitally-transform-your-back-office-operations/
-2024-11-06 16:24:20,674 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/privacy-policy'
-Redirect location: 'https://www.techmahindra.com/privacy-policy/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:24:22,084 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/role-bpo-companies-client-innovation-journey/
-2024-11-06 16:24:22,325 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/consulting/
-2024-11-06 16:24:23,711 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/business-process-evolution-powered-digital-transformation/
-2024-11-06 16:24:24,942 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/accelerators/
-2024-11-06 16:24:25,244 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/retail-cpg/
-2024-11-06 16:24:25,449 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/healthcare-life-sciences/
-2024-11-06 16:24:25,651 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/communications-media-entertainment/
-2024-11-06 16:24:26,610 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/enabling-app-development-upgrade-and-integration-leading-us-based-crop-insurer/
-2024-11-06 16:24:27,415 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/ushering-new-era-generative-ai-insurance/
-2024-11-06 16:24:27,710 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/#main-content
-2024-11-06 16:24:28,975 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-transformation-one-worlds-leading-life-insurance-companies/
-2024-11-06 16:24:29,850 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/cloud-infrastructure-transformation/
-2024-11-06 16:24:30,727 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/digital-workplace-transformation/
-2024-11-06 16:24:31,018 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/customer-experience/
-2024-11-06 16:24:32,310 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/es-policy-administration-system-roll-out-major-insurance-carrier-north/
-2024-11-06 16:24:33,194 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/managed-services-entire-infrastructure-uk-insurer/
-2024-11-06 16:24:33,394 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/data-analytics/
-2024-11-06 16:24:34,214 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/rise-embedded-insurance-game-changer-insurance-industry/
-2024-11-06 16:24:34,468 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/next-gen-managed-services/
-2024-11-06 16:24:35,815 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/enhancing-fraud-detection-capabilities-advanced-analytics-leading-us-pc-insurer/
-2024-11-06 16:24:36,789 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/maximizing-business-value-post-guidewire-implementation-part-2/
-2024-11-06 16:24:38,076 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/servicenow-secops-vulnerability-response-module-implementation-and-remediation-management/
-2024-11-06 16:24:38,256 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/digital-distribution-cx-transformation/
-2024-11-06 16:24:39,577 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/guidewire/
-2024-11-06 16:24:40,487 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/maximizing-value-data-insurance/
-2024-11-06 16:24:41,424 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/geospatial-intelligence-revolutionizing-property-insurance-industry/
-2024-11-06 16:24:42,304 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/digital-engineering-insurtechs-insurers-defii/
-2024-11-06 16:24:43,877 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/digitalizing-submission-intake-commercial-insurance-underwriting/
-2024-11-06 16:24:44,796 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/transformation-pension-administration-leading-australian-superannuation-organization/
-2024-11-06 16:24:46,136 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/underwriting-transformation/
-2024-11-06 16:24:46,910 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/leadership-perspectives-esg-insurance-featuring-rohit-puranik-svp-and-head-insurance/
-2024-11-06 16:24:47,862 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/general-insurance-claims-transformation-anz-driven-nxt-era-cloud-specialization/
-2024-11-06 16:24:48,763 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/maximizing-business-value-post-guidewire-implementation/
-2024-11-06 16:24:50,048 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/data-engineering-analytics-ai-ml/
-2024-11-06 16:24:51,044 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/empowering-life-insurance-agents-digital-tools/
-2024-11-06 16:24:51,953 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/personal-cyber-insurance/
-2024-11-06 16:24:53,717 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/defining-nxt-insurance-underwriting-automated-submission-prioritization/
-2024-11-06 16:24:53,900 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/everest-groups-guidewire-services-peak-matrix-assessment-2024/
-2024-11-06 16:24:54,463 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/security-risk-management/
-2024-11-06 16:24:55,852 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/automation-opportunities-life-insurance-illustrations/
-2024-11-06 16:24:56,699 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/insurance-industrys-digital-transformation-navigating-through-fog-while-balancing/
-2024-11-06 16:24:58,000 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/perspective-guidewire-claimcenter-data-migration/
-2024-11-06 16:24:58,995 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/enabling-data-warehouse-development-data-migration-and-data-modernization-leading-pc/
-2024-11-06 16:24:59,232 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/#main-content
-2024-11-06 16:24:59,410 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/what-we-do/application-services/sap'
-Redirect location: 'https://www.techmahindra.com/services/sap/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:24:59,642 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/microsoft-partnership/
-2024-11-06 16:25:00,490 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/oracle-partnership/
-2024-11-06 16:25:00,719 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/salesforce/
-2024-11-06 16:25:00,868 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/search?search=Applications'
-Redirect location: 'https://www.techmahindra.com/search/?search=Applications'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:25:01,153 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-2
-2024-11-06 16:25:01,370 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-0
-2024-11-06 16:25:01,601 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/mahindra-educational-institutions/
-2024-11-06 16:25:01,834 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/tech-mahindra-foundation/
-2024-11-06 16:25:02,063 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-1
-2024-11-06 16:25:02,236 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/about-us/corporate-overview/recognition/'
-Redirect location: 'https://www.techmahindra.com/awards/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:25:02,439 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/individual-social-responsibility/
-2024-11-06 16:25:03,490 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-recognized-only-indian-company-double-score-transparency/
-2024-11-06 16:25:04,817 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/#main-content
-2024-11-06 16:25:05,062 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com
-2024-11-06 16:25:05,257 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/#main-content
-2024-11-06 16:25:05,433 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/#main-content
-2024-11-06 16:25:05,659 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/#main-content
-2024-11-06 16:25:05,936 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/sitemap#main-content
-2024-11-06 16:25:07,158 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digitization-home-buying-experience-leading-bank-canada/
-2024-11-06 16:25:08,236 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/105'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:09,432 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/blockchain-enabled-supply-chain-digitalization-improves-inbound-parts-shipments-cycle/
-2024-11-06 16:25:10,148 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/tech-mahindra-saved-over-140mn-global-fb-firm-hyper-automation/
-2024-11-06 16:25:10,784 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/?page=1
-2024-11-06 16:25:11,726 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/94'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:12,985 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/navixus-saves-30-mn-australian-telecom-cognitive-ai-solutions/
-2024-11-06 16:25:14,086 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/93'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:15,137 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/102'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:15,965 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/tech-mahindra-accelerates-canadian-banks-sme-banking-onboarding-process/
-2024-11-06 16:25:17,042 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/101'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:18,093 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/100'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:18,298 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/clinical-data-integration-phoenix-based-health-center/
-2024-11-06 16:25:19,366 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Client error '404 Not Found' for url 'https://www.techmahindra.com/taxonomy/term/98'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
-2024-11-06 16:25:19,588 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/#main-content
-2024-11-06 16:25:20,554 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/techm-navixus-cx-transformation-media-entertainment-company/
-2024-11-06 16:25:21,404 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/leveraging-genai-empower-leading-automotive-manufacturer/
-2024-11-06 16:25:22,106 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/techm-navixus-leads-ccaas-transformation-us-based-health-insurance-provider/
-2024-11-06 16:25:22,287 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/changi-airport-group/
-2024-11-06 16:25:22,459 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/delta-faucet/
-2024-11-06 16:25:22,666 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/diesel/
-2024-11-06 16:25:22,909 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/5g/
-2024-11-06 16:25:23,216 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/#main-content
-2024-11-06 16:25:23,449 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/vivrelle/
-2024-11-06 16:25:23,616 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/#main-content
-2024-11-06 16:25:23,817 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/#main-content
-2024-11-06 16:25:25,099 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/cisco-partnership/
-2024-11-06 16:25:25,945 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/strategize-reduce-attack-surface-agility/
-2024-11-06 16:25:27,256 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/cyber-recovery/
-2024-11-06 16:25:28,452 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/managed-security-services/
-2024-11-06 16:25:29,279 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/insights/views/tech-mahindra-and-sysdig-partnership-accelerate-your-devsecops-and-cloud-adoption/
-2024-11-06 16:25:29,490 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/dell-partnership/
-2024-11-06 16:25:29,710 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/ibm-partnership/
-2024-11-06 16:25:29,927 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/implementing-data-security-accelerate-generative-ai-initiatives/
-2024-11-06 16:25:30,766 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/resources/managed-cloud-security/
-2024-11-06 16:25:30,976 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/alliance/aws-partnership/
-2024-11-06 16:25:31,107 | INFO | 5357 | Attempting to terminate process with PID 5372
-2024-11-06 16:25:31,224 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/#main-content
-2024-11-06 16:25:31,444 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/news-views/case-studies/secured-and-enriched-test-data-provisioning-large-financial-organization/'
-Redirect location: 'https://www.techmahindra.com/insights/case-studies/secured-and-enriched-test-data-provisioning-large-financial-organization/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:25:31,584 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/news-views/case-studies/performance-assurance-tier-1-telematics-customer-north-america/'
-Redirect location: 'https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:25:31,818 | INFO | 5372 | Markdown Report Generated for https://www.techmahindra.com/services/application-services/#main-content
-2024-11-06 16:25:32,099 | ERROR | 5372 | Got an error while scraping https://www.techmahindra.com/ : Redirect response '301 Moved Permanently' for url 'https://www.techmahindra.com/news-views/views/techm-appginiez-revolutionizing-devops-automation-generative-ai/'
-Redirect location: 'https://www.techmahindra.com/insights/views/techm-appginiez-revolutionizing-devops-automation-generative-ai/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 16:25:32,109 | INFO | 5357 | Force killing process with PID 5372
-2024-11-06 16:25:32,110 | INFO | 5357 | Scraping https://www.techmahindra.com/ for tech_mahindra timed out after 120 seconds
-2024-11-06 16:25:32,113 | ERROR | 5357 | Scraping https://www.techmahindra.com/ for tech_mahindra failed with no result after 121.137484 seconds
-2024-11-06 16:25:32,113 | INFO | 5357 | Starting conversion of parsed report from markdown to PDF
-2024-11-06 16:25:32,727 | INFO | 5357 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
-2024-11-06 16:25:32,727 | INFO | 5357 | Conversion of report completed and uploaded to vector store with id vs_T1WuVIDSjjDYV5J3QSVjvOjo
-2024-11-06 16:25:42,596 | INFO | 5357 | ['/mnt/d/Programming/convoai/server/temp/pdf/techmahindra.pdf'] got uploded to vector store with id vs_T1WuVIDSjjDYV5J3QSVjvOjo
-2024-11-06 16:25:42,600 | INFO | 5357 | Removing Markdown file generated for tech_mahindra
-2024-11-06 16:25:58,277 | INFO | 5357 | 
-Question : What are the roles for which you are hiring?
-Company Name : tech_mahindra
-Persona : 
-
-
-2024-11-06 16:26:12,533 | INFO | 5357 | Generated Answer: The documents provided did not contain specific details on the current roles for which Tech Mahindra is hiring. However, I recommend visiting their careers page for the latest job openings and available positions:
-
-- **Tech Mahindra Careers Page**: [Explore Opportunities Here](https://www.techmahindra.com/careers/)
-
-If you have any specific roles or departments in mind, please let me know, and I can assist you further!
-2024-11-06 16:26:29,908 | INFO | 5357 | 
-Question : What are the services that guys offer?
-Company Name : tech_mahindra
-Persona : 
-
-
-2024-11-06 16:26:44,288 | INFO | 5357 | Generated Answer: Tech Mahindra offers a wide range of services aimed at supporting digital transformation across various industries. Here are some of the key services provided:
-
-1. **Cloud Services**:
-   - Cloud consulting and management, including assessment, migration, and transformation services.
-
-2. **Business Process Services (BPS)**:
-   - Focused solutions for industries such as banking, insurance, and healthcare, providing next-gen digital customer experience and back-office services.
-
-3. **Digital Transformation Solutions**:
-   - Services that include enterprise application integration, implementation of SAP, Oracle, and Salesforce solutions, and automation.
-
-4. **Intelligent Automation**:
-   - Leveraging AI and automation technologies to enhance operational efficiency.
-
-5. **Consulting Services**:
-   - Advisory services across various sectors to help organizations adapt to digitalization and optimize processes.
-
-6. **Application Development and Maintenance**:
-   - Providing support for modern and legacy applications, ensuring smooth performance and updates.
-
-7. **Blockchain Solutions**:
-   - Implementing blockchain technologies for secure and efficient operations, particularly in supply chain management.
-
-8. **Customer Experience Solutions**:
-   - Developing comprehensive customer engagement strategies that include analytics, IoT integration, and personalized services.
-
-9. **Sustainability Services**:
-   - Frameworks to help businesses achieve ESG goals through improved data performance and sustainability practices.
-
-These services underscore Tech Mahindra's commitment to being a global leader in providing technology-driven business solutions tailored to meet the evolving needs of clients across different sectors. If you need more specific details about a particular service, feel free to ask!
-2024-11-06 16:27:02,956 | INFO | 5357 | 
-Question : Tell me more  about block chain solutions
-Company Name : tech_mahindra
-Persona : 
-
-
-2024-11-06 16:27:19,120 | INFO | 5357 | Generated Answer: Tech Mahindra provides a comprehensive range of blockchain solutions designed to enhance various business processes, promoting efficiency, transparency, and security across industries. Here are the key features and offerings of their blockchain services:
-
-1. **Decentralized Solutions**: Tech Mahindra focuses on providing decentralized solutions that empower users with more control over their data and financial transactions. This approach enhances transparency, security, and trust within business ecosystems.
-
-2. **Customized Blockchain Applications**: Their services include building bespoke applications using top blockchain platforms tailored to specific industry needs. This includes integration into native applications such as supply chain and loyalty management systems.
-
-3. **Prototyping and Proof of Concepts (POC)**: They support business teams in rapidly developing POCs and proof of technology to validate blockchain applications and assess their potential before full-scale deployment.
-
-4. **Modular, Plug-and-Play Solutions**: Tech Mahindra offers a modular platform as a service that allows businesses to integrate blockchain capabilities easily into their existing systems.
-
-5. **NFT Marketplace**: Built on the Polygon framework, Tech Mahindra provides solutions for an NFT marketplace where users can create, sell, and purchase NFTs using both fiat currencies and cryptocurrencies.
-
-6. **Supply Chain Transparency**: Their blockchain initiative supports supply chain management by enabling real-time verification of transactions, ownership, and payments. This is crucial for industries like agriculture and pharmaceuticals where traceability is vital.
-
-7. **Smart Contracts**: Tech Mahindra implements smart contracts to automate processes across various applications, helping in the reduction of fraud and improving operational efficiency by ensuring that contracts are executed exactly as programmed without any intermediary.
-
-These capabilities position Tech Mahindra as a leader in leveraging blockchain technology for enhancing operational efficiencies and business transformations across sectors. If you would like more specific information or examples, feel free to ask!
-2024-11-06 18:15:11,964 | INFO | 1922 | 
-Question : Hey, How are you?
-Company Name : tech_mahindra
-Persona : 
-
-
-2024-11-06 18:15:16,565 | INFO | 1922 | Generated Answer: I'm just a program, but I'm here and ready to help you! How can I assist you today?
-2024-11-06 18:15:56,972 | INFO | 1922 | Assistant with ID asst_sqvg8aJteFoCnjPUnNW9PKtL deleted.
-2024-11-06 18:15:58,206 | INFO | 1922 | Vector store with ID vs_iqr0wQXamhjURuWtNUoScH62 deleted.
-2024-11-06 18:16:01,945 | INFO | 1922 | Assistant with ID asst_vZT5odCWpG604p2UPB8ypig9 deleted.
-2024-11-06 18:16:04,507 | INFO | 1922 | Vector store with ID vs_T1WuVIDSjjDYV5J3QSVjvOjo deleted.
-2024-11-06 18:16:39,068 | INFO | 1922 | Attempting to retrieve logo for arkay windows from Google Images
-2024-11-06 18:16:42,073 | INFO | 1922 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
-2024-11-06 18:16:42,076 | INFO | 1922 | Removing crawled logo from images directory
-2024-11-06 18:16:42,082 | INFO | 1922 | Creating vector store and assistant id for new company: arkay_windows
-2024-11-06 18:16:43,327 | INFO | 1922 | Vector ID generated for arkay_windows
-2024-11-06 18:16:44,135 | INFO | 1922 | Assistant ID generated for arkay_windows
-2024-11-06 18:16:44,135 | INFO | 1922 | Converting attachments to PDF format
-2024-11-06 18:16:44,135 | INFO | 1922 | No attachments found! Skipping upload step
-2024-11-06 18:16:44,158 | INFO | 1922 | Starting Scraping task on background thread
-2024-11-06 18:16:44,158 | INFO | 1922 | Sending scraping begun response to client
-2024-11-06 18:16:44,159 | INFO | 1922 | Starting Scraping Session with Timeout at 60 seconds
-2024-11-06 18:16:44,159 | INFO | 1922 | Task started for https://www.arkaywindows.com/ at 2024-11-06 18:16:44.159854
-2024-11-06 18:16:44,167 | INFO | 1945 | Started scraping https://www.arkaywindows.com/ for arkay_windows at 2024-11-06 18:16:44.167554
-2024-11-06 18:16:45,836 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/
-2024-11-06 18:16:47,267 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video
-2024-11-06 18:16:48,413 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/terms-and-conditions/'
-Redirect location: 'https://www.arkaywindows.com/terms-and-conditions'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 18:16:49,863 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/showroom-virtual-reality-tour
-2024-11-06 18:16:51,302 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/infiniglide-3
-2024-11-06 18:16:52,640 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/vacancies
-2024-11-06 18:16:54,188 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold
-2024-11-06 18:16:55,630 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/privacy-policy
-2024-11-06 18:16:57,283 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=hinged-doors
-2024-11-06 18:16:58,848 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/infinilight
-2024-11-06 18:17:00,406 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/schuco-doors-supplier-london-uk
-2024-11-06 18:17:02,385 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/request-a-quote
-2024-11-06 18:17:03,938 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors
-2024-11-06 18:17:05,600 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold-hi
-2024-11-06 18:17:07,116 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/arkay-showroom
-2024-11-06 18:17:08,796 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com
-2024-11-06 18:17:10,330 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/case-studies
-2024-11-06 18:17:11,780 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/about-us
-2024-11-06 18:17:13,221 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=sliding-doors
-2024-11-06 18:17:14,754 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/door-manufacturer
-2024-11-06 18:17:16,271 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product/edgeglide
-2024-11-06 18:17:17,727 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/windows
-2024-11-06 18:17:18,883 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/cookie-policy/'
-Redirect location: 'https://www.arkaywindows.com/cookie-policy'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 18:17:20,005 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/product/aws-70-hi%20'
-Redirect location: 'https://www.arkaywindows.com/product/aws-70-hi'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 18:17:21,387 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/join-our-network
-2024-11-06 18:17:22,793 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/roofs
-2024-11-06 18:17:24,198 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=bifold-doors
-2024-11-06 18:17:25,620 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/faq
-2024-11-06 18:17:27,332 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/resources
-2024-11-06 18:17:28,772 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/blog
-2024-11-06 18:17:30,232 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/contact-us
-2024-11-06 18:17:31,377 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '301 Moved Permanently' for url 'https://www.arkaywindows.com/privacy-policy/'
-Redirect location: 'https://www.arkaywindows.com/privacy-policy'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
-2024-11-06 18:17:32,989 | ERROR | 1945 | Got an error while scraping https://www.arkaywindows.com/ : Redirect response '302 Found' for url 'https://www.arkaywindows.com/media-centre'
-Redirect location: 'https://www.arkaywindows.com/login/?login=media&redirect_to=https%3A%2F%2Fwww.arkaywindows.com%2Fmedia-centre'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
-2024-11-06 18:17:34,403 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/infiniglide
-2024-11-06 18:17:36,050 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/edgeglide
-2024-11-06 18:17:37,510 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/infiniglide-6
-2024-11-06 18:17:39,085 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/unifold-bifold-doors
-2024-11-06 18:17:40,470 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/arkay-windows-london
-2024-11-06 18:17:41,921 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/unifold-bifold-doors-2-2
-2024-11-06 18:17:43,341 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/infinilight
-2024-11-06 18:17:44,223 | INFO | 1922 | Attempting to terminate process with PID 1945
-2024-11-06 18:17:44,863 | INFO | 1945 | Markdown Report Generated for https://www.arkaywindows.com/video/arkay-windows-aluminium-window-door-manufacturers
-2024-11-06 18:17:45,225 | INFO | 1922 | Force killing process with PID 1945
-2024-11-06 18:17:45,226 | INFO | 1922 | Scraping https://www.arkaywindows.com/ for arkay_windows timed out after 60 seconds
-2024-11-06 18:17:45,230 | ERROR | 1922 | Scraping https://www.arkaywindows.com/ for arkay_windows failed with no result after 61.07011 seconds
-2024-11-06 18:17:45,230 | INFO | 1922 | Starting conversion of parsed report from markdown to PDF
-2024-11-06 18:17:45,405 | INFO | 1922 | The markdown file at temp/markdown/arkaywindows.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
-2024-11-06 18:17:45,406 | INFO | 1922 | Conversion of report completed and uploaded to vector store with id vs_jbqTYWvfoiskzk5maru9rYl5
-2024-11-06 18:17:51,994 | INFO | 1922 | ['/mnt/d/Programming/convoai/server/temp/pdf/arkaywindows.pdf'] got uploded to vector store with id vs_jbqTYWvfoiskzk5maru9rYl5
-2024-11-06 18:17:51,995 | INFO | 1922 | Removing Markdown file generated for arkay_windows
-2024-11-06 18:18:06,422 | INFO | 1922 | 
-Question : Hey, Tell me a bit about your company
+2024-11-11 15:20:34,818 | INFO | 2106 | Attempting to retrieve logo for arkay windows from Google Images
+2024-11-11 15:20:38,825 | INFO | 2106 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-11 15:20:38,828 | INFO | 2106 | Removing crawled logo from images directory
+2024-11-11 15:20:38,831 | INFO | 2106 | Creating vector store and assistant id for new company: arkay_windows
+2024-11-11 15:20:39,341 | INFO | 2106 | Vector ID generated for arkay_windows
+2024-11-11 15:20:40,113 | INFO | 2106 | Assistant ID generated for arkay_windows
+2024-11-11 15:20:40,114 | INFO | 2106 | Converting attachments to PDF format
+2024-11-11 15:20:40,114 | INFO | 2106 | No attachments found! Skipping upload step
+2024-11-11 15:20:40,135 | INFO | 2106 | Starting Scraping task on background thread
+2024-11-11 15:20:40,135 | INFO | 2106 | Sending scraping begun response to client
+2024-11-11 15:20:40,136 | INFO | 2106 | Starting Scraping Session with Timeout at 30 seconds
+2024-11-11 15:20:40,136 | INFO | 2106 | Task started for https://www.arkaywindows.com/ at 2024-11-11 15:20:40.136415
+2024-11-11 15:20:40,139 | INFO | 2466 | Started scraping https://www.arkaywindows.com/ for arkay_windows at 2024-11-11 15:20:40.139820
+2024-11-11 15:20:41,690 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/
+2024-11-11 15:20:41,697 | INFO | 2466 | Found 32 new URLs on https://www.arkaywindows.com/.
+2024-11-11 15:20:43,216 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/join-our-network
+2024-11-11 15:20:43,223 | INFO | 2466 | Found 3 new URLs on https://www.arkaywindows.com/join-our-network.
+2024-11-11 15:20:44,638 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product_category/roofs
+2024-11-11 15:20:44,645 | INFO | 2466 | Found 4 new URLs on https://www.arkaywindows.com/product_category/roofs.
+2024-11-11 15:20:46,241 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/about-us
+2024-11-11 15:20:46,247 | INFO | 2466 | Found 13 new URLs on https://www.arkaywindows.com/about-us.
+2024-11-11 15:20:47,571 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product_category/windows
+2024-11-11 15:20:47,576 | INFO | 2466 | Found 9 new URLs on https://www.arkaywindows.com/product_category/windows.
+2024-11-11 15:20:48,745 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/privacy-policy/
+2024-11-11 15:20:48,745 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/privacy-policy/.
+2024-11-11 15:20:50,274 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold-hi
+2024-11-11 15:20:50,281 | INFO | 2466 | Found 1 new URLs on https://www.arkaywindows.com/product/unifold-hi.
+2024-11-11 15:20:51,821 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product/infiniglide-3
+2024-11-11 15:20:51,829 | INFO | 2466 | Found 10 new URLs on https://www.arkaywindows.com/product/infiniglide-3.
+2024-11-11 15:20:53,346 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product/unifold
+2024-11-11 15:20:53,399 | INFO | 2466 | Found 9 new URLs on https://www.arkaywindows.com/product/unifold.
+2024-11-11 15:20:55,126 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=sliding-doors
+2024-11-11 15:20:55,132 | INFO | 2466 | Found 9 new URLs on https://www.arkaywindows.com/product_category/doors?cat=sliding-doors.
+2024-11-11 15:20:56,687 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product_category/doors?cat=bifold-doors
+2024-11-11 15:20:56,693 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/product_category/doors?cat=bifold-doors.
+2024-11-11 15:20:57,801 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/terms-and-conditions/
+2024-11-11 15:20:57,802 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/terms-and-conditions/.
+2024-11-11 15:20:59,311 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/schuco-doors-supplier-london-uk
+2024-11-11 15:20:59,324 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/schuco-doors-supplier-london-uk.
+2024-11-11 15:21:00,913 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/case-studies
+2024-11-11 15:21:00,918 | INFO | 2466 | Found 6 new URLs on https://www.arkaywindows.com/case-studies.
+2024-11-11 15:21:02,650 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/vacancies
+2024-11-11 15:21:02,655 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/vacancies.
+2024-11-11 15:21:04,363 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/faq
+2024-11-11 15:21:04,369 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/faq.
+2024-11-11 15:21:05,940 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/media-centre
+2024-11-11 15:21:05,944 | INFO | 2466 | Found 7 new URLs on https://www.arkaywindows.com/media-centre.
+2024-11-11 15:21:07,612 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/product/infinilight
+2024-11-11 15:21:07,619 | INFO | 2466 | Found 2 new URLs on https://www.arkaywindows.com/product/infinilight.
+2024-11-11 15:21:08,929 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/cookie-policy/
+2024-11-11 15:21:08,929 | INFO | 2466 | Found 0 new URLs on https://www.arkaywindows.com/cookie-policy/.
+2024-11-11 15:21:10,169 | INFO | 2106 | Attempting to terminate process with PID 2466
+2024-11-11 15:21:10,603 | INFO | 2466 | Markdown Report Generated for https://www.arkaywindows.com/contact-us
+2024-11-11 15:21:10,608 | INFO | 2466 | Found 1 new URLs on https://www.arkaywindows.com/contact-us.
+2024-11-11 15:21:11,171 | INFO | 2106 | Force killing process with PID 2466
+2024-11-11 15:21:11,173 | INFO | 2106 | Scraping https://www.arkaywindows.com/ for arkay_windows timed out after 30 seconds
+2024-11-11 15:21:11,177 | ERROR | 2106 | Scraping https://www.arkaywindows.com/ for arkay_windows failed with no result after 31.040952 seconds
+2024-11-11 15:21:11,177 | INFO | 2106 | Starting conversion of parsed report from markdown to PDF
+2024-11-11 15:21:11,227 | INFO | 2106 | The markdown file at temp/markdown/arkaywindows.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-11 15:21:11,227 | INFO | 2106 | Conversion of report completed and uploaded to vector store with id vs_5ESax30z3AgLiFirV5l5kP2F
+2024-11-11 15:21:16,912 | INFO | 2106 | ['/mnt/d/Programming/convoai/server/temp/pdf/arkaywindows.pdf'] got uploded to vector store with id vs_5ESax30z3AgLiFirV5l5kP2F
+2024-11-11 15:21:16,914 | INFO | 2106 | Removing Markdown file generated for arkay_windows
+2024-11-11 15:22:33,771 | INFO | 2106 | 
+Question : Tell me about your company
 Company Name : arkay_windows
-Persona : Custom Persona
+Persona : 
 
 
-2024-11-06 18:18:11,557 | INFO | 1922 | Generated Answer: Meow! Arkay Windows be company making magical, high-quality windows and doors! We focus on creating durable, energy-efficient products that keep homes cozy and stylish. Our cats-pertise includes offering various designs and materials to cater to every kitty's taste. We also care about customer satisfaction and strive to provide purr-fect service. If you have any specific questions, just meow, and I'll fetch the details! 🐾
-2024-11-08 17:25:27,501 | INFO | 2146 | Creating vector store and assistant id for new company: google
-2024-11-08 17:25:28,132 | INFO | 2146 | Vector ID generated for google
-2024-11-08 17:25:28,847 | INFO | 2146 | Assistant ID generated for google
-2024-11-08 17:25:28,847 | INFO | 2146 | Converting attachments to PDF format
-2024-11-08 17:25:28,848 | INFO | 2146 | Uploading attachments to vector store to ID vs_Yo8AZuxDPtsam9YNsJD8h4Ex
-2024-11-08 17:25:34,284 | INFO | 2146 | ['/mnt/d/Programming/convoai/server/temp/attachments/Digital-Services-Act-Practical-Implications-for-Online-Services-and-Platforms.pdf'] got uploded to vector store with id vs_Yo8AZuxDPtsam9YNsJD8h4Ex
-2024-11-08 17:25:34,464 | INFO | 2146 | Starting Scraping task on background thread
-2024-11-08 17:25:34,464 | INFO | 2146 | Sending scraping begun response to client
-2024-11-08 17:25:34,465 | INFO | 2146 | Starting Scraping Session with Timeout at 30 seconds
-2024-11-08 17:25:34,465 | INFO | 2146 | Starting conversion of parsed report from markdown to PDF
-2024-11-08 17:25:34,467 | INFO | 2146 | No PDF found from scrapped session, something went wrong.... Skipping upload
-2024-11-11 13:09:15,823 | INFO | 16652 | Creating vector store and assistant id for new company: myntraaaa
-2024-11-11 13:09:16,606 | INFO | 16652 | Vector ID generated for myntraaaa
-2024-11-11 13:09:17,347 | INFO | 16652 | Assistant ID generated for myntraaaa
-2024-11-11 13:09:17,347 | INFO | 16652 | Converting attachments to PDF format
-2024-11-11 13:09:17,347 | INFO | 16652 | No attachments found! Skipping upload step
-2024-11-11 13:09:17,567 | INFO | 16652 | Starting Scraping task on background thread
-2024-11-11 13:09:17,567 | INFO | 16652 | Sending scraping begun response to client
-2024-11-11 13:09:17,567 | INFO | 16652 | Starting Scraping Session with Timeout at 10 seconds
-2024-11-11 13:09:17,567 | INFO | 16652 | Task started for https://www.myntra.com/ at 2024-11-11 13:09:17.567170
-2024-11-11 13:09:19,892 | INFO | 5480 | Started scraping https://www.myntra.com/ for myntraaaa at 2024-11-11 13:09:19.892250
-2024-11-11 13:09:20,235 | ERROR | 5480 | Got an error while scraping https://www.myntra.com/ : Client error '403 Forbidden' for url 'https://www.myntra.com/'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
-2024-11-11 13:09:20,235 | INFO | 5480 | Completed scraping https://www.myntra.com/ for myntraaaa at 2024-11-11 13:09:20.235772, time taken: 0.343522 seconds
-2024-11-11 13:09:20,592 | INFO | 16652 | Scraping https://www.myntra.com/ for myntraaaa completed in 0.343522 seconds
-2024-11-11 13:09:20,593 | INFO | 16652 | Starting conversion of parsed report from markdown to PDF
-2024-11-11 13:09:20,593 | INFO | 16652 | No PDF found from scrapped session, something went wrong.... Skipping upload
-2024-11-11 13:12:57,140 | INFO | 16652 | 
-Question : hello 
-Company Name : myntraaaa
-Persona : Happy Helper
+2024-11-11 15:22:44,532 | INFO | 2106 | Generated Answer: Arkay Windows is a specialist manufacturer and supplier of high-performance aluminium and uPVC windows and doors, located in Watford, London. With over 45 years of experience, the company focuses on large-scale fabrication and has built a reputation for supplying quality products to various retail companies, contractors, and commercial installers throughout the UK.
 
+The product range includes:
+- **Aluminium Windows**: Offering options such as sliding sash, fully reversible, and tilt & turn windows.
+- **Bifold and Sliding Doors**: Including bespoke solutions like the UniFOLD® bifold doors and the InfiniGLIDE® sliding doors.
+- **Roof Systems**: High-quality skylights and roof lanterns designed to let in maximum natural light.
 
-2024-11-11 13:13:02,601 | INFO | 16652 | Generated Answer: Hello! How can I assist you today?
-2024-11-11 13:19:34,331 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
+Arkay Windows prides itself on customer service and quality control, being members of various industry associations including the British Fenestration Rating Council (BFRC) and founding members of FENSA. The company also emphasizes its commitment to security and energy efficiency in its products, ensuring they meet current building regulations.
 
-
-2024-11-11 13:19:37,564 | INFO | 16652 | Generated Answer: Hello again! How can I help you? If you have any questions or need assistance, feel free to ask!
-2024-11-11 13:20:00,449 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 13:20:03,456 | INFO | 16652 | Generated Answer: Hello! It seems like we're in a loop. If you have any specific questions or topics you'd like to discuss, please let me know!
-2024-11-11 14:04:14,333 | INFO | 16652 | 
-Question : dsf
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:04:19,544 | INFO | 16652 | Generated Answer: It looks like your message might be incomplete or unclear. Could you please provide more details or clarify what you need assistance with? I'm here to help!
-2024-11-11 14:21:45,923 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:21:49,054 | INFO | 16652 | Generated Answer: Hello! If there's anything specific you would like to know or discuss, please feel free to share!
-2024-11-11 14:22:47,705 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:22:50,644 | INFO | 16652 | Generated Answer: Hello! It seems we're repeating greetings. If you have any questions or topics you'd like to discuss, just let me know!
-2024-11-11 14:23:23,599 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:23:29,489 | INFO | 16652 | Generated Answer: Hello again! If there's something specific you'd like to discuss or ask about, feel free to let me know. I'm here to help!
-2024-11-11 14:23:32,600 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:23:35,971 | INFO | 16652 | Generated Answer: Hello! If you're trying to get my attention or if there's something you'd like to talk about, please let me know how I can assist you!
-2024-11-11 14:26:45,034 | INFO | 16652 | 
-Question : kem cho
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:26:48,837 | INFO | 16652 | Generated Answer: Kem cho! Hu tame kem cho? (How are you? I'm here to help you!) If you have any questions or need assistance, feel free to ask.
-2024-11-11 14:27:15,011 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:27:17,985 | INFO | 16652 | Generated Answer: Hello! It seems like we're going in circles. If you have a question or need assistance with something, please let me know!
-2024-11-11 14:27:26,062 | INFO | 16652 | 
-Question : what abt you
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:27:29,187 | INFO | 16652 | Generated Answer: I'm just a program designed to assist you! If you have any questions or need help with something specific, feel free to ask. How can I assist you today?
-2024-11-11 14:28:01,672 | INFO | 16652 | 
-Question : i want t buy a new headset can u suggest me some
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:28:05,090 | INFO | 16652 | Generated Answer: I can help with that! Are you looking for any specific features in a headset, such as noise canceling, wireless capability, or particular brands? Additionally, do you have a budget in mind? Let me know so I can provide the best recommendations!
-2024-11-11 14:28:18,952 | INFO | 16652 | 
-Question : I want microphone for streaming
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:28:27,880 | INFO | 16652 | Generated Answer: Great! For streaming, you'll want a headset with a good quality microphone and clear audio. Here are some recommendations:
-
-1. **HyperX Cloud II Gaming Headset**
-   - Features: Comfortable design, detachable noise-canceling mic, good sound quality.
-   - Price Range: Moderate.
-
-2. **Logitech G Pro X Wireless Gaming Headset**
-   - Features: Blue VO!CE technology for professional clarity, wireless, comfortable for long sessions.
-   - Price Range: Higher-end.
-
-3. **Razer BlackShark V2**
-   - Features: THX Spatial Audio, great noise isolation, detachable mic.
-   - Price Range: Moderate to high.
-
-4. **SteelSeries Arctis 7**
-   - Features: Wireless, excellent sound quality, clear mic that blocks background noise.
-   - Price Range: Higher-end.
-
-5. **Corsair HS70 Pro Wireless**
-   - Features: Comfortable fit, great sound quality, and a good quality microphone.
-   - Price Range: Moderate.
-
-Make sure to check reviews and compatibility with your streaming setup before making a purchase. If you need more information or specific brand comparisons, let me know!
-2024-11-11 14:31:26,792 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:31:29,547 | INFO | 16652 | Generated Answer: Hello! If you have any questions or need assistance, feel free to ask! How can I help you today?
-2024-11-11 14:31:57,966 | INFO | 16652 | 
-Question : ok
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:32:00,639 | INFO | 16652 | Generated Answer: Great! If there's anything specific you want to discuss or ask about, just let me know. I'm here to help!
-2024-11-11 14:32:14,416 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:32:17,009 | INFO | 16652 | Generated Answer: Hello again! If you have something on your mind or need assistance, feel free to share. I'm here to help!
-2024-11-11 14:35:52,401 | INFO | 16652 | 
-Question : hello
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:35:57,139 | INFO | 16652 | Generated Answer: Hello! If you're looking for assistance or have any questions, just let me know. I'm here to help!
-2024-11-11 14:38:24,928 | INFO | 16652 | 
-Question : hi
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:38:27,781 | INFO | 16652 | Generated Answer: Hi there! How can I assist you today?
-2024-11-11 14:38:45,848 | INFO | 16652 | 
-Question : hekki
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:38:50,679 | INFO | 16652 | Generated Answer: It seems like you might be saying "hello" in another way! If that's the case, hello! How can I help you today? If you have any questions or topics you'd like to discuss, feel free to share!
-2024-11-11 14:40:26,298 | INFO | 16652 | 
-Question : hi
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:40:29,485 | INFO | 16652 | Generated Answer: Hi! How can I assist you today? If you have any questions or need help with something, just let me know!
-2024-11-11 14:40:35,656 | INFO | 16652 | 
-Question : hii
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:40:38,395 | INFO | 16652 | Generated Answer: Hii! How are you? If there's anything you'd like to talk about or ask, just let me know!
-2024-11-11 14:44:43,280 | INFO | 16652 | 
-Question : hij
-Company Name : myntraaaa
-Persona : Happy Helper
-
-
-2024-11-11 14:44:46,239 | INFO | 16652 | Generated Answer: Hello again! If you have something specific in mind or any questions you'd like to ask, feel free to share. I'm here to help!
+Their manufacturing facility utilizes advanced technology for fabrication and maintains a comprehensive stock of products for quick delivery to customers across London and the Southeast. You can learn more about their offerings and view their virtual showroom at [Arkay Windows](https://www.arkaywindows.com).
