@@ -485,3 +485,182 @@ Persona : Custom Persona
 2024-11-11 13:09:20,235 | ERROR | 5480 | Got an error while scraping https://www.myntra.com/ : Client error '403 Forbidden' for url 'https://www.myntra.com/'
 For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
 2024-11-11 13:09:20,235 | INFO | 5480 | Completed scraping https://www.myntra.com/ for myntraaaa at 2024-11-11 13:09:20.235772, time taken: 0.343522 seconds
+2024-11-11 13:09:20,592 | INFO | 16652 | Scraping https://www.myntra.com/ for myntraaaa completed in 0.343522 seconds
+2024-11-11 13:09:20,593 | INFO | 16652 | Starting conversion of parsed report from markdown to PDF
+2024-11-11 13:09:20,593 | INFO | 16652 | No PDF found from scrapped session, something went wrong.... Skipping upload
+2024-11-11 13:12:57,140 | INFO | 16652 | 
+Question : hello 
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 13:13:02,601 | INFO | 16652 | Generated Answer: Hello! How can I assist you today?
+2024-11-11 13:19:34,331 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 13:19:37,564 | INFO | 16652 | Generated Answer: Hello again! How can I help you? If you have any questions or need assistance, feel free to ask!
+2024-11-11 13:20:00,449 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 13:20:03,456 | INFO | 16652 | Generated Answer: Hello! It seems like we're in a loop. If you have any specific questions or topics you'd like to discuss, please let me know!
+2024-11-11 14:04:14,333 | INFO | 16652 | 
+Question : dsf
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:04:19,544 | INFO | 16652 | Generated Answer: It looks like your message might be incomplete or unclear. Could you please provide more details or clarify what you need assistance with? I'm here to help!
+2024-11-11 14:21:45,923 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:21:49,054 | INFO | 16652 | Generated Answer: Hello! If there's anything specific you would like to know or discuss, please feel free to share!
+2024-11-11 14:22:47,705 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:22:50,644 | INFO | 16652 | Generated Answer: Hello! It seems we're repeating greetings. If you have any questions or topics you'd like to discuss, just let me know!
+2024-11-11 14:23:23,599 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:23:29,489 | INFO | 16652 | Generated Answer: Hello again! If there's something specific you'd like to discuss or ask about, feel free to let me know. I'm here to help!
+2024-11-11 14:23:32,600 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:23:35,971 | INFO | 16652 | Generated Answer: Hello! If you're trying to get my attention or if there's something you'd like to talk about, please let me know how I can assist you!
+2024-11-11 14:26:45,034 | INFO | 16652 | 
+Question : kem cho
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:26:48,837 | INFO | 16652 | Generated Answer: Kem cho! Hu tame kem cho? (How are you? I'm here to help you!) If you have any questions or need assistance, feel free to ask.
+2024-11-11 14:27:15,011 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:27:17,985 | INFO | 16652 | Generated Answer: Hello! It seems like we're going in circles. If you have a question or need assistance with something, please let me know!
+2024-11-11 14:27:26,062 | INFO | 16652 | 
+Question : what abt you
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:27:29,187 | INFO | 16652 | Generated Answer: I'm just a program designed to assist you! If you have any questions or need help with something specific, feel free to ask. How can I assist you today?
+2024-11-11 14:28:01,672 | INFO | 16652 | 
+Question : i want t buy a new headset can u suggest me some
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:28:05,090 | INFO | 16652 | Generated Answer: I can help with that! Are you looking for any specific features in a headset, such as noise canceling, wireless capability, or particular brands? Additionally, do you have a budget in mind? Let me know so I can provide the best recommendations!
+2024-11-11 14:28:18,952 | INFO | 16652 | 
+Question : I want microphone for streaming
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:28:27,880 | INFO | 16652 | Generated Answer: Great! For streaming, you'll want a headset with a good quality microphone and clear audio. Here are some recommendations:
+
+1. **HyperX Cloud II Gaming Headset**
+   - Features: Comfortable design, detachable noise-canceling mic, good sound quality.
+   - Price Range: Moderate.
+
+2. **Logitech G Pro X Wireless Gaming Headset**
+   - Features: Blue VO!CE technology for professional clarity, wireless, comfortable for long sessions.
+   - Price Range: Higher-end.
+
+3. **Razer BlackShark V2**
+   - Features: THX Spatial Audio, great noise isolation, detachable mic.
+   - Price Range: Moderate to high.
+
+4. **SteelSeries Arctis 7**
+   - Features: Wireless, excellent sound quality, clear mic that blocks background noise.
+   - Price Range: Higher-end.
+
+5. **Corsair HS70 Pro Wireless**
+   - Features: Comfortable fit, great sound quality, and a good quality microphone.
+   - Price Range: Moderate.
+
+Make sure to check reviews and compatibility with your streaming setup before making a purchase. If you need more information or specific brand comparisons, let me know!
+2024-11-11 14:31:26,792 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:31:29,547 | INFO | 16652 | Generated Answer: Hello! If you have any questions or need assistance, feel free to ask! How can I help you today?
+2024-11-11 14:31:57,966 | INFO | 16652 | 
+Question : ok
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:32:00,639 | INFO | 16652 | Generated Answer: Great! If there's anything specific you want to discuss or ask about, just let me know. I'm here to help!
+2024-11-11 14:32:14,416 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:32:17,009 | INFO | 16652 | Generated Answer: Hello again! If you have something on your mind or need assistance, feel free to share. I'm here to help!
+2024-11-11 14:35:52,401 | INFO | 16652 | 
+Question : hello
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:35:57,139 | INFO | 16652 | Generated Answer: Hello! If you're looking for assistance or have any questions, just let me know. I'm here to help!
+2024-11-11 14:38:24,928 | INFO | 16652 | 
+Question : hi
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:38:27,781 | INFO | 16652 | Generated Answer: Hi there! How can I assist you today?
+2024-11-11 14:38:45,848 | INFO | 16652 | 
+Question : hekki
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:38:50,679 | INFO | 16652 | Generated Answer: It seems like you might be saying "hello" in another way! If that's the case, hello! How can I help you today? If you have any questions or topics you'd like to discuss, feel free to share!
+2024-11-11 14:40:26,298 | INFO | 16652 | 
+Question : hi
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:40:29,485 | INFO | 16652 | Generated Answer: Hi! How can I assist you today? If you have any questions or need help with something, just let me know!
+2024-11-11 14:40:35,656 | INFO | 16652 | 
+Question : hii
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:40:38,395 | INFO | 16652 | Generated Answer: Hii! How are you? If there's anything you'd like to talk about or ask, just let me know!
+2024-11-11 14:44:43,280 | INFO | 16652 | 
+Question : hij
+Company Name : myntraaaa
+Persona : Happy Helper
+
+
+2024-11-11 14:44:46,239 | INFO | 16652 | Generated Answer: Hello again! If you have something specific in mind or any questions you'd like to ask, feel free to share. I'm here to help!
