@@ -51,7 +51,7 @@ logger = create_logger()
 
 async def fetch_or_upload_logo(
     company_name: str, logo: Optional[UploadFile]
-) -> Optional[FileUpload]:
+) -> Optional[str]:
     """
     Handle logo retrieval. If logo is provided, upload it; otherwise, crawl Google Images.
     """
@@ -60,7 +60,7 @@ async def fetch_or_upload_logo(
     )
     if logo:
         logo_binary = await logo.read()
-        return FileUpload(logo.filename, logo_binary)
+        return [logo.filename, logo_binary, logo.content_type]
 
     logger.info(
         f"Attempting to retrieve logo for {company_name.replace('_', ' ')} from Google Images"
@@ -78,7 +78,7 @@ async def fetch_or_upload_logo(
             logger.info(f"Logo saved at {crawled_logo_path}")
             with open(crawled_logo_path, "rb") as f:
                 logo_binary = f.read()
-            return FileUpload("logo.jpg", logo_binary)
+            return ["logo.jpg", logo_binary, "image/jpeg"]
         else:
             logger.warning("No images were saved by the crawler.")
             return None
@@ -93,8 +93,9 @@ async def fetch_or_upload_logo(
             os.remove(crawled_logo_path)
 
 
- 
-async def fetch_logo(company_name: str, company_logo: Optional[UploadFile]) -> Optional[str]:
+async def fetch_logo(
+    company_name: str, company_logo: Optional[UploadFile]
+) -> Optional[str]:
     """
     Fetches the company logo. If a company_logo is provided, it returns its filename.
     Otherwise, it fetches the logo from an external source based on the company name.
@@ -113,14 +114,18 @@ async def fetch_logo(company_name: str, company_logo: Optional[UploadFile]) -> O
     # Fetch logo from an external API
     try:
         async with aiohttp.ClientSession() as session:
-            response = await session.get(f'https://api.example.com/logo?company={company_name}')
+            response = await session.get(
+                f"https://api.example.com/logo?company={company_name}"
+            )
             if response.status == 200:
                 data = await response.json()
-                return data.get("logo_url")  # Assuming the API returns a JSON with a logo_url key
+                return data.get(
+                    "logo_url"
+                )  # Assuming the API returns a JSON with a logo_url key
             else:
                 return None
     except Exception as e:
-        raise Exception(f"Error fetching logo: {str(e)}")           
+        raise Exception(f"Error fetching logo: {str(e)}")
 
 
 def create_vector_store(client: Client, company_name: str):

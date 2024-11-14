@@ -1,6 +1,12 @@
 import "regenerator-runtime/runtime";
 import { useState, useEffect, useRef } from "react";
-import { FaMicrophoneAlt, FaStopCircle, FaStop, FaRegUser, FaRobot } from "react-icons/fa";
+import {
+  FaMicrophoneAlt,
+  FaStopCircle,
+  FaStop,
+  FaRegUser,
+  FaRobot,
+} from "react-icons/fa";
 import { GrSend } from "react-icons/gr";
 import { motion } from "framer-motion";
 import SpeechRecognition, {
@@ -14,12 +20,10 @@ import toTitleCase from "../utils/toTitleCase";
 import toast from "react-hot-toast";
 import { GoDot } from "react-icons/go";
 
-
-
 interface MessageProp {
   text: string;
   sender: string;
-  isLoading?: boolean
+  isLoading?: boolean;
 }
 
 function Message({
@@ -90,7 +94,7 @@ export default function Chatbot() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [abortController, setAbortController] =
     useState<AbortController | null>(null);
- const focusRef = useRef<HTMLInputElement | null>(null);
+  const focusRef = useRef<HTMLInputElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const urlParams = new URLSearchParams(window.location.search);
   const company = urlParams.get("company");
@@ -152,7 +156,6 @@ export default function Chatbot() {
     };
 
     fetchCompanyData();
- 
 
     return () => {
       isMounted = false;
@@ -261,7 +264,6 @@ export default function Chatbot() {
           alt="Company Logo"
           className="w-40 m-2 cursor-pointer"
           onClick={() => window.location.reload()}
-          
         />
         <div className="w-full bg-fill/[0.1] h-14 rounded-md border gap-4 flex items-center px-2">
           <div className="size-10 bg-fill rounded-full"></div>
@@ -340,10 +342,10 @@ export default function Chatbot() {
             </>
           ) : (
             <div
-              className="w-full flex flex-col gap-4 mb-24 overflow-y-hidden overflow-x-hidden h-full px-4"
+              className="w-full flex flex-col gap-4 mb-24 overflow-y-scroll overflow-x-hidden h-full px-4"
               ref={containerRef}
             >
-             {messages.map((message, index) => (
+              {messages.map((message, index) => (
                 <Message
                   key={index}
                   message={message.text}
@@ -364,17 +366,17 @@ export default function Chatbot() {
             className="bg-white rounded-full border flex items-center justify-between px-4 w-[90%] md:w-[60%] lg:w-[50%] max-w-[800px] py-2 h-16 fixed bottom-6"
           >
             <input
-               type="text"
-               ref={focusRef}
-               className={`rounded-full h-12 w-full focus:outline-none pl-4 ${
-                 isProcessing && "cursor-not-allowed"
-               }`}
-               placeholder={`${
-                 isProcessing ? "Processing..." : "Ask a question"
-               }`}
-               value={prompt}
-               disabled={isProcessing}
-               onChange={(e) => setPrompt(e.target.value)}
+              type="text"
+              ref={focusRef}
+              className={`rounded-full h-12 w-full focus:outline-none pl-4 ${
+                isProcessing && "cursor-not-allowed"
+              }`}
+              placeholder={`${
+                isProcessing ? "Processing..." : "Ask a question"
+              }`}
+              value={prompt}
+              disabled={isProcessing}
+              onChange={(e) => setPrompt(e.target.value)}
             />
 
             <div className="flex items-center">

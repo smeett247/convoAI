@@ -1,0 +1,5 @@
+2024-11-14 17:29:39,068 | INFO | 3144 | Attempting to retrieve logo for arkay windows from Google Images
+2024-11-14 17:29:42,073 | INFO | 3144 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.jpg
+2024-11-14 17:29:42,331 | INFO | 3144 | Removing crawled logo from images directory
+2024-11-14 17:29:42,380 | INFO | 3144 | Creating vector store and assistant id for new company: arkay_windows
+2024-11-14 17:30:56,942 | ERROR | 3144 | Error deleting assistant or vector store: Expected a non-empty value for `assistant_id` but received ''

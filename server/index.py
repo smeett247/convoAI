@@ -26,19 +26,19 @@ from utils import (
     delete_assistant_and_vs,
     fetch_or_upload_logo,
     logger,
-    fetch_logo
+    fetch_logo,
 )
 from openai import Client
 from dotenv import load_dotenv
 from pocketbase.client import ClientResponseError, FileUpload
-from typing import Optional,List
+from typing import Optional, List
 from datetime import datetime
 import uvicorn
 import asyncio
 from queue import Queue
 from multiprocessing import Process, Queue
 import os
-from pocketbase import PocketBase
+from pocketbase.client import FileUpload
 from pydantic import BaseModel
 
 load_dotenv()
@@ -244,9 +244,19 @@ async def scrap(
     logo: UploadFile = File(None),
     timeout_seconds: Optional[int] = Form(60),
     additional_websites: Optional[str] = Form(None),
-    attachments: list[UploadFile] = File(None),
+    attachments: List[UploadFile] = File(None),
 ):
+
     company_name = company_name.lower().strip().replace(" ", "_")
+    try:
+        db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
+        response.status_code = status.HTTP_409_CONFLICT
+        logger.error(
+            f"{company_name} has already been scrapped, skipping scraping for now"
+        )
+        return {"message": "This company has already been scraped"}
+    except:
+        pass
     if company_url and not validate_website(company_url):
         response.status_code = status.HTTP_400_BAD_REQUEST
         return {"msg": "Provided URL is not valid"}
@@ -254,12 +264,11 @@ async def scrap(
     logo_file = await fetch_or_upload_logo(company_name, logo)
 
     pdf_files = []
-
     if attachments:
         for attachment in attachments:
             attachment_path = os.path.join(attachments_folder, attachment.filename)
             with open(attachment_path, "wb") as f:
-                f.write(attachment.file.read())
+                f.write(await attachment.read())
             pdf_files.append(attachment_path)
 
     if instructions:
@@ -270,19 +279,10 @@ async def scrap(
     else:
         instructions = f"You are a helpful product support assistant for the company {company_name} and you answer questions based on the files provided."
 
-    try:
-        db.collection("companies").get_first_list_item(f"company_name='{company_name}'")
-        response.status_code = status.HTTP_409_CONFLICT
-        logger.error(
-            f"{company_name} has already been scrapped, skipping scraping for now"
-        )
-        return {"message": "This company has already been scraped"}
-    except:
-        pass
-
     logger.info(
         f"Creating vector store and assistant id for new company: {company_name}"
     )
+
     vector_store_id = create_vector_store(client=ai, company_name=company_name)
     assistant_id = create_assistant(
         client=ai,
@@ -300,18 +300,24 @@ async def scrap(
         logger.info("No attachments found! Skipping upload step")
 
     try:
-        db.collection("companies").create(
-            {
-                "company_name": company_name,
-                "company_url": company_url,
-                "vector_store_id": vector_store_id,
-                "assistant_id": assistant_id,
-                "persona": persona,
-                "customer_name": customer_name,
-                "logo": logo_file,
-                "additional_websites": additional_websites,
-            }
-        )
+        form_data = {
+            "company_name": company_name,
+            "company_url": company_url,
+            "vector_store_id": vector_store_id,
+            "assistant_id": assistant_id,
+            "persona": persona,
+            "additional_websites": additional_websites,
+            "customer_name": customer_name,
+            "logo": FileUpload(logo_file[0], logo_file[1]),
+        }
+
+        recordCreated = db.collection("companies").create(form_data)
+        for file in attachments:
+            binary_file = await file.read()
+            db.collection("companies").update(
+                recordCreated.id,
+                {"attachments": FileUpload(file.filename, binary_file)},
+            )
 
         websites_to_scrape = []
         if company_url:
@@ -435,9 +441,6 @@ async def delete_company(company_name: str):
             raise HTTPException(status_code=404, detail="Company not found.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
-
-
 
 
 @app.put("/companies/{existing_company_name}")
@@ -448,15 +451,17 @@ async def edit_company(
     instructions: Optional[str] = Form(None),
     attachments: Optional[List[UploadFile]] = File(None),
     customer_name: Optional[str] = Form(None),
-    company_logo: Optional[UploadFile] = File(None)  # Optional logo file upload
+    company_logo: Optional[UploadFile] = File(None),  # Optional logo file upload
 ):
     try:
         # Fetch the company by existing_company_name using a filter
-        company_list = db.collection("companies").get_list(1, 1, {"filter": f"company_name='{existing_company_name}'"})
-        
+        company_list = db.collection("companies").get_list(
+            1, 1, {"filter": f"company_name='{existing_company_name}'"}
+        )
+
         if not company_list.items:
             raise HTTPException(status_code=404, detail="Company not found.")
-        
+
         # Get the first company that matches existing_company_name
         company = company_list.items[0]
         company_data = company.data if hasattr(company, "data") else {}
@@ -469,24 +474,15 @@ async def edit_company(
         if customer_name:
             update_data["customer_name"] = customer_name
 
-        # Try to fetch company logo using the fetch_logo function if necessary
-        if company_name:
-            try:
-                logo_url = await fetch_logo(company_name, company_logo)  # Fetch logo
-                if logo_url:
-                    update_data["company_logo"] = logo_url
-                else:
-                    logger.warning("Logo not found through external API.")
-            except Exception as e:
-                logger.warning(f"Error fetching logo via external API: {str(e)}")
-
         # Handle manual logo upload if provided
         if company_logo:
-            os.makedirs('logos', exist_ok=True)  # Ensure the 'logos' directory exists
+            os.makedirs("logos", exist_ok=True)  # Ensure the 'logos' directory exists
             file_location = f"logos/{company_logo.filename}"
             with open(file_location, "wb") as f:
                 f.write(await company_logo.read())
-            update_data["company_logo"] = file_location  # Save the local path in the database
+            update_data["company_logo"] = (
+                file_location  # Save the local path in the database
+            )
 
         # Update the company details in the database
         updated_company = db.collection("companies").update(company_id, update_data)
@@ -494,13 +490,10 @@ async def edit_company(
         # Extract assistant_id and vector_store_id from the company record
         assistant_id = company_data.get("assistant_id")
         vector_store_id = company_data.get("vector_store_id")
-        
+
         # Handle persona and instructions if provided
         if persona and instructions and assistant_id:
-            assistant_data = {
-                "persona": persona,
-                "instructions": instructions
-            }
+            assistant_data = {"persona": persona, "instructions": instructions}
             db.collection("assistants").update(assistant_id, assistant_data)
 
         # Handle attachments if provided
@@ -511,11 +504,13 @@ async def edit_company(
                 file_data = await file.read()
 
                 # Upload the file to PocketBase using the 'upload_file' method
-                file_upload = db.collection("companies").upload_file(file_data, file.filename)
+                file_upload = db.collection("companies").upload_file(
+                    file_data, file.filename
+                )
 
                 # Add the returned file ID to attachment_file_ids
-                if file_upload and file_upload['id']:
-                    attachment_file_ids.append(file_upload['id'])
+                if file_upload and file_upload["id"]:
+                    attachment_file_ids.append(file_upload["id"])
 
             # Now, associate the uploaded files with the company
             company_update_data = {"attachments": attachment_file_ids}
@@ -525,8 +520,7 @@ async def edit_company(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error updating company: {str(e)}")
-    
-#############################################################################################################
+
 
 @app.post("/ask")
 async def ask_query(
