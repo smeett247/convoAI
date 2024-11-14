@@ -1,0 +1,51 @@
+/* For larger screens (default styles) */
+.responsive-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem; /* Adjust the gap as needed */
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .responsive-container h2 {
+    font-size: 1.25rem; /* Default text size for larger screens */
+  }
+  
+  .responsive-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Medium screens (tablets) */
+  @media (max-width: 768px) {
+    .responsive-container {
+      flex-direction: column; /* Stack content vertically */
+      align-items: stretch; /* Center items if needed */
+    }
+  
+    .responsive-container h2 {
+      font-size: 0.9rem; /* Slightly smaller font size on tablets */
+    }
+  
+    .responsive-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+    }
+  }
+  
+  /* Small screens (mobile devices) */
+  @media (max-width: 480px) {
+    .responsive-container {
+      padding: 0.5rem;
+    }
+  
+    .responsive-container h2 {
+      font-size: 0.6rem; /* Smaller font size on mobile */
+    }
+  
+    .responsive-buttons button {
+      width: 100%; /* Make buttons full width */
+    }
+  }
+  

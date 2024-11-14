@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { HOST } from "../../config";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import EditCompanyModal from "../components/EditCompanyModal";
+import "./Home.css"
 
 function formatCompanyName(name: string) {
   return name
@@ -29,6 +31,8 @@ function formatDate(timestamp: string) {
 
 function ScrapedCompanyCard({ company }: { company: any }) {
   const navigate = useNavigate();
+  const [isEditing, setIsEditing] = useState(false); // Modal visibility state
+
   const handleDelete = () => {
     const deletePromise = fetch(`${HOST}/companies/${company.company_name}`, {
       method: "DELETE",
@@ -37,16 +41,10 @@ function ScrapedCompanyCard({ company }: { company: any }) {
     toast
       .promise(deletePromise, {
         loading: "Deleting...",
-        success: (data) => {
-          if (data.ok) {
-            //@ts-ignore
-            return data.detail;
-          }
-          throw new Error("Failed to delete company");
-        },
+        success: "Company deleted successfully",
         error: "Error deleting the company",
       })
-      .then((data) => {
+      .then(() => {
         setTimeout(() => {
           window.location.reload();
         }, 2000);
@@ -56,33 +54,62 @@ function ScrapedCompanyCard({ company }: { company: any }) {
         toast.error(JSON.stringify(error));
       });
   };
-  return (
-    <div
-      className="px-4 py-4 font-bold border text-lg rounded-md hover:bg-slate-100 transition-colors hover:cursor-pointer flex items-center gap-4"
-      onClick={() => navigate(`/chatbot?company=${company.company_name}`)}
-    >
-      <div>
-        <h2 className="text-xl font-bold">
-          {formatCompanyName(company.company_name)}
-        </h2>
 
-        <p className="text-xs opacity-50 italic">
-          Scraped on: {formatDate(company.created)}
-        </p>
-        <button
-          className="text-xs bg-red-500 text-white font-bold mt-2 hover:bg-red-600 transition-colors"
-          title="This action is irreversible!"
-          onClick={(e) => {
-            e.stopPropagation();
-            handleDelete();
-          }}
-        >
-          Delete Company
-        </button>
-      </div>
+  const handleEdit = () => {
+    setIsEditing(true); // Open the modal on edit button click
+  };
+
+  // Prevent navigation while editing
+  const handleModalClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
+  return (
+<div
+  className="responsive-container border text-lg rounded-md hover:bg-slate-100 transition-colors hover:cursor-pointer"
+  onClick={() => !isEditing && navigate(`/chatbot?company=${company.company_name}`)}
+>
+  <div>
+    <h2 className="text-xl font-bold">
+    {formatCompanyName(company.company_name)}
+    </h2>
+    <p className="text-xs opacity-50 italic">
+      Scraped on: {new Date(company.created).toLocaleDateString()}
+    </p>
+    <div className="responsive-buttons">
+      <button
+        className="text-xs bg-red-500 text-white font-bold hover:bg-red-600 transition-colors"
+        title="This action is irreversible!"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleDelete();
+        }}
+      >
+        Delete Company
+      </button>
+      <button
+        className="text-xs bg-blue-500 text-white font-bold hover:bg-blue-600 transition-colors"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleEdit();
+        }}
+      >
+        Edit Company
+      </button>
     </div>
+  </div>
+  {isEditing && (
+    <EditCompanyModal
+      company={company}
+      onClose={() => setIsEditing(false)}
+    />
+  )}
+</div>
+
+
   );
 }
+
 
 export default function Home() {
   const [companies, setCompanies] = useState([]);
@@ -114,7 +141,7 @@ export default function Home() {
         />
       </div>
       <div className="h-full flex justify-center">
-        <div className="min-w-[60vw] max-w-[80vw] flex flex-col items-center max-h-[50vh] py-24 mt-10 bg-white rounded-md border">
+        <div className="min-w-[60vw] max-w-[80vw] flex flex-col items-center max-h-[60vh] p-[10px] py-24 mt-10 bg-white rounded-md border">
           <h1 className="text-2xl font-bold ">Use Already Scraped Websites</h1>
           {companies.length == 0 && (
             <div className="text-center mt-2">
