@@ -76,3 +76,1613 @@ The product range includes:
 Arkay Windows prides itself on customer service and quality control, being members of various industry associations including the British Fenestration Rating Council (BFRC) and founding members of FENSA. The company also emphasizes its commitment to security and energy efficiency in its products, ensuring they meet current building regulations.
 
 Their manufacturing facility utilizes advanced technology for fabrication and maintains a comprehensive stock of products for quick delivery to customers across London and the Southeast. You can learn more about their offerings and view their virtual showroom at [Arkay Windows](https://www.arkaywindows.com).
+2024-11-11 13:31:08,871 | ERROR | 959 | Error deleting assistant or vector store: Error code: 404 - {'error': {'message': "No assistant found with id 'asst_qZcb4AsrunUIu14E2nK5HLTk'.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-11 13:31:12,395 | ERROR | 959 | Error deleting assistant or vector store: Error code: 404 - {'error': {'message': "No assistant found with id 'asst_uZ2vFV3WvYTeocZn6RhJGrd2'.", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2024-11-11 13:32:01,868 | INFO | 959 | Attempting to retrieve logo for scan pro audio from Google Images
+2024-11-11 13:32:06,876 | WARNING | 959 | Logo retrieval for scan pro audio failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-11 13:32:06,882 | INFO | 959 | Creating vector store and assistant id for new company: scan_pro_audio
+2024-11-11 13:32:07,577 | INFO | 959 | Vector ID generated for scan_pro_audio
+2024-11-11 13:32:08,259 | INFO | 959 | Assistant ID generated for scan_pro_audio
+2024-11-11 13:32:08,260 | INFO | 959 | Converting attachments to PDF format
+2024-11-11 13:32:08,261 | INFO | 959 | No attachments found! Skipping upload step
+2024-11-11 13:32:08,275 | INFO | 959 | Starting Scraping task on background thread
+2024-11-11 13:32:08,275 | INFO | 959 | Sending scraping begun response to client
+2024-11-11 13:32:08,276 | INFO | 959 | Starting Scraping Session with Timeout at 60 seconds
+2024-11-11 13:32:08,277 | INFO | 959 | Task started for https://www.scan.co.uk/3xs/custom/pc at 2024-11-11 13:32:08.277230
+2024-11-11 13:32:08,319 | INFO | 1011 | Started scraping https://www.scan.co.uk/3xs/custom/pc for scan_pro_audio at 2024-11-11 13:32:08.319401
+2024-11-11 13:32:08,520 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/pc. Using ScraperAPI.
+2024-11-11 13:32:11,432 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/pc
+2024-11-11 13:32:11,443 | INFO | 1011 | Found 34 new URLs on https://www.scan.co.uk/3xs/custom/pc.
+2024-11-11 13:32:11,592 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/why-choose-3xs. Using ScraperAPI.
+2024-11-11 13:32:15,954 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/why-choose-3xs
+2024-11-11 13:32:15,967 | INFO | 1011 | Found 6 new URLs on https://www.scan.co.uk/3xs/info/why-choose-3xs.
+2024-11-11 13:32:16,117 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/bundle. Using ScraperAPI.
+2024-11-11 13:32:17,989 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/bundle
+2024-11-11 13:32:18,005 | INFO | 1011 | Found 10 new URLs on https://www.scan.co.uk/3xs/custom/bundle.
+2024-11-11 13:32:18,166 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/. Using ScraperAPI.
+2024-11-11 13:32:22,209 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/
+2024-11-11 13:32:22,223 | INFO | 1011 | Found 36 new URLs on https://www.scan.co.uk/.
+2024-11-11 13:32:22,375 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/quality-pc-components. Using ScraperAPI.
+2024-11-11 13:32:27,474 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/quality-pc-components
+2024-11-11 13:32:27,485 | INFO | 1011 | Found 8 new URLs on https://www.scan.co.uk/3xs/info/quality-pc-components.
+2024-11-11 13:32:27,650 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom. Using ScraperAPI.
+2024-11-11 13:32:29,521 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom
+2024-11-11 13:32:29,538 | INFO | 1011 | Found 9 new URLs on https://www.scan.co.uk/3xs/custom.
+2024-11-11 13:32:29,682 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/terms. Using ScraperAPI.
+2024-11-11 13:32:35,539 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/terms
+2024-11-11 13:32:35,551 | INFO | 1011 | Found 4 new URLs on https://www.scan.co.uk/3xs/info/terms.
+2024-11-11 13:32:35,707 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/home-and-office. Using ScraperAPI.
+2024-11-11 13:32:38,527 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/home-and-office
+2024-11-11 13:32:38,538 | INFO | 1011 | Found 7 new URLs on https://www.scan.co.uk/3xs/custom/home-and-office.
+2024-11-11 13:32:38,689 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/shops/recycling-weee. Using ScraperAPI.
+2024-11-11 13:32:40,880 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/shops/recycling-weee
+2024-11-11 13:32:40,892 | INFO | 1011 | Found 0 new URLs on https://www.scan.co.uk/shops/recycling-weee.
+2024-11-11 13:32:41,043 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/laptop. Using ScraperAPI.
+2024-11-11 13:32:42,779 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/laptop
+2024-11-11 13:32:42,792 | INFO | 1011 | Found 8 new URLs on https://www.scan.co.uk/3xs/custom/laptop.
+2024-11-11 13:32:42,944 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/cdn-cgi/l/email-protection#5d3c2e366e252e1d2e3e3c33733e32732836
+2024-11-11 13:32:42,947 | INFO | 1011 | Found 0 new URLs on https://www.scan.co.uk/cdn-cgi/l/email-protection#5d3c2e366e252e1d2e3e3c33733e32732836.
+2024-11-11 13:32:43,107 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/gaming. Using ScraperAPI.
+2024-11-11 13:32:46,158 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/gaming
+2024-11-11 13:32:46,184 | INFO | 1011 | Found 25 new URLs on https://www.scan.co.uk/3xs/custom/gaming.
+2024-11-11 13:32:46,333 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/openingtimes. Using ScraperAPI.
+2024-11-11 13:32:51,094 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/openingtimes
+2024-11-11 13:32:51,181 | INFO | 1011 | Found 0 new URLs on https://www.scan.co.uk/3xs/info/openingtimes.
+2024-11-11 13:32:51,340 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/enterprise. Using ScraperAPI.
+2024-11-11 13:32:52,982 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/enterprise
+2024-11-11 13:32:52,994 | INFO | 1011 | Found 5 new URLs on https://www.scan.co.uk/3xs/enterprise.
+2024-11-11 13:32:53,141 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/pages/support. Using ScraperAPI.
+2024-11-11 13:32:55,500 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/pages/support
+2024-11-11 13:32:55,514 | INFO | 1011 | Found 1 new URLs on https://www.scan.co.uk/3xs/custom/pages/support.
+2024-11-11 13:32:55,650 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/dream-pc-custom-shop. Using ScraperAPI.
+2024-11-11 13:32:57,838 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/dream-pc-custom-shop
+2024-11-11 13:32:57,849 | INFO | 1011 | Found 5 new URLs on https://www.scan.co.uk/3xs/custom/dream-pc-custom-shop.
+2024-11-11 13:32:58,011 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/hd-4k-video-editing-pcs-laptops. Using ScraperAPI.
+2024-11-11 13:33:01,509 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/hd-4k-video-editing-pcs-laptops
+2024-11-11 13:33:01,524 | INFO | 1011 | Found 24 new URLs on https://www.scan.co.uk/3xs/custom/hd-4k-video-editing-pcs-laptops.
+2024-11-11 13:33:01,669 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/privacy. Using ScraperAPI.
+2024-11-11 13:33:08,340 | INFO | 1011 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/privacy
+2024-11-11 13:33:08,350 | INFO | 1011 | Found 1 new URLs on https://www.scan.co.uk/3xs/info/privacy.
+2024-11-11 13:33:08,388 | INFO | 959 | Attempting to terminate process with PID 1011
+2024-11-11 13:33:08,494 | INFO | 1011 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/system-awards. Using ScraperAPI.
+2024-11-11 13:33:09,390 | INFO | 959 | Force killing process with PID 1011
+2024-11-11 13:33:09,391 | INFO | 959 | Scraping https://www.scan.co.uk/3xs/custom/pc for scan_pro_audio timed out after 60 seconds
+2024-11-11 13:33:09,395 | ERROR | 959 | Scraping https://www.scan.co.uk/3xs/custom/pc for scan_pro_audio failed with no result after 61.118291 seconds
+2024-11-11 13:33:09,395 | INFO | 959 | Starting conversion of parsed report from markdown to PDF
+2024-11-11 13:33:09,780 | INFO | 959 | The markdown file at temp/markdown/co.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-11 13:33:09,780 | INFO | 959 | Conversion of report completed and uploaded to vector store with id vs_TxLR7p6TfCvVGd1LJKIsPKZc
+2024-11-11 13:33:16,169 | INFO | 959 | ['/mnt/c/programming/convoAI/server/temp/pdf/co.pdf'] got uploded to vector store with id vs_TxLR7p6TfCvVGd1LJKIsPKZc
+2024-11-11 13:33:16,170 | INFO | 959 | Removing Markdown file generated for scan_pro_audio
+2024-11-11 13:33:22,015 | INFO | 959 | 
+Question : Hello
+Company Name : scan_pro_audio
+Persona : Custom Persona
+
+
+2024-11-11 13:33:25,573 | INFO | 959 | Generated Answer: Meow! How can I assist you today? 🐾
+2024-11-11 13:33:41,027 | INFO | 959 | 
+Question : Tell me a bit about the product 
+Company Name : scan_pro_audio
+Persona : Custom Persona
+
+
+2024-11-11 13:33:52,965 | INFO | 959 | Generated Answer: Nyaa! 🐱 Let me share some pawsitive details about the product!
+
+Scan Pro Audio offers custom-built PCs designed to meet a variety of user needs such as gaming, video editing, music production, and everyday office tasks. Here's a little breakdown of what you can expect:
+
+1. **Customizability**: You can start with a blank canvas, choosing each component to create a tailor-made PC perfect for your requirements.
+   
+2. **Quality Assurance**: All PCs are built using premium branded components, ensuring reliability and quality. They undergo rigorous testing, including a 24-hour burn-in test for overclocked systems.
+
+3. **Warranty and Support**: Each system comes with a three-year warranty that includes both parts and labor. The technical support team is available seven days a week, ensuring any issues can be promptly addressed.
+
+4. **Performance for Various Needs**: They cater not just to gamers but also to professional creators needing powerful machines for video editing or 3D rendering. Their line-up includes options from entry-level to extreme performance configurations.
+
+5. **Accessibility**: With options for finance and easy customization through their user-friendly configurator, it's convenient for customers to find a product that fits their budget and specifications.
+
+If you want more detailed info or specifications, just let me know! Purr-fectly happy to help! 🐾
+2024-11-11 13:34:43,044 | INFO | 959 | Assistant with ID asst_4CWrPedsnRcmDbjLmLGHvqjF deleted.
+2024-11-11 13:34:44,191 | INFO | 959 | Vector store with ID vs_TxLR7p6TfCvVGd1LJKIsPKZc deleted.
+2024-11-11 13:36:10,635 | INFO | 959 | Attempting to retrieve logo for scan computers international ltd from Google Images
+2024-11-11 13:36:15,646 | WARNING | 959 | Logo retrieval for scan computers international ltd failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-11 13:36:15,657 | INFO | 959 | Creating vector store and assistant id for new company: scan_computers_international_ltd
+2024-11-11 13:36:16,393 | INFO | 959 | Vector ID generated for scan_computers_international_ltd
+2024-11-11 13:36:17,208 | INFO | 959 | Assistant ID generated for scan_computers_international_ltd
+2024-11-11 13:36:17,209 | INFO | 959 | Converting attachments to PDF format
+2024-11-11 13:36:17,209 | INFO | 959 | No attachments found! Skipping upload step
+2024-11-11 13:36:17,218 | INFO | 959 | Starting Scraping task on background thread
+2024-11-11 13:36:17,218 | INFO | 959 | Sending scraping begun response to client
+2024-11-11 13:36:17,219 | INFO | 959 | Starting Scraping Session with Timeout at 60 seconds
+2024-11-11 13:36:17,219 | INFO | 959 | Task started for https://www.scan.co.uk/3xs/custom/pc at 2024-11-11 13:36:17.219681
+2024-11-11 13:36:17,223 | INFO | 1052 | Started scraping https://www.scan.co.uk/3xs/custom/pc for scan_computers_international_ltd at 2024-11-11 13:36:17.223699
+2024-11-11 13:36:17,386 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/pc. Using ScraperAPI.
+2024-11-11 13:36:19,973 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/pc
+2024-11-11 13:36:19,984 | INFO | 1052 | Found 34 new URLs on https://www.scan.co.uk/3xs/custom/pc.
+2024-11-11 13:36:20,150 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/cdn-cgi/l/email-protection#4d2c3e267e353e0d3e2e2c23632e22633826
+2024-11-11 13:36:20,152 | INFO | 1052 | Found 0 new URLs on https://www.scan.co.uk/cdn-cgi/l/email-protection#4d2c3e267e353e0d3e2e2c23632e22633826.
+2024-11-11 13:36:20,294 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/why-choose-3xs. Using ScraperAPI.
+2024-11-11 13:36:26,522 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/why-choose-3xs
+2024-11-11 13:36:26,533 | INFO | 1052 | Found 6 new URLs on https://www.scan.co.uk/3xs/info/why-choose-3xs.
+2024-11-11 13:36:26,683 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/bundle. Using ScraperAPI.
+2024-11-11 13:36:29,316 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/bundle
+2024-11-11 13:36:29,332 | INFO | 1052 | Found 10 new URLs on https://www.scan.co.uk/3xs/custom/bundle.
+2024-11-11 13:36:29,485 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/. Using ScraperAPI.
+2024-11-11 13:36:32,146 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/
+2024-11-11 13:36:32,163 | INFO | 1052 | Found 36 new URLs on https://www.scan.co.uk/.
+2024-11-11 13:36:32,316 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/quality-pc-components. Using ScraperAPI.
+2024-11-11 13:36:36,820 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/quality-pc-components
+2024-11-11 13:36:36,832 | INFO | 1052 | Found 9 new URLs on https://www.scan.co.uk/3xs/info/quality-pc-components.
+2024-11-11 13:36:36,985 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom. Using ScraperAPI.
+2024-11-11 13:36:40,431 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom
+2024-11-11 13:36:40,447 | INFO | 1052 | Found 9 new URLs on https://www.scan.co.uk/3xs/custom.
+2024-11-11 13:36:40,584 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/terms. Using ScraperAPI.
+2024-11-11 13:36:45,393 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/terms
+2024-11-11 13:36:45,409 | INFO | 1052 | Found 4 new URLs on https://www.scan.co.uk/3xs/info/terms.
+2024-11-11 13:36:45,546 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/home-and-office. Using ScraperAPI.
+2024-11-11 13:36:48,072 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/home-and-office
+2024-11-11 13:36:48,084 | INFO | 1052 | Found 7 new URLs on https://www.scan.co.uk/3xs/custom/home-and-office.
+2024-11-11 13:36:48,245 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/shops/recycling-weee. Using ScraperAPI.
+2024-11-11 13:36:49,607 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/shops/recycling-weee
+2024-11-11 13:36:49,618 | INFO | 1052 | Found 0 new URLs on https://www.scan.co.uk/shops/recycling-weee.
+2024-11-11 13:36:49,758 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/laptop. Using ScraperAPI.
+2024-11-11 13:36:52,281 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/laptop
+2024-11-11 13:36:52,376 | INFO | 1052 | Found 8 new URLs on https://www.scan.co.uk/3xs/custom/laptop.
+2024-11-11 13:36:52,516 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/gaming. Using ScraperAPI.
+2024-11-11 13:36:54,673 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/gaming
+2024-11-11 13:36:54,695 | INFO | 1052 | Found 25 new URLs on https://www.scan.co.uk/3xs/custom/gaming.
+2024-11-11 13:36:54,843 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/openingtimes. Using ScraperAPI.
+2024-11-11 13:36:55,918 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/openingtimes
+2024-11-11 13:36:55,927 | INFO | 1052 | Found 1 new URLs on https://www.scan.co.uk/3xs/info/openingtimes.
+2024-11-11 13:36:56,090 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/enterprise. Using ScraperAPI.
+2024-11-11 13:36:57,441 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/enterprise
+2024-11-11 13:36:57,453 | INFO | 1052 | Found 5 new URLs on https://www.scan.co.uk/3xs/enterprise.
+2024-11-11 13:36:57,591 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/pages/support. Using ScraperAPI.
+2024-11-11 13:37:00,199 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/pages/support
+2024-11-11 13:37:00,212 | INFO | 1052 | Found 0 new URLs on https://www.scan.co.uk/3xs/custom/pages/support.
+2024-11-11 13:37:00,364 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/dream-pc-custom-shop. Using ScraperAPI.
+2024-11-11 13:37:04,698 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/dream-pc-custom-shop
+2024-11-11 13:37:04,709 | INFO | 1052 | Found 5 new URLs on https://www.scan.co.uk/3xs/custom/dream-pc-custom-shop.
+2024-11-11 13:37:04,870 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/hd-4k-video-editing-pcs-laptops. Using ScraperAPI.
+2024-11-11 13:37:07,962 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/custom/hd-4k-video-editing-pcs-laptops
+2024-11-11 13:37:07,974 | INFO | 1052 | Found 24 new URLs on https://www.scan.co.uk/3xs/custom/hd-4k-video-editing-pcs-laptops.
+2024-11-11 13:37:08,125 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/privacy. Using ScraperAPI.
+2024-11-11 13:37:12,910 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/privacy
+2024-11-11 13:37:12,918 | INFO | 1052 | Found 1 new URLs on https://www.scan.co.uk/3xs/info/privacy.
+2024-11-11 13:37:13,204 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/system-awards. Using ScraperAPI.
+2024-11-11 13:37:17,026 | INFO | 1052 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/system-awards
+2024-11-11 13:37:17,061 | INFO | 1052 | Found 62 new URLs on https://www.scan.co.uk/3xs/info/system-awards.
+2024-11-11 13:37:17,213 | INFO | 1052 | Forbidden access for URL: https://www.scan.co.uk/3xs/custom/pc-simulators. Using ScraperAPI.
+2024-11-11 13:37:17,283 | INFO | 959 | Attempting to terminate process with PID 1052
+2024-11-11 13:37:18,285 | INFO | 959 | Force killing process with PID 1052
+2024-11-11 13:37:18,286 | INFO | 959 | Scraping https://www.scan.co.uk/3xs/custom/pc for scan_computers_international_ltd timed out after 60 seconds
+2024-11-11 13:37:18,291 | ERROR | 959 | Scraping https://www.scan.co.uk/3xs/custom/pc for scan_computers_international_ltd failed with no result after 61.072033 seconds
+2024-11-11 13:37:18,292 | INFO | 959 | Starting conversion of parsed report from markdown to PDF
+2024-11-11 13:37:18,421 | INFO | 959 | The markdown file at temp/markdown/co.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-11 13:37:18,421 | INFO | 959 | Conversion of report completed and uploaded to vector store with id vs_ox0kmEZGD5LUrCbnnVABM9pr
+2024-11-11 13:37:24,562 | INFO | 959 | ['/mnt/c/programming/convoAI/server/temp/pdf/co.pdf'] got uploded to vector store with id vs_ox0kmEZGD5LUrCbnnVABM9pr
+2024-11-11 13:37:24,566 | INFO | 959 | Removing Markdown file generated for scan_computers_international_ltd
+2024-11-11 13:37:32,860 | INFO | 959 | 
+Question : Hello
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:37:36,710 | INFO | 959 | Generated Answer: Woof! Hello there, friend! How can I help you today? 🐶
+2024-11-11 13:37:55,125 | INFO | 959 | 
+Question : tell me a bit about the price of the product 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:38:04,311 | INFO | 959 | Generated Answer: Woof! Here's some info about the prices of Scan Computers International Ltd's products:
+
+1. **Gaming PCs**: Start from as low as **£699**, with installment options available from around **£17** a month. There's a range of prices based on performance needs, from entry-level to extreme setups.
+
+2. **Workstations**: For a powerful configuration, prices might be around **£2,300** or more, giving you excellent performance for professional applications like CAD.
+
+3. **Laptops**: High-performance models, particularly gaming laptops, can be found for under **£1,000**, but you may find some that are higher based on specifications.
+
+4. **Custom Builds**: Scan also offers completely customizable PCs, with prices varying based on the components and specifications selected.
+
+If you have more specific needs or questions, just bark and I'll fetch more details! 🐾
+2024-11-11 13:39:28,694 | INFO | 959 | 
+Question : can you only provide me the price range of the product 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:39:33,088 | INFO | 959 | Generated Answer: Woof woof! Sure thing! The price range for products at Scan Computers International Ltd is roughly:
+
+- **Gaming PCs**: Starting from **£699**.
+- **Workstations**: Typically around **£2,300** or more.
+- **Laptops**: High-performance models under **£1,000**, depending on specs.
+
+If you need more specific details, just let me know! 🐕✨
+2024-11-11 13:40:43,014 | INFO | 959 | 
+Question : from were you are giving all this answer 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:40:47,507 | INFO | 959 | Generated Answer: Woof! I'm fetching all this information from the documents you uploaded! They're filled with details about Scan Computers International Ltd and their products. If you have specific questions or need more details, just ask, and I'll dig in more! 🐾📄
+2024-11-11 13:41:15,821 | INFO | 959 | 
+Question : oaky thanks doggy 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:41:19,199 | INFO | 959 | Generated Answer: Woof woof! You're welcome! If you have more questions or need help later, just give a bark! Have a pawsome day! 🐶💖
+2024-11-11 13:53:42,391 | INFO | 959 | 
+Question : Hello
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:53:45,941 | INFO | 959 | Generated Answer: Woof woof! Hello again! How can I assist you today? 🐕✨
+2024-11-11 13:54:04,460 | INFO | 959 | 
+Question : Give me the prices of the product 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:54:09,098 | INFO | 959 | Generated Answer: Woof! Here's a recap of the price ranges for the products at Scan Computers International Ltd:
+
+1. **Gaming PCs**: Starting from **£699**.
+2. **Workstations**: Typically around **£2,300** or more.
+3. **Laptops**: High-performance models under **£1,000**, depending on the specifications.
+
+If you need more detailed pricing or info about specific products, just let me know! 🐾💻
+2024-11-11 13:54:28,824 | INFO | 959 | 
+Question : Corsair iCUE Gaming PCs
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 13:54:37,609 | INFO | 959 | Generated Answer: Woof! Here's what I found about the prices for **Corsair iCUE Gaming PCs**:
+
+- **3XS Gamer iCUE RTX**: This mid-range base unit is priced comfortably below **£2,000**.
+- **3XS Vengeance XTi iCUE**: Known for great gaming speed in a quiet and well-built machine; specific pricing was not mentioned, but it caters to those requiring higher performance.
+
+For precise pricing, it looks like you may need to check directly on their website or online configurator since custom builds can vary greatly. If you need help finding that, just let me know! 🐾💻
+2024-11-11 14:07:56,078 | INFO | 959 | 
+Question : Barracuda tell me the pricing for this 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:08:07,134 | INFO | 959 | Generated Answer: Woof! 🐶 Here's what I found about the pricing for **Barracuda Gaming PCs**:
+
+Unfortunately, the specific pricing for Barracuda wasn't explicitly detailed in the documents. However, the **3XS Gaming PCs** from Scan Computers typically start from around **£699**, so you might find similar pricing for Barracuda models.
+
+If you want precise details, it could be best to check their website directly! If there's anything more you’d like to know, just give me a bark! 🐾💬
+2024-11-11 14:08:47,090 | INFO | 959 | 
+Question : can you give me overview of that 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:09:25,916 | INFO | 959 | Generated Answer: Woof! 🐾 Here's an overview of the **Barracuda Gaming PCs** from Scan Computers International Ltd:
+
+The Barracuda series is designed for serious gamers, providing high-performance systems that can handle the latest games with ease. These PCs are built with quality components ensuring reliability and performance. 
+
+### Key Features:
+- **Engineered Performance**: They’re engineered to give gamers an edge with cutting-edge components and technology.
+- **High-Speed Processing**: Many models will feature powerful CPUs and GPUs, enhancing gaming experiences with smooth frame rates and rapid load times.
+- **Customizability**: Customers have the option to customize various components to fit their specifications and gaming needs.
+- **Aesthetics and Build Quality**: The systems often have a sleek design and may incorporate RGB lighting through Corsair iCUE, enabling stunning visual effects that sync across your setup.
+  
+### Warranty and Support:
+- The Barracuda PCs come with a three-year warranty that includes both parts and labor, ensuring peace of mind for gamers.
+  
+For more specific details or custom configurations, feel free to ask, and I'll wag my tail to help! 🐕💻
+2024-11-11 14:14:48,443 | INFO | 959 | 
+Question : Give me the pricing for the every gaming mouse ? 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:15:05,844 | INFO | 959 | Generated Answer: Woof! 🐾 Here’s the pricing information for the **gaming mice** available at Scan Computers International Ltd:
+
+Unfortunately, I didn't find the specific pricing details for the gaming mice listed in the uploaded documents. It seems they might not have been detailed or included in the materials I searched through.
+
+For comprehensive and accurate pricing, I recommend checking the Scan Computers website directly or exploring their gaming peripherals section. If you have more specific models in mind or need help with anything else, let me know, and I’ll be happy to help! 🐶💻
+2024-11-11 14:15:40,006 | INFO | 959 | 
+Question : i know you love mouse 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:15:43,570 | INFO | 959 | Generated Answer: Woof woof! You bet! I might love the idea of mice, but I'll leave the real catching to you! 🐾 Just let me know if you need more info about gaming mice or anything else, and I'll fetch it for you! 🐶💖
+2024-11-11 14:16:11,921 | INFO | 959 | 
+Question : okay give the pricing for the mouse 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:16:24,414 | INFO | 959 | Generated Answer: Woof! 🐾 I searched for the pricing details for gaming mice but couldn't find specific prices in the uploaded documents. It seems the prices for gaming mice weren't included or detailed.
+
+For the most accurate and up-to-date pricing information, I suggest checking the Scan Computers website directly or their gaming peripherals section! If there's anything more you'd like to know, just bark, and I'll help you out! 🐶💻
+2024-11-11 14:20:42,656 | INFO | 959 | 
+Question : What is an Intel CPU / Processor ?
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:20:51,813 | INFO | 959 | Generated Answer: Woof woof! 🐶 Here’s a quick overview of what an **Intel CPU / Processor** is:
+
+### What is it?
+An **Intel CPU (Central Processing Unit)**, commonly referred to as a processor, is the primary component of a computer that performs most of the processing inside the system. It executes instructions from computer programs, handling arithmetic, logic, control, and input/output operations.
+
+### Key Features:
+1. **Core Count**: Modern Intel CPUs come with multiple cores, allowing them to perform several tasks simultaneously. Common configurations include dual-core, quad-core, and even higher.
+2. **Clock Speed**: Measured in gigahertz (GHz), this indicates how many cycles per second the CPU can execute. Higher clock speeds can mean faster processing.
+3. **Integrated Graphics**: Many Intel processors include integrated graphics, allowing them to render images and videos without needing a separate graphics card.
+4. **Power Management**: Intel CPUs often have advanced power-saving features to improve energy efficiency.
+5. **Hyper-Threading**: This technology allows a single core to behave like two logical cores, improving multitasking and performance in multi-threaded applications.
+
+### Use Cases:
+- **General Computing**: Ideal for everyday tasks like web browsing, document editing, and media consumption.
+- **Gaming**: Many modern Intel CPUs are designed to handle demanding games when paired with adequate graphics cards.
+- **Workstations**: Professional applications such as video editing and 3D rendering benefit from powerful Intel processors.
+
+They offer a range of processors tailored for different needs, from everyday use to high-performance gaming and professional workloads! If you have more questions, just give me a woof! 🐾💻
+2024-11-11 14:21:11,408 | INFO | 959 | 
+Question : and the pricing for that 
+Company Name : scan_computers_international_ltd
+Persona : Custom Persona
+
+
+2024-11-11 14:21:22,093 | INFO | 959 | Generated Answer: Woof! 🐶 Here’s what I found about the pricing for **Intel CPUs / Processors** at Scan Computers International Ltd:
+
+1. **Intel Core i7 Hex Core System**: This powerful workstation is priced at just over **£2,300**, showcasing incredible performance for rendering and modeling tasks.
+   
+2. **Custom Intel Bundles**: Prices vary significantly based on the specific Intel processor chosen, such as the Intel Core i5 and other configurations. Custom bundles using Socket 1200 Intel processors are available, but specific pricing details for these bundles were not mentioned in the documents.
+
+For more tailored pricing or to explore different Intel processors and their configurations, checking the Scan Computers website or their online configurator might be the best option! If you have any more queries or need further assistance, just give me a wag! 🐾💻
+2024-11-12 14:14:08,840 | INFO | 609 | Assistant with ID asst_mckEuS3rI9HnwQEhfJfXJY8J deleted.
+2024-11-12 14:14:10,209 | INFO | 609 | Vector store with ID vs_ox0kmEZGD5LUrCbnnVABM9pr deleted.
+2024-11-12 14:15:13,708 | INFO | 609 | Attempting to retrieve logo for tech mahindra from Google Images
+2024-11-12 14:15:18,715 | WARNING | 609 | Logo retrieval for tech mahindra failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-12 14:15:18,988 | INFO | 609 | Creating vector store and assistant id for new company: tech_mahindra
+2024-11-12 14:15:19,700 | INFO | 609 | Vector ID generated for tech_mahindra
+2024-11-12 14:15:20,669 | INFO | 609 | Assistant ID generated for tech_mahindra
+2024-11-12 14:15:20,669 | INFO | 609 | Converting attachments to PDF format
+2024-11-12 14:15:20,670 | INFO | 609 | No attachments found! Skipping upload step
+2024-11-12 14:15:20,679 | INFO | 609 | Starting Scraping task on background thread
+2024-11-12 14:15:20,679 | INFO | 609 | Sending scraping begun response to client
+2024-11-12 14:15:20,681 | INFO | 609 | Starting Scraping Session with Timeout at 120 seconds
+2024-11-12 14:15:20,681 | INFO | 609 | Task started for https://www.techmahindra.com/ at 2024-11-12 14:15:20.681456
+2024-11-12 14:15:20,710 | INFO | 635 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-12 14:15:20.710176
+2024-11-12 14:15:21,076 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/
+2024-11-12 14:15:21,125 | INFO | 635 | Found 110 new URLs on https://www.techmahindra.com/.
+2024-11-12 14:15:21,319 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/
+2024-11-12 14:15:21,346 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/.
+2024-11-12 14:15:21,546 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/
+2024-11-12 14:15:21,584 | INFO | 635 | Found 11 new URLs on https://www.techmahindra.com/industries/media-and-entertainment/.
+2024-11-12 14:15:21,786 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/
+2024-11-12 14:15:21,909 | INFO | 635 | Found 37 new URLs on https://www.techmahindra.com/industries/manufacturing/.
+2024-11-12 14:15:22,337 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/
+2024-11-12 14:15:22,376 | INFO | 635 | Found 10 new URLs on https://www.techmahindra.com/about-us/.
+2024-11-12 14:15:22,603 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/
+2024-11-12 14:15:22,659 | INFO | 635 | Found 22 new URLs on https://www.techmahindra.com/services/business-excellence/.
+2024-11-12 14:15:22,880 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/
+2024-11-12 14:15:23,028 | INFO | 635 | Found 26 new URLs on https://www.techmahindra.com/services/oracle/.
+2024-11-12 14:15:23,397 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/search
+2024-11-12 14:15:23,398 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/search.
+2024-11-12 14:15:23,564 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/
+2024-11-12 14:15:23,590 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/.
+2024-11-12 14:15:23,748 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/
+2024-11-12 14:15:23,774 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/.
+2024-11-12 14:15:23,964 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/
+2024-11-12 14:15:24,000 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/services/cloud-consulting-services/.
+2024-11-12 14:15:24,205 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/
+2024-11-12 14:15:24,251 | INFO | 635 | Found 18 new URLs on https://www.techmahindra.com/alliance/.
+2024-11-12 14:15:24,440 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/
+2024-11-12 14:15:24,547 | INFO | 635 | Found 6 new URLs on https://www.techmahindra.com/services/experience-design/.
+2024-11-12 14:15:24,747 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/#main-content
+2024-11-12 14:15:24,794 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/#main-content.
+2024-11-12 14:15:24,911 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty
+2024-11-12 14:15:24,912 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty.
+2024-11-12 14:15:25,067 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/
+2024-11-12 14:15:25,092 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/.
+2024-11-12 14:15:25,359 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/
+2024-11-12 14:15:25,386 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/.
+2024-11-12 14:15:25,568 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/rcg/
+2024-11-12 14:15:25,606 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/industries/rcg/.
+2024-11-12 14:15:25,938 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/
+2024-11-12 14:15:25,966 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/performance-assurance-tier-1-telematics-customer-north-america/.
+2024-11-12 14:15:26,120 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/
+2024-11-12 14:15:26,147 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/.
+2024-11-12 14:15:26,326 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/search/
+2024-11-12 14:15:26,352 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/search/.
+2024-11-12 14:15:26,469 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/search?search=Jobs
+2024-11-12 14:15:26,470 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/search?search=Jobs.
+2024-11-12 14:15:26,986 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/
+2024-11-12 14:15:27,012 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/.
+2024-11-12 14:15:27,254 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/testing-services/
+2024-11-12 14:15:27,290 | INFO | 635 | Found 15 new URLs on https://www.techmahindra.com/services/testing-services/.
+2024-11-12 14:15:27,485 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/network-services/
+2024-11-12 14:15:27,603 | INFO | 635 | Found 15 new URLs on https://www.techmahindra.com/services/network-services/.
+2024-11-12 14:15:27,791 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/#vbp-carousel-3157
+2024-11-12 14:15:27,839 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/#vbp-carousel-3157.
+2024-11-12 14:15:28,054 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/
+2024-11-12 14:15:28,099 | INFO | 635 | Found 9 new URLs on https://www.techmahindra.com/careers/why-techm/.
+2024-11-12 14:15:28,283 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/salesforce/
+2024-11-12 14:15:28,346 | INFO | 635 | Found 13 new URLs on https://www.techmahindra.com/services/salesforce/.
+2024-11-12 14:15:28,641 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/privacy-policy/
+2024-11-12 14:15:28,674 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/privacy-policy/.
+2024-11-12 14:15:28,927 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/
+2024-11-12 14:15:29,007 | INFO | 635 | Found 34 new URLs on https://www.techmahindra.com/industries/insurance/.
+2024-11-12 14:15:29,443 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/news/
+2024-11-12 14:15:29,484 | INFO | 635 | Found 11 new URLs on https://www.techmahindra.com/insights/news/.
+2024-11-12 14:15:29,657 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/access-control-management-government-agency/
+2024-11-12 14:15:29,687 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/access-control-management-government-agency/.
+2024-11-12 14:15:29,853 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/products-and-platforms/
+2024-11-12 14:15:29,959 | INFO | 635 | Found 16 new URLs on https://www.techmahindra.com/products-and-platforms/.
+2024-11-12 14:15:30,173 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/energy-and-utilities/
+2024-11-12 14:15:30,218 | INFO | 635 | Found 9 new URLs on https://www.techmahindra.com/industries/energy-and-utilities/.
+2024-11-12 14:15:30,381 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/careers/
+2024-11-12 14:15:30,409 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/careers/.
+2024-11-12 14:15:30,584 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/terms-of-use/
+2024-11-12 14:15:30,611 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/terms-of-use/.
+2024-11-12 14:15:30,811 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/
+2024-11-12 14:15:30,860 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/services/cyber-security/.
+2024-11-12 14:15:32,098 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/sitemap
+2024-11-12 14:15:32,130 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/sitemap.
+2024-11-12 14:15:32,308 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/scale-at-speed/
+2024-11-12 14:15:32,340 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/scale-at-speed/.
+2024-11-12 14:15:32,571 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/application-development-maintenance-service/
+2024-11-12 14:15:32,609 | INFO | 635 | Found 8 new URLs on https://www.techmahindra.com/services/application-development-maintenance-service/.
+2024-11-12 14:15:32,807 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-portfolio-companies/
+2024-11-12 14:15:32,836 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/about-us/our-portfolio-companies/.
+2024-11-12 14:15:33,006 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/
+2024-11-12 14:15:33,032 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/.
+2024-11-12 14:15:33,346 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/indus-project/
+2024-11-12 14:15:33,386 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/makers-lab/indus-project/.
+2024-11-12 14:15:34,664 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/pega/
+2024-11-12 14:15:34,706 | INFO | 635 | Found 10 new URLs on https://www.techmahindra.com/services/pega/.
+2024-11-12 14:15:34,932 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/blockchain/
+2024-11-12 14:15:34,978 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/services/blockchain/.
+2024-11-12 14:15:35,214 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/performance-engineering/
+2024-11-12 14:15:35,250 | INFO | 635 | Found 4 new URLs on https://www.techmahindra.com/services/performance-engineering/.
+2024-11-12 14:15:35,585 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/techmverse/
+2024-11-12 14:15:35,619 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/services/techmverse/.
+2024-11-12 14:15:35,811 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/events/
+2024-11-12 14:15:35,840 | INFO | 635 | Found 6 new URLs on https://www.techmahindra.com/events/.
+2024-11-12 14:15:35,997 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions
+2024-11-12 14:15:35,999 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions.
+2024-11-12 14:15:36,142 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/search?search=Applications
+2024-11-12 14:15:36,143 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/search?search=Applications.
+2024-11-12 14:15:36,938 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-data-platform-telia/
+2024-11-12 14:15:36,965 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/strategic-data-platform-telia/.
+2024-11-12 14:15:37,117 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/
+2024-11-12 14:15:37,149 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/.
+2024-11-12 14:15:37,299 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/
+2024-11-12 14:15:37,327 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/.
+2024-11-12 14:15:37,500 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/analyst-insights/
+2024-11-12 14:15:37,600 | INFO | 635 | Found 22 new URLs on https://www.techmahindra.com/insights/analyst-insights/.
+2024-11-12 14:15:37,818 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/
+2024-11-12 14:15:37,860 | INFO | 635 | Found 16 new URLs on https://www.techmahindra.com/services/business-process-services/.
+2024-11-12 14:15:38,035 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/
+2024-11-12 14:15:38,071 | INFO | 635 | Found 9 new URLs on https://www.techmahindra.com/insights/views/.
+2024-11-12 14:15:38,323 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/
+2024-11-12 14:15:38,351 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/.
+2024-11-12 14:15:38,846 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-and-it-strategy-roadmap-upcoming-middle-eastern-smart-city/
+2024-11-12 14:15:38,872 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/digital-and-it-strategy-roadmap-upcoming-middle-eastern-smart-city/.
+2024-11-12 14:15:39,128 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/application-services/
+2024-11-12 14:15:39,166 | INFO | 635 | Found 5 new URLs on https://www.techmahindra.com/services/application-services/.
+2024-11-12 14:15:39,333 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/
+2024-11-12 14:15:39,362 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/.
+2024-11-12 14:15:39,548 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/
+2024-11-12 14:15:39,573 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/.
+2024-11-12 14:15:39,700 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/search?search=Locations
+2024-11-12 14:15:39,701 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/search?search=Locations.
+2024-11-12 14:15:39,887 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/
+2024-11-12 14:15:39,914 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/.
+2024-11-12 14:15:40,213 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/digital-supply-chain/
+2024-11-12 14:15:40,253 | INFO | 635 | Found 16 new URLs on https://www.techmahindra.com/services/digital-supply-chain/.
+2024-11-12 14:15:40,506 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-brand/
+2024-11-12 14:15:40,548 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/about-us/our-brand/.
+2024-11-12 14:15:40,752 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/artificial-intelligence/
+2024-11-12 14:15:40,797 | INFO | 635 | Found 8 new URLs on https://www.techmahindra.com/services/artificial-intelligence/.
+2024-11-12 14:15:40,979 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/
+2024-11-12 14:15:41,005 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/.
+2024-11-12 14:15:41,177 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/next-gen-contact-center-framework-canadian-retailer/
+2024-11-12 14:15:41,206 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/next-gen-contact-center-framework-canadian-retailer/.
+2024-11-12 14:15:41,440 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/
+2024-11-12 14:15:41,477 | INFO | 635 | Found 14 new URLs on https://www.techmahindra.com/insights/.
+2024-11-12 14:15:41,737 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/rise/
+2024-11-12 14:15:41,776 | INFO | 635 | Found 5 new URLs on https://www.techmahindra.com/rise/.
+2024-11-12 14:15:42,035 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/hi-tech/
+2024-11-12 14:15:42,078 | INFO | 635 | Found 22 new URLs on https://www.techmahindra.com/industries/hi-tech/.
+2024-11-12 14:15:42,259 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/
+2024-11-12 14:15:42,299 | INFO | 635 | Found 14 new URLs on https://www.techmahindra.com/industries/communications/.
+2024-11-12 14:15:42,471 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/
+2024-11-12 14:15:42,497 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/.
+2024-11-12 14:15:42,795 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-infrastructure-services/
+2024-11-12 14:15:42,837 | INFO | 635 | Found 23 new URLs on https://www.techmahindra.com/services/cloud-infrastructure-services/.
+2024-11-12 14:15:43,240 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/investors/
+2024-11-12 14:15:43,277 | INFO | 635 | Found 23 new URLs on https://www.techmahindra.com/investors/.
+2024-11-12 14:15:43,764 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/servicenow/
+2024-11-12 14:15:43,797 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/servicenow/.
+2024-11-12 14:15:43,958 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/
+2024-11-12 14:15:43,991 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/our-capabilities/.
+2024-11-12 14:15:44,290 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/
+2024-11-12 14:15:44,420 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/.
+2024-11-12 14:15:44,640 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/sap/
+2024-11-12 14:15:44,693 | INFO | 635 | Found 21 new URLs on https://www.techmahindra.com/services/sap/.
+2024-11-12 14:15:44,877 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/accessibility-statement/
+2024-11-12 14:15:44,905 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/accessibility-statement/.
+2024-11-12 14:15:45,099 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/
+2024-11-12 14:15:45,150 | INFO | 635 | Found 8 new URLs on https://www.techmahindra.com/makers-lab/.
+2024-11-12 14:15:45,414 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/
+2024-11-12 14:15:45,450 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/insights/case-studies/.
+2024-11-12 14:15:45,598 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/
+2024-11-12 14:15:45,626 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/.
+2024-11-12 14:15:45,796 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/strategy-and-consulting-services/
+2024-11-12 14:15:45,826 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/services/strategy-and-consulting-services/.
+2024-11-12 14:15:46,032 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/
+2024-11-12 14:15:46,067 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/services/digital-enterprise-applications/.
+2024-11-12 14:15:46,261 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/cookie-policy/
+2024-11-12 14:15:46,290 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/cookie-policy/.
+2024-11-12 14:15:46,639 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/contact-us/
+2024-11-12 14:15:46,741 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/contact-us/.
+2024-11-12 14:15:47,021 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/ways-working/
+2024-11-12 14:15:47,050 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/ways-working/.
+2024-11-12 14:15:47,228 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/intelligent-automation/
+2024-11-12 14:15:47,332 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/services/intelligent-automation/.
+2024-11-12 14:15:47,545 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/careers/techm-way/
+2024-11-12 14:15:47,580 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/careers/techm-way/.
+2024-11-12 14:15:47,742 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/awards/
+2024-11-12 14:15:47,772 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/awards/.
+2024-11-12 14:15:47,988 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/search?search=Mahindra
+2024-11-12 14:15:47,989 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/search?search=Mahindra.
+2024-11-12 14:15:48,151 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/
+2024-11-12 14:15:48,177 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/.
+2024-11-12 14:15:48,425 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/sustainability/
+2024-11-12 14:15:48,474 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/about-us/sustainability/.
+2024-11-12 14:15:48,591 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation
+2024-11-12 14:15:48,591 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation.
+2024-11-12 14:15:49,890 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/
+2024-11-12 14:15:49,920 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/.
+2024-11-12 14:15:50,196 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/
+2024-11-12 14:15:50,225 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/.
+2024-11-12 14:15:50,483 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/customer-speak/
+2024-11-12 14:15:50,514 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/about-us/customer-speak/.
+2024-11-12 14:15:50,728 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/professional-services/
+2024-11-12 14:15:50,768 | INFO | 635 | Found 8 new URLs on https://www.techmahindra.com/industries/professional-services/.
+2024-11-12 14:15:50,988 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/healthcare-life-sciences/
+2024-11-12 14:15:51,105 | INFO | 635 | Found 17 new URLs on https://www.techmahindra.com/industries/healthcare-life-sciences/.
+2024-11-12 14:15:51,568 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/leadership/
+2024-11-12 14:15:51,608 | INFO | 635 | Found 34 new URLs on https://www.techmahindra.com/about-us/leadership/.
+2024-11-12 14:15:51,816 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/oil-and-gas/
+2024-11-12 14:15:51,856 | INFO | 635 | Found 6 new URLs on https://www.techmahindra.com/industries/oil-and-gas/.
+2024-11-12 14:15:52,029 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/private-equity/
+2024-11-12 14:15:52,067 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/industries/private-equity/.
+2024-11-12 14:15:52,276 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/data-analytics/
+2024-11-12 14:15:52,393 | INFO | 635 | Found 19 new URLs on https://www.techmahindra.com/services/data-analytics/.
+2024-11-12 14:15:52,604 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/events/tech-mahindra-gold-sponsor-aws-reinvent-2024/
+2024-11-12 14:15:52,640 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/insights/events/tech-mahindra-gold-sponsor-aws-reinvent-2024/.
+2024-11-12 14:15:52,869 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/engineering-services/
+2024-11-12 14:15:52,922 | INFO | 635 | Found 17 new URLs on https://www.techmahindra.com/services/engineering-services/.
+2024-11-12 14:15:53,180 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/careers/diversity-inclusion/
+2024-11-12 14:15:53,215 | INFO | 635 | Found 6 new URLs on https://www.techmahindra.com/careers/diversity-inclusion/.
+2024-11-12 14:15:53,821 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/banking-financial-services/
+2024-11-12 14:15:53,879 | INFO | 635 | Found 50 new URLs on https://www.techmahindra.com/industries/banking-financial-services/.
+2024-11-12 14:15:54,056 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
+2024-11-12 14:15:54,085 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/.
+2024-11-12 14:15:54,301 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
+2024-11-12 14:15:54,347 | INFO | 635 | Found 17 new URLs on https://www.techmahindra.com/services/sustainability-services/.
+2024-11-12 14:15:54,560 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/ttlh/
+2024-11-12 14:15:54,596 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/industries/ttlh/.
+2024-11-12 14:15:54,765 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/#main-content
+2024-11-12 14:15:54,867 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/#main-content.
+2024-11-12 14:15:55,751 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/exploring-fast-channel-explosion-us/
+2024-11-12 14:15:55,780 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/exploring-fast-channel-explosion-us/.
+2024-11-12 14:15:55,984 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/cloud-infrastructure-transformation/
+2024-11-12 14:15:56,023 | INFO | 635 | Found 5 new URLs on https://www.techmahindra.com/industries/insurance/cloud-infrastructure-transformation/.
+2024-11-12 14:15:56,187 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/privacy-policy
+2024-11-12 14:15:56,188 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/privacy-policy.
+2024-11-12 14:15:57,497 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/media-entertainment/video-engineering-services/
+2024-11-12 14:15:57,533 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/media-entertainment/video-engineering-services/.
+2024-11-12 14:15:58,846 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/media-entertainment/gaming-services/
+2024-11-12 14:15:58,881 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/media-entertainment/gaming-services/.
+2024-11-12 14:15:59,845 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/av1-codec-assessing-its-evolution-launch/
+2024-11-12 14:15:59,872 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/av1-codec-assessing-its-evolution-launch/.
+2024-11-12 14:16:00,059 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/#main-content
+2024-11-12 14:16:00,098 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/industries/media-and-entertainment/#main-content.
+2024-11-12 14:16:00,962 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/media-entertainment/digital-services-me/
+2024-11-12 14:16:00,997 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/media-entertainment/digital-services-me/.
+2024-11-12 14:16:02,207 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/stylist-group/
+2024-11-12 14:16:02,236 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/stylist-group/.
+2024-11-12 14:16:03,607 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/algorithms-headlines-exploring-ai-newsroom/
+2024-11-12 14:16:03,635 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/algorithms-headlines-exploring-ai-newsroom/.
+2024-11-12 14:16:03,886 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/communications/network-services-empowering-transformation/
+2024-11-12 14:16:03,923 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/industries/communications/network-services-empowering-transformation/.
+2024-11-12 14:16:04,132 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/industry-4/
+2024-11-12 14:16:04,169 | INFO | 635 | Found 3 new URLs on https://www.techmahindra.com/industries/manufacturing/industry-4/.
+2024-11-12 14:16:04,372 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/customer-experience/
+2024-11-12 14:16:04,406 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/manufacturing/customer-experience/.
+2024-11-12 14:16:05,659 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/idc-tech-spotlight/
+2024-11-12 14:16:05,684 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/idc-tech-spotlight/.
+2024-11-12 14:16:06,508 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/cloud-based-quality-management-solution/
+2024-11-12 14:16:06,534 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/cloud-based-quality-management-solution/.
+2024-11-12 14:16:06,832 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/future-mobility-generative-ai-genai-integral-capability/
+2024-11-12 14:16:06,860 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/insights/views/future-mobility-generative-ai-genai-integral-capability/.
+2024-11-12 14:16:07,024 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/scaling-construction-industry-speed-benefits-digitalizing/
+2024-11-12 14:16:07,056 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/scaling-construction-industry-speed-benefits-digitalizing/.
+2024-11-12 14:16:07,230 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/advanced-analytics-mining-and-metal-processing-unveiling-power-data/
+2024-11-12 14:16:07,258 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/advanced-analytics-mining-and-metal-processing-unveiling-power-data/.
+2024-11-12 14:16:08,911 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/application-modernization-and-transformation-clunky-jalopies-sleek-sports-cars/
+2024-11-12 14:16:08,944 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/insights/views/application-modernization-and-transformation-clunky-jalopies-sleek-sports-cars/.
+2024-11-12 14:16:10,157 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/construction/
+2024-11-12 14:16:10,183 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/construction/.
+2024-11-12 14:16:10,359 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/unlocking-sustainable-supply-chains-through-scope-3-id/
+2024-11-12 14:16:10,385 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/unlocking-sustainable-supply-chains-through-scope-3-id/.
+2024-11-12 14:16:11,649 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/providing-smart-efficient-and-sustainable-digital-solutions-construction-industry/
+2024-11-12 14:16:11,676 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/providing-smart-efficient-and-sustainable-digital-solutions-construction-industry/.
+2024-11-12 14:16:11,887 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/#main-content
+2024-11-12 14:16:11,936 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/industries/manufacturing/#main-content.
+2024-11-12 14:16:12,133 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/power-supply-chain-analytics-empowering-businesses-become-resilient-agile-and/
+2024-11-12 14:16:12,159 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/power-supply-chain-analytics-empowering-businesses-become-resilient-agile-and/.
+2024-11-12 14:16:12,316 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/automotive/
+2024-11-12 14:16:12,345 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/manufacturing/automotive/.
+2024-11-12 14:16:13,173 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/offering-innovative-and-customer-centric-it-experiences/
+2024-11-12 14:16:13,200 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/offering-innovative-and-customer-centric-it-experiences/.
+2024-11-12 14:16:13,547 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/revolutionizing-automotive-sales-growing-trend-direct-consumer-sales/
+2024-11-12 14:16:13,577 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/revolutionizing-automotive-sales-growing-trend-direct-consumer-sales/.
+2024-11-12 14:16:14,797 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/metals-mining/
+2024-11-12 14:16:14,823 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/metals-mining/.
+2024-11-12 14:16:15,027 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/metals-mining/
+2024-11-12 14:16:15,063 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/manufacturing/metals-mining/.
+2024-11-12 14:16:15,270 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/emerging-technologies-disrupting-future-aviation-mro/
+2024-11-12 14:16:15,296 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/emerging-technologies-disrupting-future-aviation-mro/.
+2024-11-12 14:16:16,183 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/fostering-business-resilience-through-sustainability/
+2024-11-12 14:16:16,213 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/fostering-business-resilience-through-sustainability/.
+2024-11-12 14:16:17,095 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/automotive-captive-transformation-implementing-fintech-legacy-world/
+2024-11-12 14:16:17,124 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/automotive-captive-transformation-implementing-fintech-legacy-world/.
+2024-11-12 14:16:18,083 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/power-integrated-business-planning-understanding-why-what-and-how/
+2024-11-12 14:16:18,108 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/power-integrated-business-planning-understanding-why-what-and-how/.
+2024-11-12 14:16:19,546 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/industry-40-how-comparative-and-consolidated-insights-several-factories-enhance-kpis/
+2024-11-12 14:16:19,575 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/industry-40-how-comparative-and-consolidated-insights-several-factories-enhance-kpis/.
+2024-11-12 14:16:20,481 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/aftermarket/
+2024-11-12 14:16:20,517 | INFO | 635 | Found 4 new URLs on https://www.techmahindra.com/industries/manufacturing/aftermarket/.
+2024-11-12 14:16:20,728 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/aerospace-defense/
+2024-11-12 14:16:20,765 | INFO | 635 | Found 5 new URLs on https://www.techmahindra.com/industries/manufacturing/aerospace-defense/.
+2024-11-12 14:16:21,605 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/how-data-driving-innovation-adasad-programs/
+2024-11-12 14:16:21,636 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/how-data-driving-innovation-adasad-programs/.
+2024-11-12 14:16:22,944 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/scope-3-id/
+2024-11-12 14:16:22,972 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/scope-3-id/.
+2024-11-12 14:16:23,176 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/discrete-manufacturing/
+2024-11-12 14:16:23,212 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/industries/manufacturing/discrete-manufacturing/.
+2024-11-12 14:16:24,253 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/automotive-firm-future-afof/
+2024-11-12 14:16:24,294 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/automotive-firm-future-afof/.
+2024-11-12 14:16:24,495 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/remanufacturing-business-challenges-and-need-digital-interventions/
+2024-11-12 14:16:24,539 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/remanufacturing-business-challenges-and-need-digital-interventions/.
+2024-11-12 14:16:25,873 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/accelerate-digital-transformation-construction-industry/
+2024-11-12 14:16:25,898 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/accelerate-digital-transformation-construction-industry/.
+2024-11-12 14:16:27,328 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/new-product-introduction-npi/
+2024-11-12 14:16:27,436 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/industries/manufacturing/new-product-introduction-npi/.
+2024-11-12 14:16:28,271 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/command-center-aws/
+2024-11-12 14:16:28,298 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/command-center-aws/.
+2024-11-12 14:16:29,261 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/process-manufacturing/
+2024-11-12 14:16:29,296 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/industries/manufacturing/process-manufacturing/.
+2024-11-12 14:16:30,794 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/addressing-aftersales-revenue-leakages-automotive-industry/
+2024-11-12 14:16:30,825 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/addressing-aftersales-revenue-leakages-automotive-industry/.
+2024-11-12 14:16:32,139 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/strengthening-warranty-supplier-recovery-programs/
+2024-11-12 14:16:32,166 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/strengthening-warranty-supplier-recovery-programs/.
+2024-11-12 14:16:33,071 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/strategic-sourcing-procurement-transformation/
+2024-11-12 14:16:33,105 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/industries/manufacturing/strategic-sourcing-procurement-transformation/.
+2024-11-12 14:16:33,253 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-overview/recognition/
+2024-11-12 14:16:33,256 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-overview/recognition/.
+2024-11-12 14:16:33,543 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com
+2024-11-12 14:16:33,589 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com.
+2024-11-12 14:16:33,766 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-2
+2024-11-12 14:16:33,808 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/#tabvbp-9893-2.
+2024-11-12 14:16:34,677 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-recognized-only-indian-company-double-score-transparency/
+2024-11-12 14:16:34,706 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/press-releases/tech-mahindra-recognized-only-indian-company-double-score-transparency/.
+2024-11-12 14:16:34,883 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-0
+2024-11-12 14:16:34,985 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/#tabvbp-9893-0.
+2024-11-12 14:16:35,151 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/individual-social-responsibility/
+2024-11-12 14:16:35,178 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/about-us/individual-social-responsibility/.
+2024-11-12 14:16:35,342 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/mahindra-educational-institutions/
+2024-11-12 14:16:35,372 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/about-us/mahindra-educational-institutions/.
+2024-11-12 14:16:35,550 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/#main-content
+2024-11-12 14:16:35,591 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/#main-content.
+2024-11-12 14:16:35,763 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/#tabvbp-9893-1
+2024-11-12 14:16:35,804 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/about-us/#tabvbp-9893-1.
+2024-11-12 14:16:36,208 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/about-us/tech-mahindra-foundation/
+2024-11-12 14:16:36,327 | INFO | 635 | Found 7 new URLs on https://www.techmahindra.com/about-us/tech-mahindra-foundation/.
+2024-11-12 14:16:37,773 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/building-seamless-experience-baas-banking-service-through-service-design/
+2024-11-12 14:16:37,798 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/building-seamless-experience-baas-banking-service-through-service-design/.
+2024-11-12 14:16:37,998 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-3
+2024-11-12 14:16:38,043 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-3.
+2024-11-12 14:16:38,417 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/transform-supply-chain-management-5g-technology/
+2024-11-12 14:16:38,465 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/transform-supply-chain-management-5g-technology/.
+2024-11-12 14:16:40,079 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/business-excellence-telecom/
+2024-11-12 14:16:40,107 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/business-excellence-telecom/.
+2024-11-12 14:16:41,050 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/node/1606
+2024-11-12 14:16:41,051 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/node/1606.
+2024-11-12 14:16:41,350 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-1
+2024-11-12 14:16:41,393 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-1.
+2024-11-12 14:16:41,660 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/manufacturing/
+2024-11-12 14:16:41,715 | INFO | 635 | Found 4 new URLs on https://www.techmahindra.com/services/business-process-services/manufacturing/.
+2024-11-12 14:16:41,932 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-4
+2024-11-12 14:16:42,000 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-4.
+2024-11-12 14:16:42,195 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-2
+2024-11-12 14:16:42,302 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-2.
+2024-11-12 14:16:42,468 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/agile-about-flow-not-speed/
+2024-11-12 14:16:42,498 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/agile-about-flow-not-speed/.
+2024-11-12 14:16:43,376 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/citizen-development-code-zero-way/
+2024-11-12 14:16:43,405 | INFO | 635 | Found 5 new URLs on https://www.techmahindra.com/insights/views/citizen-development-code-zero-way/.
+2024-11-12 14:16:43,593 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-5
+2024-11-12 14:16:43,670 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-5.
+2024-11-12 14:16:44,904 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/human-centricity-managed-service-transitions/
+2024-11-12 14:16:44,931 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/human-centricity-managed-service-transitions/.
+2024-11-12 14:16:46,247 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/enhancing-customer-experience-through-digital-service-design/
+2024-11-12 14:16:46,274 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/enhancing-customer-experience-through-digital-service-design/.
+2024-11-12 14:16:46,547 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#main-content
+2024-11-12 14:16:46,591 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#main-content.
+2024-11-12 14:16:47,812 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/machine-learning-inventory-optimization/
+2024-11-12 14:16:47,838 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/machine-learning-inventory-optimization/.
+2024-11-12 14:16:48,046 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-0
+2024-11-12 14:16:48,091 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/business-excellence/#tabvbp-33299-0.
+2024-11-12 14:16:49,373 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/redesigning-enterprise-operating-model-post-covid-19-era/
+2024-11-12 14:16:49,401 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/redesigning-enterprise-operating-model-post-covid-19-era/.
+2024-11-12 14:16:50,305 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/digitizing-service-management/
+2024-11-12 14:16:50,424 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/digitizing-service-management/.
+2024-11-12 14:16:51,343 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/views/can-digital-enable-more-equal-world/
+2024-11-12 14:16:51,373 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/views/can-digital-enable-more-equal-world/.
+2024-11-12 14:16:51,557 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/unlocking-value-mergers-acquisitions-through-generative-ai-innovations/
+2024-11-12 14:16:51,585 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/unlocking-value-mergers-acquisitions-through-generative-ai-innovations/.
+2024-11-12 14:16:51,778 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/business-process-services/banking-financial-services/
+2024-11-12 14:16:51,817 | INFO | 635 | Found 6 new URLs on https://www.techmahindra.com/services/business-process-services/banking-financial-services/.
+2024-11-12 14:16:52,995 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/procure-pay-automation-powered-jde-orchestration-oracle-ai-oic/
+2024-11-12 14:16:53,022 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/procure-pay-automation-powered-jde-orchestration-oracle-ai-oic/.
+2024-11-12 14:16:54,857 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/utility-1/
+2024-11-12 14:16:54,883 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/utility-1/.
+2024-11-12 14:16:55,172 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-28306-1
+2024-11-12 14:16:55,222 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-28306-1.
+2024-11-12 14:16:55,484 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-7
+2024-11-12 14:16:55,537 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-7.
+2024-11-12 14:16:56,799 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-6
+2024-11-12 14:16:56,851 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-6.
+2024-11-12 14:16:57,898 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/erp-edge-plus/
+2024-11-12 14:16:57,935 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/erp-edge-plus/.
+2024-11-12 14:16:58,394 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-3
+2024-11-12 14:16:58,447 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-3.
+2024-11-12 14:16:58,586 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/what-we-do/application-services/oracle/oracle-hcm
+2024-11-12 14:16:58,587 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/what-we-do/application-services/oracle/oracle-hcm.
+2024-11-12 14:17:00,013 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/telecom-xpress/
+2024-11-12 14:17:00,039 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/telecom-xpress/.
+2024-11-12 14:17:00,238 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-28306-2
+2024-11-12 14:17:00,368 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-28306-2.
+2024-11-12 14:17:01,557 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/oracle-transportation-management-fusion-success-story/
+2024-11-12 14:17:01,584 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/oracle-transportation-management-fusion-success-story/.
+2024-11-12 14:17:02,433 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/jd-edwards-success-story-leading-snack-company/
+2024-11-12 14:17:02,459 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/jd-edwards-success-story-leading-snack-company/.
+2024-11-12 14:17:02,677 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-2
+2024-11-12 14:17:02,732 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-2.
+2024-11-12 14:17:02,884 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/what-we-do/application-services/oracle/oracle-cx
+2024-11-12 14:17:02,885 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/what-we-do/application-services/oracle/oracle-cx.
+2024-11-12 14:17:03,099 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#main-content
+2024-11-12 14:17:03,231 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#main-content.
+2024-11-12 14:17:04,437 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/aviation-record-management/
+2024-11-12 14:17:04,463 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/aviation-record-management/.
+2024-11-12 14:17:04,661 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-1
+2024-11-12 14:17:04,713 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-1.
+2024-11-12 14:17:05,578 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/oracle-erp-enterprise-resource-planning/
+2024-11-12 14:17:05,615 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/services/oracle/oracle-erp-enterprise-resource-planning/.
+2024-11-12 14:17:05,915 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-0
+2024-11-12 14:17:06,037 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-0.
+2024-11-12 14:17:06,874 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/charm/
+2024-11-12 14:17:06,902 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/charm/.
+2024-11-12 14:17:07,100 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-4
+2024-11-12 14:17:07,153 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-4.
+2024-11-12 14:17:07,363 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-18872-5
+2024-11-12 14:17:07,478 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-18872-5.
+2024-11-12 14:17:07,959 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/oracle/#tabvbp-28306-0
+2024-11-12 14:17:08,011 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/oracle/#tabvbp-28306-0.
+2024-11-12 14:17:09,219 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/epm-arcs/
+2024-11-12 14:17:09,244 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/epm-arcs/.
+2024-11-12 14:17:10,070 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/epm-fccs/
+2024-11-12 14:17:10,097 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/epm-fccs/.
+2024-11-12 14:17:11,044 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-fleet-management/
+2024-11-12 14:17:11,071 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/resources/digital-fleet-management/.
+2024-11-12 14:17:11,227 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/#main-content
+2024-11-12 14:17:11,339 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/resources/ebitda-savings-improved-customer-experience-us-based-marketing-company/#main-content.
+2024-11-12 14:17:11,540 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/#main-content
+2024-11-12 14:17:11,567 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/#main-content.
+2024-11-12 14:17:12,846 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-infrastructure-services/data-center-services/
+2024-11-12 14:17:12,884 | INFO | 635 | Found 14 new URLs on https://www.techmahindra.com/services/cloud-infrastructure-services/data-center-services/.
+2024-11-12 14:17:13,062 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/#main-content
+2024-11-12 14:17:13,097 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/services/cloud-consulting-services/#main-content.
+2024-11-12 14:17:14,032 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/node/369
+2024-11-12 14:17:14,033 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/node/369.
+2024-11-12 14:17:14,232 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/#main-content
+2024-11-12 14:17:14,274 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/alliance/#main-content.
+2024-11-12 14:17:15,226 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/news/newgen-tech-mahindra-deal-uk-based-premium-credit-pcl-automate-premium-finance/
+2024-11-12 14:17:15,251 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/insights/news/newgen-tech-mahindra-deal-uk-based-premium-credit-pcl-automate-premium-finance/.
+2024-11-12 14:17:15,371 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/en-in/alliance/celonis/
+2024-11-12 14:17:15,372 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/en-in/alliance/celonis/.
+2024-11-12 14:17:16,208 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/cisco-partnership/
+2024-11-12 14:17:16,240 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/cisco-partnership/.
+2024-11-12 14:17:17,088 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/bmc-partnership/
+2024-11-12 14:17:17,123 | INFO | 635 | Found 9 new URLs on https://www.techmahindra.com/alliance/bmc-partnership/.
+2024-11-12 14:17:17,292 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/salesforce/
+2024-11-12 14:17:17,325 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/salesforce/.
+2024-11-12 14:17:18,840 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/veeva-partnership/
+2024-11-12 14:17:18,873 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/veeva-partnership/.
+2024-11-12 14:17:19,246 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/microsoft-partnership/
+2024-11-12 14:17:19,283 | INFO | 635 | Found 11 new URLs on https://www.techmahindra.com/alliance/microsoft-partnership/.
+2024-11-12 14:17:20,146 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-partners-thoughtspot-offer-scalable-and-ai-driven-analytics/
+2024-11-12 14:17:20,175 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/insights/press-releases/tech-mahindra-partners-thoughtspot-offer-scalable-and-ai-driven-analytics/.
+2024-11-12 14:17:20,359 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/hpe-partnership/
+2024-11-12 14:17:20,390 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/hpe-partnership/.
+2024-11-12 14:17:20,601 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/oracle-partnership/
+2024-11-12 14:17:20,637 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/oracle-partnership/.
+2024-11-12 14:17:20,824 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/dell-partnership/
+2024-11-12 14:17:20,827 | INFO | 609 | Attempting to terminate process with PID 635
+2024-11-12 14:17:20,854 | INFO | 635 | Found 2 new URLs on https://www.techmahindra.com/alliance/dell-partnership/.
+2024-11-12 14:17:21,008 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/what-we-do/application-services/sap
+2024-11-12 14:17:21,009 | INFO | 635 | Found 0 new URLs on https://www.techmahindra.com/what-we-do/application-services/sap.
+2024-11-12 14:17:21,282 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/aws-partnership/
+2024-11-12 14:17:21,325 | INFO | 635 | Found 16 new URLs on https://www.techmahindra.com/alliance/aws-partnership/.
+2024-11-12 14:17:21,553 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/vmware-partnership/
+2024-11-12 14:17:21,585 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/vmware-partnership/.
+2024-11-12 14:17:21,766 | INFO | 635 | Markdown Report Generated for https://www.techmahindra.com/alliance/google-cloud-partnership/
+2024-11-12 14:17:21,821 | INFO | 635 | Found 1 new URLs on https://www.techmahindra.com/alliance/google-cloud-partnership/.
+2024-11-12 14:17:21,829 | INFO | 609 | Force killing process with PID 635
+2024-11-12 14:17:21,830 | INFO | 609 | Scraping https://www.techmahindra.com/ for tech_mahindra timed out after 120 seconds
+2024-11-12 14:17:21,835 | ERROR | 609 | Scraping https://www.techmahindra.com/ for tech_mahindra failed with no result after 121.1537 seconds
+2024-11-12 14:17:21,839 | INFO | 609 | Starting conversion of parsed report from markdown to PDF
+2024-11-12 14:17:23,794 | INFO | 609 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-12 14:17:23,795 | INFO | 609 | Conversion of report completed and uploaded to vector store with id vs_pyODFrx3UHePgXsnsM5paYit
+2024-11-12 14:17:33,846 | INFO | 609 | ['/mnt/c/programming/convoAI/server/temp/pdf/techmahindra.pdf'] got uploded to vector store with id vs_pyODFrx3UHePgXsnsM5paYit
+2024-11-12 14:17:33,848 | INFO | 609 | Removing Markdown file generated for tech_mahindra
+2024-11-12 14:17:50,172 | INFO | 609 | 
+Question : Hello
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-12 14:17:54,275 | INFO | 609 | Generated Answer: Hello! How can I assist you today?
+2024-11-12 14:18:10,239 | INFO | 609 | 
+Question : Can you answer in a tiger language
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-12 14:18:13,859 | INFO | 609 | Generated Answer: Roar! 🐅 I can certainly help you in a tiger-like manner! What questions do you have, mighty explorer?
+2024-11-12 14:18:39,296 | INFO | 609 | 
+Question : Who is the ceo of tech mahindra
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-12 14:18:43,742 | INFO | 609 | Generated Answer: Roar! 🐯 The Chief Executive Officer of Tech Mahindra is Mohit Joshi, who also serves as the Managing Director. He's working on strategic improvement efforts for the company. If there's more you wish to know, just let me know! 🐅
+2024-11-12 14:19:13,736 | INFO | 609 | 
+Question : who is the Sanskar Vegad and the Sahil Potdar in the tech mahindra
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-12 14:19:28,215 | INFO | 609 | Generated Answer: Roar! 🐯 I couldn't find specific information on Sanskar Vegad and Sahil Potdar within the documents. They might not be mentioned in the files provided.
+
+If you have more specific questions or if there are other topics you'd like to explore, just let me know! I'm here to help, mighty one! 🐅
+2024-11-12 14:22:13,811 | INFO | 701 | Assistant with ID asst_zJDQQWUJSCAJGGHb0fRsBkaP deleted.
+2024-11-12 14:22:14,790 | INFO | 701 | Vector store with ID vs_pyODFrx3UHePgXsnsM5paYit deleted.
+2024-11-12 14:23:19,332 | INFO | 701 | Attempting to retrieve logo for unikwork from Google Images
+2024-11-12 14:23:24,339 | WARNING | 701 | Logo retrieval for unikwork failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-12 14:23:24,366 | INFO | 701 | Creating vector store and assistant id for new company: unikwork
+2024-11-12 14:23:24,876 | INFO | 701 | Vector ID generated for unikwork
+2024-11-12 14:23:25,488 | INFO | 701 | Assistant ID generated for unikwork
+2024-11-12 14:23:25,489 | INFO | 701 | Converting attachments to PDF format
+2024-11-12 14:23:25,489 | INFO | 701 | No attachments found! Skipping upload step
+2024-11-12 14:23:25,498 | INFO | 701 | Starting Scraping task on background thread
+2024-11-12 14:23:25,498 | INFO | 701 | Sending scraping begun response to client
+2024-11-12 14:23:25,499 | INFO | 701 | Starting Scraping Session with Timeout at 60 seconds
+2024-11-12 14:23:25,499 | INFO | 701 | Task started for https://www.unikwork.com/ at 2024-11-12 14:23:25.499946
+2024-11-12 14:23:25,504 | INFO | 720 | Started scraping https://www.unikwork.com/ for unikwork at 2024-11-12 14:23:25.504253
+2024-11-12 14:23:26,184 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/
+2024-11-12 14:23:26,205 | INFO | 720 | Found 23 new URLs on https://www.unikwork.com/.
+2024-11-12 14:23:26,440 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/case-studies
+2024-11-12 14:23:26,446 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/case-studies.
+2024-11-12 14:23:26,653 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/contact-us
+2024-11-12 14:23:26,661 | INFO | 720 | Found 1 new URLs on https://www.unikwork.com/contact-us.
+2024-11-12 14:23:26,899 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/case-studies/carblip
+2024-11-12 14:23:26,904 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/case-studies/carblip.
+2024-11-12 14:23:27,305 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/#front
+2024-11-12 14:23:27,326 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/#front.
+2024-11-12 14:23:27,533 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/privacy-policy
+2024-11-12 14:23:27,539 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/privacy-policy.
+2024-11-12 14:23:27,763 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/terms-of-service
+2024-11-12 14:23:27,769 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/terms-of-service.
+2024-11-12 14:23:28,308 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/#cms
+2024-11-12 14:23:28,329 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/#cms.
+2024-11-12 14:23:28,624 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/web-development
+2024-11-12 14:23:28,638 | INFO | 720 | Found 1 new URLs on https://www.unikwork.com/web-development.
+2024-11-12 14:23:28,880 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/development-operations
+2024-11-12 14:23:28,890 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/development-operations.
+2024-11-12 14:23:29,315 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/#infra
+2024-11-12 14:23:29,337 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/#infra.
+2024-11-12 14:23:29,599 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/internet-of-things
+2024-11-12 14:23:29,610 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/internet-of-things.
+2024-11-12 14:23:30,146 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com
+2024-11-12 14:23:30,168 | INFO | 720 | Found 6 new URLs on https://www.unikwork.com.
+2024-11-12 14:23:30,691 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/#backend
+2024-11-12 14:23:30,714 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/#backend.
+2024-11-12 14:23:30,941 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/careers
+2024-11-12 14:23:30,948 | INFO | 720 | Found 6 new URLs on https://www.unikwork.com/careers.
+2024-11-12 14:23:31,207 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/ui-ux
+2024-11-12 14:23:31,217 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/ui-ux.
+2024-11-12 14:23:31,755 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/blog
+2024-11-12 14:23:31,760 | INFO | 720 | Found 2 new URLs on https://www.unikwork.com/blog.
+2024-11-12 14:23:31,969 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/sitemap
+2024-11-12 14:23:31,975 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/sitemap.
+2024-11-12 14:23:32,243 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/quality-assurance
+2024-11-12 14:23:32,257 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/quality-assurance.
+2024-11-12 14:23:33,651 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/#mobile
+2024-11-12 14:23:33,671 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/#mobile.
+2024-11-12 14:23:37,987 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/app-development
+2024-11-12 14:23:38,007 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/app-development.
+2024-11-12 14:23:38,419 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/#database
+2024-11-12 14:23:38,439 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/#database.
+2024-11-12 14:23:38,695 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/about-us
+2024-11-12 14:23:38,707 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/about-us.
+2024-11-12 14:23:38,986 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/services
+2024-11-12 14:23:39,003 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/services.
+2024-11-12 14:23:39,380 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/our-portfolio
+2024-11-12 14:23:39,388 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/our-portfolio.
+2024-11-12 14:23:41,418 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com#cms
+2024-11-12 14:23:41,438 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com#cms.
+2024-11-12 14:23:42,618 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com#front
+2024-11-12 14:23:42,638 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com#front.
+2024-11-12 14:23:43,158 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com#infra
+2024-11-12 14:23:43,185 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com#infra.
+2024-11-12 14:23:43,596 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com#backend
+2024-11-12 14:23:43,618 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com#backend.
+2024-11-12 14:23:43,961 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com#database
+2024-11-12 14:23:43,982 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com#database.
+2024-11-12 14:23:44,379 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com#mobile
+2024-11-12 14:23:44,400 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com#mobile.
+2024-11-12 14:23:44,628 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6Imxua2FjMC9ib2ozYjFwdERuOVZxOUE9PSIsInZhbHVlIjoidXlNbi8xZmcrK0lZL2hNWkVNM3cwdz09IiwibWFjIjoiZmQyMGMwOTI0MjQ4Mzc0ZGYyYjI5MGM0MmYwYWNiMTJmMGVlZWEzNGMwZTI1ZGIxNmE5Nzg0NTkxYzlkZDYyZiIsInRhZyI6IiJ9
+2024-11-12 14:23:44,637 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6Imxua2FjMC9ib2ozYjFwdERuOVZxOUE9PSIsInZhbHVlIjoidXlNbi8xZmcrK0lZL2hNWkVNM3cwdz09IiwibWFjIjoiZmQyMGMwOTI0MjQ4Mzc0ZGYyYjI5MGM0MmYwYWNiMTJmMGVlZWEzNGMwZTI1ZGIxNmE5Nzg0NTkxYzlkZDYyZiIsInRhZyI6IiJ9.
+2024-11-12 14:23:44,858 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6IkF4ejh6cDkwVjB1OGx0V0poa2ZndlE9PSIsInZhbHVlIjoicWNvR2VwN2FGWW1WU2U1cXUzajcrUT09IiwibWFjIjoiMDFkMTE3MTQzZjlhNDgyYmU2ZWQ5NGFmMzk1MTg5OTVlNmM4MzM4Y2JjNTQ4Njk4NTQ5N2I1YWQxZWI1NTM0ZiIsInRhZyI6IiJ9
+2024-11-12 14:23:44,866 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6IkF4ejh6cDkwVjB1OGx0V0poa2ZndlE9PSIsInZhbHVlIjoicWNvR2VwN2FGWW1WU2U1cXUzajcrUT09IiwibWFjIjoiMDFkMTE3MTQzZjlhNDgyYmU2ZWQ5NGFmMzk1MTg5OTVlNmM4MzM4Y2JjNTQ4Njk4NTQ5N2I1YWQxZWI1NTM0ZiIsInRhZyI6IiJ9.
+2024-11-12 14:23:45,065 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6Ik0ycG9iOHRGS0twYWo1eWtsZWRUS1E9PSIsInZhbHVlIjoiNUhiVHREZHJBVzVVUjZyeEZ1M2JXZz09IiwibWFjIjoiNTA0YmNkYWNhYTYxNGQ4ZDAwN2VkODRhNzc5ZDZjZGEyMzcyYWJlYmI3NDBjYjRjZmNjMGE0ZjFkN2E2Y2Y2ZCIsInRhZyI6IiJ9
+2024-11-12 14:23:45,075 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6Ik0ycG9iOHRGS0twYWo1eWtsZWRUS1E9PSIsInZhbHVlIjoiNUhiVHREZHJBVzVVUjZyeEZ1M2JXZz09IiwibWFjIjoiNTA0YmNkYWNhYTYxNGQ4ZDAwN2VkODRhNzc5ZDZjZGEyMzcyYWJlYmI3NDBjYjRjZmNjMGE0ZjFkN2E2Y2Y2ZCIsInRhZyI6IiJ9.
+2024-11-12 14:23:45,308 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6IlQ0amFIQVh5Tlh1QkdZMmpqbzc5VXc9PSIsInZhbHVlIjoieGNLZytISENhSVpXekcvTHZNajFpdz09IiwibWFjIjoiNTc5ZWZiZTM5MTNiYjU4YTkzYTM5NzdkNDE0YTg1NmU0ZDY0MTU3OWE2NGEyNzI3NjBjZDhjZWU1NTU5ZGM4NSIsInRhZyI6IiJ9
+2024-11-12 14:23:45,316 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6IlQ0amFIQVh5Tlh1QkdZMmpqbzc5VXc9PSIsInZhbHVlIjoieGNLZytISENhSVpXekcvTHZNajFpdz09IiwibWFjIjoiNTc5ZWZiZTM5MTNiYjU4YTkzYTM5NzdkNDE0YTg1NmU0ZDY0MTU3OWE2NGEyNzI3NjBjZDhjZWU1NTU5ZGM4NSIsInRhZyI6IiJ9.
+2024-11-12 14:23:45,546 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6Iit3K2I4OWxuc2dVcTZGV01tdkFGWkE9PSIsInZhbHVlIjoiUkZ3Qkx2OHFlY1RCQWJodzhKakQyUT09IiwibWFjIjoiZmE0ZGU5ZWNlNWEwM2M4MWRkNGM2Yzc2NjUwMmQ4MTcxMzg3YTU1MDdhZDYwZWQ3MTQ0YWM1NGI4ZTNjZWMyMyIsInRhZyI6IiJ9
+2024-11-12 14:23:45,555 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6Iit3K2I4OWxuc2dVcTZGV01tdkFGWkE9PSIsInZhbHVlIjoiUkZ3Qkx2OHFlY1RCQWJodzhKakQyUT09IiwibWFjIjoiZmE0ZGU5ZWNlNWEwM2M4MWRkNGM2Yzc2NjUwMmQ4MTcxMzg3YTU1MDdhZDYwZWQ3MTQ0YWM1NGI4ZTNjZWMyMyIsInRhZyI6IiJ9.
+2024-11-12 14:23:45,797 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/careers#current_opening
+2024-11-12 14:23:45,804 | INFO | 720 | Found 5 new URLs on https://www.unikwork.com/careers#current_opening.
+2024-11-12 14:23:46,020 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/blog/why-should-you-use-react-js
+2024-11-12 14:23:46,027 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/blog/why-should-you-use-react-js.
+2024-11-12 14:23:46,280 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/blog/when-should-you-choose-react-native-for-your-app-development
+2024-11-12 14:23:46,289 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/blog/when-should-you-choose-react-native-for-your-app-development.
+2024-11-12 14:23:46,520 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6IlVQOGtuR2UwMGo3MW5SVEtPRy8zWXc9PSIsInZhbHVlIjoiREVrbkk1MkNBMjVuY0NvT1A3TDJSdz09IiwibWFjIjoiZjk5OTkwZjM3OWVkNjllYWU4ZWZhZDczYzgzN2EzYzA0Yzg0ZjY3YjViZWY4ODI4ZTgyNTg0NTZiYzFjYjllNCIsInRhZyI6IiJ9
+2024-11-12 14:23:46,529 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6IlVQOGtuR2UwMGo3MW5SVEtPRy8zWXc9PSIsInZhbHVlIjoiREVrbkk1MkNBMjVuY0NvT1A3TDJSdz09IiwibWFjIjoiZjk5OTkwZjM3OWVkNjllYWU4ZWZhZDczYzgzN2EzYzA0Yzg0ZjY3YjViZWY4ODI4ZTgyNTg0NTZiYzFjYjllNCIsInRhZyI6IiJ9.
+2024-11-12 14:23:46,738 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6InV0VHJYQ2VKanlST0drMlpiZGhYaXc9PSIsInZhbHVlIjoiMTZTYnBIcHFCRTkyV1Y0RHVYaSsrQT09IiwibWFjIjoiZGQ3NTE1YTUyOWEyOWU2N2JmNDQ1MWJkODgyNzM2NjI1MGRmMDk5ZWRlMjg0ZTlmODg4NjU2NTNiZjI0MDFmNSIsInRhZyI6IiJ9
+2024-11-12 14:23:46,746 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6InV0VHJYQ2VKanlST0drMlpiZGhYaXc9PSIsInZhbHVlIjoiMTZTYnBIcHFCRTkyV1Y0RHVYaSsrQT09IiwibWFjIjoiZGQ3NTE1YTUyOWEyOWU2N2JmNDQ1MWJkODgyNzM2NjI1MGRmMDk5ZWRlMjg0ZTlmODg4NjU2NTNiZjI0MDFmNSIsInRhZyI6IiJ9.
+2024-11-12 14:23:46,983 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6Ikh1QXNnNG1TNzYzclRQc2ZZWTRZRmc9PSIsInZhbHVlIjoia1c2eldYRlFWZjJCSTA4UmpBZkRidz09IiwibWFjIjoiMWI4N2NhNjUyN2JlZDMyZTQzMzE5ZDYyMGI2YzAwMWRlYzE4MzYwMTk2MTI3YWI4Y2M3MzBkODdmZGQwM2I5NSIsInRhZyI6IiJ9
+2024-11-12 14:23:46,992 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6Ikh1QXNnNG1TNzYzclRQc2ZZWTRZRmc9PSIsInZhbHVlIjoia1c2eldYRlFWZjJCSTA4UmpBZkRidz09IiwibWFjIjoiMWI4N2NhNjUyN2JlZDMyZTQzMzE5ZDYyMGI2YzAwMWRlYzE4MzYwMTk2MTI3YWI4Y2M3MzBkODdmZGQwM2I5NSIsInRhZyI6IiJ9.
+2024-11-12 14:23:47,241 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6Ii95SythSEVEU2Q1eTFYQ2hFT0xNbXc9PSIsInZhbHVlIjoiVlp2RjJKcU5IakFXUEpCak82VHM0dz09IiwibWFjIjoiMGUwZTMwMjViMDA5NDA5ZmNlZDk3Zjc3OTM2YjA5MjY2MzkwNTk3MmNlMTJjNTdhMmY5ZjdhYzg4YzhhNGU3YiIsInRhZyI6IiJ9
+2024-11-12 14:23:47,249 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6Ii95SythSEVEU2Q1eTFYQ2hFT0xNbXc9PSIsInZhbHVlIjoiVlp2RjJKcU5IakFXUEpCak82VHM0dz09IiwibWFjIjoiMGUwZTMwMjViMDA5NDA5ZmNlZDk3Zjc3OTM2YjA5MjY2MzkwNTk3MmNlMTJjNTdhMmY5ZjdhYzg4YzhhNGU3YiIsInRhZyI6IiJ9.
+2024-11-12 14:23:47,482 | INFO | 720 | Markdown Report Generated for https://www.unikwork.com/career-details/eyJpdiI6IjVweGVzTmV4RnlnamhoRHhqTHU1dVE9PSIsInZhbHVlIjoicVA3VDU1clFIRFc5aDFCbE8yYndkdz09IiwibWFjIjoiM2MzNzE0ZDRjMzBhNWMwNjE1MWI0MjYyYjY5YTM1NzY0NTgwZTJiY2E0N2QzZDJlYjRjOGE2ZjAxYzZhNGM2OCIsInRhZyI6IiJ9
+2024-11-12 14:23:47,539 | INFO | 720 | Found 0 new URLs on https://www.unikwork.com/career-details/eyJpdiI6IjVweGVzTmV4RnlnamhoRHhqTHU1dVE9PSIsInZhbHVlIjoicVA3VDU1clFIRFc5aDFCbE8yYndkdz09IiwibWFjIjoiM2MzNzE0ZDRjMzBhNWMwNjE1MWI0MjYyYjY5YTM1NzY0NTgwZTJiY2E0N2QzZDJlYjRjOGE2ZjAxYzZhNGM2OCIsInRhZyI6IiJ9.
+2024-11-12 14:23:47,540 | INFO | 720 | Completed scraping https://www.unikwork.com/ for unikwork at 2024-11-12 14:23:47.540012, time taken: 22.035759 seconds
+2024-11-12 14:23:48,527 | INFO | 701 | Scraping https://www.unikwork.com/ for unikwork completed in 22.035759 seconds
+2024-11-12 14:23:48,527 | INFO | 701 | Starting conversion of parsed report from markdown to PDF
+2024-11-12 14:23:49,426 | INFO | 701 | The markdown file at temp/markdown/unikwork.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-12 14:23:49,427 | INFO | 701 | Conversion of report completed and uploaded to vector store with id vs_mhKHIVnQrohGmSp9E4JVq3cj
+2024-11-12 14:23:53,525 | INFO | 701 | ['/mnt/c/programming/convoAI/server/temp/pdf/unikwork.pdf'] got uploded to vector store with id vs_mhKHIVnQrohGmSp9E4JVq3cj
+2024-11-12 14:23:53,527 | INFO | 701 | Removing Markdown file generated for unikwork
+2024-11-12 14:28:42,031 | INFO | 701 | 
+Question : who is the owner of this company unikwork
+Company Name : unikwork
+Persona : Custom Persona
+
+
+2024-11-12 14:28:49,491 | INFO | 701 | Generated Answer: The owners of Unikwork are **Nirav Vavadiya** and **Sagar Radadiya**. They founded the company to provide technology development and consultancy services.
+2024-11-13 10:47:58,646 | INFO | 1291 | Assistant with ID asst_ihOGnL5mqVHxQb32sReTeNAa deleted.
+2024-11-13 10:48:00,134 | INFO | 1291 | Vector store with ID vs_mhKHIVnQrohGmSp9E4JVq3cj deleted.
+2024-11-13 10:50:15,893 | INFO | 1291 | Attempting to retrieve logo for scan pro audio from Google Images
+2024-11-13 10:50:20,902 | WARNING | 1291 | Logo retrieval for scan pro audio failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 10:50:20,911 | INFO | 1291 | Creating vector store and assistant id for new company: scan_pro_audio
+2024-11-13 10:50:21,558 | INFO | 1291 | Vector ID generated for scan_pro_audio
+2024-11-13 10:50:24,466 | INFO | 1291 | Assistant ID generated for scan_pro_audio
+2024-11-13 10:50:24,466 | INFO | 1291 | Converting attachments to PDF format
+2024-11-13 10:50:24,467 | INFO | 1291 | No attachments found! Skipping upload step
+2024-11-13 10:50:24,484 | INFO | 1291 | Starting Scraping task on background thread
+2024-11-13 10:50:24,485 | INFO | 1291 | Sending scraping begun response to client
+2024-11-13 10:50:24,486 | INFO | 1291 | Starting Scraping Session with Timeout at 20 seconds
+2024-11-13 10:50:24,487 | INFO | 1291 | Task started for https://www.scan.co.uk/shop/music-and-pro-audio at 2024-11-13 10:50:24.487002
+2024-11-13 10:50:24,529 | INFO | 1330 | Started scraping https://www.scan.co.uk/shop/music-and-pro-audio for scan_pro_audio at 2024-11-13 10:50:24.529174
+2024-11-13 10:50:24,792 | INFO | 1330 | Forbidden access for URL: https://www.scan.co.uk/shop/music-and-pro-audio. Using ScraperAPI.
+2024-11-13 10:50:35,095 | INFO | 1330 | Markdown Report Generated for https://www.scan.co.uk/shop/music-and-pro-audio
+2024-11-13 10:50:35,122 | INFO | 1330 | Found 119 new URLs on https://www.scan.co.uk/shop/music-and-pro-audio.
+2024-11-13 10:50:35,263 | INFO | 1330 | Forbidden access for URL: https://www.scan.co.uk/shop-by-brand/genelec. Using ScraperAPI.
+2024-11-13 10:50:38,461 | INFO | 1330 | Markdown Report Generated for https://www.scan.co.uk/shop-by-brand/genelec
+2024-11-13 10:50:38,495 | INFO | 1330 | Found 85 new URLs on https://www.scan.co.uk/shop-by-brand/genelec.
+2024-11-13 10:50:38,622 | INFO | 1330 | Forbidden access for URL: https://www.scan.co.uk/3xs/info/support. Using ScraperAPI.
+2024-11-13 10:50:42,244 | INFO | 1291 | 
+Question : Hello
+Company Name : scan_pro_audio
+Persona : 
+
+
+2024-11-13 10:50:44,120 | INFO | 1330 | Markdown Report Generated for https://www.scan.co.uk/3xs/info/support
+2024-11-13 10:50:44,135 | INFO | 1330 | Found 22 new URLs on https://www.scan.co.uk/3xs/info/support.
+2024-11-13 10:50:44,266 | INFO | 1330 | Forbidden access for URL: https://www.scan.co.uk/info/terms. Using ScraperAPI.
+2024-11-13 10:50:48,260 | INFO | 1291 | Generated Answer: Woof woof! 🐾 How can I help you today?
+2024-11-13 10:50:49,493 | INFO | 1330 | Markdown Report Generated for https://www.scan.co.uk/info/terms
+2024-11-13 10:50:49,511 | INFO | 1330 | Found 2 new URLs on https://www.scan.co.uk/info/terms.
+2024-11-13 10:50:49,662 | INFO | 1330 | Forbidden access for URL: https://www.scan.co.uk/help/orders/returns/returning-an-item. Using ScraperAPI.
+2024-11-13 10:50:50,268 | INFO | 1291 | Attempting to terminate process with PID 1330
+2024-11-13 10:50:51,271 | INFO | 1291 | Force killing process with PID 1330
+2024-11-13 10:50:51,272 | INFO | 1291 | Scraping https://www.scan.co.uk/shop/music-and-pro-audio for scan_pro_audio timed out after 20 seconds
+2024-11-13 10:50:51,280 | ERROR | 1291 | Scraping https://www.scan.co.uk/shop/music-and-pro-audio for scan_pro_audio failed with no result after 26.793455 seconds
+2024-11-13 10:50:51,281 | INFO | 1291 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 10:50:52,151 | INFO | 1291 | The markdown file at temp/markdown/co.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-13 10:50:52,152 | INFO | 1291 | Conversion of report completed and uploaded to vector store with id vs_b73ezeCEpGM83dGAUVsRpw1L
+2024-11-13 10:50:57,227 | INFO | 1291 | ['/mnt/c/programming/convoAI/server/temp/pdf/co.pdf'] got uploded to vector store with id vs_b73ezeCEpGM83dGAUVsRpw1L
+2024-11-13 10:50:57,230 | INFO | 1291 | Removing Markdown file generated for scan_pro_audio
+2024-11-13 10:52:09,026 | INFO | 1291 | Assistant with ID asst_5rPqplJi3IEi6ztKhnDwzRgv deleted.
+2024-11-13 10:52:10,131 | INFO | 1291 | Vector store with ID vs_b73ezeCEpGM83dGAUVsRpw1L deleted.
+2024-11-13 10:53:04,175 | INFO | 1291 | Attempting to retrieve logo for college dunia from Google Images
+2024-11-13 10:53:09,186 | WARNING | 1291 | Logo retrieval for college dunia failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 10:53:09,196 | INFO | 1291 | Creating vector store and assistant id for new company: college_dunia
+2024-11-13 10:53:09,648 | INFO | 1291 | Vector ID generated for college_dunia
+2024-11-13 10:53:10,392 | INFO | 1291 | Assistant ID generated for college_dunia
+2024-11-13 10:53:10,392 | INFO | 1291 | Converting attachments to PDF format
+2024-11-13 10:53:10,393 | INFO | 1291 | No attachments found! Skipping upload step
+2024-11-13 10:53:10,401 | INFO | 1291 | Starting Scraping task on background thread
+2024-11-13 10:53:10,401 | INFO | 1291 | Sending scraping begun response to client
+2024-11-13 10:53:10,403 | INFO | 1291 | Starting Scraping Session with Timeout at 20 seconds
+2024-11-13 10:53:10,403 | INFO | 1291 | Task started for https://collegedunia.com/ at 2024-11-13 10:53:10.403633
+2024-11-13 10:53:10,409 | INFO | 1361 | Started scraping https://collegedunia.com/ for college_dunia at 2024-11-13 10:53:10.409154
+2024-11-13 10:53:10,588 | INFO | 1361 | Forbidden access for URL: https://collegedunia.com/. Using ScraperAPI.
+2024-11-13 10:53:22,153 | INFO | 1361 | Markdown Report Generated for https://collegedunia.com/
+2024-11-13 10:53:22,238 | INFO | 1361 | Found 341 new URLs on https://collegedunia.com/.
+2024-11-13 10:53:22,362 | INFO | 1361 | Forbidden access for URL: https://collegedunia.com/usa. Using ScraperAPI.
+2024-11-13 10:53:29,199 | INFO | 1361 | Markdown Report Generated for https://collegedunia.com/usa
+2024-11-13 10:53:29,373 | INFO | 1361 | Found 208 new URLs on https://collegedunia.com/usa.
+2024-11-13 10:53:29,492 | INFO | 1361 | Forbidden access for URL: https://collegedunia.com/delhi-ncr-colleges. Using ScraperAPI.
+2024-11-13 10:53:30,428 | INFO | 1291 | Attempting to terminate process with PID 1361
+2024-11-13 10:53:31,430 | INFO | 1291 | Force killing process with PID 1361
+2024-11-13 10:53:31,432 | INFO | 1291 | Scraping https://collegedunia.com/ for college_dunia timed out after 20 seconds
+2024-11-13 10:53:31,444 | ERROR | 1291 | Scraping https://collegedunia.com/ for college_dunia failed with no result after 21.040778 seconds
+2024-11-13 10:53:31,445 | INFO | 1291 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 10:53:31,505 | INFO | 1291 | The markdown file at temp/markdown/collegedunia.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-13 10:53:31,505 | INFO | 1291 | Conversion of report completed and uploaded to vector store with id vs_Nnpq3zZXt3oCppiKbVFTNwdm
+2024-11-13 10:53:36,113 | INFO | 1291 | ['/mnt/c/programming/convoAI/server/temp/pdf/collegedunia.pdf'] got uploded to vector store with id vs_Nnpq3zZXt3oCppiKbVFTNwdm
+2024-11-13 10:53:36,114 | INFO | 1291 | Removing Markdown file generated for college_dunia
+2024-11-13 10:54:26,913 | INFO | 1291 | 
+Question : Hello
+Company Name : college_dunia
+Persona : Custom Persona
+
+
+2024-11-13 10:54:30,509 | INFO | 1291 | Generated Answer: Woof woof! How can I help you today, hooman? 🐾
+2024-11-13 10:54:59,863 | INFO | 1291 | 
+Question : Give me bit about the Sri Balaji university,  Pune
+Company Name : college_dunia
+Persona : Custom Persona
+
+
+2024-11-13 10:55:11,091 | INFO | 1291 | Generated Answer: Woof woof! Here’s a little bark about Sri Balaji University in Pune, hooman:
+
+Sri Balaji University, Pune, is known for its various courses in management and business. The university offers programs like MBA, which are quite popular among students. It emphasizes holistic development, giving students not just academic knowledge but also practical insights for their future careers.
+
+If you need more specific details like admission criteria or course offerings, let me know! 🐕‍🦺
+2024-11-13 11:06:37,519 | INFO | 1384 | Attempting to retrieve logo for google from Google Images
+2024-11-13 11:06:42,526 | WARNING | 1384 | Logo retrieval for google failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 11:06:42,527 | INFO | 1384 | Creating vector store and assistant id for new company: google
+2024-11-13 11:06:43,559 | INFO | 1384 | Vector ID generated for google
+2024-11-13 11:06:44,374 | INFO | 1384 | Assistant ID generated for google
+2024-11-13 11:06:44,375 | INFO | 1384 | Converting attachments to PDF format
+2024-11-13 11:06:44,375 | INFO | 1384 | No attachments found! Skipping upload step
+2024-11-13 11:08:06,534 | INFO | 1384 | Attempting to retrieve logo for msbc group from Google Images
+2024-11-13 11:08:11,543 | WARNING | 1384 | Logo retrieval for msbc group failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 11:08:11,547 | INFO | 1384 | Creating vector store and assistant id for new company: msbc_group
+2024-11-13 11:08:12,265 | INFO | 1384 | Vector ID generated for msbc_group
+2024-11-13 11:08:12,930 | INFO | 1384 | Assistant ID generated for msbc_group
+2024-11-13 11:08:12,930 | INFO | 1384 | Converting attachments to PDF format
+2024-11-13 11:08:12,931 | INFO | 1384 | No attachments found! Skipping upload step
+2024-11-13 11:08:42,490 | INFO | 1384 | Attempting to retrieve logo for msbc group from Google Images
+2024-11-13 11:08:47,495 | WARNING | 1384 | Logo retrieval for msbc group failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 11:08:47,554 | INFO | 1384 | Creating vector store and assistant id for new company: msbc_group
+2024-11-13 11:08:48,002 | INFO | 1384 | Vector ID generated for msbc_group
+2024-11-13 11:08:48,973 | INFO | 1384 | Assistant ID generated for msbc_group
+2024-11-13 11:08:48,974 | INFO | 1384 | Converting attachments to PDF format
+2024-11-13 11:08:48,974 | INFO | 1384 | No attachments found! Skipping upload step
+2024-11-13 11:08:49,045 | INFO | 1384 | Starting Scraping task on background thread
+2024-11-13 11:08:49,045 | INFO | 1384 | Sending scraping begun response to client
+2024-11-13 11:08:49,046 | INFO | 1384 | Starting Scraping Session with Timeout at 20 seconds
+2024-11-13 11:08:49,046 | INFO | 1384 | Task started for https://www.msbcgroup.com/ at 2024-11-13 11:08:49.046478
+2024-11-13 11:08:49,066 | INFO | 1551 | Started scraping https://www.msbcgroup.com/ for msbc_group at 2024-11-13 11:08:49.065906
+2024-11-13 11:08:50,534 | INFO | 1551 | Markdown Report Generated for https://www.msbcgroup.com/
+2024-11-13 11:08:50,535 | INFO | 1551 | Found 0 new URLs on https://www.msbcgroup.com/.
+2024-11-13 11:08:50,535 | INFO | 1551 | Completed scraping https://www.msbcgroup.com/ for msbc_group at 2024-11-13 11:08:50.535774, time taken: 1.469868 seconds
+2024-11-13 11:08:51,066 | INFO | 1384 | Scraping https://www.msbcgroup.com/ for msbc_group completed in 1.469868 seconds
+2024-11-13 11:08:51,066 | INFO | 1384 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 11:08:51,300 | INFO | 1384 | The markdown file at temp/markdown/msbcgroup.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-13 11:08:51,300 | INFO | 1384 | Conversion of report completed and uploaded to vector store with id vs_3H1A4fpUpN9MDcMJDNQryWv3
+2024-11-13 11:08:55,315 | INFO | 1384 | ['/mnt/c/programming/convoAI/server/temp/pdf/msbcgroup.pdf'] got uploded to vector store with id vs_3H1A4fpUpN9MDcMJDNQryWv3
+2024-11-13 11:08:55,316 | INFO | 1384 | Removing Markdown file generated for msbc_group
+2024-11-13 11:25:53,256 | INFO | 1723 | Assistant with ID asst_4fQvL6h25h6Pj64SoeipeybN deleted.
+2024-11-13 11:25:54,442 | INFO | 1723 | Vector store with ID vs_Nnpq3zZXt3oCppiKbVFTNwdm deleted.
+2024-11-13 11:26:01,432 | INFO | 1723 | Assistant with ID asst_kCrNeNhVkh2H9cxKtPKKNuGE deleted.
+2024-11-13 11:26:02,958 | INFO | 1723 | Vector store with ID vs_3H1A4fpUpN9MDcMJDNQryWv3 deleted.
+2024-11-13 11:26:37,423 | INFO | 1723 | Attempting to retrieve logo for tech mahindra from Google Images
+2024-11-13 11:26:42,433 | WARNING | 1723 | Logo retrieval for tech mahindra failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 11:26:42,442 | INFO | 1723 | Creating vector store and assistant id for new company: tech_mahindra
+2024-11-13 11:26:43,076 | INFO | 1723 | Vector ID generated for tech_mahindra
+2024-11-13 11:26:43,842 | INFO | 1723 | Assistant ID generated for tech_mahindra
+2024-11-13 11:26:43,843 | INFO | 1723 | Converting attachments to PDF format
+2024-11-13 11:26:43,844 | INFO | 1723 | No attachments found! Skipping upload step
+2024-11-13 11:26:43,858 | INFO | 1723 | Starting Scraping task on background thread
+2024-11-13 11:26:43,858 | INFO | 1723 | Sending scraping begun response to client
+2024-11-13 11:26:43,860 | INFO | 1723 | Starting Scraping Session with Timeout at 20 seconds
+2024-11-13 11:26:43,861 | INFO | 1723 | Task started for https://www.techmahindra.com/ at 2024-11-13 11:26:43.860946
+2024-11-13 11:26:43,888 | INFO | 1803 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-13 11:26:43.888505
+2024-11-13 11:26:44,201 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/
+2024-11-13 11:26:44,253 | INFO | 1803 | Found 110 new URLs on https://www.techmahindra.com/.
+2024-11-13 11:26:44,982 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/
+2024-11-13 11:26:45,011 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/.
+2024-11-13 11:26:45,164 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/cookie-policy/
+2024-11-13 11:26:45,196 | INFO | 1803 | Found 2 new URLs on https://www.techmahindra.com/cookie-policy/.
+2024-11-13 11:26:45,375 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-consulting-services/
+2024-11-13 11:26:45,415 | INFO | 1803 | Found 3 new URLs on https://www.techmahindra.com/services/cloud-consulting-services/.
+2024-11-13 11:26:45,939 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/access-control-management-government-agency/
+2024-11-13 11:26:45,964 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/access-control-management-government-agency/.
+2024-11-13 11:26:46,176 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/performance-engineering/
+2024-11-13 11:26:46,214 | INFO | 1803 | Found 5 new URLs on https://www.techmahindra.com/services/performance-engineering/.
+2024-11-13 11:26:46,388 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/
+2024-11-13 11:26:46,415 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/engineered-solutions-and-support-govtech-secure-hybrid-infrastructure-pipeline/.
+2024-11-13 11:26:46,557 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation
+2024-11-13 11:26:46,558 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/tech-mahindra-foundation.
+2024-11-13 11:26:46,788 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/network-services/
+2024-11-13 11:26:46,833 | INFO | 1803 | Found 16 new URLs on https://www.techmahindra.com/services/network-services/.
+2024-11-13 11:26:47,003 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/
+2024-11-13 11:26:47,030 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/ml-based-demand-forecasting-enhance-inventory-control-japanese-auto-major/.
+2024-11-13 11:26:47,261 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/
+2024-11-13 11:26:47,288 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/secure-scalable-multi-customer-isolated-environment-aws/.
+2024-11-13 11:26:47,477 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/intelligent-automation/
+2024-11-13 11:26:47,525 | INFO | 1803 | Found 5 new URLs on https://www.techmahindra.com/services/intelligent-automation/.
+2024-11-13 11:26:48,235 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/
+2024-11-13 11:26:48,264 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/14000-clinical-hours-saved-digital-content-process-dutch-publishing-company/.
+2024-11-13 11:26:48,437 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/
+2024-11-13 11:26:48,477 | INFO | 1803 | Found 9 new URLs on https://www.techmahindra.com/careers/why-techm/.
+2024-11-13 11:26:48,650 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/events/
+2024-11-13 11:26:48,681 | INFO | 1803 | Found 6 new URLs on https://www.techmahindra.com/events/.
+2024-11-13 11:26:48,940 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/careers/techm-way/
+2024-11-13 11:26:48,976 | INFO | 1803 | Found 7 new URLs on https://www.techmahindra.com/careers/techm-way/.
+2024-11-13 11:26:49,666 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/
+2024-11-13 11:26:49,693 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/.
+2024-11-13 11:26:50,167 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/
+2024-11-13 11:26:50,195 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/.
+2024-11-13 11:26:50,361 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/search/
+2024-11-13 11:26:50,391 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/search/.
+2024-11-13 11:26:50,576 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/events/tech-mahindra-gold-sponsor-aws-reinvent-2024/
+2024-11-13 11:26:50,609 | INFO | 1803 | Found 3 new URLs on https://www.techmahindra.com/insights/events/tech-mahindra-gold-sponsor-aws-reinvent-2024/.
+2024-11-13 11:26:50,838 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/healthcare-life-sciences/
+2024-11-13 11:26:50,953 | INFO | 1803 | Found 20 new URLs on https://www.techmahindra.com/industries/healthcare-life-sciences/.
+2024-11-13 11:26:51,151 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/artificial-intelligence/
+2024-11-13 11:26:51,200 | INFO | 1803 | Found 18 new URLs on https://www.techmahindra.com/services/artificial-intelligence/.
+2024-11-13 11:26:51,681 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/
+2024-11-13 11:26:51,708 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/.
+2024-11-13 11:26:51,940 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/techmverse/
+2024-11-13 11:26:51,975 | INFO | 1803 | Found 2 new URLs on https://www.techmahindra.com/services/techmverse/.
+2024-11-13 11:26:52,183 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/private-equity/
+2024-11-13 11:26:52,282 | INFO | 1803 | Found 5 new URLs on https://www.techmahindra.com/industries/private-equity/.
+2024-11-13 11:26:52,479 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/privacy-policy/
+2024-11-13 11:26:52,508 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/privacy-policy/.
+2024-11-13 11:26:52,803 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/contact-us/
+2024-11-13 11:26:52,908 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/contact-us/.
+2024-11-13 11:26:53,166 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/rcg/
+2024-11-13 11:26:53,208 | INFO | 1803 | Found 7 new URLs on https://www.techmahindra.com/industries/rcg/.
+2024-11-13 11:26:53,421 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/data-analytics/
+2024-11-13 11:26:53,466 | INFO | 1803 | Found 20 new URLs on https://www.techmahindra.com/services/data-analytics/.
+2024-11-13 11:26:53,687 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/
+2024-11-13 11:26:53,723 | INFO | 1803 | Found 20 new URLs on https://www.techmahindra.com/insights/.
+2024-11-13 11:26:53,928 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/cyber-security/
+2024-11-13 11:26:54,048 | INFO | 1803 | Found 11 new URLs on https://www.techmahindra.com/services/cyber-security/.
+2024-11-13 11:26:54,269 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-brand/
+2024-11-13 11:26:54,311 | INFO | 1803 | Found 7 new URLs on https://www.techmahindra.com/about-us/our-brand/.
+2024-11-13 11:26:54,510 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/views/
+2024-11-13 11:26:54,547 | INFO | 1803 | Found 6 new URLs on https://www.techmahindra.com/insights/views/.
+2024-11-13 11:26:54,673 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/search
+2024-11-13 11:26:54,675 | INFO | 1803 | Found 0 new URLs on https://www.techmahindra.com/search.
+2024-11-13 11:26:54,840 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/sitemap
+2024-11-13 11:26:54,873 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/sitemap.
+2024-11-13 11:26:55,066 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/
+2024-11-13 11:26:55,108 | INFO | 1803 | Found 5 new URLs on https://www.techmahindra.com/services/experience-design/.
+2024-11-13 11:26:55,377 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/
+2024-11-13 11:26:55,419 | INFO | 1803 | Found 10 new URLs on https://www.techmahindra.com/industries/media-and-entertainment/.
+2024-11-13 11:26:55,595 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/
+2024-11-13 11:26:55,626 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/our-capabilities/.
+2024-11-13 11:26:55,838 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/careers/diversity-inclusion/
+2024-11-13 11:26:55,874 | INFO | 1803 | Found 6 new URLs on https://www.techmahindra.com/careers/diversity-inclusion/.
+2024-11-13 11:26:56,396 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/
+2024-11-13 11:26:56,423 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/saas-based-insurance-systems-suite-nz-based-automobile-insurance-company/.
+2024-11-13 11:26:56,621 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/digital-supply-chain/
+2024-11-13 11:26:56,722 | INFO | 1803 | Found 15 new URLs on https://www.techmahindra.com/services/digital-supply-chain/.
+2024-11-13 11:26:56,888 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/our-portfolio-companies/
+2024-11-13 11:26:56,921 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/about-us/our-portfolio-companies/.
+2024-11-13 11:26:57,088 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/search?search=Applications
+2024-11-13 11:26:57,089 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/search?search=Applications.
+2024-11-13 11:26:57,260 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/
+2024-11-13 11:26:57,290 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/digital-home-ownership-experience-large-bank-canada/.
+2024-11-13 11:26:57,992 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/
+2024-11-13 11:26:58,018 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/.
+2024-11-13 11:26:58,174 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
+2024-11-13 11:26:58,203 | INFO | 1803 | Found 3 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/.
+2024-11-13 11:26:58,457 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/insurance/
+2024-11-13 11:26:58,573 | INFO | 1803 | Found 33 new URLs on https://www.techmahindra.com/industries/insurance/.
+2024-11-13 11:26:58,744 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/
+2024-11-13 11:26:58,776 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/.
+2024-11-13 11:26:59,496 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/
+2024-11-13 11:26:59,524 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/.
+2024-11-13 11:26:59,686 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/search?search=Locations
+2024-11-13 11:26:59,690 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/search?search=Locations.
+2024-11-13 11:27:00,304 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-data-platform-telia/
+2024-11-13 11:27:00,332 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/strategic-data-platform-telia/.
+2024-11-13 11:27:00,561 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/banking-financial-services/
+2024-11-13 11:27:00,618 | INFO | 1803 | Found 50 new URLs on https://www.techmahindra.com/industries/banking-financial-services/.
+2024-11-13 11:27:00,847 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/
+2024-11-13 11:27:00,877 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/insights/case-studies/bespoke-loan-origination-system-bank-indonesia/.
+2024-11-13 11:27:01,018 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions
+2024-11-13 11:27:01,019 | INFO | 1803 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions.
+2024-11-13 11:27:01,215 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/
+2024-11-13 11:27:01,262 | INFO | 1803 | Found 20 new URLs on https://www.techmahindra.com/services/business-excellence/.
+2024-11-13 11:27:01,490 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/makers-lab/
+2024-11-13 11:27:01,543 | INFO | 1803 | Found 9 new URLs on https://www.techmahindra.com/makers-lab/.
+2024-11-13 11:27:01,748 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/engineering-services/
+2024-11-13 11:27:01,864 | INFO | 1803 | Found 19 new URLs on https://www.techmahindra.com/services/engineering-services/.
+2024-11-13 11:27:02,052 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/strategy-and-consulting-services/
+2024-11-13 11:27:02,082 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/services/strategy-and-consulting-services/.
+2024-11-13 11:27:02,231 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty
+2024-11-13 11:27:02,233 | INFO | 1803 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty.
+2024-11-13 11:27:02,461 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
+2024-11-13 11:27:02,507 | INFO | 1803 | Found 23 new URLs on https://www.techmahindra.com/services/sustainability-services/.
+2024-11-13 11:27:03,000 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/
+2024-11-13 11:27:03,028 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/resources/surplus-insurance-business-and-profitability-through-pega-us-pc-insurance-firm/.
+2024-11-13 11:27:03,258 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/industries/hi-tech/
+2024-11-13 11:27:03,304 | INFO | 1803 | Found 22 new URLs on https://www.techmahindra.com/industries/hi-tech/.
+2024-11-13 11:27:03,571 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/insights/analyst-insights/
+2024-11-13 11:27:03,613 | INFO | 1803 | Found 22 new URLs on https://www.techmahindra.com/insights/analyst-insights/.
+2024-11-13 11:27:03,780 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/terms-of-use/
+2024-11-13 11:27:03,807 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/terms-of-use/.
+2024-11-13 11:27:03,902 | INFO | 1723 | Attempting to terminate process with PID 1803
+2024-11-13 11:27:04,004 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/alliance/
+2024-11-13 11:27:04,051 | INFO | 1803 | Found 13 new URLs on https://www.techmahindra.com/alliance/.
+2024-11-13 11:27:04,216 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/alliance/servicenow/
+2024-11-13 11:27:04,250 | INFO | 1803 | Found 1 new URLs on https://www.techmahindra.com/alliance/servicenow/.
+2024-11-13 11:27:04,571 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/services/sap/
+2024-11-13 11:27:04,626 | INFO | 1803 | Found 17 new URLs on https://www.techmahindra.com/services/sap/.
+2024-11-13 11:27:04,829 | INFO | 1803 | Markdown Report Generated for https://www.techmahindra.com/about-us/customer-speak/
+2024-11-13 11:27:04,861 | INFO | 1803 | Found 2 new URLs on https://www.techmahindra.com/about-us/customer-speak/.
+2024-11-13 11:27:04,904 | INFO | 1723 | Force killing process with PID 1803
+2024-11-13 11:27:04,905 | INFO | 1723 | Scraping https://www.techmahindra.com/ for tech_mahindra timed out after 20 seconds
+2024-11-13 11:27:04,921 | ERROR | 1723 | Scraping https://www.techmahindra.com/ for tech_mahindra failed with no result after 21.060896 seconds
+2024-11-13 11:27:04,923 | INFO | 1723 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 11:27:05,375 | INFO | 1723 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-13 11:27:05,376 | INFO | 1723 | Conversion of report completed and uploaded to vector store with id vs_xBIxLgnqOzEv1dhlBXf7RBKJ
+2024-11-13 11:27:13,786 | INFO | 1723 | ['/mnt/c/programming/convoAI/server/temp/pdf/techmahindra.pdf'] got uploded to vector store with id vs_xBIxLgnqOzEv1dhlBXf7RBKJ
+2024-11-13 11:27:13,789 | INFO | 1723 | Removing Markdown file generated for tech_mahindra
+2024-11-13 11:33:03,426 | INFO | 1894 | Assistant with ID asst_YABJHTRt7V4uODnXVqLSQZ8Y deleted.
+2024-11-13 11:33:04,509 | INFO | 1894 | Vector store with ID vs_xBIxLgnqOzEv1dhlBXf7RBKJ deleted.
+2024-11-13 11:33:29,671 | INFO | 1894 | Attempting to retrieve logo for tech mahindra from Google Images
+2024-11-13 11:33:34,679 | WARNING | 1894 | Logo retrieval for tech mahindra failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 11:33:34,694 | INFO | 1894 | Creating vector store and assistant id for new company: tech_mahindra
+2024-11-13 11:33:35,337 | INFO | 1894 | Vector ID generated for tech_mahindra
+2024-11-13 11:33:41,517 | INFO | 1894 | Assistant ID generated for tech_mahindra
+2024-11-13 11:33:41,518 | INFO | 1894 | Converting attachments to PDF format
+2024-11-13 11:33:41,519 | INFO | 1894 | No attachments found! Skipping upload step
+2024-11-13 11:33:41,532 | INFO | 1894 | Starting Scraping task on background thread
+2024-11-13 11:33:41,533 | INFO | 1894 | Sending scraping begun response to client
+2024-11-13 11:33:41,534 | INFO | 1894 | Starting Scraping Session with Timeout at 15 seconds
+2024-11-13 11:33:41,534 | INFO | 1894 | Task started for https://www.techmahindra.com/ at 2024-11-13 11:33:41.534916
+2024-11-13 11:33:41,560 | INFO | 1902 | Started scraping https://www.techmahindra.com/ for tech_mahindra at 2024-11-13 11:33:41.560071
+2024-11-13 11:33:41,992 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/
+2024-11-13 11:33:42,042 | INFO | 1902 | Found 110 new URLs on https://www.techmahindra.com/.
+2024-11-13 11:33:42,234 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/
+2024-11-13 11:33:42,261 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/end-end-enterprise-network-efficiency-improved-40-canadian-media-conglomerate/.
+2024-11-13 11:33:42,457 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/insights/
+2024-11-13 11:33:42,493 | INFO | 1902 | Found 23 new URLs on https://www.techmahindra.com/insights/.
+2024-11-13 11:33:42,680 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/
+2024-11-13 11:33:42,710 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/insights/press-releases/tech-mahindra-and-discai-deliver-ai-powered-anti-money-laundering-solution/.
+2024-11-13 11:33:43,004 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/rise/
+2024-11-13 11:33:43,046 | INFO | 1902 | Found 6 new URLs on https://www.techmahindra.com/rise/.
+2024-11-13 11:33:43,236 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/accessibility-statement/
+2024-11-13 11:33:43,265 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/accessibility-statement/.
+2024-11-13 11:33:43,466 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/data-analytics/
+2024-11-13 11:33:43,511 | INFO | 1902 | Found 21 new URLs on https://www.techmahindra.com/services/data-analytics/.
+2024-11-13 11:33:43,698 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/private-equity/
+2024-11-13 11:33:43,736 | INFO | 1902 | Found 7 new URLs on https://www.techmahindra.com/industries/private-equity/.
+2024-11-13 11:33:44,232 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/
+2024-11-13 11:33:44,319 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/automated-smarter-drug-discovery-process-us-biotech-company/.
+2024-11-13 11:33:44,958 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/
+2024-11-13 11:33:44,984 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/full-suite-guidewire-cloud-aioi-nissay-dowa-insurance/.
+2024-11-13 11:33:45,161 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/our-capabilities/
+2024-11-13 11:33:45,202 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/our-capabilities/.
+2024-11-13 11:33:45,396 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/experience-design/
+2024-11-13 11:33:45,442 | INFO | 1902 | Found 6 new URLs on https://www.techmahindra.com/services/experience-design/.
+2024-11-13 11:33:45,604 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/
+2024-11-13 11:33:45,635 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/insights/press-releases/techmahindra-q2-fy25-results/.
+2024-11-13 11:33:45,800 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/insights/analyst-insights/
+2024-11-13 11:33:45,896 | INFO | 1902 | Found 24 new URLs on https://www.techmahindra.com/insights/analyst-insights/.
+2024-11-13 11:33:46,095 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/media-and-entertainment/
+2024-11-13 11:33:46,135 | INFO | 1902 | Found 10 new URLs on https://www.techmahindra.com/industries/media-and-entertainment/.
+2024-11-13 11:33:46,347 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/about-us/
+2024-11-13 11:33:46,390 | INFO | 1902 | Found 10 new URLs on https://www.techmahindra.com/about-us/.
+2024-11-13 11:33:46,607 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/engineering-services/
+2024-11-13 11:33:46,656 | INFO | 1902 | Found 20 new URLs on https://www.techmahindra.com/services/engineering-services/.
+2024-11-13 11:33:46,810 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/sitemap
+2024-11-13 11:33:46,907 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/sitemap.
+2024-11-13 11:33:47,089 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-data-platform-telia/
+2024-11-13 11:33:47,115 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/strategic-data-platform-telia/.
+2024-11-13 11:33:47,270 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/
+2024-11-13 11:33:47,298 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/.
+2024-11-13 11:33:47,493 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/
+2024-11-13 11:33:47,519 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/digital-transformation-insurance-major-thailand/.
+2024-11-13 11:33:47,743 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/healthcare-life-sciences/
+2024-11-13 11:33:47,790 | INFO | 1902 | Found 19 new URLs on https://www.techmahindra.com/industries/healthcare-life-sciences/.
+2024-11-13 11:33:47,947 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/search?search=Jobs
+2024-11-13 11:33:47,950 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/search?search=Jobs.
+2024-11-13 11:33:48,132 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/
+2024-11-13 11:33:48,225 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/strategic-sourcing-aircraft-parts-american-aerospace-and-defense-major/.
+2024-11-13 11:33:48,450 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/awards/
+2024-11-13 11:33:48,480 | INFO | 1902 | Found 3 new URLs on https://www.techmahindra.com/awards/.
+2024-11-13 11:33:48,658 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/careers/
+2024-11-13 11:33:48,685 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/careers/.
+2024-11-13 11:33:48,888 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/network-services/
+2024-11-13 11:33:48,932 | INFO | 1902 | Found 15 new URLs on https://www.techmahindra.com/services/network-services/.
+2024-11-13 11:33:49,159 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/about-us/sustainability/
+2024-11-13 11:33:49,210 | INFO | 1902 | Found 3 new URLs on https://www.techmahindra.com/about-us/sustainability/.
+2024-11-13 11:33:49,484 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/#main-content
+2024-11-13 11:33:49,531 | INFO | 1902 | Found 0 new URLs on https://www.techmahindra.com/#main-content.
+2024-11-13 11:33:49,701 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/events/
+2024-11-13 11:33:49,730 | INFO | 1902 | Found 5 new URLs on https://www.techmahindra.com/events/.
+2024-11-13 11:33:50,200 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/
+2024-11-13 11:33:50,226 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/smarter-business-transformations-omans-leading-og-firm/.
+2024-11-13 11:33:50,411 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/performance-engineering/
+2024-11-13 11:33:50,446 | INFO | 1902 | Found 3 new URLs on https://www.techmahindra.com/services/performance-engineering/.
+2024-11-13 11:33:50,614 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/alliance/servicenow/
+2024-11-13 11:33:50,709 | INFO | 1902 | Found 6 new URLs on https://www.techmahindra.com/alliance/servicenow/.
+2024-11-13 11:33:50,890 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/insights/news/
+2024-11-13 11:33:50,920 | INFO | 1902 | Found 8 new URLs on https://www.techmahindra.com/insights/news/.
+2024-11-13 11:33:51,108 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/ttlh/
+2024-11-13 11:33:51,143 | INFO | 1902 | Found 8 new URLs on https://www.techmahindra.com/industries/ttlh/.
+2024-11-13 11:33:51,344 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/digital-enterprise-applications/
+2024-11-13 11:33:51,380 | INFO | 1902 | Found 4 new URLs on https://www.techmahindra.com/services/digital-enterprise-applications/.
+2024-11-13 11:33:51,606 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/banking-financial-services/
+2024-11-13 11:33:51,720 | INFO | 1902 | Found 50 new URLs on https://www.techmahindra.com/industries/banking-financial-services/.
+2024-11-13 11:33:51,926 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/hi-tech/
+2024-11-13 11:33:51,970 | INFO | 1902 | Found 23 new URLs on https://www.techmahindra.com/industries/hi-tech/.
+2024-11-13 11:33:52,150 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/products-and-platforms/
+2024-11-13 11:33:52,183 | INFO | 1902 | Found 15 new URLs on https://www.techmahindra.com/products-and-platforms/.
+2024-11-13 11:33:52,397 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/sustainability-services/
+2024-11-13 11:33:52,441 | INFO | 1902 | Found 22 new URLs on https://www.techmahindra.com/services/sustainability-services/.
+2024-11-13 11:33:52,721 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/manufacturing/
+2024-11-13 11:33:52,770 | INFO | 1902 | Found 33 new URLs on https://www.techmahindra.com/industries/manufacturing/.
+2024-11-13 11:33:52,950 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/#vbp-carousel-3157
+2024-11-13 11:33:52,998 | INFO | 1902 | Found 0 new URLs on https://www.techmahindra.com/#vbp-carousel-3157.
+2024-11-13 11:33:53,210 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/alliance/
+2024-11-13 11:33:53,253 | INFO | 1902 | Found 10 new URLs on https://www.techmahindra.com/alliance/.
+2024-11-13 11:33:53,473 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/salesforce/
+2024-11-13 11:33:53,584 | INFO | 1902 | Found 11 new URLs on https://www.techmahindra.com/services/salesforce/.
+2024-11-13 11:33:53,785 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/search/
+2024-11-13 11:33:53,812 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/search/.
+2024-11-13 11:33:53,974 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/
+2024-11-13 11:33:54,001 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/digitalized-policy-issuance-journey-grow-smb-lines-us-based-pc-insurer/.
+2024-11-13 11:33:54,199 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/testing-services/
+2024-11-13 11:33:54,236 | INFO | 1902 | Found 15 new URLs on https://www.techmahindra.com/services/testing-services/.
+2024-11-13 11:33:54,401 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/search?search=Mahindra
+2024-11-13 11:33:54,404 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/search?search=Mahindra.
+2024-11-13 11:33:54,584 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/business-excellence/
+2024-11-13 11:33:54,629 | INFO | 1902 | Found 20 new URLs on https://www.techmahindra.com/services/business-excellence/.
+2024-11-13 11:33:54,833 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/
+2024-11-13 11:33:54,920 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/customer-experiences-transformed-sre-framework-fortune-500-firm/.
+2024-11-13 11:33:55,105 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/insights/case-studies/
+2024-11-13 11:33:55,142 | INFO | 1902 | Found 3 new URLs on https://www.techmahindra.com/insights/case-studies/.
+2024-11-13 11:33:55,343 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/cloud-infrastructure-services/
+2024-11-13 11:33:55,389 | INFO | 1902 | Found 24 new URLs on https://www.techmahindra.com/services/cloud-infrastructure-services/.
+2024-11-13 11:33:55,613 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/blockchain/
+2024-11-13 11:33:55,664 | INFO | 1902 | Found 7 new URLs on https://www.techmahindra.com/services/blockchain/.
+2024-11-13 11:33:55,794 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty
+2024-11-13 11:33:55,794 | INFO | 1902 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/individual-social-responsibilty.
+2024-11-13 11:33:55,947 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/
+2024-11-13 11:33:56,043 | INFO | 1902 | Found 1 new URLs on https://www.techmahindra.com/resources/transformed-data-and-analytics-applications-aws/.
+2024-11-13 11:33:56,187 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions
+2024-11-13 11:33:56,188 | INFO | 1902 | Found 0 new URLs on https://www.techmahindra.com/about-us/corporate-citizenship/mahindra-educational-institutions.
+2024-11-13 11:33:56,422 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/sap/
+2024-11-13 11:33:56,477 | INFO | 1902 | Found 18 new URLs on https://www.techmahindra.com/services/sap/.
+2024-11-13 11:33:56,572 | INFO | 1894 | Attempting to terminate process with PID 1902
+2024-11-13 11:33:56,655 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/industries/oil-and-gas/
+2024-11-13 11:33:56,696 | INFO | 1902 | Found 6 new URLs on https://www.techmahindra.com/industries/oil-and-gas/.
+2024-11-13 11:33:56,900 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/careers/why-techm/
+2024-11-13 11:33:56,940 | INFO | 1902 | Found 9 new URLs on https://www.techmahindra.com/careers/why-techm/.
+2024-11-13 11:33:57,197 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/services/digital-supply-chain/
+2024-11-13 11:33:57,238 | INFO | 1902 | Found 15 new URLs on https://www.techmahindra.com/services/digital-supply-chain/.
+2024-11-13 11:33:57,434 | INFO | 1902 | Markdown Report Generated for https://www.techmahindra.com/terms-of-use/
+2024-11-13 11:33:57,461 | INFO | 1902 | Found 2 new URLs on https://www.techmahindra.com/terms-of-use/.
+2024-11-13 11:33:57,575 | INFO | 1894 | Force killing process with PID 1902
+2024-11-13 11:33:57,577 | INFO | 1894 | Scraping https://www.techmahindra.com/ for tech_mahindra timed out after 15 seconds
+2024-11-13 11:33:57,595 | ERROR | 1894 | Scraping https://www.techmahindra.com/ for tech_mahindra failed with no result after 16.06033 seconds
+2024-11-13 11:33:57,596 | INFO | 1894 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 11:33:58,086 | INFO | 1894 | The markdown file at temp/markdown/techmahindra.md got saved as pdf to /mnt/c/programming/convoAI/server/temp/pdf
+2024-11-13 11:33:58,086 | INFO | 1894 | Conversion of report completed and uploaded to vector store with id vs_IyMuTmJmShzNpjhAOxLzzO1i
+2024-11-13 11:34:04,354 | INFO | 1894 | ['/mnt/c/programming/convoAI/server/temp/pdf/techmahindra.pdf'] got uploded to vector store with id vs_IyMuTmJmShzNpjhAOxLzzO1i
+2024-11-13 11:34:04,360 | INFO | 1894 | Removing Markdown file generated for tech_mahindra
+2024-11-13 11:34:12,939 | INFO | 1894 | 
+Question : Hello
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:34:16,792 | INFO | 1894 | Generated Answer: Meowdy! How can I assist you today? 🐾
+2024-11-13 11:34:47,855 | INFO | 1894 | 
+Question : who is the chair man of this company 
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:35:00,522 | INFO | 1894 | Generated Answer: Meow! I couldn't find any specific mention of the current chairman of Tech Mahindra in the files you provided. Would you like me to help you with something else, or should I check more files or keywords? 🐱‍👤
+2024-11-13 11:35:29,617 | INFO | 1894 | 
+Question : add in that pdf that its chair man is Anand Mahindra 
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:35:34,287 | INFO | 1894 | Generated Answer: Aww, purrfect! I can't directly edit the PDF myself, but you can easily add that information to it. Simply open the PDF file using a PDF editor and include that Anand Mahindra is the chairman of Tech Mahindra. If you need tips on how to do that, just let me know! 🐾✨
+2024-11-13 11:36:13,719 | INFO | 1894 | 
+Question : tell me that how to do it 
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:36:22,073 | INFO | 1894 | Generated Answer: Sure! Here’s a simple guide on how to add information to a PDF file using a PDF editor:
+
+1. **Choose a PDF Editor**: You can use tools like Adobe Acrobat, PDF-XChange Editor, or any online PDF editor like Smallpdf or PDFescape.
+
+2. **Open the PDF**:
+   - Launch your chosen PDF editor.
+   - Open the PDF file that you want to edit.
+
+3. **Edit the Document**:
+   - Look for an option like **"Edit"** or **"Add Text"**. In Adobe Acrobat, for example, you would select "Edit PDF" from the right-hand pane.
+   - Click on the area where you want to add the text.
+
+4. **Add Text**:
+   - Type in “The chairman of Tech Mahindra is Anand Mahindra.”
+   - Adjust the font size, style, and positioning as needed.
+
+5. **Save the Changes**:
+   - Once you’ve added the text, make sure to save the document. You can do this by choosing **"File" > "Save"** or **"Save As"** if you want to keep the original unchanged.
+
+6. **Review**:
+   - Open the PDF file again to ensure your changes have been saved properly.
+
+And that’s it! If you need further assistance, feel free to paw at me! 🐾😊
+2024-11-13 11:36:39,304 | INFO | 1894 | 
+Question : great thanks 
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:36:42,538 | INFO | 1894 | Generated Answer: Purrfection! 😸 If you have any more questions or need further help, just give me a meow. Happy editing! 🐾✨
+2024-11-13 11:36:58,922 | INFO | 1894 | 
+Question : meow
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:37:01,738 | INFO | 1894 | Generated Answer: Meow meow! 🐾 What can I do for you today?
+2024-11-13 11:37:14,222 | INFO | 1894 | 
+Question : woof woof 
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:37:19,011 | INFO | 1894 | Generated Answer: Meow! 🐾 Even the woofers are welcome here! What’s on your mind? 🐱💬
+2024-11-13 11:37:46,658 | INFO | 1894 | 
+Question : Ahh i guess you like the dog 
+Company Name : tech_mahindra
+Persona : Custom Persona
+
+
+2024-11-13 11:37:49,396 | INFO | 1894 | Generated Answer: Oh, absolutely! All furry friends are pawsome! 🐾💖 Dogs and cats can be great pals. Do you have a favorite between us cute critters? 🐱🐶
+2024-11-13 11:42:15,187 | INFO | 1894 | Assistant with ID asst_tqv8UfNsetbFRApUWoiTwTdr deleted.
+2024-11-13 11:42:16,932 | INFO | 1894 | Vector store with ID vs_IyMuTmJmShzNpjhAOxLzzO1i deleted.
+2024-11-13 12:50:22,863 | INFO | 2087 | Attempting to retrieve logo for jpmorgan chase from Google Images
+2024-11-13 12:50:27,873 | WARNING | 2087 | Logo retrieval for jpmorgan chase failed: [Errno 2] No such file or directory: '/mnt/c/programming/convoAI/server/temp/images'
+2024-11-13 12:50:27,881 | INFO | 2087 | Creating vector store and assistant id for new company: jpmorgan_chase
+2024-11-13 12:50:28,751 | INFO | 2087 | Vector ID generated for jpmorgan_chase
+2024-11-13 12:50:29,577 | INFO | 2087 | Assistant ID generated for jpmorgan_chase
+2024-11-13 12:50:29,578 | INFO | 2087 | Converting attachments to PDF format
+2024-11-13 12:50:29,578 | INFO | 2087 | No attachments found! Skipping upload step
+2024-11-13 12:50:29,641 | INFO | 2087 | Starting Scraping task on background thread
+2024-11-13 12:50:29,642 | INFO | 2087 | Sending scraping begun response to client
+2024-11-13 12:50:29,643 | INFO | 2087 | Starting Scraping Session with Timeout at 30 seconds
+2024-11-13 12:50:29,643 | INFO | 2087 | Task started for https://www.jpmorganchase.com/ at 2024-11-13 12:50:29.643516
+2024-11-13 12:50:29,733 | INFO | 2097 | Started scraping https://www.jpmorganchase.com/ for jpmorgan_chase at 2024-11-13 12:50:29.732949
+2024-11-13 12:50:30,879 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/
+2024-11-13 12:50:30,902 | INFO | 2097 | Found 57 new URLs on https://www.jpmorganchase.com/.
+2024-11-13 12:50:33,610 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/impact/diversity-equity-and-inclusion/military-and-vets
+2024-11-13 12:50:33,639 | INFO | 2097 | Found 12 new URLs on https://www.jpmorganchase.com/impact/diversity-equity-and-inclusion/military-and-vets.
+2024-11-13 12:50:36,123 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/newsroom/press-releases/2024/chicago-inclusive-econmoic-growth
+2024-11-13 12:50:36,142 | INFO | 2097 | Found 6 new URLs on https://www.jpmorganchase.com/newsroom/press-releases/2024/chicago-inclusive-econmoic-growth.
+2024-11-13 12:50:37,696 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/about/awards-and-recognition
+2024-11-13 12:50:37,721 | INFO | 2097 | Found 4 new URLs on https://www.jpmorganchase.com/about/awards-and-recognition.
+2024-11-13 12:50:38,188 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/about/leadership
+2024-11-13 12:50:38,215 | INFO | 2097 | Found 26 new URLs on https://www.jpmorganchase.com/about/leadership.
+2024-11-13 12:50:39,134 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/legal/cookies
+2024-11-13 12:50:39,151 | INFO | 2097 | Found 3 new URLs on https://www.jpmorganchase.com/legal/cookies.
+2024-11-13 12:50:40,626 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/newsroom/press-releases/2023/greater-washington-talentready-philanthropic-commitment
+2024-11-13 12:50:40,643 | INFO | 2097 | Found 3 new URLs on https://www.jpmorganchase.com/newsroom/press-releases/2023/greater-washington-talentready-philanthropic-commitment.
+2024-11-13 12:50:41,931 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/careers/how-we-hire
+2024-11-13 12:50:42,025 | INFO | 2097 | Found 8 new URLs on https://www.jpmorganchase.com/careers/how-we-hire.
+2024-11-13 12:50:44,482 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/newsroom/stories/realizing-potential-through-perseverance
+2024-11-13 12:50:44,501 | INFO | 2097 | Found 6 new URLs on https://www.jpmorganchase.com/newsroom/stories/realizing-potential-through-perseverance.
+2024-11-13 12:50:46,206 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/impact/business-growth-and-entrepreneurship
+2024-11-13 12:50:46,229 | INFO | 2097 | Found 5 new URLs on https://www.jpmorganchase.com/impact/business-growth-and-entrepreneurship.
+2024-11-13 12:50:47,029 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/newsroom/stories/hq-triggers-economic-growth
+2024-11-13 12:50:47,046 | INFO | 2097 | Found 7 new URLs on https://www.jpmorganchase.com/newsroom/stories/hq-triggers-economic-growth.
+2024-11-13 12:50:47,861 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/newsroom/stories/future-of-work
+2024-11-13 12:50:47,881 | INFO | 2097 | Found 1 new URLs on https://www.jpmorganchase.com/newsroom/stories/future-of-work.
+2024-11-13 12:50:48,656 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/about/suppliers
+2024-11-13 12:50:48,677 | INFO | 2097 | Found 18 new URLs on https://www.jpmorganchase.com/about/suppliers.
+2024-11-13 12:50:49,612 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/careers/how-we-hire/equal-opportunities
+2024-11-13 12:50:49,627 | INFO | 2097 | Found 1 new URLs on https://www.jpmorganchase.com/careers/how-we-hire/equal-opportunities.
+2024-11-13 12:50:50,400 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/communities
+2024-11-13 12:50:50,422 | INFO | 2097 | Found 19 new URLs on https://www.jpmorganchase.com/communities.
+2024-11-13 12:50:52,323 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/careers/grow-with-us
+2024-11-13 12:50:52,348 | INFO | 2097 | Found 9 new URLs on https://www.jpmorganchase.com/careers/grow-with-us.
+2024-11-13 12:50:54,576 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/legal/privacy
+2024-11-13 12:50:54,655 | INFO | 2097 | Found 4 new URLs on https://www.jpmorganchase.com/legal/privacy.
+2024-11-13 12:50:55,999 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/newsroom/media-contacts
+2024-11-13 12:50:56,019 | INFO | 2097 | Found 2 new URLs on https://www.jpmorganchase.com/newsroom/media-contacts.
+2024-11-13 12:50:57,547 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/impact/diversity-equity-and-inclusion
+2024-11-13 12:50:57,573 | INFO | 2097 | Found 13 new URLs on https://www.jpmorganchase.com/impact/diversity-equity-and-inclusion.
+2024-11-13 12:50:58,958 | INFO | 2097 | Markdown Report Generated for https://www.jpmorganchase.com/ir/events
+2024-11-13 12:50:58,981 | INFO | 2097 | Found 3 new URLs on https://www.jpmorganchase.com/ir/events.
+2024-11-13 12:50:59,693 | INFO | 2087 | Attempting to terminate process with PID 2097
+2024-11-13 12:51:00,697 | INFO | 2087 | Force killing process with PID 2097
+2024-11-13 12:51:00,697 | INFO | 2087 | Scraping https://www.jpmorganchase.com/ for jpmorgan_chase timed out after 30 seconds
+2024-11-13 12:51:00,702 | ERROR | 2087 | Scraping https://www.jpmorganchase.com/ for jpmorgan_chase failed with no result after 31.058766 seconds
+2024-11-13 12:51:00,702 | INFO | 2087 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 13:06:05,076 | INFO | 2191 | Assistant with ID asst_BRLmNVivSl3Kx5jTdCabCKYA deleted.
+2024-11-13 13:06:06,283 | INFO | 2191 | Vector store with ID vs_wVPCE3YEpmP5C4kWjaGJ0SDZ deleted.
+2024-11-13 13:12:18,722 | INFO | 2238 | Creating vector store and assistant id for new company: msbc_group
+2024-11-13 13:12:19,572 | INFO | 2238 | Vector ID generated for msbc_group
+2024-11-13 13:12:20,368 | INFO | 2238 | Assistant ID generated for msbc_group
+2024-11-13 13:12:20,368 | INFO | 2238 | Converting attachments to PDF format
+2024-11-13 13:12:20,369 | INFO | 2238 | No attachments found! Skipping upload step
+2024-11-13 13:12:20,484 | INFO | 2238 | Starting Scraping task on background thread
+2024-11-13 13:12:20,485 | INFO | 2238 | Sending scraping begun response to client
+2024-11-13 13:12:20,486 | INFO | 2238 | Starting Scraping Session with Timeout at 20 seconds
+2024-11-13 13:12:20,486 | INFO | 2238 | Task started for https://www.msbcgroup.com/ at 2024-11-13 13:12:20.486348
+2024-11-13 13:12:20,506 | INFO | 2256 | Started scraping https://www.msbcgroup.com/ for msbc_group at 2024-11-13 13:12:20.506242
+2024-11-13 13:12:21,544 | INFO | 2256 | Markdown Report Generated for https://www.msbcgroup.com/
+2024-11-13 13:12:21,545 | INFO | 2256 | Found 0 new URLs on https://www.msbcgroup.com/.
+2024-11-13 13:12:21,545 | INFO | 2256 | Completed scraping https://www.msbcgroup.com/ for msbc_group at 2024-11-13 13:12:21.545628, time taken: 1.039386 seconds
+2024-11-13 13:12:22,507 | INFO | 2238 | Scraping https://www.msbcgroup.com/ for msbc_group completed in 1.039386 seconds
+2024-11-13 13:12:22,509 | INFO | 2238 | Starting conversion of parsed report from markdown to PDF
+2024-11-13 13:14:44,735 | INFO | 2301 | 
+Question : Hello
+Company Name : msbc_group
+Persona : Custom Persona
+
+
+2024-11-13 13:14:48,817 | INFO | 2301 | Generated Answer: Meow! Hello there! How can I assist you today? 🐾
+2024-11-13 13:15:10,217 | INFO | 2301 | 
+Question : who is the coo of MSBC Group
+Company Name : msbc_group
+Persona : Custom Persona
+
+
+2024-11-13 13:15:14,389 | INFO | 2301 | Generated Answer: Hmm, no purr-fect match for the COO of MSBC Group in the files! Maybe you can check the company website or contact them directly for the latest info. Need help with anything else? 🐱✨

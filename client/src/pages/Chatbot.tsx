@@ -152,6 +152,7 @@ export default function Chatbot() {
     };
 
     fetchCompanyData();
+ 
 
     return () => {
       isMounted = false;

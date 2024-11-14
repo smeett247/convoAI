@@ -16,6 +16,7 @@ from icrawler.builtin import GoogleImageCrawler
 import random
 from typing import Optional
 from fastapi import UploadFile
+import aiohttp
 from pocketbase.client import FileUpload
 
 load_dotenv()
@@ -90,6 +91,36 @@ async def fetch_or_upload_logo(
         if crawled_logo_path and os.path.exists(crawled_logo_path):
             logger.info("Removing crawled logo from images directory")
             os.remove(crawled_logo_path)
+
+
+ 
+async def fetch_logo(company_name: str, company_logo: Optional[UploadFile]) -> Optional[str]:
+    """
+    Fetches the company logo. If a company_logo is provided, it returns its filename.
+    Otherwise, it fetches the logo from an external source based on the company name.
+
+    Parameters:
+        company_name (str): Name of the company to fetch the logo for.
+        company_logo (Optional[UploadFile]): Optional uploaded file for the logo.
+
+    Returns:
+        Optional[str]: The logo filename or a URL to the fetched logo.
+    """
+    # If company_logo is provided, return its filename
+    if company_logo:
+        return company_logo.filename  # Or return a suitable URL if needed
+
+    # Fetch logo from an external API
+    try:
+        async with aiohttp.ClientSession() as session:
+            response = await session.get(f'https://api.example.com/logo?company={company_name}')
+            if response.status == 200:
+                data = await response.json()
+                return data.get("logo_url")  # Assuming the API returns a JSON with a logo_url key
+            else:
+                return None
+    except Exception as e:
+        raise Exception(f"Error fetching logo: {str(e)}")           
 
 
 def create_vector_store(client: Client, company_name: str):

@@ -26,17 +26,20 @@ from utils import (
     delete_assistant_and_vs,
     fetch_or_upload_logo,
     logger,
+    fetch_logo
 )
 from openai import Client
 from dotenv import load_dotenv
 from pocketbase.client import ClientResponseError, FileUpload
-from typing import Optional
+from typing import Optional,List
 from datetime import datetime
 import uvicorn
 import asyncio
 from queue import Queue
 from multiprocessing import Process, Queue
 import os
+from pocketbase import PocketBase
+from pydantic import BaseModel
 
 load_dotenv()
 app = FastAPI()
@@ -432,7 +435,98 @@ async def delete_company(company_name: str):
             raise HTTPException(status_code=404, detail="Company not found.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
 
+
+
+
+@app.put("/companies/{existing_company_name}")
+async def edit_company(
+    existing_company_name: str,  # Existing company name to identify the record
+    company_name: Optional[str] = Form(None),  # New company name to update
+    persona: Optional[str] = Form(None),
+    instructions: Optional[str] = Form(None),
+    attachments: Optional[List[UploadFile]] = File(None),
+    customer_name: Optional[str] = Form(None),
+    company_logo: Optional[UploadFile] = File(None)  # Optional logo file upload
+):
+    try:
+        # Fetch the company by existing_company_name using a filter
+        company_list = db.collection("companies").get_list(1, 1, {"filter": f"company_name='{existing_company_name}'"})
+        
+        if not company_list.items:
+            raise HTTPException(status_code=404, detail="Company not found.")
+        
+        # Get the first company that matches existing_company_name
+        company = company_list.items[0]
+        company_data = company.data if hasattr(company, "data") else {}
+        company_id = company.id  # Use company_id for database operations
+
+        # Prepare the fields to update
+        update_data = {}
+        if company_name:
+            update_data["company_name"] = company_name  # Update with new company name
+        if customer_name:
+            update_data["customer_name"] = customer_name
+
+        # Try to fetch company logo using the fetch_logo function if necessary
+        if company_name:
+            try:
+                logo_url = await fetch_logo(company_name, company_logo)  # Fetch logo
+                if logo_url:
+                    update_data["company_logo"] = logo_url
+                else:
+                    logger.warning("Logo not found through external API.")
+            except Exception as e:
+                logger.warning(f"Error fetching logo via external API: {str(e)}")
+
+        # Handle manual logo upload if provided
+        if company_logo:
+            os.makedirs('logos', exist_ok=True)  # Ensure the 'logos' directory exists
+            file_location = f"logos/{company_logo.filename}"
+            with open(file_location, "wb") as f:
+                f.write(await company_logo.read())
+            update_data["company_logo"] = file_location  # Save the local path in the database
+
+        # Update the company details in the database
+        updated_company = db.collection("companies").update(company_id, update_data)
+
+        # Extract assistant_id and vector_store_id from the company record
+        assistant_id = company_data.get("assistant_id")
+        vector_store_id = company_data.get("vector_store_id")
+        
+        # Handle persona and instructions if provided
+        if persona and instructions and assistant_id:
+            assistant_data = {
+                "persona": persona,
+                "instructions": instructions
+            }
+            db.collection("assistants").update(assistant_id, assistant_data)
+
+        # Handle attachments if provided
+        if attachments:
+            attachment_file_ids = []  # List to store file ids from PocketBase
+            for file in attachments:
+                # Read the file data
+                file_data = await file.read()
+
+                # Upload the file to PocketBase using the 'upload_file' method
+                file_upload = db.collection("companies").upload_file(file_data, file.filename)
+
+                # Add the returned file ID to attachment_file_ids
+                if file_upload and file_upload['id']:
+                    attachment_file_ids.append(file_upload['id'])
+
+            # Now, associate the uploaded files with the company
+            company_update_data = {"attachments": attachment_file_ids}
+            db.collection("companies").update(company_id, company_update_data)
+
+        return {"message": "Company updated successfully"}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error updating company: {str(e)}")
+    
+#############################################################################################################
 
 @app.post("/ask")
 async def ask_query(
