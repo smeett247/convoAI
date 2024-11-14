@@ -3,3 +3,129 @@
 2024-11-14 17:29:42,331 | INFO | 3144 | Removing crawled logo from images directory
 2024-11-14 17:29:42,380 | INFO | 3144 | Creating vector store and assistant id for new company: arkay_windows
 2024-11-14 17:30:56,942 | ERROR | 3144 | Error deleting assistant or vector store: Expected a non-empty value for `assistant_id` but received ''
+2024-11-14 17:45:50,062 | INFO | 2598 | Attempting to retrieve logo for adani university from Google Images
+2024-11-14 17:45:53,074 | INFO | 2598 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.png
+2024-11-14 17:45:53,077 | INFO | 2598 | Removing crawled logo from images directory
+2024-11-14 17:45:53,078 | INFO | 2598 | Creating vector store and assistant id for new company: adani_university
+2024-11-14 17:45:53,818 | INFO | 2598 | Vector ID generated for adani_university
+2024-11-14 17:45:54,679 | INFO | 2598 | Assistant ID generated for adani_university
+2024-11-14 17:45:54,679 | INFO | 2598 | Converting attachments to PDF format
+2024-11-14 17:45:54,680 | INFO | 2598 | No attachments found! Skipping upload step
+2024-11-14 17:49:12,242 | ERROR | 2633 | adani_university has already been scrapped, skipping scraping for now
+2024-11-14 17:49:32,257 | INFO | 2633 | Attempting to retrieve logo for adani university from Google Images
+2024-11-14 17:49:34,263 | INFO | 2633 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.png
+2024-11-14 17:49:34,270 | INFO | 2633 | Removing crawled logo from images directory
+2024-11-14 17:49:34,294 | INFO | 2633 | Creating vector store and assistant id for new company: adani_university
+2024-11-14 17:49:34,989 | INFO | 2633 | Vector ID generated for adani_university
+2024-11-14 17:49:35,850 | INFO | 2633 | Assistant ID generated for adani_university
+2024-11-14 17:49:35,851 | INFO | 2633 | Converting attachments to PDF format
+2024-11-14 17:49:35,852 | INFO | 2633 | Uploading attachments to vector store to ID vs_WmNOblY12zW4Q2Sa1kRQ2HFY
+2024-11-14 17:49:42,590 | INFO | 2633 | ['/mnt/d/Programming/convoai/server/temp/attachments/quad_scan_pro.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/Digital-Services-Act-Practical-Implications-for-Online-Services-and-Platforms.pdf'] got uploded to vector store with id vs_WmNOblY12zW4Q2Sa1kRQ2HFY
+2024-11-14 17:49:42,643 | INFO | 2633 | Starting Scraping task on background thread
+2024-11-14 17:49:42,643 | INFO | 2633 | Sending scraping begun response to client
+2024-11-14 17:49:42,644 | INFO | 2633 | Starting Scraping Session with Timeout at 10 seconds
+2024-11-14 17:49:42,644 | INFO | 2633 | Task started for https://www.adaniuni.ac.in/ at 2024-11-14 17:49:42.644878
+2024-11-14 17:49:42,652 | INFO | 2646 | Started scraping https://www.adaniuni.ac.in/ for adani_university at 2024-11-14 17:49:42.652311
+2024-11-14 17:49:44,727 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/
+2024-11-14 17:49:44,748 | INFO | 2646 | Found 72 new URLs on https://www.adaniuni.ac.in/.
+2024-11-14 17:49:46,891 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/admissions#postgraduate
+2024-11-14 17:49:46,908 | INFO | 2646 | Found 14 new URLs on https://www.adaniuni.ac.in/admissions#postgraduate.
+2024-11-14 17:49:47,829 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/expert-talk-on-recent-trends-in-mergers-acquisition/
+2024-11-14 17:49:47,840 | INFO | 2646 | Found 0 new URLs on https://www.adaniuni.ac.in/expert-talk-on-recent-trends-in-mergers-acquisition/.
+2024-11-14 17:49:49,208 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/programs/dds/
+2024-11-14 17:49:49,228 | INFO | 2646 | Found 17 new URLs on https://www.adaniuni.ac.in/programs/dds/.
+2024-11-14 17:49:50,257 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/student-support-services/
+2024-11-14 17:49:50,266 | INFO | 2646 | Found 0 new URLs on https://www.adaniuni.ac.in/student-support-services/.
+2024-11-14 17:49:50,628 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/finance-for-non-finance-professionals-batch-iii/
+2024-11-14 17:49:50,629 | INFO | 2646 | Found 0 new URLs on https://www.adaniuni.ac.in/finance-for-non-finance-professionals-batch-iii/.
+2024-11-14 17:49:51,476 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/apply-fms/
+2024-11-14 17:49:51,485 | INFO | 2646 | Found 0 new URLs on https://www.adaniuni.ac.in/apply-fms/.
+2024-11-14 17:49:52,334 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/silicon-and-net-zero-target/
+2024-11-14 17:49:52,343 | INFO | 2646 | Found 0 new URLs on https://www.adaniuni.ac.in/silicon-and-net-zero-target/.
+2024-11-14 17:49:52,661 | INFO | 2633 | Attempting to terminate process with PID 2646
+2024-11-14 17:49:52,670 | INFO | 2646 | Markdown Report Generated for https://www.adaniuni.ac.in/finance-for-non-finance-professionals/
+2024-11-14 17:49:52,671 | INFO | 2646 | Found 0 new URLs on https://www.adaniuni.ac.in/finance-for-non-finance-professionals/.
+2024-11-14 17:49:53,664 | INFO | 2633 | Force killing process with PID 2646
+2024-11-14 17:49:53,666 | INFO | 2633 | Scraping https://www.adaniuni.ac.in/ for adani_university timed out after 10 seconds
+2024-11-14 17:49:53,674 | ERROR | 2633 | Scraping https://www.adaniuni.ac.in/ for adani_university failed with no result after 11.0292 seconds
+2024-11-14 17:49:53,674 | INFO | 2633 | Starting conversion of parsed report from markdown to PDF
+2024-11-14 17:49:53,839 | INFO | 2633 | The markdown file at temp/markdown/ac.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-14 17:49:53,839 | INFO | 2633 | Conversion of report completed and uploaded to vector store with id vs_WmNOblY12zW4Q2Sa1kRQ2HFY
+2024-11-14 17:49:59,176 | INFO | 2633 | ['/mnt/d/Programming/convoai/server/temp/pdf/ac.pdf'] got uploded to vector store with id vs_WmNOblY12zW4Q2Sa1kRQ2HFY
+2024-11-14 17:49:59,177 | INFO | 2633 | Removing Markdown file generated for adani_university
+2024-11-14 17:56:24,578 | INFO | 2633 | Attempting to retrieve logo for yahoo from Google Images
+2024-11-14 17:56:27,583 | INFO | 2633 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.png
+2024-11-14 17:56:27,586 | INFO | 2633 | Removing crawled logo from images directory
+2024-11-14 17:56:27,602 | INFO | 2633 | Creating vector store and assistant id for new company: yahoo
+2024-11-14 17:56:28,112 | INFO | 2633 | Vector ID generated for yahoo
+2024-11-14 17:56:29,141 | INFO | 2633 | Assistant ID generated for yahoo
+2024-11-14 17:56:29,142 | INFO | 2633 | Converting attachments to PDF format
+2024-11-14 17:56:29,142 | INFO | 2633 | Uploading attachments to vector store to ID vs_uYA5YGBxfn4TEDrHCy4KWXeG
+2024-11-14 17:56:35,999 | INFO | 2633 | ['/mnt/d/Programming/convoai/server/temp/attachments/quad_scan_pro.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/Digital-Services-Act-Practical-Implications-for-Online-Services-and-Platforms.pdf'] got uploded to vector store with id vs_uYA5YGBxfn4TEDrHCy4KWXeG
+2024-11-14 17:56:36,052 | INFO | 2633 | Starting Scraping task on background thread
+2024-11-14 17:56:36,052 | INFO | 2633 | Sending scraping begun response to client
+2024-11-14 17:56:36,053 | INFO | 2633 | Starting Scraping Session with Timeout at 10 seconds
+2024-11-14 17:56:36,053 | INFO | 2633 | Task started for https://www.yahoo.com at 2024-11-14 17:56:36.053881
+2024-11-14 17:56:36,056 | INFO | 2680 | Started scraping https://www.yahoo.com for yahoo at 2024-11-14 17:56:36.056147
+2024-11-14 17:56:37,036 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com
+2024-11-14 17:56:37,084 | INFO | 2680 | Found 114 new URLs on https://www.yahoo.com.
+2024-11-14 17:56:38,620 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com#Aside
+2024-11-14 17:56:38,658 | INFO | 2680 | Found 0 new URLs on https://www.yahoo.com#Aside.
+2024-11-14 17:56:39,545 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com/lifestyle/there-are-thousands-of-deals-at-walmarts-black-friday-sale--these-are-the-12-were-buying-212538606.html
+2024-11-14 17:56:39,572 | INFO | 2680 | Found 31 new URLs on https://www.yahoo.com/lifestyle/there-are-thousands-of-deals-at-walmarts-black-friday-sale--these-are-the-12-were-buying-212538606.html.
+2024-11-14 17:56:40,571 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com/lifestyle/tagged/sexual-health/
+2024-11-14 17:56:40,593 | INFO | 2680 | Found 15 new URLs on https://www.yahoo.com/lifestyle/tagged/sexual-health/.
+2024-11-14 17:56:42,111 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com/lifestyle/tagged/covid/
+2024-11-14 17:56:42,132 | INFO | 2680 | Found 9 new URLs on https://www.yahoo.com/lifestyle/tagged/covid/.
+2024-11-14 17:56:43,075 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com/lifestyle/tagged/it-figures/
+2024-11-14 17:56:43,096 | INFO | 2680 | Found 9 new URLs on https://www.yahoo.com/lifestyle/tagged/it-figures/.
+2024-11-14 17:56:43,708 | INFO | 2680 | Markdown Report Generated for https://www.yahoo.com/creators/
+2024-11-14 17:56:43,731 | INFO | 2680 | Found 22 new URLs on https://www.yahoo.com/creators/.
+2024-11-14 17:56:43,841 | INFO | 2680 | Forbidden access for URL: https://www.yahoo.com/entertainment/jamie-lee-curtis-makes-bold-184827339.html. Using ScraperAPI.
+2024-11-14 17:56:46,065 | INFO | 2633 | Attempting to terminate process with PID 2680
+2024-11-14 17:56:47,067 | INFO | 2633 | Force killing process with PID 2680
+2024-11-14 17:56:47,068 | INFO | 2633 | Scraping https://www.yahoo.com for yahoo timed out after 10 seconds
+2024-11-14 17:56:47,073 | ERROR | 2633 | Scraping https://www.yahoo.com for yahoo failed with no result after 11.019698 seconds
+2024-11-14 17:56:47,073 | INFO | 2633 | Starting conversion of parsed report from markdown to PDF
+2024-11-14 17:56:47,110 | INFO | 2633 | The markdown file at temp/markdown/yahoo.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-14 17:56:47,111 | INFO | 2633 | Conversion of report completed and uploaded to vector store with id vs_uYA5YGBxfn4TEDrHCy4KWXeG
+2024-11-14 17:56:56,293 | INFO | 2633 | ['/mnt/d/Programming/convoai/server/temp/pdf/yahoo.pdf'] got uploded to vector store with id vs_uYA5YGBxfn4TEDrHCy4KWXeG
+2024-11-14 17:56:56,297 | INFO | 2633 | Removing Markdown file generated for yahoo
+2024-11-14 18:00:32,862 | INFO | 2703 | Attempting to retrieve logo for yahoo from Google Images
+2024-11-14 18:00:35,868 | INFO | 2703 | Logo saved at /mnt/d/Programming/convoai/server/temp/images/000001.png
+2024-11-14 18:00:35,870 | INFO | 2703 | Removing crawled logo from images directory
+2024-11-14 18:00:35,885 | INFO | 2703 | Creating vector store and assistant id for new company: yahoo
+2024-11-14 18:00:36,721 | INFO | 2703 | Vector ID generated for yahoo
+2024-11-14 18:00:37,493 | INFO | 2703 | Assistant ID generated for yahoo
+2024-11-14 18:00:37,494 | INFO | 2703 | Converting attachments to PDF format
+2024-11-14 18:00:37,494 | INFO | 2703 | Uploading attachments to vector store to ID vs_ZC2IlzpyMSByIqK5MDIpJBWT
+2024-11-14 18:00:44,697 | INFO | 2703 | ['/mnt/d/Programming/convoai/server/temp/attachments/quad_scan_pro.pdf', '/mnt/d/Programming/convoai/server/temp/attachments/Digital-Services-Act-Practical-Implications-for-Online-Services-and-Platforms.pdf'] got uploded to vector store with id vs_ZC2IlzpyMSByIqK5MDIpJBWT
+2024-11-14 18:00:45,012 | INFO | 2703 | Starting Scraping task on background thread
+2024-11-14 18:00:45,012 | INFO | 2703 | Sending scraping begun response to client
+2024-11-14 18:00:45,013 | INFO | 2703 | Starting Scraping Session with Timeout at 10 seconds
+2024-11-14 18:00:45,013 | INFO | 2703 | Task started for https://www.yahoo.com at 2024-11-14 18:00:45.013886
+2024-11-14 18:00:45,020 | INFO | 2713 | Started scraping https://www.yahoo.com for yahoo at 2024-11-14 18:00:45.020739
+2024-11-14 18:00:46,103 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com
+2024-11-14 18:00:46,146 | INFO | 2713 | Found 115 new URLs on https://www.yahoo.com.
+2024-11-14 18:00:47,299 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com/news/justine-bateman-feels-she-breathe-135914542.html
+2024-11-14 18:00:47,375 | INFO | 2713 | Found 67 new URLs on https://www.yahoo.com/news/justine-bateman-feels-she-breathe-135914542.html.
+2024-11-14 18:00:47,548 | INFO | 2713 | Forbidden access for URL: https://www.yahoo.com/entertainment/tagged/how-to-watch/. Using ScraperAPI.
+2024-11-14 18:00:51,734 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com/entertainment/tagged/how-to-watch/
+2024-11-14 18:00:51,736 | INFO | 2713 | Found 4 new URLs on https://www.yahoo.com/entertainment/tagged/how-to-watch/.
+2024-11-14 18:00:52,565 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com/lifestyle/starbucks-red-cup-day-2024-is-on-november-14--heres-how-to-get-your-free-holiday-cup-150002856.html
+2024-11-14 18:00:52,585 | INFO | 2713 | Found 27 new URLs on https://www.yahoo.com/lifestyle/starbucks-red-cup-day-2024-is-on-november-14--heres-how-to-get-your-free-holiday-cup-150002856.html.
+2024-11-14 18:00:54,002 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com/lifestyle/best-gifts-for-someone-you-dont-know-well-171258437.html
+2024-11-14 18:00:54,027 | INFO | 2713 | Found 15 new URLs on https://www.yahoo.com/lifestyle/best-gifts-for-someone-you-dont-know-well-171258437.html.
+2024-11-14 18:00:54,798 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com/lifestyle/tagged/health/
+2024-11-14 18:00:54,820 | INFO | 2713 | Found 12 new URLs on https://www.yahoo.com/lifestyle/tagged/health/.
+2024-11-14 18:00:55,031 | INFO | 2703 | Attempting to terminate process with PID 2713
+2024-11-14 18:00:55,809 | INFO | 2713 | Markdown Report Generated for https://www.yahoo.com/lifestyle/13-secret-santa-gifts-from-walmart-that-dont-scream-i-bought-this-on-the-way-165944780.html
+2024-11-14 18:00:55,833 | INFO | 2713 | Found 4 new URLs on https://www.yahoo.com/lifestyle/13-secret-santa-gifts-from-walmart-that-dont-scream-i-bought-this-on-the-way-165944780.html.
+2024-11-14 18:00:56,035 | INFO | 2703 | Force killing process with PID 2713
+2024-11-14 18:00:56,036 | INFO | 2703 | Scraping https://www.yahoo.com for yahoo timed out after 10 seconds
+2024-11-14 18:00:56,041 | ERROR | 2703 | Scraping https://www.yahoo.com for yahoo failed with no result after 11.028019 seconds
+2024-11-14 18:00:56,042 | INFO | 2703 | Starting conversion of parsed report from markdown to PDF
+2024-11-14 18:00:56,163 | INFO | 2703 | The markdown file at temp/markdown/yahoo.md got saved as pdf to /mnt/d/Programming/convoai/server/temp/pdf
+2024-11-14 18:00:56,163 | INFO | 2703 | Conversion of report completed and uploaded to vector store with id vs_ZC2IlzpyMSByIqK5MDIpJBWT
+2024-11-14 18:01:02,669 | INFO | 2703 | ['/mnt/d/Programming/convoai/server/temp/pdf/yahoo.pdf'] got uploded to vector store with id vs_ZC2IlzpyMSByIqK5MDIpJBWT
+2024-11-14 18:01:02,673 | INFO | 2703 | Removing Markdown file generated for yahoo

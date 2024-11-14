@@ -312,12 +312,13 @@ async def scrap(
         }
 
         recordCreated = db.collection("companies").create(form_data)
-        for file in attachments:
-            binary_file = await file.read()
-            db.collection("companies").update(
-                recordCreated.id,
-                {"attachments": FileUpload(file.filename, binary_file)},
-            )
+        for pdf_path in pdf_files:
+            with open(pdf_path, "rb") as f:
+                binary_file = f.read()
+                db.collection("companies").update(
+                    recordCreated.id,
+                    {"attachments": FileUpload(pdf_path.split("/")[-1], binary_file)},
+                )
 
         websites_to_scrape = []
         if company_url:
